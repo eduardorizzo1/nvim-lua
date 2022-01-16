@@ -42,4 +42,8 @@ return require('packer').startup(function()
   use 'folke/twilight.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
 
+  -- Telescope
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+
 end)
