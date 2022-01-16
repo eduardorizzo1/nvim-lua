@@ -35,8 +35,11 @@ return require('packer').startup(function()
   use 'l3mon4d3/luasnip'
   use 'saadparwaiz1/cmp_luasnip'
 
-  -- Treesitter
+  -- Code Colorizers
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
+  use 'norcalli/nvim-colorizer.lua'
+  use 'p00f/nvim-ts-rainbow'
+  use 'folke/twilight.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
 
 end)
