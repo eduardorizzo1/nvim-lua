@@ -1,3 +1,5 @@
 require 'settings'
 require 'plugins.config'
 require 'plugins.dashboard'
+require 'plugins.bufferline'
+require 'plugins.nvimtree'
