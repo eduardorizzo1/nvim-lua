@@ -41,6 +41,7 @@ return require('packer').startup(function()
   use 'p00f/nvim-ts-rainbow'
   use 'folke/twilight.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use "windwp/nvim-autopairs"
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
