@@ -1,4 +1,5 @@
 require 'settings'
+require 'mappings'
 require 'plugins.config'
 require 'plugins.dashboard'
 require 'plugins.bufferline'
