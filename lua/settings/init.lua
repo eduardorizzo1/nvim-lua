@@ -1,19 +1,27 @@
+vim.cmd('filetype plugin indent on')
+
 local options = {
+  termguicolors = true,
   number = true,
-  relativenumber = true,
-  shiftwidth = 2,
+  relativenumber = false,
   mouse = 'a',
   history = 5000,
   clipboard ='unnamedplus',
   fileencoding = 'utf-8',
+  shiftwidth = 2,
+  tabstop = 2,
   autoindent = true,
   smartindent = true,
+  smartcase = true,
   incsearch = true,
-  shiftwidth = 2,
-  termguicolors = true,
+  hlsearch = true,
   background = 'dark',
   cursorline = true,
-  signcolumn = 'yes'
+  signcolumn = 'yes',
+  swapfile = false,
+  undofile = true,
+  backup = false,
+  completeopt = { "menuone", "noselect" }
 }
 
 for key, value in pairs(options) do

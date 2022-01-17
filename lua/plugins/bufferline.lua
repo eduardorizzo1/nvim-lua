@@ -1,5 +1,5 @@
 require('bufferline').setup{
-	options = {
+    options = {
     view = "multiwindow",
     separator_style = { "", "" },
     buffer_close_icon = "",

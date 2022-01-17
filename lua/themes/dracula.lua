@@ -1,6 +1,6 @@
-vim.cmd[[colorscheme dracula]]
+local g = vim.g
 
-vim.g.dracula_show_end_of_buffer=1
-vim.g.dracula_transparent_bg=1
-vim.g.dracula_lualine_bg_color="#000"
-vim.g.dracula_italic=0
+g.dracula_show_end_of_buffer=1
+g.dracula_transparent_bg=1
+g.dracula_lualine_bg_color="#000"
+g.dracula_italic=0
