@@ -21,8 +21,9 @@ bufferline.setup{
    	always_show_bufferline = true,
    	show_tab_indicators = false,
    	diagnostic = 'nvim_lsp',
-	 	--right_mouse_command = "vertical sbuffer %d",
+	 	right_mouse_command = "vertical sbuffer %d",
 		numbers = "none",
+		close_command = "bdelete! %d",
    	 
 	 	diagnostics_indicator = function(count, level, diagnostics_dict)
    	  return "("..count..")"
@@ -31,12 +32,6 @@ bufferline.setup{
 	 	offsets = {
    	  { 
 	 			filetype = "NvimTree", 
-	 	 		--text = '◀️ 🔍 💀 🧛 👻 🥷 👀 🔎 ▶️',
-	 	 		-- text = 'File Explorer',
-	 	 		--text = function()
-	 	 		--	return vim.fn.getcwd()
-	 	 		--end,
-	 	 		-- text_align = "center",
 	 	 		highlight = "Directory",
 	 	 		padding = 0
    	   }

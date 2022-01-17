@@ -17,7 +17,7 @@ map('v', '<C-s>', '<Esc> :w <CR>', opts)
 
 -- ctrl+z
 map('n', '<C-z>', ':u <CR>', opts)
-map('i', '<C-z>', '<Esc> :u <CR>i', opts)
+map('i', '<C-z>', '<Esc> :u <CR>', opts)
 
 -- Delete without copy
 map('v', 'D', '"_d', opts)
@@ -26,14 +26,15 @@ map('v', 'D', '"_d', opts)
 map('n', '<C-q>', ':q<CR>', opts)
 
 -- Toggle highlight match word
-map('n', '<leader>*', ':noh', opts)
+map('n', '<space>*', ':noh', opts)
 
--- Lualine
+-- Bufferline
 map('n', '<M-l>', ':bn <CR>', opts)
 map('n', '<M-h>', ':bp <CR>', opts)
+map('n', '<M-x>', ':bd <Esc> :bp <CR>', opts)
 
 -- Prettier
-map('n', '<leader>p', ':PrettierAsync<cr>', opts)  
+map('n', '<space>p', ':PrettierAsync<cr>', opts)  
 
 -- Telescope
 map('n', '<c-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
