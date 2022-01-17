@@ -22,7 +22,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'onsails/lspkind-nvim'
   use 'ray-x/lsp_signature.nvim'
-	use 'tami5/lspsaga.nvim'
+  use 'tami5/lspsaga.nvim'
 
   -- CMP
   use 'hrsh7th/nvim-cmp'

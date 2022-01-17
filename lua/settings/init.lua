@@ -1,16 +1,21 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.shiftwidth = 2
-vim.opt.mouse = 'a'
-vim.opt.history=5000
-vim.opt.clipboard ='unnamedplus'
-vim.opt.fileencoding = 'utf-8'
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.incsearch = true
-vim.opt.shiftwidth = 2
-vim.opt.termguicolors = true
-vim.opt.background = dark
-vim.opt.cursorline = true
+local options = {
+  number = true,
+  relativenumber = true,
+  shiftwidth = 2,
+  mouse = 'a',
+  history = 5000,
+  clipboard ='unnamedplus',
+  fileencoding = 'utf-8',
+  autoindent = true,
+  smartindent = true,
+  incsearch = true,
+  shiftwidth = 2,
+  termguicolors = true,
+  background = 'dark',
+  cursorline = true,
+  signcolumn = 'yes'
+}
 
-vim.cmd[[colorscheme dracula]]
+for key, value in pairs(options) do
+  vim.opt[key] = value
+end

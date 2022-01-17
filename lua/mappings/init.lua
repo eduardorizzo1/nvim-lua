@@ -1,6 +1,9 @@
 local opts = { noremap = true, silent = true }
 local map = vim.api.nvim_set_keymap
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Window Navigate
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)
@@ -18,3 +21,7 @@ map('i', '<C-z>', '<Esc> :u <CR>i', opts)
 
 -- Delete without copy
 map('v', 'D', '"_d', opts)
+
+-- Lualine
+map('n', '<M-l>', ':bn <CR>', opts)
+map('n', '<M-h>', ':bp <CR>', opts)
