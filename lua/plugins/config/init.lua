@@ -47,4 +47,7 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
 
+	-- Prettier
+	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
+
 end)

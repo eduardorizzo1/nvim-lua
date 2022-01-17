@@ -26,3 +26,6 @@ map('v', 'D', '"_d', opts)
 -- Lualine
 map('n', '<M-l>', ':bn <CR>', opts)
 map('n', '<M-h>', ':bp <CR>', opts)
+
+-- Prettier
+map('n', '<space>p', ':PrettierAsync<cr>', opts)  
