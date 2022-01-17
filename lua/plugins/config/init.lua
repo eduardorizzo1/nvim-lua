@@ -30,6 +30,9 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+	
+	-- Null-ls
+	use "jose-elias-alvarez/null-ls.nvim"
 
   -- Luasnip
   use 'l3mon4d3/luasnip'

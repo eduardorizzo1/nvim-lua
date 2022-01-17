@@ -1,5 +1,6 @@
 local nvim_lsp = require'lspconfig'
 local lspsaga = require'lspsaga'
+local null_ls = require'null-ls'
 require('lsp_signature').setup(cfg)
 
 vim.o.completeopt = 'menuone,noselect'
@@ -24,34 +25,20 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
   -- Mappings.
   local opts = { noremap=true, silent=true }
-
-  -- LspSaga Mappings
-	buf_set_keymap('n', 'gc', '<cmd>Lspsaga code_action<CR>', opts)
-	buf_set_keymap('n', 'ga', '<cmd>Lspsaga range_code_action<CR>', opts)
-  buf_set_keymap('n', 'gh', '<cmd>Lspsaga hover_doc<CR>', opts)
-	buf_set_keymap('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
-	buf_set_keymap('n', 'gi', '<cmd>Lspsaga implement<CR>', opts)
-	buf_set_keymap('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
-	buf_set_keymap('n', 'gn', '<cmd>Lspsaga rename<CR>', opts)
-	buf_set_keymap('n', 'gt', '<cmd>Lspsaga open_floaterm<CR>', opts)
-	buf_set_keymap('n', 'gq', '<cmd>Lspsaga close_floaterm<CR>', opts)
-	buf_set_keymap('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-	buf_set_keymap('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
-	buf_set_keymap('n', '<C-k>', '<cmd>Lspsaga signature_help<CR>', opts)
-
-	-- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-	buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-	buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  buf_set_keymap('n', '<space>i', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-	buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
+null_ls.setup({
+	on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+       vim.cmd([[
+        augroup LspFormatting
+           autocmd! * <buffer>
+           autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+           augroup END
+        ]])
+     end
+  end,
+ })
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -122,7 +109,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 
- cfg = {
+
+cfg = {
   debug = false, -- set to true to enable debug logging
   log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
   -- default is  ~/.cache/nvim/lsp_signature.log
