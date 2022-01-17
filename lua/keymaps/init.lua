@@ -23,10 +23,24 @@ map('i', '<C-z>', '<Esc> :u <CR>', opts)
 map('v', 'D', '"_d', opts)
 
 -- ctrl+q to quit
-map('n', '<C-q>', ':q<CR>', opts)
+map('n', '<C-q>', ':q <CR>', opts)
 
 -- Toggle highlight match word
 map('n', '<space>*', ':noh', opts)
+
+-- Toggle Relative number
+map('n', '<C-k>n', ':set relativenumber! <CR>', opts)
+
+------------------ P L U G I N S --------------------------
+
+-- Nvimtree
+map('n', '<C-b>', ':NvimtreeToggle <CR>', opts)
+
+-- IndentLine
+map('n', '<C-k>i', ':IndentBlanklineToggle <CR>', opts)
+
+-- Twilight
+map('n', '<C-k>z', ':Twilight <CR>', opts)
 
 -- Bufferline
 map('n', '<M-l>', ':bn <CR>', opts)

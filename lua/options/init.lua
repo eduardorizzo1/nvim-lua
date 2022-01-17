@@ -7,7 +7,6 @@ cmd('autocmd FileType * exe "normal zR"')
 
 local options = {
   number = true,
-  relativenumber = false,
   cursorline = true,
   autoindent = true,
   smartindent = true,

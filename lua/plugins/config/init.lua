@@ -17,6 +17,10 @@ return require('packer').startup(function()
 
   -- Neoscroll
   use 'karb94/neoscroll.nvim'
+  
+	--Treesitter
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -38,8 +42,7 @@ return require('packer').startup(function()
   use 'l3mon4d3/luasnip'
   use 'saadparwaiz1/cmp_luasnip'
 
-  -- Code Colorizers
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  -- Colorizers
   use 'norcalli/nvim-colorizer.lua'
   use 'p00f/nvim-ts-rainbow'
   use 'folke/twilight.nvim'
