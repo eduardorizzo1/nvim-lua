@@ -1,5 +1,5 @@
-require 'settings'
-require 'mappings'
+require 'options'
+require 'keymaps'
 require 'themes'
 require 'themes.custom'
 require 'plugins.config'
