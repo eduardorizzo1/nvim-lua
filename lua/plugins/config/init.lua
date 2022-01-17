@@ -41,6 +41,7 @@ return require('packer').startup(function()
   -- Luasnip
   use 'l3mon4d3/luasnip'
   use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
 
   -- Colorizers
   use 'norcalli/nvim-colorizer.lua'
