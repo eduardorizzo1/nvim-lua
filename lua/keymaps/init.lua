@@ -12,7 +12,7 @@ map('n', '<C-l>', '<C-w>l', opts)
 
 -- ctrl+s to save
 map('n', '<C-s>', ':w <CR>', opts)
-map('i', '<C-s>', '<Esc> :w <CR>i', opts)
+map('i', '<C-s>', '<Esc> :w <CR>l', opts)
 map('v', '<C-s>', '<Esc> :w <CR>', opts)
 
 -- ctrl+z

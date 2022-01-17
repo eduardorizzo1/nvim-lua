@@ -1,6 +1,9 @@
 local nvimtree = require"nvim-tree"
 local g = vim.g
 
+vim.cmd[[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]]
+vim.cmd[[ au WinLeave * setlocal nocursorline ]]
+
 g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
 g.nvim_tree_git_hl = git_status
 g.nvim_tree_highlight_opened_files = 0
