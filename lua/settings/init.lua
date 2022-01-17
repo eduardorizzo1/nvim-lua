@@ -1,27 +1,38 @@
-vim.cmd('filetype plugin indent on')
+local cmd = vim.cmd
+
+cmd('syntax enable')
+cmd('filetype plugin indent on')
+cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+cmd('autocmd FileType * exe "normal zR"')
 
 local options = {
-  termguicolors = true,
   number = true,
   relativenumber = false,
-  mouse = 'a',
-  history = 5000,
-  clipboard ='unnamedplus',
-  fileencoding = 'utf-8',
-  shiftwidth = 2,
-  tabstop = 2,
+  cursorline = true,
   autoindent = true,
   smartindent = true,
-  smartcase = true,
   incsearch = true,
-  hlsearch = true,
+  termguicolors = true,
+  mouse = 'a',
   background = 'dark',
-  cursorline = true,
+  history = 5000,
+  clipboard ='unnamedplus',
+  encoding = 'utf8',
+  tabstop = 2,
+  shiftwidth = 2,
+
+  smartcase = true,
+  hlsearch = true,
   signcolumn = 'yes',
   swapfile = false,
   undofile = true,
   backup = false,
-  completeopt = { "menuone", "noselect" }
+	writebackup = false,
+	splitright = true,
+	splitbelow = true,
+	showtabline = 2,
+  completeopt = { "menuone", "noselect" },
+	-- foldmethod = 'indent',
 }
 
 for key, value in pairs(options) do

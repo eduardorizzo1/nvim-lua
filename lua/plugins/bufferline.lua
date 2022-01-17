@@ -1,58 +1,64 @@
-require('bufferline').setup{
-    options = {
-    view = "multiwindow",
-    separator_style = { "", "" },
-    buffer_close_icon = "",
-    modified_icon = "",
-    show_close_icon = true,
-    close_icon = "",
-    show_buffer_close_icons = true,
-    left_trunc_marker = "",
-    right_trunc_marker = "",
-    max_name_length = 14,
-    max_prefix_length = 15,
-    tab_size = 20,
-    enforce_regular_tabs = false,
-    always_show_bufferline = true,
-    show_tab_indicators = false,
-    diagnostic = 'nvim_lsp',
-		right_mouse_command = "vertical sbuffer %d",
-    
-		diagnostics_indicator = function(count, level, diagnostics_dict)
-      return "("..count..")"
-    end,
-    
-		offsets = {
-      { 
-				filetype = "NvimTree", 
-				--text = '◀️ 🔍 💀 🧛 👻 🥷 👀 🔎 ▶️',
-				-- text = 'File Explorer',
-				--text = function()
-				--	return vim.fn.getcwd()
-				--end,
-				-- text_align = "center",
-				highlight = "Directory",
-				padding = 0
-      }
-    },
-    
-		custom_filter = function(buf_number)
-       -- Func to filter out our managed/persistent split terms
-       local present_type, type = pcall(function()
-          return vim.api.nvim_buf_get_var(buf_number, "term_type")
-       end)
+local status_ok, bufferline = pcall(require, "bufferline")
+if not status_ok then
+  return
+end
 
-       if present_type then
-          if type == "vert" then
-             return false
-          elseif type == "hori" then
-             return false
-          end
-          return true
-       end
+bufferline.setup{
+  options = {
+  	view = "multiwindow",
+   	separator_style = { "", "" },
+   	show_buffer_close_icons = true,
+   	buffer_close_icon = "",
+   	modified_icon = "",
+   	show_close_icon = true,
+   	close_icon = "",
+   	left_trunc_marker = "",
+   	right_trunc_marker = "",
+   	max_name_length = 14,
+   	max_prefix_length = 15,
+   	tab_size = 20,
+   	enforce_regular_tabs = false,
+   	always_show_bufferline = true,
+   	show_tab_indicators = false,
+   	diagnostic = 'nvim_lsp',
+	 	--right_mouse_command = "vertical sbuffer %d",
+		numbers = "none",
+   	 
+	 	diagnostics_indicator = function(count, level, diagnostics_dict)
+   	  return "("..count..")"
+   	end,
+   	 
+	 	offsets = {
+   	  { 
+	 			filetype = "NvimTree", 
+	 	 		--text = '◀️ 🔍 💀 🧛 👻 🥷 👀 🔎 ▶️',
+	 	 		-- text = 'File Explorer',
+	 	 		--text = function()
+	 	 		--	return vim.fn.getcwd()
+	 	 		--end,
+	 	 		-- text_align = "center",
+	 	 		highlight = "Directory",
+	 	 		padding = 0
+   	   }
+   	 },
+   	 
+	 	custom_filter = function(buf_number)
+   	    -- Func to filter out our managed/persistent split terms
+   	    local present_type, type = pcall(function()
+   	       return vim.api.nvim_buf_get_var(buf_number, "term_type")
+   	    end)
 
-       return true
-    end,
+   	    if present_type then
+   	       if type == "vert" then
+   	          return false
+   	       elseif type == "hori" then
+   	          return false
+   	       end
+   	       return true
+   	    end
+
+   	    return true
+   	 end,
   },
 
 
