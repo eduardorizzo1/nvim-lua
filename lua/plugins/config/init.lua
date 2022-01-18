@@ -4,6 +4,16 @@ return require('packer').startup(function()
 
   -- Themes
   use 'Mofiqul/dracula.nvim'
+	use 'icymind/neosolarized'
+	use 'morhetz/gruvbox'
+  use 'sainnhe/gruvbox-material'
+  use 'ghifarit53/tokyonight-vim'
+	use 'drewtempelmeyer/palenight.vim'
+  use 'joshdick/onedark.vim'
+	use 'bluz71/vim-moonfly-colors'
+	use 'EdenEast/nightfox.nvim'
+	use 'patstockwell/vim-monokai-tasty'
+  use 'jacoborus/tender.vim' 	
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
@@ -21,6 +31,7 @@ return require('packer').startup(function()
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use 'nvim-treesitter/nvim-treesitter-textobjects'
+	use 'romgrk/nvim-treesitter-context'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -46,9 +57,12 @@ return require('packer').startup(function()
   -- Colorizers
   use 'norcalli/nvim-colorizer.lua'
   use 'p00f/nvim-ts-rainbow'
-  use 'folke/twilight.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
 	use "windwp/nvim-autopairs"
+
+	-- Twilight and Zen-mode
+	use 'folke/zen-mode.nvim'
+  use 'folke/twilight.nvim'
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
@@ -56,5 +70,11 @@ return require('packer').startup(function()
 
 	-- Prettier
 	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
+
+	-- Which key
+	use 'folke/which-key.nvim'
+
+	-- Vim multiple cursor
+	use {'mg979/vim-visual-multi', branch = 'master'}
 
 end)

@@ -57,16 +57,16 @@ bufferline.setup{
   },
 
 
-	highlights = {
-		 --background = {
-		 --	guifg = "#44475A",
-		 --	guibg = "#191A21",
-		 --},
-		
-		--fill = {
-		--	guifg = "#191A21",
-		--	guibg = "#191A21",
-		--},
+	--highlights = {
+	--	 --background = {
+	--	 --	guifg = "#44475A",
+	--	 --	guibg = "#191A21",
+	--	 --},
+	--	
+	--	--fill = {
+	--	--	guifg = "#191A21",
+	--	--	guibg = "#191A21",
+	--	--},
 
 		buffer_selected = {
 			guifg = "#8BE9FD",
@@ -74,60 +74,60 @@ bufferline.setup{
 			gui = "bold",
 		},
 
-		--close_button = {
-		--	guibg = "#191a21"
-		--},
-		
-		close_button_selected = {
-			guifg = "#8BE9FD",
-			guibg = "#000000",
-		},
-		
-		separator_selected = {
-    	guifg = "#0000ff",
-      guibg = "#0000ff",
-    },
+	--	--close_button = {
+	--	--	guibg = "#191a21"
+	--	--},
+	--	
+	--	close_button_selected = {
+	--		guifg = "#8BE9FD",
+	--		guibg = "#000000",
+	--	},
+	--	
+	--	separator_selected = {
+  --  	guifg = "#0000ff",
+  --    guibg = "#0000ff",
+  --  },
 
-		indicator_selected = {
-    	guifg = "#000000",
-      guibg = "#000000",
-    },
-		
-		modified_selected = {
-    	guifg = "#F1FA8C",
-      guibg = "#191A21",
-    },
+	--	indicator_selected = {
+  --  	guifg = "#000000",
+  --    guibg = "#000000",
+  --  },
+	--	
+	--	modified_selected = {
+  --  	guifg = "#F1FA8C",
+  --    guibg = "#191A21",
+  --  },
 
-		--separator = {
-		--	guifg = "#0000ff",
-		--	guibg = "#0000ff",
-		--},
+	--	--separator = {
+	--	--	guifg = "#0000ff",
+	--	--	guibg = "#0000ff",
+	--	--},
 
-		--separator_visible = {
-		--	guifg = "#ABB2BF",
-		--	guibg = "#ABB2BF",
-		--},
+	--	--separator_visible = {
+	--	--	guifg = "#ABB2BF",
+	--	--	guibg = "#ABB2BF",
+	--	--},
 
-		tab = {
-			guifg = "#191A21",
-			guibg = "#191A21",
-		},
+	--	tab = {
+	--		guifg = "#191A21",
+	--		guibg = "#191A21",
+	--	},
 
-		tab_selected = {
-			guifg = "#191A21",
-			guibg = "#191A21",
-		},
+	--	tab_selected = {
+	--		guifg = "#191A21",
+	--		guibg = "#191A21",
+	--	},
 
-		tab_close = {
-		--	guifg = "#191A21",
-			guibg = "#000000",
-		},
+	--	tab_close = {
+	--	--	guifg = "#191A21",
+	--		guibg = "#000000",
+	--	},
 
-		modified = {
-			guifg = "#F1FA8C",
-			guibg = "#191A21",
-    },
+	--	modified = {
+	--		guifg = "#F1FA8C",
+	--		guibg = "#191A21",
+  --  },
 
-	}
+	-- }
 
 }

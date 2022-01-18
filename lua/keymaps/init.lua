@@ -26,7 +26,7 @@ map('v', 'D', '"_d', opts)
 map('n', '<C-q>', ':q <CR>', opts)
 
 -- Toggle highlight match word
-map('n', '<space>*', ':noh', opts)
+map('n', '<space>*', ':noh <CR>', opts)
 
 -- Toggle Relative number
 map('n', '<C-k>n', ':set relativenumber! <CR>', opts)
@@ -40,7 +40,10 @@ map('n', '<C-b>', ':NvimtreeToggle <CR>', opts)
 map('n', '<C-k>i', ':IndentBlanklineToggle <CR>', opts)
 
 -- Twilight
-map('n', '<C-k>z', ':Twilight <CR>', opts)
+map('n', '<C-k>t', ':Twilight <CR>', opts)
+
+-- Zen-mode
+map('n', '<C-k>z', ':ZenMode <CR>', opts)
 
 -- Bufferline
 map('n', '<M-l>', ':bn <CR>', opts)
