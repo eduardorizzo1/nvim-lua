@@ -1,107 +1,88 @@
 local opts = { noremap = true, silent = true }
+local map = vim.api.nvim_set_keymap
 
-local term_opts = { silent = true }
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+-- Window Navigate
+map('n', '<C-h>', '<C-w>h', opts)
+map('n', '<C-j>', '<C-w>j', opts)
+map('n', '<C-k>', '<C-w>k', opts)
+map('n', '<C-l>', '<C-w>l', opts)
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- ctrl+s to save
+map('n', '<C-s>', ':w <CR>', opts)
+map('i', '<C-s>', '<Esc> :w <CR>l', opts)
+map('v', '<C-s>', '<Esc> :w <CR>', opts)
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+-- ctrl+z
+map('n', '<C-z>', ':u <CR>', opts)
+map('i', '<C-z>', '<Esc> :u <CR>', opts)
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- Delete without copy
+map('v', 'D', '"_d', opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- ctrl+q to quit
+map('n', '<C-q>', ':q <CR>', opts)
 
--- Naviagate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- Toggle highlight match word
+map('n', '<space>*', ':noh <CR>', opts)
 
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- Toggle Relative number
+map('n', '<C-k>n', ':set relativenumber! <CR>', opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+------------------ P L U G I N S --------------------------
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- Nvimtree
+map('n', '<C-b>', ':NvimtreeToggle <CR>', opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- IndentLine
+map('n', '<C-k>i', ':IndentBlanklineToggle <CR>', opts)
 
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- Twilight
+map('n', '<C-k>t', ':Twilight <CR>', opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- Zen-mode
+map('n', '<C-k>z', ':ZenMode <CR>', opts)
 
--- Custom
-keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
-keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
-keymap("n", "<F3>", ":e .<cr>", opts)
-keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
-keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
-keymap(
-  "n",
-  "<F6>",
-  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-  opts
-)
-keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
-keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
-keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
-keymap(
-  "n",
-  "<C-p>",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  opts
-)
-keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
-keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
-keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
--- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)
--- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
--- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
--- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
--- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)
--- keymap("n", "gx", [[:execute '!brave ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
--- Change '<CR>' to whatever shortcut you like :)
-vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, silent=true, nowait=true })
+-- Bufferline
+map('n', '<M-l>', ':bn <CR>', opts)
+map('n', '<M-h>', ':bp <CR>', opts)
+map('n', '<M-x>', ':bd <Esc> :bp <CR>', opts)
+
+-- Prettier
+map('n', '<space>p', ':PrettierAsync<cr>', opts)  
+
+-- Telescope
+map('n', '<c-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+map('n', ',ff', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+map('n', ',fg','<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+map('n', ',fb','<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
+map('n', ',fh','<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
+map('n', ',gg','<cmd>lua require("telescope.builtin").git_status()<cr>', opts)
+
+-- LspSaga Mappings
+map('n', 'gc', '<cmd>Lspsaga code_action<CR>', opts)
+map('n', 'ga', '<cmd>Lspsaga range_code_action<CR>', opts)
+map('n', 'gh', '<cmd>Lspsaga hover_doc<CR>', opts)
+map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+map('n', 'gi', '<cmd>Lspsaga implement<CR>', opts)
+map('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
+map('n', 'gn', '<cmd>Lspsaga rename<CR>', opts)
+map('n', 'gt', '<cmd>Lspsaga open_floaterm<CR>', opts)
+map('n', 'gq', '<cmd>Lspsaga close_floaterm<CR>', opts)
+map('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+map('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+map('n', 'gH', '<cmd>Lspsaga signature_help<CR>', opts)
+
+-- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+map('n', 'gE', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+map('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+
