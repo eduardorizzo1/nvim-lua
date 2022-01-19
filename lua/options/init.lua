@@ -1,9 +1,8 @@
 local cmd = vim.cmd
 
---cmd('syntax enable')
---cmd('filetype plugin indent on')
---cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
---cmd('autocmd FileType * exe "normal zR"')
+cmd('syntax enable')
+cmd('filetype plugin indent on')
+cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
 local options = {
   number = true,
@@ -29,6 +28,8 @@ local options = {
 	splitright = true,
 	splitbelow = true,
 	showtabline = 2,
+  timeoutlen = 100,
+  updatetime = 300,
   completeopt = { "menuone", "noselect" },
 }
 
