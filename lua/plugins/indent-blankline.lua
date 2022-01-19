@@ -1,3 +1,8 @@
+local status_ok, indent_blankline = pcall(require, "indent_blankline")
+if not status_ok then
+  return
+end
+
 local g = vim.g
 local cmd = vim.cmd
 
@@ -12,7 +17,7 @@ g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 cmd[[ hi IndentBlanklineChar guifg=#282a36 gui=nocombine ]]
 cmd[[ hi IndentBlanklineContextChar guifg=#6272a4 gui=nocombine ]]
 
-require('indent_blankline').setup{
+indent_blankline.setup{
   buftype_exclude = {"terminal"},
   filetype_exclude = {"dashboard", "NvimTree", "packer", "help"},
   show_current_context = true,
