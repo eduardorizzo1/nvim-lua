@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use 'icymind/neosolarized'
 	use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
-  -- use 'ghifarit53/tokyonight-vim'
+  use 'ghifarit53/tokyonight-vim'
 	use 'folke/tokyonight.nvim'
 	use 'drewtempelmeyer/palenight.vim'
   use 'joshdick/onedark.vim'
@@ -69,11 +69,12 @@ return packer.startup(function(use)
 
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-	use 'romgrk/nvim-treesitter-context'
-  use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "nvim-treesitter/playground"
-  use "windwp/nvim-ts-autotag"
-  use "ChristianChiarulli/nvim-ts-rainbow"
+  use "romgrk/nvim-treesitter-context"
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'nvim-treesitter/playground'
+  use 'windwp/nvim-ts-autotag'
+  -- use 'p00f/nvim-ts-rainbow'
+	use "ChristianChiarulli/nvim-ts-rainbow"
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -108,6 +109,8 @@ return packer.startup(function(use)
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use "nvim-telescope/telescope-media-files.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
 
 	-- Prettier
 	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
@@ -117,6 +120,5 @@ return packer.startup(function(use)
 
 	-- Vim multiple cursor
 	use {'mg979/vim-visual-multi', branch = 'master'}
-
 
 end)

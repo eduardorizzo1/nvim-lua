@@ -1,9 +1,9 @@
 local cmd = vim.cmd
 
-cmd('syntax enable')
-cmd('filetype plugin indent on')
-cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
-cmd('autocmd FileType * exe "normal zR"')
+--cmd('syntax enable')
+--cmd('filetype plugin indent on')
+--cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+--cmd('autocmd FileType * exe "normal zR"')
 
 local options = {
   number = true,
@@ -30,9 +30,11 @@ local options = {
 	splitbelow = true,
 	showtabline = 2,
   completeopt = { "menuone", "noselect" },
-	-- foldmethod = 'indent',
 }
 
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
+
+vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd [[set iskeyword+=-]]
