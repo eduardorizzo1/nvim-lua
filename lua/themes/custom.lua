@@ -19,3 +19,5 @@ g.dracula_transparent_bg = 1
 g.dracula_lualine_bg_color = "#000"
 g.dracula_italic = 0
 
+-- Tokyonight
+vim.g.tokyonight_style = "night"

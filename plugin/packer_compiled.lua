@@ -164,10 +164,10 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/neosolarized",
     url = "https://github.com/icymind/neosolarized"
   },
-  nord = {
+  ["nightfox.nvim"] = {
     loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nord",
-    url = "https://github.com/arcticicestudio/nord"
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -244,10 +244,15 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight-vim"] = {
+  ["tender.vim"] = {
     loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
-    url = "https://github.com/ghifarit53/tokyonight-vim"
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["twilight.nvim"] = {
     loaded = true,
@@ -258,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-clap",
     url = "https://github.com/liuchengxu/vim-clap"
+  },
+  ["vim-monokai-tasty"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-monokai-tasty",
+    url = "https://github.com/patstockwell/vim-monokai-tasty"
   },
   ["vim-moonfly-colors"] = {
     loaded = true,
@@ -278,6 +288,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

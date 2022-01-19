@@ -1,7 +1,7 @@
 require 'options'
 require 'keymaps'
 require 'themes'
--- require 'themes.custom'
+require 'themes.custom'
 require 'plugins.config'
 require 'plugins.dashboard'
 require 'plugins.bufferline'

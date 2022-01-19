@@ -1,23 +1,27 @@
-require"nvim-treesitter.configs".setup {
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	return
+end
+
+local status_ok, context = pcall(require, "treesitter-context")
+if not status_ok then
+	return
+end
+
+local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
+parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+
+configs.setup ({
+  ensure_installed = "maintained",
   highlight = {
     enable = true,
     disable = {},
 		additional_vim_regex_highlighting = true,
   },
-  ensure_installed = "maintained",
 	rainbow = {
 		enable = true,
 		extended_mode = true,
 		max_file_lines = nil,
-	},
-}
-
-local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
-parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
-
-
-require'nvim-treesitter.configs'.setup {
-	rainbow = {
 		colors = {
 			"#ffff00",
 			"#00ffff",
@@ -25,34 +29,26 @@ require'nvim-treesitter.configs'.setup {
 			"#ffa500",
 		},
 	},
-  textobjects = {
-    select = {
-      enable = true,
-			extended_mode = true,
-
-      -- Automatically jump forward to textobj, similar to targets.vim
-      lookahead = true,
-
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-
-        -- Or you can define your own textobjects like this
-        ["iF"] = {
-          python = "(function_definition) @function",
-          cpp = "(function_definition) @function",
-          c = "(function_definition) @function",
-          java = "(method_declaration) @function",
-        },
-      },
-    },
+  indent = {
+    enable = true,
+  }
+  context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
+  autopairs = {
+    enable = true,
   },
-}
+  autotag = {
+    enable = true,
+  },
+  playground = {
+    enable = true,
+  }
+})
 
-require'treesitter-context'.setup{
+
+context.setup{
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     throttle = true, -- Throttles plugin updates (may improve performance)
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -81,7 +77,6 @@ require'treesitter-context'.setup{
         -- Example for a specific filetype with Lua patterns
         -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
         -- exactly match "impl_item" only)
-        -- rust = true, 
+        -- rust = true,
     }
 }
-
