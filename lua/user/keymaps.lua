@@ -18,6 +18,7 @@ map('v', '<C-s>', '<Esc> :w <CR>', opts)
 -- ctrl+z
 map('n', '<C-z>', ':u <CR>', opts)
 map('i', '<C-z>', '<Esc> :u <CR>', opts)
+map('v', '<C-z>', '<Esc> :u <CR>', opts)
 
 -- Delete without copy
 map('v', 'D', '"_d', opts)
@@ -29,21 +30,21 @@ map('n', '<C-q>', ':q <CR>', opts)
 map('n', '<space>*', ':noh <CR>', opts)
 
 -- Toggle Relative number
-map('n', '<C-k>n', ':set relativenumber! <CR>', opts)
+map('n', ';n', ':set relativenumber! <CR>', opts)
 
 ------------------ P L U G I N S --------------------------
 
 -- Nvimtree
-map('n', '<C-b>', ':NvimtreeToggle <CR>', opts)
+map('n', '<C-b>', ':NvimTreeToggle <CR>', opts)
 
 -- IndentLine
-map('n', '<C-k>i', ':IndentBlanklineToggle <CR>', opts)
+map('n', ',i', ':IndentBlanklineToggle <CR>', opts)
 
 -- Twilight
-map('n', '<C-k>t', ':Twilight <CR>', opts)
+map('n', ',t', ':Twilight <CR>', opts)
 
 -- Zen-mode
-map('n', '<C-k>z', ':ZenMode <CR>', opts)
+map('n', ',z', ':ZenMode <CR>', opts)
 
 -- Bufferline
 map('n', '<M-l>', ':bn <CR>', opts)
@@ -55,11 +56,12 @@ map('n', '<space>p', ':PrettierAsync<cr>', opts)
 
 -- Telescope
 map('n', '<c-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
-map('n', ',ff', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
-map('n', ',fg','<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
-map('n', ',fb','<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
-map('n', ',fh','<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
-map('n', ',gg','<cmd>lua require("telescope.builtin").git_status()<cr>', opts)
+map('n', ';ff', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+map('n', ';fg','<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+map('n', ';fb','<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
+map('n', ';fh','<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
+map('n', ';gg','<cmd>lua require("telescope.builtin").git_status()<cr>', opts)
+map('n', ';fa','<cmd>lua require("telescope.builtin").grep_string()<cr>', opts)
 
 -- LspSaga Mappings
 map('n', 'gc', '<cmd>Lspsaga code_action<CR>', opts)

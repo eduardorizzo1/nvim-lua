@@ -6,6 +6,7 @@ cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions
 
 local options = {
   number = true,
+	relativenumber = false,
   autoindent = true,
   smartindent = true,
   incsearch = true,

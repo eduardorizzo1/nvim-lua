@@ -5,12 +5,11 @@ end
 
 bufferline.setup{
   options = {
+		numbers = "none",
   	view = "multiwindow",
    	separator_style = { "", "" },
-   	show_buffer_close_icons = true,
    	buffer_close_icon = "",
    	modified_icon = "",
-   	show_close_icon = true,
    	close_icon = "",
    	left_trunc_marker = "",
    	right_trunc_marker = "",
@@ -19,10 +18,11 @@ bufferline.setup{
    	tab_size = 20,
    	enforce_regular_tabs = false,
    	always_show_bufferline = true,
+   	show_close_icon = true,
+   	show_buffer_close_icons = true,
    	show_tab_indicators = false,
    	diagnostic = 'nvim_lsp',
 	 	right_mouse_command = "vertical sbuffer %d",
-		numbers = "none",
 		close_command = "bdelete! %d",
    	 
 	 	diagnostics_indicator = function(count, level, diagnostics_dict)
@@ -33,7 +33,7 @@ bufferline.setup{
    	  { 
 	 			filetype = "NvimTree", 
 	 	 		highlight = "Directory",
-	 	 		padding = 0
+	 	 		padding = 1
    	   }
    	 },
    	 
@@ -55,7 +55,6 @@ bufferline.setup{
    	    return true
    	 end,
   },
-
 
 	--highlights = {
 	--	 --background = {

@@ -222,7 +222,7 @@ _G.packer_plugins = {
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
+    url = "https://github.com/ChristianChiarulli/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -269,6 +269,11 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["tokyonight-vim"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
@@ -308,11 +313,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
-  },
-  ["which-key.nvim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

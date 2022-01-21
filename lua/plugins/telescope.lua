@@ -7,6 +7,7 @@ local actions = require('telescope.actions')
 telescope.load_extension "media_files"
 
 telescope.setup {
+	shorten_path = true,
   defaults = {
 
     layout_config = {

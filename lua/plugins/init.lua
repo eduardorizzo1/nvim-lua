@@ -45,14 +45,23 @@ return packer.startup(function(use)
 	use 'icymind/neosolarized'
 	use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
-  use 'ghifarit53/tokyonight-vim'
-	use 'folke/tokyonight.nvim'
+  --use 'ghifarit53/tokyonight-vim'
+  use 'folke/tokyonight.nvim'
 	use 'drewtempelmeyer/palenight.vim'
   use 'joshdick/onedark.vim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'EdenEast/nightfox.nvim'
 	use 'patstockwell/vim-monokai-tasty'
   use 'jacoborus/tender.vim'
+	use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/darkplus.nvim"
+  use "rose-pine/neovim"
+  use "rebelot/kanagawa.nvim"
+	use 'pineapplegiant/spaceduck'
+	use 'cocopon/iceberg.vim'
+	use 'altercation/vim-colors-solarized'
+	use 'arcticicestudio/nord-vim'
+	use 'challenger-deep-theme/vim'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
@@ -73,7 +82,6 @@ return packer.startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'nvim-treesitter/playground'
   use 'windwp/nvim-ts-autotag'
-  -- use 'p00f/nvim-ts-rainbow'
 	use "ChristianChiarulli/nvim-ts-rainbow"
 
   -- LSP
@@ -91,6 +99,9 @@ return packer.startup(function(use)
 
 	-- Null-ls
 	use "jose-elias-alvarez/null-ls.nvim"
+
+	-- Toggleterm
+	 use "akinsho/toggleterm.nvim"
 
   -- Luasnip
   use 'l3mon4d3/luasnip'
@@ -116,7 +127,7 @@ return packer.startup(function(use)
 	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
 
 	-- Which key
-	use 'folke/which-key.nvim'
+ 	use 'folke/which-key.nvim'
 
 	-- Vim multiple cursor
 	use {'mg979/vim-visual-multi', branch = 'master'}
