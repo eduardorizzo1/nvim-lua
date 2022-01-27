@@ -127,9 +127,18 @@ return packer.startup(function(use)
 	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
 
 	-- Which key
- 	use 'folke/which-key.nvim'
+ 	-- use 'folke/which-key.nvim'
 
 	-- Vim multiple cursor
 	use {'mg979/vim-visual-multi', branch = 'master'}
+
+	-- Trouble
+	use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
+
+	-- Surround
+	use "blackCauldron7/surround.nvim"
 
 end)
