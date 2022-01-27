@@ -38,13 +38,13 @@ map('n', ';n', ':set relativenumber! <CR>', opts)
 map('n', '<C-b>', ':NvimTreeToggle <CR>', opts)
 
 -- IndentLine
-map('n', ',i', ':IndentBlanklineToggle <CR>', opts)
+map('n', ';i', ':IndentBlanklineToggle <CR>', opts)
 
 -- Twilight
-map('n', ',t', ':Twilight <CR>', opts)
+map('n', ';t', ':Twilight <CR>', opts)
 
 -- Zen-mode
-map('n', ',z', ':ZenMode <CR>', opts)
+map('n', ';z', ':ZenMode <CR>', opts)
 
 -- Bufferline
 map('n', '<M-l>', ':bn <CR>', opts)
@@ -68,6 +68,7 @@ map('n', 'gc', '<cmd>Lspsaga code_action<CR>', opts)
 map('n', 'ga', '<cmd>Lspsaga range_code_action<CR>', opts)
 map('n', 'gh', '<cmd>Lspsaga hover_doc<CR>', opts)
 map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opts)
+map('n', 'ge', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 map('n', 'gi', '<cmd>Lspsaga implement<CR>', opts)
 map('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
 map('n', 'gn', '<cmd>Lspsaga rename<CR>', opts)
