@@ -1,4 +1,4 @@
--- require('lspconfig').jsonls.setup ({})
+require('lspconfig').jsonls.setup ({})
 local lsp_installer = require('nvim-lsp-installer')
 local lspconfig = require("lspconfig")
 local nlspsettings = require("nlspsettings")
@@ -11,6 +11,8 @@ nlspsettings.setup({
 
 function on_attach(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+ 	client.resolved_capabilities.document_formatting = false
+ 	client.resolved_capabilities.document_range_formatting = false
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
