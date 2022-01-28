@@ -29,7 +29,7 @@ local options = {
 	splitright = true,
 	splitbelow = true,
 	showtabline = 2,
-  timeoutlen = 200,
+  timeoutlen = 400,
   updatetime = 300,
   completeopt = { "menuone", "noselect" },
 }

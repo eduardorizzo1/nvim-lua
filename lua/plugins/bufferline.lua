@@ -56,26 +56,25 @@ bufferline.setup{
    	 end,
   },
 
-	--highlights = {
-	--	 --background = {
-	--	 --	guifg = "#44475A",
-	--	 --	guibg = "#191A21",
-	--	 --},
-	--	
-	--	--fill = {
-	--	--	guifg = "#191A21",
-	--	--	guibg = "#191A21",
-	--	--},
+highlights = {
+	background = {
+		guifg = "#3d3d3d",
+		guibg = "#181b28",
+	},
+	
+	fill = {
+			guifg = "#242131",
+			guibg = "#181b28",
+		},
 
 		buffer_selected = {
-			guifg = "#8BE9FD",
-			guibg = "#000000",
+			guifg = "#ffffff",
 			gui = "bold",
 		},
 
-	--	--close_button = {
-	--	--	guibg = "#191a21"
-	--	--},
+	close_button = {
+		guibg = "#181b28"
+	},
 	--	
 	--	close_button_selected = {
 	--		guifg = "#8BE9FD",
@@ -87,10 +86,10 @@ bufferline.setup{
   --    guibg = "#0000ff",
   --  },
 
-	--	indicator_selected = {
-  --  	guifg = "#000000",
-  --    guibg = "#000000",
-  --  },
+		indicator_selected = {
+    	guifg = "#242131",
+      guibg = "#242131",
+    },
 	--	
 	--	modified_selected = {
   --  	guifg = "#F1FA8C",
@@ -117,10 +116,9 @@ bufferline.setup{
 	--		guibg = "#191A21",
 	--	},
 
-	--	tab_close = {
-	--	--	guifg = "#191A21",
-	--		guibg = "#000000",
-	--	},
+	tab_close = {
+		guibg = "#181b28",
+	},
 
 	--	modified = {
 	--		guifg = "#F1FA8C",
@@ -128,5 +126,5 @@ bufferline.setup{
   --  },
 
 	-- }
-
+		}
 }

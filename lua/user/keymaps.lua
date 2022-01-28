@@ -52,7 +52,7 @@ map('n', '<M-h>', ':bp <CR>', opts)
 map('n', '<M-x>', ':bd <Esc> :bp <CR>', opts)
 
 -- Prettier
-map('n', '<space>p', ':PrettierAsync<cr>', opts)  
+-- map('n', '<space>p', ':PrettierAsync<cr>', opts)  
 
 -- Telescope
 map('n', '<c-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
@@ -87,7 +87,3 @@ map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 map('n', 'gE', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-
--- Comment String
-map('n', '<space>/', '<cmd>lua require("ts_context_commentstring.internal").update_commentstring()<cr>', opts)
-

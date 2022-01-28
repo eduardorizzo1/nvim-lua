@@ -12,7 +12,7 @@ g.terminal_color_background = '#00ffff'
 
 cmd[[ hi Normal guibg=#242131 ]]
 cmd[[ hi NvimTreeNormal guibg=#242131 ]]
-cmd[[ hi NvimTreeVertSplit guifg=#534378 guibg=#242131 ]]
+cmd[[ hi NvimTreeVertSplit guifg=#564f8b guibg=#242132 ]]
 cmd[[ hi NvimTreeEndOfBuffer guifg=#242131 ]]
 cmd[[ hi CursorLine guibg=#242131 ]]
 cmd[[ hi CursorLineNR cterm=bold guifg=#ffffff gui=bold ]]
