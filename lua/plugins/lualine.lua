@@ -6,7 +6,7 @@ require'lualine'.setup {
     disabled_filetypes = {},
     always_divide_middle = true,
     theme = 'auto',
-		-- theme = 'dracula-nvim'
+		theme = 'dracula-nvim'
   },
   sections = {
     lualine_a = {'mode'},
