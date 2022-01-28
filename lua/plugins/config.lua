@@ -41,27 +41,31 @@ packer.init {
 return packer.startup(function(use)
 
   -- Themes
-  use 'Mofiqul/dracula.nvim'
 	use 'icymind/neosolarized'
+  use 'Mofiqul/dracula.nvim'
+  -- use 'ghifarit53/tokyonight-vim'
+  use 'folke/tokyonight.nvim'
 	use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
-  --use 'ghifarit53/tokyonight-vim'
-  use 'folke/tokyonight.nvim'
 	use 'drewtempelmeyer/palenight.vim'
   use 'joshdick/onedark.vim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'EdenEast/nightfox.nvim'
 	use 'patstockwell/vim-monokai-tasty'
-  use 'jacoborus/tender.vim'
 	use "lunarvim/colorschemes" 
 	use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
 	use 'pineapplegiant/spaceduck'
 	use 'cocopon/iceberg.vim'
-	use 'altercation/vim-colors-solarized'
 	use 'arcticicestudio/nord-vim'
+  use "lunarvim/darkplus.nvim"
 	use 'challenger-deep-theme/vim'
+	use 'ayu-theme/ayu-vim'
+	use 'sonph/onehalf'
+	use 'gosukiwi/vim-atom-dark'
+	use 'kyoz/purify'
+	use 'sjl/badwolf'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'

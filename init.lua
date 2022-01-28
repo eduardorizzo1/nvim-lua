@@ -1,7 +1,7 @@
 require 'user.options'
 require 'user.keymaps'
 require 'user.themes.dracula'
-require 'user.themes.custom'
+-- require 'user.themes.custom'
 require 'plugins.config'
 require 'plugins.dashboard'
 require 'plugins.bufferline'
