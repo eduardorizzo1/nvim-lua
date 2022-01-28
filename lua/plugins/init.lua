@@ -53,8 +53,8 @@ return packer.startup(function(use)
 	use 'EdenEast/nightfox.nvim'
 	use 'patstockwell/vim-monokai-tasty'
   use 'jacoborus/tender.vim'
-	use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+	use "lunarvim/colorschemes" 
+	use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
 	use 'pineapplegiant/spaceduck'
@@ -74,7 +74,6 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   -- Neoscroll
-  use 'karb94/neoscroll.nvim'
 
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -96,12 +95,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-
-	-- Null-ls
 	use "jose-elias-alvarez/null-ls.nvim"
-
-	-- Toggleterm
-	 use "akinsho/toggleterm.nvim"
 
   -- Luasnip
   use 'l3mon4d3/luasnip'
@@ -113,24 +107,18 @@ return packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
 	use "windwp/nvim-autopairs"
 
-	-- Twilight and Zen-mode
+	-- Others
 	use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
+	use "akinsho/toggleterm.nvim"
+  use 'karb94/neoscroll.nvim'
+	use {'mg979/vim-visual-multi', branch = 'master'}
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
-
-	-- Prettier
-	use {'prettier/vim-prettier', ['do'] = 'yarn install --frozen-lockfile --production' }
-
-	-- Which key
- 	-- use 'folke/which-key.nvim'
-
-	-- Vim multiple cursor
-	use {'mg979/vim-visual-multi', branch = 'master'}
 
 	-- Trouble
 	use {
