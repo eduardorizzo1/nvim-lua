@@ -85,7 +85,6 @@ map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 map('n', 'gE', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-map('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
