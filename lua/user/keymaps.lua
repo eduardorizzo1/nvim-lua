@@ -88,3 +88,6 @@ map('n', 'gE', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
+-- Comment String
+map('n', '<space>/', '<cmd>lua require("ts_context_commentstring.internal").update_commentstring()<cr>', opts)
+

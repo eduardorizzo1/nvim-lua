@@ -73,8 +73,6 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
-  -- Neoscroll
-
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use "romgrk/nvim-treesitter-context"
@@ -88,6 +86,10 @@ return packer.startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'tami5/lspsaga.nvim'
+	use 'williamboman/nvim-lsp-installer'
+	use 'tamago324/nlsp-settings.nvim'
+	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+	use 'jose-elias-alvarez/null-ls.nvim'
 
   -- CMP
   use 'hrsh7th/nvim-cmp'
@@ -95,12 +97,15 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-	use "jose-elias-alvarez/null-ls.nvim"
 
   -- Luasnip
   use 'l3mon4d3/luasnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
+
+	-- Comments
+	use 'numToStr/Comment.nvim'
+	use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Colorizers
   use 'norcalli/nvim-colorizer.lua'
