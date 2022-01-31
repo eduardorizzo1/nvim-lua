@@ -32,6 +32,9 @@ map('n', '<space>*', ':noh <CR>', opts)
 -- Toggle Relative number
 map('n', ';n', ':set relativenumber! <CR>', opts)
 
+-- Vsplit
+map('n', ';n', ':vsplit<CR>', opts)
+
 ------------------ P L U G I N S --------------------------
 
 -- Nvimtree

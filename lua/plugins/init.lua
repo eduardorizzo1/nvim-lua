@@ -79,9 +79,6 @@ return packer.startup(function(use)
 
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use "romgrk/nvim-treesitter-context"
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'nvim-treesitter/playground'
   use 'windwp/nvim-ts-autotag'
 	use "ChristianChiarulli/nvim-ts-rainbow"
 
@@ -101,10 +98,11 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use 'saadparwaiz1/cmp_luasnip'
+	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
   -- Luasnip
   use 'l3mon4d3/luasnip'
-  use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
 
 	-- Comments

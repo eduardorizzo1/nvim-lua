@@ -28,19 +28,10 @@ configs.setup ({
   indent = {
     enable = true,
   },
- context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
   autopairs = {
     enable = true,
   },
   autotag = {
     enable = true,
   },
-  playground = {
-    enable = true,
-  }
 })
-
-require('treesitter-context').setup()

@@ -21,7 +21,7 @@ zen_mode.setup({
 	plugins = {
 		gitsigns = { enabled = false }, -- disables git signs
 		tmux = { enabled = false },
-		twilight = { enabled = true },
+		twilight = { enabled = false },
 	},
 	-- on_open = function()
 	--   vim.lsp.diagnostic.disable()
