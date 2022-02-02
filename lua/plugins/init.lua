@@ -120,6 +120,10 @@ return packer.startup(function(use)
 	use "akinsho/toggleterm.nvim"
   use 'karb94/neoscroll.nvim'
 	use {'mg979/vim-visual-multi', branch = 'master'}
+	use {
+  	'phaazon/hop.nvim',
+  	branch = 'v1',
+	}
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'

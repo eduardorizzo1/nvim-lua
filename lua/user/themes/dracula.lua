@@ -22,5 +22,7 @@ cmd[[ hi NvimTreeNormal guibg=#1e1c29 ]]
 cmd[[ hi NvimTreeVertSplit guifg=#1e1c29 guibg=#1e1c29 ]]
 cmd[[ hi NvimTreeEndOfBuffer guifg=#1e1c29 ]]
 cmd[[ hi NvimTreeFolderName guifg=#f8f8f2 gui=bold]]
+cmd[[ hi NvimTreeFolderIcon guifg=#bd93f9 gui=bold]]
 cmd[[ hi NvimTreeOpenedFolderName guifg=#bd93f9 gui=bold]]
+cmd[[ hi NvimTreeRootFolder guifg=#6272a4 gui=bold]]
 
