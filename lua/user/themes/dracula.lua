@@ -5,8 +5,8 @@ cmd[[ colo dracula ]]
 
 g.dracula_show_end_of_buffer = false
 g.dracula_transparent_bg = false
-g.dracula_lualine_bg_color = "#1e1c29"
-g.dracula_lualine_fg_color = "#ffffff"
+-- g.dracula_lualine_bg_color = "#1e1c29"
+-- g.dracula_lualine_fg_color = "#ffffff"
 g.dracula_italic = false
 g.dracula_italic_comment = true
 

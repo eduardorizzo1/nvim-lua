@@ -17,10 +17,11 @@ vim.g.nvim_tree_icons = {
 		
 	folder = {
 		default = "",
-    open = "",
+    --open = "",
+    open = "",
     empty = "",
     empty_open = "",
-    empty_open = " ",
+    -- empty_open = " ",
     symlink = " ",
     symlink_open = " ",
    },
@@ -70,7 +71,6 @@ nvim_tree.setup {
     folders = 1,
     files = 1,
     folder_arrows = 1,
-    tree_width = 30,
   },
 
 	update_to_buf_dir   = {
@@ -119,7 +119,7 @@ nvim_tree.setup {
 
   git = {
 	 	enable = true,
-    ignore = true,
+    ignore = false,
 	 	timeout = 400,
   },
 
@@ -128,3 +128,4 @@ nvim_tree.setup {
 		require_confirm = true,
 	}
 }
+

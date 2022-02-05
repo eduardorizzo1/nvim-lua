@@ -20,3 +20,24 @@ lspconfig.tsserver.setup({
   	vim.lsp.protocol.make_client_capabilities()
 	)
 })
+
+vim.o.completeopt = 'menuone,noselect'
+
+vim.diagnostic.config({
+  underline = true,
+  virtual_text = {
+    spacing = 4,
+      prefix = ' '
+    }
+})
+
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics, {
+--     underline = true,
+--     virtual_text = {
+--       spacing = 4,
+--       prefix = ' '
+--     }
+--   }
+-- )
+--

@@ -73,7 +73,6 @@ highlights = {
 		},
 
 	close_button = {
-		guifg = "#44475a",
 		guibg = "#1e1c29"
 	},
 	
