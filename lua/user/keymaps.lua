@@ -94,4 +94,6 @@ map('n', '<leader><leader>k', "<cmd>lua require'hop'.hint_lines_skip_whitespace(
 map('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
 map('n', '<leader><leader>b', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
 
+-- ToggleTerm
+map('n', '<leader>t', ':ToggleTerm <CR>', opts)
 
