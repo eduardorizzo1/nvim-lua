@@ -41,7 +41,8 @@ packer.init {
 return packer.startup(function(use)
 
   -- Themes
-	use 'icymind/neosolarized'
+	-- use 'icymind/neosolarized'
+	use 'overcache/NeoSolarized'
   use 'Mofiqul/dracula.nvim'
   -- use 'ghifarit53/tokyonight-vim'
   use 'folke/tokyonight.nvim'
@@ -130,6 +131,8 @@ return packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
+	use 'nvim-lua/popup.nvim'
+	use 'nvim-telescope/telescope-media-files.nvim'
 
 	-- Trouble
 	use {
@@ -139,5 +142,8 @@ return packer.startup(function(use)
 
 	-- Surround
 	use "blackCauldron7/surround.nvim"
+
+	-- Styled-components
+	use 'fleischie/vim-styled-components'
 
 end)

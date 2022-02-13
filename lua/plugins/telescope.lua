@@ -4,10 +4,9 @@ if not status_ok then
 end
 
 local actions = require('telescope.actions')
-telescope.load_extension "media_files"
+telescope.load_extension('media_files')
 
 telescope.setup {
-	shorten_path = true,
   defaults = {
 
     layout_config = {
@@ -83,6 +82,7 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
+				["<esc>"] = actions.close,
 
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
@@ -107,7 +107,9 @@ telescope.setup {
       },
 
       n = {
-        ["<esc>"] = actions.close,
+        ["<C-c>"] = actions.close,
+				["<esc>"] = actions.close,
+
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,

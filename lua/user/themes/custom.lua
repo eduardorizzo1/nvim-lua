@@ -13,3 +13,7 @@ cmd[[ hi NvimTreeNormal guibg=NONE ]]
 cmd[[ hi NvimTreeVertSplit guibg=NONE ]]
 cmd[[ hi NvimTreeEndOfBuffer guifg=NONE ]]
 
+
+if (vim.g.neosolarized) then
+	vim.cmd[[ hi CursorLine guibg=#073642]]
+end
