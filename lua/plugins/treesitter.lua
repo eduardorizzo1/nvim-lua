@@ -19,10 +19,13 @@ configs.setup ({
 		extended_mode = true,
 		max_file_lines = nil,
 		colors = {
-			"#ffff00",
-			"#00ffff",
-			--"#800080",
-			"#ffa500",
+			-- "#ffff00",
+			-- "#00ffff",
+			-- "#800080",
+			-- "#ffa500",
+			-- "#bd00ff",
+			-- "#00ff00",
+			-- "#bd0000",
 		},
 	},
   indent = {

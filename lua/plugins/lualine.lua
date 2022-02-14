@@ -5,8 +5,11 @@ require'lualine'.setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
-    --theme = 'auto',
-		theme = 'dracula-nvim'
+    -- theme = 'onedark',
+    theme = 'auto',
+		-- theme = "catppuccin"
+		-- theme = 'dracula-nvim'
+		-- theme = 'material'
   },
   sections = {
     lualine_a = {'mode'},

@@ -57,38 +57,39 @@ bufferline.setup{
   },
 
 highlights = {
-	background = {
-		guifg = "#44475a",
-		guibg = "#1e1c29",
-	},
-	
-	fill = {
-			guifg = "#44475a",
-			guibg = "#1e1c29",
-		},
+	-- background = {
+	-- 	guifg = "#44475a",
+	-- 	guibg = "#1e1c29",
+	-- },
+	-- 
+	-- fill = {
+	-- 		guifg = "#44475a",
+	-- 		guibg = "#1e1c29",
+	-- 	},
+	--
+	-- 	buffer_selected = {
+	-- 		guifg = "#fff",
+	-- 		gui = "bold",
+	-- 	},
+	--
+	-- close_button = {
+	-- 	guibg = "#1e1c29"
+	-- },
+	-- 
+	-- tab_close = {
+	-- 	guifg = "#44475a",
+	-- 	guibg = "#1e1c29",
+	-- },
+	--
+	-- indicator_selected = {
+ --  	guifg = "#1e1c29",
+ --  },
+	-- --	
+	-- close_button_selected = {
+	-- 	guifg = "#fff",
+	-- 	gui = "bold"
+	-- },
 
-		buffer_selected = {
-			guifg = "#fff",
-			gui = "bold",
-		},
-
-	close_button = {
-		guibg = "#1e1c29"
-	},
-	
-	tab_close = {
-		guifg = "#44475a",
-		guibg = "#1e1c29",
-	},
-
-	indicator_selected = {
-  	guifg = "#1e1c29",
-  },
-	--	
-	close_button_selected = {
-		guifg = "#fff",
-		gui = "bold"
-	},
 	--	
 	--	separator_selected = {
   --  	guifg = "#0000ff",

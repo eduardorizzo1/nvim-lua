@@ -3,10 +3,9 @@ local g = vim.g
 
 cmd[[ hi CursorLine guibg=NONE ]]
 cmd[[ hi CursorLineNR cterm=bold guifg=#fff gui=bold ]]
+cmd[[ hi SignColumn guibg=NONE ]]
 cmd[[ hi Normal guibg=NONE ]]
 cmd[[ hi EndOfBuffer guibg=#000  ]]
-cmd[[ hi CursorLine guibg=NONE ]]
-cmd[[ hi SignColumn guibg=NONE ]]
 
 -- Nvimtree
 cmd[[ hi NvimTreeNormal guibg=NONE ]]
