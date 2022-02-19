@@ -1,6 +1,6 @@
 local cmd = vim.cmd
 
-cmd('syntax enable')
+-- cmd('syntax enable')
 cmd('filetype plugin indent on')
 cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart')

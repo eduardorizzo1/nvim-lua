@@ -141,10 +141,9 @@ return packer.startup(function(use)
     cmd = "TroubleToggle",
   }
 
-	-- Surround
-	use "blackCauldron7/surround.nvim"
-
 	-- Styled-components
 	use 'fleischie/vim-styled-components'
 
+	-- Vim EasyMotion
+	use 'easymotion/vim-easymotion'
 end)

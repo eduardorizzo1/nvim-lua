@@ -89,10 +89,10 @@ map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
 -- Hop EasyMotion
-map('n', '<leader><leader>j', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
+--[[ map('n', '<leader><leader>j', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
 map('n', '<leader><leader>k', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR})<cr>", {})
 map('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
-map('n', '<leader><leader>b', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
+map('n', '<leader><leader>b', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {}) ]]
 
 -- ToggleTerm
 map('n', '<leader>t', ':ToggleTerm <CR>', opts)
