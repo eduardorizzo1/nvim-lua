@@ -96,4 +96,3 @@ map('n', '<leader><leader>b', "<cmd>lua require'hop'.hint_words({ direction = re
 
 -- ToggleTerm
 map('n', '<leader>t', ':ToggleTerm <CR>', opts)
-
