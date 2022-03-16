@@ -81,9 +81,9 @@ highlights = {
 	-- 	guibg = "#1e1c29",
 	-- },
 	--
-	indicator_selected = {
-  	guifg = "#1e1c29",
-  },
+	-- indicator_selected = {
+  -- 	guifg = "#1e1c29",
+  -- },
 	-- --	
 	-- close_button_selected = {
 	-- 	guifg = "#fff",

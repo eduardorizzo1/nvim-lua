@@ -6,9 +6,14 @@ vim.g.maplocalleader = ' '
 
 -- Window Navigate
 map('n', '<C-h>', '<C-w>h', opts)
-map('n', '<C-j>', '<C-w>j', opts)
-map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
+map('n', '<M-j>', '<C-w>j', opts)
+map('n', '<M-k>', '<C-w>k', opts)
+
+map('n', '<S-J>', '5j', opts)
+map('n', 'K', '5k', opts)
+map('n', '<C-j>', '5j', opts)
+map('n', '<C-k>', '5k', opts)
 
 -- ctrl+s to save
 map('n', '<C-s>', ':w<CR>', opts)
@@ -27,13 +32,14 @@ map('v', 'D', '"_d', opts)
 map('n', '<C-q>', ':q<CR>', opts)
 
 -- Toggle highlight match word
-map('n', '<space>*', ':noh<CR>', opts)
+map('n', '<leader>*', ':noh<CR>', opts)
 
 -- Toggle Relative number
-map('n', ';n', ':set relativenumber!<CR>', opts)
+map('n', '<leader>n', ':set relativenumber!<CR>', opts)
 
 -- Vsplit
-map('n', ';v', ':vsplit<CR>', opts)
+map('n', '<leader>v', ':vsp<CR>', opts)
+map('n', '<leader>h', ':sp<CR>', opts)
 
 ------------------ P L U G I N S --------------------------
 
@@ -47,7 +53,7 @@ map('n', ';i', ':IndentBlanklineToggle<CR>', opts)
 map('n', ';t', ':Twilight<CR>', opts)
 
 -- Zen-mode
-map('n', ';z', ':ZenMode<CR>', opts)
+map('n', '<leader>z', ':ZenMode<CR>', opts)
 
 -- Bufferline
 map('n', '<M-l>', ':bn<CR>', opts)
@@ -56,12 +62,12 @@ map('n', '<M-x>', ':bd<Esc>:bp<CR>', opts)
 
 -- Telescope
 map('n', '<c-p>', '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
-map('n', ';ff', '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
-map('n', ';fg','<cmd>lua require("telescope.builtin").live_grep()<CR>', opts)
-map('n', ';fb','<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
-map('n', ';fh','<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
-map('n', ';gg','<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
-map('n', ';fa','<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
+map('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
+map('n', '<leader>fg','<cmd>lua require("telescope.builtin").live_grep()<CR>', opts)
+map('n', '<leader>fb','<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
+map('n', '<leader>fh','<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
+map('n', '<leader>gg','<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
+map('n', '<leader>fa','<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
 
 -- LspSaga Mappings
 map('n', 'gc', '<cmd>Lspsaga code_action<CR>', opts)

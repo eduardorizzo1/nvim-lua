@@ -1,6 +1,6 @@
 require 'user.options'
 require 'user.keymaps'
-require 'user.themes.kanagawa'
+require 'user.themes.tokyonight'
 require 'plugins'
 require 'plugins.dashboard'
 require 'plugins.bufferline'
