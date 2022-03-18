@@ -15,6 +15,10 @@ map('n', 'K', '5k', opts)
 map('n', '<C-j>', '5j', opts)
 map('n', '<C-k>', '5k', opts)
 
+-- Resize Window
+map('n', '<C-w>h', ':vertical resize -5<CR>', opts)
+map('n', '<C-w>l', ':vertical resize +5<CR>', opts)
+
 -- ctrl+s to save
 map('n', '<C-s>', ':w<CR>', opts)
 map('i', '<C-s>', '<Esc>:w<CR>', opts)
