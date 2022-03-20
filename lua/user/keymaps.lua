@@ -82,27 +82,19 @@ map('n', 'ge', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 map('n', 'gi', '<cmd>Lspsaga implement<CR>', opts)
 map('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
 map('n', 'gn', '<cmd>Lspsaga rename<CR>', opts)
-map('n', 'gt', '<cmd>Lspsaga open_floaterm<CR>', opts)
-map('n', 'gq', '<cmd>Lspsaga close_floaterm<CR>', opts)
 map('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 map('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 map('n', 'gH', '<cmd>Lspsaga signature_help<CR>', opts)
 
 -- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
-map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 map('n', 'gE', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-map('n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-
--- Hop EasyMotion
---[[ map('n', '<leader><leader>j', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
-map('n', '<leader><leader>k', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR})<cr>", {})
-map('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
-map('n', '<leader><leader>b', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {}) ]]
+map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
 -- ToggleTerm
 map('n', '<leader>t', ':ToggleTerm <CR>', opts)
