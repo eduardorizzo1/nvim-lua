@@ -3,13 +3,13 @@ require('Comment').setup({
     sticky = true,
     ignore = nil,
     toggler = {
-        line = ';cc',
-        block = ';ca',
+        line = '<leader>c',
+        block = '<leader>ca',
     },
 
     opleader = {
-        line = ';cc',
-        block = ';ca'
+        line = '<leader>c',
+        block = '<leader>ca'
     },
 
     mappings = {
