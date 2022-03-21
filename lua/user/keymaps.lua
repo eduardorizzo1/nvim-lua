@@ -98,3 +98,6 @@ map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
 -- ToggleTerm
 map('n', '<leader>t', ':ToggleTerm <CR>', opts)
+
+-- Git Blame
+map('n', '<leader>gb', ':GitBlameToggle <CR>', opts)

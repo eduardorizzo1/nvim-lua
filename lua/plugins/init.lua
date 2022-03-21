@@ -144,4 +144,7 @@ return packer.startup(function(use)
 
 	-- Vim EasyMotion
 	use 'easymotion/vim-easymotion'
+
+	-- Git Blame
+	use 'f-person/git-blame.nvim'
 end)
