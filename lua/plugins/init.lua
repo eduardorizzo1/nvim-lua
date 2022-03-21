@@ -147,4 +147,7 @@ return packer.startup(function(use)
 
 	-- Git Blame
 	use 'f-person/git-blame.nvim'
+
+	-- Impatient
+	use 'lewis6991/impatient.nvim'
 end)

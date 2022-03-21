@@ -65,7 +65,7 @@ nvim_tree.setup {
   },
 
 	window_picker_exclude = {
-   filetype = { "notify", "packer", "qf", "telescope" },
+   filetype = { "notify", "packer", "qf", "telescope"},
    buftype = { "terminal" },
 	},
 
@@ -103,7 +103,7 @@ nvim_tree.setup {
 	  height = 30,
 	  hide_root_folder = false,
 	  side = 'left',
-	  auto_resize = true,
+	  auto_resize = false,
 	  number = false,
 	  relativenumber = false,
 		signcolumn = "yes",
