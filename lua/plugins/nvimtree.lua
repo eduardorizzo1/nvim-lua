@@ -55,18 +55,19 @@ nvim_tree.setup {
 	add_trailing = 0,
 	highlight_opened_files = 1,
 	indent_markers = 1,
-
-	window_picker_exclude = {
-   filetype = { "notify", "packer", "qf", "telescope" },
-   buftype = { "terminal" },
-	},
-
+  
 	show_icons = {
     git = 1,
     folders = 1,
     files = 1,
     folder_arrows = 1,
+    tree_width = 30,
   },
+
+	window_picker_exclude = {
+   filetype = { "notify", "packer", "qf", "telescope" },
+   buftype = { "terminal" },
+	},
 
 	update_to_buf_dir   = {
     enable = true,
@@ -106,6 +107,7 @@ nvim_tree.setup {
 	  number = false,
 	  relativenumber = false,
 		signcolumn = "yes",
+		preserve_window_proportions = true,
 
   	mappings = {
   	  custom_only = false,
@@ -127,5 +129,11 @@ nvim_tree.setup {
 		cmd = "trash",
 		require_confirm = true,
 	},
+
+	actions = {
+		open_file = {
+			resize_window = true
+		}
+	}
 }
 
