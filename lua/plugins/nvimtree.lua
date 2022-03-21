@@ -103,13 +103,18 @@ nvim_tree.setup {
 	  hide_root_folder = false,
 	  side = 'left',
 	  auto_resize = true,
-	  mappings = {
-	    custom_only = false,
-	    list = {}
-	  },
 	  number = false,
 	  relativenumber = false,
-		signcolumn = "yes"
+		signcolumn = "yes",
+
+  	mappings = {
+  	  custom_only = false,
+  	  list = {
+				{ key = "J", action = ""},
+				{ key = "K", action = ""},
+				{ key = "<C-k>", action = ""},
+  	  },
+  	},
 	},
 
   git = {
@@ -121,6 +126,6 @@ nvim_tree.setup {
 	trash = {
 		cmd = "trash",
 		require_confirm = true,
-	}
+	},
 }
 

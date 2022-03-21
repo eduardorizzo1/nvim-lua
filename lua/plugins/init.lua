@@ -55,7 +55,6 @@ return packer.startup(function(use)
 	use 'katawful/kat.nvim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'EdenEast/nightfox.nvim'
-	use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
 	use 'pineapplegiant/spaceduck'
@@ -130,7 +129,6 @@ return packer.startup(function(use)
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
-  use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-telescope/telescope-media-files.nvim'
