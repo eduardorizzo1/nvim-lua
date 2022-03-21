@@ -3,25 +3,19 @@ vim.g.nvim_tree_icons = {
    symlink = "",
    git = {
 		unstaged = "",
-    -- unstaged = "✗",
     staged = "S",
-    -- staged = "✓",
     unmerged = "",
     renamed = "➜",
     deleted = "",
-    -- deleted = "",
     untracked = "U",
-    -- untracked = "★",
     ignored = "◌",
    },
 		
 	folder = {
 		default = "",
-    --open = "",
     open = "",
     empty = "",
     empty_open = "",
-    -- empty_open = " ",
     symlink = " ",
     symlink_open = " ",
    },
@@ -45,10 +39,6 @@ vim.cmd[[ au WinLeave * setlocal nocursorline ]]
 vim.g.nvim_tree_highlight_opened_files = 0
 vim.g.nvim_tree_highlight_opened_folders = 1
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_window_picker_exclude = {
-   filetype = { "notify", "packer", "qf", "telescope" },
-   buftype = { "terminal" },
-}
 
 nvim_tree.setup {
 	disable_netrw = true,
@@ -65,6 +55,11 @@ nvim_tree.setup {
 	add_trailing = 0,
 	highlight_opened_files = 1,
 	indent_markers = 1,
+
+	window_picker_exclude = {
+   filetype = { "notify", "packer", "qf", "telescope" },
+   buftype = { "terminal" },
+	},
 
 	show_icons = {
     git = 1,
