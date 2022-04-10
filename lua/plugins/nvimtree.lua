@@ -46,7 +46,6 @@ nvim_tree.setup {
   hijack_cursor = false,
 	open_on_setup = false,	
   open_on_tab = false,
-  auto_close = true,
   update_cwd = false,
 	quit_on_open = 0,
   git_hl = 1,
