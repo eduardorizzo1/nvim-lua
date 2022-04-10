@@ -1,6 +1,7 @@
 require 'user.options'
 require 'user.keymaps'
 require 'user.themes.tokyonight'
+require 'utils'
 require 'plugins'
 require 'plugins.dashboard'
 require 'plugins.bufferline'
@@ -21,4 +22,3 @@ require 'plugins.zen-mode'
 require 'plugins.toggleterm'
 require 'plugins.telescope'
 require 'plugins.git-blame'
-
