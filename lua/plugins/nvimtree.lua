@@ -35,8 +35,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 vim.cmd[[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]]
 vim.cmd[[ au WinLeave * setlocal nocursorline ]]
-vim.cmd[[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
- ]]
 
 vim.g.nvim_tree_highlight_opened_files = 0
 vim.g.nvim_tree_highlight_opened_folders = 1
@@ -48,6 +46,7 @@ nvim_tree.setup {
   hijack_cursor = false,
 	open_on_setup = false,	
   open_on_tab = false,
+  auto_close = true,
   update_cwd = false,
 	quit_on_open = 0,
   git_hl = 1,
@@ -66,7 +65,7 @@ nvim_tree.setup {
   },
 
 	window_picker_exclude = {
-   filetype = { "notify", "packer", "qf", "telescope"},
+   filetype = { "notify", "packer", "qf", "telescope" },
    buftype = { "terminal" },
 	},
 
@@ -104,7 +103,7 @@ nvim_tree.setup {
 	  height = 30,
 	  hide_root_folder = false,
 	  side = 'left',
-	  auto_resize = false,
+	  auto_resize = true,
 	  number = false,
 	  relativenumber = false,
 		signcolumn = "yes",
