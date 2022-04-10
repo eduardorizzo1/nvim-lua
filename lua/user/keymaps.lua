@@ -102,5 +102,5 @@ map('n', '<leader>t', ':ToggleTerm <CR>', opts)
 -- Git Blame
 map('n', '<leader>gb', ':GitBlameToggle <CR>', opts)
 
--- Reload 
-map('n', '<Leader><CR>', ':luafile $MYVIMRC<CR>', { noremap = true })
+-- Reload VIMRC 
+map('n', '<Leader>rv', ':luafile $MYVIMRC<CR>', { noremap = true })
