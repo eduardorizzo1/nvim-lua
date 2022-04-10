@@ -1,16 +1,5 @@
 local cmd = vim.cmd
 
--- cmd('syntax enable')
-cmd('filetype plugin indent on')
-cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
-cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart')
-cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear')
-
-cmd[[ set autoread ]]
-cmd[[ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif ]]
-cmd[[ autocmd FileChangedShellPost *
-        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None ]]
-
 local options = {
   number = true,
 	relativenumber = false,
@@ -25,7 +14,6 @@ local options = {
   encoding = 'utf8',
   tabstop = 2,
   shiftwidth = 2,
-
   smartcase = true,
   hlsearch = true,
   signcolumn = 'yes',
@@ -45,5 +33,16 @@ for key, value in pairs(options) do
   vim.opt[key] = value
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+cmd[[ filetype plugin indent on ]]
+cmd[[ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o ]]
+cmd[[ autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ]]
+cmd[[ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ]]
+
+cmd[[ set autoread ]]
+cmd[[ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif ]]
+cmd[[ autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None ]]
+
+cmd[[ set whichwrap+=<,>,[,],h,l ]]
+cmd[[ set iskeyword+=- ]]
+-- cmd[[ syntax enable ]]
