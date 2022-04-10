@@ -1,6 +1,7 @@
 require 'user.options'
 require 'user.keymaps'
 require 'user.themes.dracula'
+require 'utils'
 
 require 'plugins'
 require 'plugins.dashboard'
