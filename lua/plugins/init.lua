@@ -46,7 +46,6 @@ return packer.startup(function(use)
 	use 'Mofiqul/vscode.nvim'
 	use 'navarasu/onedark.nvim'
 	use 'olimorris/onedarkpro.nvim'
-	use 'tiagovla/tokyodark.nvim'
   use 'folke/tokyonight.nvim'
 	use 'drewtempelmeyer/palenight.vim'
 	use 'morhetz/gruvbox'
@@ -61,11 +60,8 @@ return packer.startup(function(use)
 	use 'arcticicestudio/nord-vim'
   use "lunarvim/darkplus.nvim"
 	use 'challenger-deep-theme/vim'
-	use 'ayu-theme/ayu-vim'
 	use 'gosukiwi/vim-atom-dark'
-	use 'sjl/badwolf'
 	use 'bluz71/vim-nightfly-guicolors'
-	use 'Shatur/neovim-ayu'
 	use ({"catppuccin/nvim", as = "catppuccin"})
 
   -- Dashboard
@@ -145,9 +141,12 @@ return packer.startup(function(use)
 	-- Vim EasyMotion
 	use 'easymotion/vim-easymotion'
 
-	-- Git Blame
-	use 'f-person/git-blame.nvim'
+	-- Blamer
+	use 'APZelos/blamer.nvim'
 
 	-- Impatient
 	use 'lewis6991/impatient.nvim'
+
+	-- Fugitive
+	use 'tpope/vim-fugitive'
 end)
