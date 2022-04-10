@@ -6,6 +6,11 @@ cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions
 cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart')
 cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear')
 
+cmd[[ set autoread ]]
+cmd[[ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif ]]
+cmd[[ autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None ]]
+
 local options = {
   number = true,
 	relativenumber = false,
