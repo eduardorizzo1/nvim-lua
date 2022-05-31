@@ -4,7 +4,7 @@ local cmd = vim.cmd
 cmd[[ colo dracula ]]
 
 g.dracula_show_end_of_buffer = false
-g.dracula_transparent_bg = false
+g.dracula_transparent_bg = true
 g.dracula_italic = false
 g.dracula_italic_comment = true
 

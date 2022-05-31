@@ -1,7 +1,7 @@
 local cmd = vim.cmd
 local g = vim.g
 
-cmd[[ hi CursorLine guibg=NONE ]]
+-- cmd[[ hi CursorLine guibg=NONE ]]
 cmd[[ hi CursorLineNR cterm=bold guifg=#fff gui=bold ]]
 cmd[[ hi SignColumn guibg=NONE ]]
 cmd[[ hi Normal guibg=NONE ]]
