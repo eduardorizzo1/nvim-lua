@@ -1,6 +1,6 @@
 require 'user.options'
 require 'user.keymaps'
-require 'user.themes.tokyonight'
+require 'user.themes.dracula'
 require 'utils'
 
 require 'plugins'
