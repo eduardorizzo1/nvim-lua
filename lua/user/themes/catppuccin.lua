@@ -1,23 +1,23 @@
 require('catppuccin').setup({
-	transparent_background = true,
+	-- transparent_background = true,
 term_colors = false,
 styles = {
-	comments = "italic",
+	-- comments = "italic",
 	functions = "NONE",
-	keywords = "italic",
+	-- keywords = "italic",
 	strings = "NONE",
-	variables = "italic",
+	-- variables = "italic",
 },
 integrations = {
 	treesitter = true,
 	native_lsp = {
 		enabled = true,
-		virtual_text = {
-			errors = "italic",
-			hints = "italic",
-			warnings = "italic",
-			information = "italic",
-		},
+		-- virtual_text = {
+		-- 	errors = "italic",
+		-- 	hints = "italic",
+		-- 	warnings = "italic",
+		-- 	information = "italic",
+
 		underlines = {
 			errors = "underline",
 			hints = "underline",

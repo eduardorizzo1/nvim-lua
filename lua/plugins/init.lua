@@ -52,13 +52,11 @@ return packer.startup(function(use)
 	use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
 	use 'sainnhe/edge'
-	use 'katawful/kat.nvim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'EdenEast/nightfox.nvim'
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
 	use 'pineapplegiant/spaceduck'
-	use 'arcticicestudio/nord-vim'
   use "lunarvim/darkplus.nvim"
 	use 'challenger-deep-theme/vim'
 	use 'ayu-theme/ayu-vim'
@@ -81,7 +79,7 @@ return packer.startup(function(use)
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'windwp/nvim-ts-autotag'
-	use "ChristianChiarulli/nvim-ts-rainbow"
+	use "p00f/nvim-ts-rainbow"
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -147,4 +145,7 @@ return packer.startup(function(use)
 
 	-- Blamer
 	use 'APZelos/blamer.nvim'
+
+	-- Notify
+	use 'rcarriga/nvim-notify'
 end)
