@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
   -- Themes
 	use 'overcache/NeoSolarized'
+	-- use ({"dracula/vim", as = "dracula"})
   use 'Mofiqul/dracula.nvim'
 	use 'Mofiqul/vscode.nvim'
 	use 'navarasu/onedark.nvim'
@@ -59,13 +60,10 @@ return packer.startup(function(use)
 	use 'pineapplegiant/spaceduck'
   use "lunarvim/darkplus.nvim"
 	use 'challenger-deep-theme/vim'
-	use 'ayu-theme/ayu-vim'
-	use 'gosukiwi/vim-atom-dark'
-	use 'sjl/badwolf'
 	use 'bluz71/vim-nightfly-guicolors'
-	use 'Shatur/neovim-ayu'
 	use ({"catppuccin/nvim", as = "catppuccin"})
 	use 'marko-cerovac/material.nvim'
+	use 'shaunsingh/nord.nvim'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
@@ -149,4 +147,8 @@ return packer.startup(function(use)
 
 	-- Notify
 	use 'rcarriga/nvim-notify'
+
+	if PACKER_BOOTSTRAP then 
+		require('packer').sync()
+	end
 end)

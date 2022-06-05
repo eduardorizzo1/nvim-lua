@@ -79,16 +79,6 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/NeoSolarized",
     url = "https://github.com/overcache/NeoSolarized"
   },
-  ["ayu-vim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/ayu-vim",
-    url = "https://github.com/ayu-theme/ayu-vim"
-  },
-  badwolf = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/badwolf",
-    url = "https://github.com/sjl/badwolf"
-  },
   ["blamer.nvim"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/blamer.nvim",
@@ -224,11 +214,6 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
   },
-  ["neovim-ayu"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/neovim-ayu",
-    url = "https://github.com/Shatur/neovim-ayu"
-  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
@@ -238,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -386,11 +376,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim",
     url = "https://github.com/challenger-deep-theme/vim"
-  },
-  ["vim-atom-dark"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-atom-dark",
-    url = "https://github.com/gosukiwi/vim-atom-dark"
   },
   ["vim-clap"] = {
     loaded = true,
