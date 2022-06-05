@@ -65,6 +65,7 @@ return packer.startup(function(use)
 	use 'bluz71/vim-nightfly-guicolors'
 	use 'Shatur/neovim-ayu'
 	use ({"catppuccin/nvim", as = "catppuccin"})
+	use 'marko-cerovac/material.nvim'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
