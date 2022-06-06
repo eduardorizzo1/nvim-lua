@@ -117,6 +117,7 @@ return packer.startup(function(use)
   use 'folke/twilight.nvim'
 	use "akinsho/toggleterm.nvim"
   use 'karb94/neoscroll.nvim'
+	use 'lewis6991/impatient.nvim'
 	use {'mg979/vim-visual-multi', branch = 'master'}
 	use {
   	'phaazon/hop.nvim',
