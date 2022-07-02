@@ -119,10 +119,6 @@ return packer.startup(function(use)
   use 'karb94/neoscroll.nvim'
 	use 'lewis6991/impatient.nvim'
 	use {'mg979/vim-visual-multi', branch = 'master'}
-	use {
-  	'phaazon/hop.nvim',
-  	branch = 'v1',
-	}
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
@@ -140,14 +136,20 @@ return packer.startup(function(use)
 	-- Styled-components
 	use 'fleischie/vim-styled-components'
 
-	-- Vim EasyMotion
-	use 'easymotion/vim-easymotion'
+	-- Hop.nvim (easymotion)
+	use {
+  	'phaazon/hop.nvim',
+  	branch = 'v1',
+	}
 
 	-- Blamer
 	use 'APZelos/blamer.nvim'
 
 	-- Notify
 	use 'rcarriga/nvim-notify'
+
+	-- Code Runner
+	use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 	if PACKER_BOOTSTRAP then 
 		require('packer').sync()

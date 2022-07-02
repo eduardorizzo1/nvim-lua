@@ -101,3 +101,12 @@ map('n', '<leader>t', ':ToggleTerm <CR>', opts)
 
 -- Git Blame
 map('n', '<leader>gb', ':GitBlameToggle <CR>', opts)
+
+-- Hop
+map('n', '<leader><leader>w', ':HopWordAC<CR>', opts)
+map('n', '<leader><leader>b', ':HopWordBC<CR>', opts)
+map('n', '<leader><leader>j', ':HopLineAC<CR>', opts)
+map('n', '<leader><leader>k', ':HopLineBC<CR>', opts)
+
+
+
