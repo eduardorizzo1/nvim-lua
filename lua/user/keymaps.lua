@@ -108,5 +108,5 @@ map('n', '<leader><leader>b', ':HopWordBC<CR>', opts)
 map('n', '<leader><leader>j', ':HopLineAC<CR>', opts)
 map('n', '<leader><leader>k', ':HopLineBC<CR>', opts)
 
-
-
+-- Code Runner
+map('n', '<C-M-n>', ':RunCode<CR>', opts)
