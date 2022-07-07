@@ -12,8 +12,8 @@ map('n', '<M-k>', '<C-w>k', opts)
 
 map('n', '<S-J>', '5j', opts)
 map('n', 'K', '5k', opts)
-map('n', '<C-j>', '5j', opts)
-map('n', '<C-k>', '5k', opts)
+map('n', '<C-j>', '10j', opts)
+map('n', '<C-k>', '10k', opts)
 
 -- Resize Window
 map('n', '<C-w>h', ':vertical resize -5<CR>', opts)

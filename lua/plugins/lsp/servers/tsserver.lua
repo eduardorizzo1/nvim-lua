@@ -1,15 +1,15 @@
 local lspconfig = require("lspconfig")
 
 local on_attach = function(client, bufnr)
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
       vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end
 
 lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
-  	client.resolved_capabilities.document_formatting = false
-  	client.resolved_capabilities.document_range_formatting = false
+  	client.server_capabilities.document_formatting = false
+  	client.server_capabilities.document_range_formatting = false
   	local ts_utils = require("nvim-lsp-ts-utils")
   	ts_utils.setup({})
   	ts_utils.setup_client(client)
@@ -30,14 +30,3 @@ vim.diagnostic.config({
       prefix = ' '
     }
 })
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics, {
---     underline = true,
---     virtual_text = {
---       spacing = 4,
---       prefix = ' '
---     }
---   }
--- )
---
