@@ -5,8 +5,9 @@ require'lualine'.setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
-    -- theme = 'onedark',
     theme = 'auto',
+    -- theme = 'onedark',
+    -- theme = 'tokyonight',
 		-- theme = "catppuccin"
 		-- theme = 'dracula-nvim'
 		-- theme = 'material'

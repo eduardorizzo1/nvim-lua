@@ -45,4 +45,4 @@ cmd[[ autocmd FileChangedShellPost *
 
 cmd[[ set whichwrap+=<,>,[,],h,l ]]
 cmd[[ set iskeyword+=- ]]
--- cmd[[ syntax enable ]]
+cmd[[ syntax enable ]]

@@ -20,15 +20,13 @@ configs.setup({
 		disable = { 'html' },
 		extended_mode = true,
 		max_file_lines = nil,
-		colors = {
-			-- "#ffff00",
-			-- "#00ffff",
-			-- "#800080",
-			-- "#ffa500",
-			-- "#bd00ff",
-			-- "#00ff00",
-			-- "#bd0000",
-		},
+		-- colors = {
+		-- 	"#ffa500",
+		-- 	"#ff7699",
+		-- 	"#00ff00",
+		-- 	"#ffff00",
+		-- 	"#ff5555",
+
 	},
 	indent = {
 		enable = true,

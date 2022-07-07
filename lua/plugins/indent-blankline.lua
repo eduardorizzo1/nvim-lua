@@ -14,9 +14,6 @@ g.indent_blankline_show_first_indent_level = true
 g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 
-cmd[[ hi IndentBlanklineChar guifg=#282a36 gui=nocombine ]]
-cmd[[ hi IndentBlanklineContextChar guifg=#6272a4 gui=nocombine ]]
-
 indent_blankline.setup{
   buftype_exclude = {"terminal"},
   filetype_exclude = {"dashboard", "NvimTree", "packer", "help"},

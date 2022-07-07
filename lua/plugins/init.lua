@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
   -- Themes
 	use 'overcache/NeoSolarized'
+	-- use ({"dracula/vim", as = "dracula"})
   use 'Mofiqul/dracula.nvim'
 	use 'Mofiqul/vscode.nvim'
 	use 'navarasu/onedark.nvim'
@@ -52,21 +53,18 @@ return packer.startup(function(use)
 	use 'morhetz/gruvbox'
   use 'sainnhe/gruvbox-material'
 	use 'sainnhe/edge'
-	use 'katawful/kat.nvim'
 	use 'bluz71/vim-moonfly-colors'
 	use 'EdenEast/nightfox.nvim'
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
 	use 'pineapplegiant/spaceduck'
-	use 'arcticicestudio/nord-vim'
   use "lunarvim/darkplus.nvim"
 	use 'challenger-deep-theme/vim'
-	use 'ayu-theme/ayu-vim'
-	use 'gosukiwi/vim-atom-dark'
-	use 'sjl/badwolf'
 	use 'bluz71/vim-nightfly-guicolors'
-	use 'Shatur/neovim-ayu'
 	use ({"catppuccin/nvim", as = "catppuccin"})
+	use 'marko-cerovac/material.nvim'
+	use 'shaunsingh/nord.nvim'
+	use 'mhartington/oceanic-next'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
@@ -81,7 +79,7 @@ return packer.startup(function(use)
 	--Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'windwp/nvim-ts-autotag'
-	use "ChristianChiarulli/nvim-ts-rainbow"
+	use "p00f/nvim-ts-rainbow"
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -120,11 +118,8 @@ return packer.startup(function(use)
   use 'folke/twilight.nvim'
 	use "akinsho/toggleterm.nvim"
   use 'karb94/neoscroll.nvim'
+	use 'lewis6991/impatient.nvim'
 	use {'mg979/vim-visual-multi', branch = 'master'}
-	use {
-  	'phaazon/hop.nvim',
-  	branch = 'v1',
-	}
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
@@ -142,9 +137,22 @@ return packer.startup(function(use)
 	-- Styled-components
 	use 'fleischie/vim-styled-components'
 
-	-- Vim EasyMotion
-	use 'easymotion/vim-easymotion'
+	-- Hop.nvim (easymotion)
+	use {
+  	'phaazon/hop.nvim',
+  	branch = 'v1',
+	}
 
 	-- Blamer
 	use 'APZelos/blamer.nvim'
+
+	-- Notify
+	use 'rcarriga/nvim-notify'
+
+	-- Code Runner
+	use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+	if PACKER_BOOTSTRAP then 
+		require('packer').sync()
+	end
 end)
