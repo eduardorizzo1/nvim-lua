@@ -64,6 +64,7 @@ return packer.startup(function(use)
 	use ({"catppuccin/nvim", as = "catppuccin"})
 	use 'marko-cerovac/material.nvim'
 	use 'shaunsingh/nord.nvim'
+	use 'mhartington/oceanic-next'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'

@@ -10,19 +10,22 @@ map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<M-j>', '<C-w>j', opts)
 map('n', '<M-k>', '<C-w>k', opts)
 
-map('n', '<S-J>', '5j', opts)
+map('n', 'J', '5j', opts)
 map('n', 'K', '5k', opts)
-map('n', '<C-j>', '5j', opts)
-map('n', '<C-k>', '5k', opts)
+map('n', '<C-j>', '10j', opts)
+map('n', '<C-k>', '10k', opts)
 
 -- Resize Window
-map('n', '<C-w>h', ':vertical resize -5<CR>', opts)
-map('n', '<C-w>l', ':vertical resize +5<CR>', opts)
+map('n', '<C-M-l>', ':vertical resize -5<CR>', opts)
+map('n', '<C-M-h>', ':vertical resize +5<CR>', opts)
 
 -- ctrl+s to save
 map('n', '<C-s>', ':w<CR>', opts)
 map('i', '<C-s>', '<Esc>:w<CR>', opts)
 map('v', '<C-s>', '<Esc>:w<CR>', opts)
+
+-- save all files
+map('n', ';<C-s>', ':wa<CR>', opts)
 
 -- ctrl+z
 map('n', '<C-z>', ':u<CR>', opts)
@@ -45,7 +48,9 @@ map('n', '<leader>n', ':set relativenumber!<CR>', opts)
 map('n', '<leader>v', ':vsp<CR>', opts)
 map('n', '<leader>h', ':sp<CR>', opts)
 
+-- ========================================================
 ------------------ P L U G I N S --------------------------
+-- ========================================================
 
 -- Nvimtree
 map('n', '<C-b>', ':NvimTreeToggle<CR>', opts)

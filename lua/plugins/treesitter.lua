@@ -26,7 +26,7 @@ configs.setup({
 		-- 	"#00ff00",
 		-- 	"#ffff00",
 		-- 	"#ff5555",
-		-- },
+
 	},
 	indent = {
 		enable = true,

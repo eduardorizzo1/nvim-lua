@@ -129,13 +129,13 @@ nvim_tree.setup {
   },
 
   diagnostics = {
-    enable = false,
-		show_on_dirs = false,
+    enable = true,
+		show_on_dirs = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = " ",
+      info = " ",
+      warning = " ",
+      error = " ",
     }
   },
   
