@@ -2,7 +2,7 @@ require('lsp_signature').setup(cfg)
 
 cfg = {
   debug = false, 
-  log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", 
+  log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log",
   verbose = false,
   bind = true,
   doc_lines = 10,
@@ -15,7 +15,7 @@ cfg = {
   use_lspsaga = false,
   hi_parameter = "LspSignatureActiveParameter",
   max_height = 12,
-  max_width = 120, 
+  max_width = 120,
   handler_opts = {
     border = "rounded"   
   },
