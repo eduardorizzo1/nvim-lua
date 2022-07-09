@@ -1,32 +1,6 @@
 local lspconfig = require("lspconfig")
 
-local on_attach = function(client, bufnr)
-  if client.server_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-  end
-end
-
 lspconfig.tsserver.setup({
-  on_attach = function(client, bufnr)
-  	client.server_capabilities.document_formatting = false
-  	client.server_capabilities.document_range_formatting = false
-  	local ts_utils = require("nvim-lsp-ts-utils")
-  	ts_utils.setup({})
-  	ts_utils.setup_client(client)
-  	on_attach(client, bufnr)
-  end,
-
-	capabilities = require('cmp_nvim_lsp').update_capabilities(
-  	vim.lsp.protocol.make_client_capabilities()
-	)
-})
-
-vim.o.completeopt = 'menuone,noselect'
-
-vim.diagnostic.config({
-  underline = true,
-  virtual_text = {
-    spacing = 4,
-      prefix = ' '
-    }
+  on_attach = require("plugins.lsp.handlers").on_attach,
+	capabilities = require("plugins.lsp.handlers").capabilities
 })

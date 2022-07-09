@@ -23,13 +23,10 @@ local settings = {
   ensure_installed = servers,
   ui = {
     icons = {
-      -- server_installed = "◍",
-      -- server_pending = "◍",
-      -- server_uninstalled = "◍",
-      -- server_installed = "✓",
-      -- server_pending = "➜",
-      -- server_uninstalled = "✗",
-    },
+			server_installed = "✓",
+      server_pending = "➜",
+    	server_uninstalled = "✗"
+		},
     keymaps = {
       toggle_server_expand = "<CR>",
       install_server = "i",
@@ -42,8 +39,6 @@ local settings = {
   },
 
   log_level = vim.log.levels.INFO,
-  -- max_concurrent_installers = 4,
-  -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
 }
 
 lsp_installer.setup(settings)
@@ -57,39 +52,18 @@ local opts = {}
 
 for _, server in pairs(servers) do
   opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = require("plugins.lsp.handlers").on_attach,
+    capabilities = require("plugins.lsp.handlers").capabilities,
   }
 
   if server == "jsonls" then
-    local jsonls_opts = require "user.lsp.settings.jsonls"
+    local jsonls_opts = require "plugins.lsp.servers.jsonls"
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   end
 
   if server == "sumneko_lua" then
-    local sumneko_opts = require "user.lsp.settings.sumneko_lua"
+    local sumneko_opts = require "plugins.lsp.servers.sumneko-lua"
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
-
-  if server == "pyright" then
-    local pyright_opts = require "user.lsp.settings.pyright"
-    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-  end
-
-  if server == "solang" then
-    local solang_opts = require "user.lsp.settings.solang"
-    opts = vim.tbl_deep_extend("force", solang_opts, opts)
-  end
-
-  if server == "solc" then
-    local solc_opts = require "user.lsp.settings.solc"
-    opts = vim.tbl_deep_extend("force", solc_opts, opts)
-  end
-
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-  end
-
   lspconfig[server].setup(opts)
 end

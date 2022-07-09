@@ -83,10 +83,10 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+	use 'williamboman/nvim-lsp-installer'
   use 'onsails/lspkind-nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'tami5/lspsaga.nvim'
-	use 'williamboman/nvim-lsp-installer'
 	use 'tamago324/nlsp-settings.nvim'
 	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 	use 'jose-elias-alvarez/null-ls.nvim'
@@ -112,6 +112,7 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'lukas-reineke/indent-blankline.nvim'
 	use "windwp/nvim-autopairs"
+	use "RRethy/vim-illuminate"
 
 	-- Others
 	use 'folke/zen-mode.nvim'
@@ -120,6 +121,7 @@ return packer.startup(function(use)
   use 'karb94/neoscroll.nvim'
 	use 'lewis6991/impatient.nvim'
 	use {'mg979/vim-visual-multi', branch = 'master'}
+	use "b0o/schemastore.nvim"
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
