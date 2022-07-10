@@ -1,5 +1,3 @@
-require('lsp_signature').setup(cfg)
-
 cfg = {
   debug = false, 
   log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log",
@@ -11,6 +9,7 @@ cfg = {
   fix_pos = false,
   hint_enable = true,
   hint_prefix = "🐼 ",
+	-- HINTS => 😏 💀 🐼 🐶 🐵 😜 ⭐ 👉 🪄
   hint_scheme = "String",
   use_lspsaga = false,
   hi_parameter = "LspSignatureActiveParameter",
@@ -30,3 +29,5 @@ cfg = {
   timer_interval = 200,
   toggle_key = nil
 }
+
+require('lsp_signature').setup(cfg)
