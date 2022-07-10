@@ -12,6 +12,8 @@ map('n', '<M-k>', '<C-w>k', opts)
 
 map('n', 'J', '5j', opts)
 map('n', 'K', '5k', opts)
+map('n', 'H', '5h', opts)
+map('n', 'L', '5l', opts)
 map('n', '<C-j>', '10j', opts)
 map('n', '<C-k>', '10k', opts)
 

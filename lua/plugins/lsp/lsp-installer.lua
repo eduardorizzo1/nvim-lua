@@ -4,18 +4,25 @@ if not status_ok then
 end
 
 local servers = {
+  "tsserver",
+  "html",
+	"eslint",
   "cssls",
   "cssmodules_ls",
-  "emmet_ls",
-  "html",
-  "jsonls",
-  "solc",
+	"tailwindcss",
+	"prismals",
+	"graphql",
+	"marksman",
+	"dockerls",
+	"dotls",
   "sumneko_lua",
+  "bashls",
+  "jsonls",
+  "emmet_ls",
+  "solc",
   "tflint",
-  "tsserver",
   "pyright",
   "yamlls",
-  "bashls",
   "clangd",
 }
 
