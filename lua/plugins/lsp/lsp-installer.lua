@@ -4,7 +4,10 @@ if not status_ok then
 end
 
 local servers = {
+  "sumneko_lua",
   "tsserver",
+	"angularls",
+	"vuels",
   "html",
 	"eslint",
   "cssls",
@@ -15,7 +18,6 @@ local servers = {
 	"marksman",
 	"dockerls",
 	"dotls",
-  "sumneko_lua",
   "bashls",
   "jsonls",
   "emmet_ls",

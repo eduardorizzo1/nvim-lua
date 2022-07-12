@@ -8,8 +8,6 @@ if not config_status_ok then
   return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 vim.cmd [[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]]
 vim.cmd [[ au WinLeave * setlocal nocursorline ]]
 
@@ -35,6 +33,7 @@ nvim_tree.setup {
 		adaptive_size = false,
     width = 30,
     height = 30,
+		centralize_selection = false,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -57,7 +56,7 @@ nvim_tree.setup {
     group_empty = false,
     highlight_git = false,
 		full_name = false,
-    highlight_opened_files = "none",
+    highlight_opened_files = "name",
     root_folder_modifier = ":t",
     indent_markers = {
       enable = true,
