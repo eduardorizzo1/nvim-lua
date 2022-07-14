@@ -24,11 +24,11 @@ bufferline.setup{
    	diagnostic = 'nvim_lsp',
 	 	right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
-   	 
+  
 	 	diagnostics_indicator = function(count, level, diagnostics_dict)
    	  return "("..count..")"
    	end,
-   	 
+   	
 	 	offsets = {
    	  { 
 	 			filetype = "NvimTree", 
@@ -36,7 +36,7 @@ bufferline.setup{
 	 	 		padding = 1
    	   }
    	 },
-   	 
+
 	 	custom_filter = function(buf_number)
    	    -- Func to filter out our managed/persistent split terms
    	    local present_type, type = pcall(function()

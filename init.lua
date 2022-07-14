@@ -1,28 +1,29 @@
-require 'user.options'
-require 'user.keymaps'
-require 'user.themes.tokyonight'
-require 'utils'
+require("user.options")
+require("user.keymaps")
+require("user.themes.tokyonight")
+require("user.themes.custom")
+require("utils")
 
-require 'plugins'
-require 'plugins.impatient'
-require 'plugins.dashboard'
-require 'plugins.bufferline'
-require 'plugins.lualine'
-require 'plugins.nvimtree'
-require 'plugins.neoscroll'
-require 'plugins.treesitter'
-require 'plugins.lsp'
-require 'plugins.cmp'
-require 'plugins.comment'
-require 'plugins.colorizer'
-require 'plugins.illuminate'
-require 'plugins.indent-blankline'
-require 'plugins.autopairs'
-require 'plugins.multiple-cursors'
-require 'plugins.zen-mode'
-require 'plugins.toggleterm'
-require 'plugins.telescope'
-require 'plugins.blamer'
-require 'plugins.hop'
-require 'plugins.code-runner'
-require 'plugins.whichkey'
+require("plugins")
+require("plugins.impatient")
+require("plugins.dashboard")
+require("plugins.bufferline")
+require("plugins.lualine")
+require("plugins.nvimtree")
+require("plugins.neoscroll")
+require("plugins.treesitter")
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.comment")
+require("plugins.colorizer")
+require("plugins.illuminate")
+require("plugins.indent-blankline")
+require("plugins.autopairs")
+require("plugins.multiple-cursors")
+require("plugins.zen-mode")
+require("plugins.toggleterm")
+require("plugins.telescope")
+require("plugins.blamer")
+require("plugins.hop")
+require("plugins.code-runner")
+require("plugins.whichkey")

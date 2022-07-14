@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
   -- Themes
 	use 'overcache/NeoSolarized'
+	use 'ishan9299/nvim-solarized-lua'
 	-- use ({"dracula/vim", as = "dracula"})
   use 'Mofiqul/dracula.nvim'
 	use 'Mofiqul/vscode.nvim'
@@ -154,7 +155,7 @@ return packer.startup(function(use)
 	-- Whichkey
 	use 'folke/which-key.nvim'
 
-	if PACKER_BOOTSTRAP then 
+	if PACKER_BOOTSTRAP then
 		require('packer').sync()
 	end
 end)
