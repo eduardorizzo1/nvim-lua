@@ -29,7 +29,7 @@ nvim_tree.setup({
 		centralize_selection = false,
 		hide_root_folder = false,
 		side = "left",
-		preserve_window_proportions = false,
+		preserve_window_proportions = true,
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
