@@ -279,6 +279,11 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
+  ["nvim-solarized-lua"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
+    url = "https://github.com/ishan9299/nvim-solarized-lua"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
