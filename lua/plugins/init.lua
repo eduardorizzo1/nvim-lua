@@ -90,6 +90,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("folke/lsp-colors.nvim")
 
 	-- CMP
 	use("hrsh7th/nvim-cmp")
@@ -153,6 +154,9 @@ return packer.startup(function(use)
 
 	-- Whichkey
 	use("folke/which-key.nvim")
+
+	-- Surround
+	use({ "echasnovski/mini.nvim", branch = "stable" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
