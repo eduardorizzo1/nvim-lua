@@ -16,6 +16,7 @@ end
 
 M.on_attach = function(client, bufnr)
 	client.resolved_capabilities.document_formatting = false
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	if client.name == "tsserver" then
 		local ts_utils = require("nvim-lsp-ts-utils")
