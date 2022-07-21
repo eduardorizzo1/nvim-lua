@@ -119,3 +119,6 @@ map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
 
 -- Code Runner
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
+
+-- Trouble
+map("n", "<leader>e", ":TroubleToggle<CR>", opts)

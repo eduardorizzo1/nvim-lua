@@ -123,7 +123,6 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use({ "mg979/vim-visual-multi", branch = "master" })
 	use("b0o/schemastore.nvim")
-	use("rcarriga/nvim-notify")
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Telescope

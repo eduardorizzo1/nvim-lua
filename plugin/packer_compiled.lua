@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -213,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
+  },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
   },
   ["neoscroll.nvim"] = {
     loaded = true,
@@ -273,11 +283,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-solarized-lua"] = {
     loaded = true,
