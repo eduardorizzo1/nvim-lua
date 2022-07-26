@@ -1,35 +1,62 @@
-vim.g.dashboard_preview_file_height = 12
-vim.g.dashboard_preview_file_width = 100
-vim.g.dahsboard_preview_command = "cat"
-vim.g.dashboard_preview_pipeline = 'lolcat --spread=2.5 -t --seed=156'
+local db = require("dashboard")
 
-vim.g.dashboard_custom_section = {
-    a = {description = {'  Find File          '}, command = 'Telescope find_files find_command=rg,--files,--hidden,--ignore-file,~/.rgignore'},
-    b = {description = {'  Recently Used Files'}, command = 'Telescope oldfiles'},
-    c = {description = {'  Load Last Session  '}, command = 'SessionLoad'},
-    d = {description = {'  Find Word          '}, command = 'Telescope live_grep'},
-    e = {description = {'  Settings           '}, command = ':e ~/.config/nvim/nv-settings.lua'}
+db.custom_center = {
+	{
+		icon = "  ",
+		desc = "Recently latest session                  ",
+		shortcut = "SPC s l",
+		action = "SessionLoad",
+	},
+	{
+		icon = "  ",
+		desc = "Recently opened files                   ",
+		action = "DashboardFindHistory",
+		shortcut = "SPC f h",
+	},
+	{
+		icon = "  ",
+		desc = "Find  File                              ",
+		action = "Telescope find_files find_command=rg,--hidden,--files",
+		shortcut = "SPC f f",
+	},
+	{
+		icon = "  ",
+		desc = "File Browser                            ",
+		action = "Telescope file_browser",
+		shortcut = "SPC f b",
+	},
+	{
+		icon = "  ",
+		desc = "Find  word                              ",
+		action = "Telescope live_grep",
+		shortcut = "SPC f w",
+	},
+	{
+		icon = "  ",
+		desc = "Open Personal dotfiles                  ",
+		-- action = "Telescope dotfiles path=" .. home .. "/.dotfiles",
+		shortcut = "SPC f d",
+	},
 }
 
-vim.g.dashboard_custom_header = {
-                 "=================     ===============     ===============   ========  ========",
-                 "\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-                 "||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-                 "|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-                 "||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-                 "|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-                 "||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-                 "|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-                 "||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-                 "||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-                 "||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-                 "||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-                 "||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-                 "||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-                 "||   .=='    _-'          `-__\\._-'         `-_./__-'         `' |. /|  |   ||",
-                 "||.=='    _-'                                                     `' |  /==.||",
-                 "=='    _-'                        N E O V I M                         \\/   `==",
-                 "\\   _-'                                                                `-_   /",
-                 " `''                                                                      ``'  ", 
+db.custom_header = {
+	"=================     ===============     ===============   ========  ========",
+	"\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
+	"||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
+	"|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
+	"||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
+	"|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
+	"||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
+	"|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
+	"||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
+	"||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
+	"||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
+	"||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
+	"||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
+	"||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
+	"||   .=='    _-'          `-__\\._-'         `-_./__-'         `' |. /|  |   ||",
+	"||.=='    _-'                                                     `' |  /==.||",
+	"=='    _-'                        N E O V I M                         \\/   `==",
+	"\\   _-'                                                                `-_   /",
+	" `''                                                                      ``'  ",
 }
-
