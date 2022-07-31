@@ -1,7 +1,7 @@
 local lualine = require("lualine")
 
 local colors = {
-	bg = "#24283b",
+	bg = "#1f2335",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#333952",
 	fg = "#bbc2cf",
@@ -122,29 +122,6 @@ ins_left({
 })
 
 ins_left({
-	"branch",
-	icon = "",
-	color = { fg = colors.violet, gui = "bold", bg = colors.rounded_fg },
-})
-
-ins_left({
-	function()
-		return ""
-	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { left = 0, right = 1 },
-})
-
-----------------
-ins_left({
-	function()
-		return ""
-	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { left = 0, right = 0 },
-})
-
-ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold", bg = colors.rounded_fg },
@@ -155,10 +132,50 @@ ins_left({
 		return ""
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { right = 0 },
+	padding = { right = 1 },
+})
+
+----------------
+ins_left({
+	function()
+		return ""
+	end,
+	cond = conditions.check_git_workspace,
+	color = { fg = colors.rounded_fg, bg = colors.bg },
+	padding = { left = 0, right = 0 },
 })
 
 ins_left({
+	"branch",
+	icon = "",
+	cond = conditions.check_git_workspace,
+	color = { fg = colors.green, gui = "bold", bg = colors.rounded_fg },
+})
+
+ins_left({
+	function()
+		return ""
+	end,
+	cond = conditions.check_git_workspace,
+	color = { fg = colors.rounded_fg, bg = colors.bg },
+	padding = { left = 0, right = 1 },
+})
+
+-- ins_right({
+-- 	"diff",
+-- 	-- Is it me or the symbol for modified us really weird
+-- 	symbols = { added = " ", modified = "柳 ", removed = " " },
+-- 	diff_color = {
+-- 		added = { fg = colors.green },
+-- 		modified = { fg = colors.orange },
+-- 		removed = { fg = colors.red },
+-- 	},
+-- 	cond = conditions.hide_in_width,
+-- })
+
+---------------------------RIGHT----------------------------------
+
+ins_right({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	symbols = { error = " ", warn = " ", info = " " },
@@ -170,8 +187,7 @@ ins_left({
 	color = { fg = colors.bg },
 })
 
----------------------------RIGHT----------------------------------
-ins_right({ "location", color = { fg = colors.violet, gui = "bold" } })
+ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
 
 ins_right({
 	function()
@@ -198,7 +214,7 @@ ins_right({
 		return msg
 	end,
 	-- icon = " LSP:",
-	color = { fg = colors.violet, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.yellow, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_right({
