@@ -1,9 +1,9 @@
 local lualine = require("lualine")
 
 local colors = {
-	bg = "#1f2335",
+	bg = "#24283b",
 	rounded_bg = "#1f2335",
-	rounded_fg = "#292e42",
+	rounded_fg = "#333952",
 	fg = "#bbc2cf",
 	yellow = "#ECBE7B",
 	cyan = "#008080",
@@ -70,7 +70,7 @@ ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 ins_left({
@@ -102,21 +102,22 @@ ins_left({
 		}
 		return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
 	end,
-	padding = { right = 1 },
+	padding = { right = 1, left = 0 },
 })
 ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 1 },
 })
 
+----------------
 ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 
@@ -130,49 +131,57 @@ ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 1 },
 })
 
+----------------
 ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_bg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 
 ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.magenta, gui = "bold", bg = colors.rounded_bg },
+	color = { fg = colors.magenta, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_left({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_bg, bg = colors.bg },
-	padding = { left = 0, right = 1 },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
+	padding = { right = 0 },
 })
 
 ins_left({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		color_error = { fg = colors.red },
+		color_warn = { fg = colors.yellow },
+		color_info = { fg = colors.cyan },
+	},
+	color = { fg = colors.bg },
+})
+
+---------------------------RIGHT----------------------------------
+ins_right({ "location", color = { fg = colors.violet, gui = "bold" } })
+
+ins_right({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_bg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 
-ins_left({
-	function()
-		return ""
-	end,
-	color = { fg = colors.rounded_bg, bg = colors.bg },
-	padding = { left = 0, right = 0 },
-})
-
-ins_left({
+ins_right({
 	function()
 		local msg = "No Active Lsp"
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
@@ -188,30 +197,23 @@ ins_left({
 		end
 		return msg
 	end,
-	icon = " LSP:",
-	color = { fg = colors.violet, gui = "bold", bg = colors.rounded_bg },
+	-- icon = " LSP:",
+	color = { fg = colors.violet, gui = "bold", bg = colors.rounded_fg },
 })
----------------------------RIGHT----------------------------------
 
 ins_right({
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
-	diagnostics_color = {
-		color_error = { fg = colors.red },
-		color_warn = { fg = colors.yellow },
-		color_info = { fg = colors.cyan },
-	},
-	color = { fg = colors.bg },
+	function()
+		return ""
+	end,
+	color = { fg = colors.rounded_fg, bg = colors.bg },
+	padding = { right = 1 },
 })
-
-ins_right({ "location", color = { fg = colors.violet, gui = "bold" } })
 
 ins_right({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 
@@ -225,7 +227,7 @@ ins_right({
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.rounded_bg },
+	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
 
