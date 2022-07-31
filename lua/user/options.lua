@@ -1,5 +1,7 @@
 local cmd = vim.cmd
 
+vim.api.nvim_exec("language en_US.UTF-8", true)
+
 local options = {
 	number = true,
 	relativenumber = false,
