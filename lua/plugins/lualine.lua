@@ -4,16 +4,41 @@ local colors = {
 	bg = "#1f2335",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#333952",
-	fg = "#bbc2cf",
-	yellow = "#ECBE7B",
-	cyan = "#008080",
+	fg = "#f8f8f2",
+	yellow = "#f1fa8c",
+	cyan = "#8be9fd",
 	darkblue = "#081633",
-	green = "#98be65",
-	orange = "#FF8800",
+	green = "#50fa7b",
+	orange = "#ffb86c",
 	violet = "#a9a1e1",
 	magenta = "#c678dd",
+	pink = "#ff79c6",
+	purple = "#bd93f9",
 	blue = "#51afef",
 	red = "#ec5f67",
+}
+
+local mode_color = {
+	n = colors.purple,
+	i = colors.green,
+	v = colors.pink,
+	[""] = colors.pink,
+	V = colors.pink,
+	c = colors.magenta,
+	no = colors.red,
+	s = colors.orange,
+	S = colors.orange,
+	[""] = colors.orange,
+	ic = colors.yellow,
+	R = colors.red,
+	Rv = colors.red,
+	cv = colors.red,
+	ce = colors.red,
+	r = colors.cyan,
+	rm = colors.cyan,
+	["r?"] = colors.cyan,
+	["!"] = colors.red,
+	t = colors.red,
 }
 
 local conditions = {
@@ -78,28 +103,6 @@ ins_left({
 		return ""
 	end,
 	color = function()
-		local mode_color = {
-			n = colors.blue,
-			i = colors.green,
-			v = colors.violet,
-			[""] = colors.violet,
-			V = colors.violet,
-			c = colors.magenta,
-			no = colors.red,
-			s = colors.orange,
-			S = colors.orange,
-			[""] = colors.orange,
-			ic = colors.yellow,
-			R = colors.red,
-			Rv = colors.red,
-			cv = colors.red,
-			ce = colors.red,
-			r = colors.cyan,
-			rm = colors.cyan,
-			["r?"] = colors.cyan,
-			["!"] = colors.red,
-			t = colors.red,
-		}
 		return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
 	end,
 	padding = { right = 1, left = 0 },
@@ -124,7 +127,7 @@ ins_left({
 ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.magenta, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.green, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_left({
@@ -149,7 +152,7 @@ ins_left({
 	"branch",
 	icon = "",
 	cond = conditions.check_git_workspace,
-	color = { fg = colors.green, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.cyan, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_left({
@@ -158,7 +161,7 @@ ins_left({
 	end,
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { left = 0, right = 1 },
+	padding = { right = 1 },
 })
 
 -- ins_right({
@@ -214,7 +217,7 @@ ins_right({
 		return msg
 	end,
 	-- icon = " LSP:",
-	color = { fg = colors.yellow, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.purple, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_right({
@@ -236,7 +239,7 @@ ins_right({
 ins_right({
 	"filetype",
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.violet, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.pink, gui = "bold", bg = colors.rounded_fg },
 })
 
 ins_right({
