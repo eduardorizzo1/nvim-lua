@@ -157,6 +157,14 @@ return packer.startup(function(use)
 	-- Surround
 	use({ "echasnovski/mini.nvim", branch = "stable" })
 
+	-- Markdown
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
