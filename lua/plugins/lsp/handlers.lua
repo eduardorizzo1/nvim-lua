@@ -17,12 +17,7 @@ end
 M.on_attach = function(client, bufnr)
 	client.resolved_capabilities.document_formatting = false
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-	if client.name == "tsserver" then
-		local ts_utils = require("nvim-lsp-ts-utils")
-		ts_utils.setup({})
-		ts_utils.setup_client(client)
-	end
+	illuminate.on_attach(client)
 
 	if client.name == "null-ls" then
 		client.resolved_capabilities.document_formatting = true
@@ -31,49 +26,14 @@ M.on_attach = function(client, bufnr)
 		end
 	end
 
-	illuminate.on_attach(client)
+	if client.name == "tsserver" then
+		local ts_utils = require("nvim-lsp-ts-utils")
+		require("plugins.lsp.ts-utils")
+		ts_utils.setup_client(client)
+		local opts = { silent = true }
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
+	end
 end
 
 return M
-
--- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
--- local lsp_formatting = function(client, bufnr)
---     vim.lsp.buf.format({
---         filter = function(client)
---             return client.name == "null-ls"
---         end,
---         bufnr = bufnr,
---     })
--- end
-
--- function M.enable_format_on_save()
---   vim.cmd [[
---     augroup format_on_save
---       autocmd!
---       autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
---     augroup end
---   ]]
---   vim.notify "Enabled format on save"
--- end
---
--- function M.disable_format_on_save()
---   M.remove_augroup "format_on_save"
---   vim.notify "Disabled format on save"
--- end
---
--- function M.toggle_format_on_save()
---   if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
---     M.enable_format_on_save()
---   else
---     M.disable_format_on_save()
---   end
--- end
---
--- function M.remove_augroup(name)
---   if vim.fn.exists("#" .. name) == 1 then
---     vim.cmd("au! " .. name)
---   end
--- end
---
--- vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("plugins.lsp.handlers").toggle_format_on_save()' ]]
