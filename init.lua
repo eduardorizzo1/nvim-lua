@@ -1,6 +1,3 @@
-if vim.fn.exists("g:vscode") == 1 then
-	require("user.vscode")
-else
 	require("user.options")
 	require("user.keymaps")
 	require("user.themes.tokyonight")
@@ -32,4 +29,3 @@ else
 	require("plugins.trouble")
 	require("plugins.mini-surround")
 	-- require("plugins.whichkey")
-end
