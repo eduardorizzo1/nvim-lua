@@ -127,7 +127,7 @@ ins_left({
 ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.green, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.green, bg = colors.rounded_fg },
 })
 
 ins_left({
@@ -152,7 +152,7 @@ ins_left({
 	"branch",
 	icon = "",
 	cond = conditions.check_git_workspace,
-	color = { fg = colors.cyan, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.cyan, bg = colors.rounded_fg },
 })
 
 ins_left({
@@ -190,7 +190,7 @@ ins_right({
 	color = { fg = colors.bg },
 })
 
-ins_right({ "location", color = { fg = colors.fg, gui = "bold" } })
+ins_right({ "location", color = { fg = colors.fg } })
 
 ins_right({
 	function()
@@ -217,7 +217,7 @@ ins_right({
 		return msg
 	end,
 	-- icon = " LSP:",
-	color = { fg = colors.purple, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.purple, bg = colors.rounded_fg },
 })
 
 ins_right({
@@ -239,7 +239,7 @@ ins_right({
 ins_right({
 	"filetype",
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.pink, gui = "bold", bg = colors.rounded_fg },
+	color = { fg = colors.pink, bg = colors.rounded_fg },
 })
 
 ins_right({
