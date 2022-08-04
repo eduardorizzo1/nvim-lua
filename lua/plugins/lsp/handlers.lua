@@ -31,7 +31,7 @@ M.on_attach = function(client, bufnr)
 		require("plugins.lsp.ts-utils")
 		ts_utils.setup_client(client)
 		local opts = { silent = true }
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "go", ":TSLspOrganize<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
 	end
 end

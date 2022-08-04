@@ -99,6 +99,7 @@ map("n", "gn", "<cmd>Lspsaga rename<CR>", opts)
 map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
+map("n", ";e", "<cmd>lua toggle_diagnostics()<CR>", opts)
 
 -- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
 map("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
