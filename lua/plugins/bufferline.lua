@@ -5,9 +5,6 @@ end
 
 bufferline.setup({
 	options = {
-		indicator_icon = "",
-		-- indicator_icon = "",
-		-- indicator_icon = "",
 		numbers = "none",
 		view = "multiwindow",
 		separator_style = { "", "" },
@@ -27,6 +24,10 @@ bufferline.setup({
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
+		indicator = {
+			icon = "",
+			style = "icon",
+		},
 
 		diagnostics_indicator = function(count, level, diagnostics_dict)
 			return "(" .. count .. ")"
