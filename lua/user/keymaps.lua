@@ -24,7 +24,7 @@ map("n", "<leader>h", ":vertical resize +5<CR>", opts)
 -- ctrl+s to save
 map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>", opts)
-map("v", "<C-s>", "<Esc>:w<CR>", opts)
+map("v", "<C-s>", "<Esc>:w<CR>i", opts)
 
 -- save all files
 map("n", ";s", ":wa<CR>", opts)

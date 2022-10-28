@@ -165,6 +165,15 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Winbar
+	use({ "fgheng/winbar.nvim" })
+
+	-- Navic
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
