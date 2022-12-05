@@ -1,10 +1,10 @@
+require("plugins")
 require("user.options")
 require("user.keymaps")
 require("user.themes.tokyonight")
 -- require("user.themes.custom")
 -- require("utils")
 
-require("plugins")
 require("plugins.impatient")
 require("plugins.nvimtree")
 require("plugins.treesitter")

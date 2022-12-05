@@ -100,7 +100,8 @@ ins_left({
 })
 ins_left({
 	function()
-		return ""
+		return " "
+		-- return ""
 	end,
 	color = function()
 		return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
