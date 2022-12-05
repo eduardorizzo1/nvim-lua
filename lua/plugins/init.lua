@@ -130,7 +130,6 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim")
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
-	use("nvim-lua/popup.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 
 	-- Trouble

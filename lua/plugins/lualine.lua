@@ -100,7 +100,7 @@ ins_left({
 })
 ins_left({
 	function()
-		return " "
+		return ""
 		-- return ""
 	end,
 	color = function()
