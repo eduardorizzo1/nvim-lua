@@ -42,8 +42,8 @@ return packer.startup(function(use)
 	-- Themes
 	use("overcache/NeoSolarized")
 	use("ishan9299/nvim-solarized-lua")
-	-- use ({"dracula/vim", as = "dracula"})
-	use("Mofiqul/dracula.nvim")
+	use ({"dracula/vim", as = "dracula"})
+	-- use("Mofiqul/dracula.nvim")
 	use("Mofiqul/vscode.nvim")
 	use("navarasu/onedark.nvim")
 	use("olimorris/onedarkpro.nvim")
@@ -172,6 +172,9 @@ return packer.startup(function(use)
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
+
+	-- Debugger (DAP)
+	use({'mfussenegger/nvim-dap'})
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

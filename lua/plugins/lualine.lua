@@ -1,7 +1,7 @@
 local lualine = require("lualine")
 
 local colors = {
-	bg = "#1f2335",
+	bg = "none",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#333952",
 	fg = "#f8f8f2",
@@ -98,6 +98,7 @@ ins_left({
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
 })
+
 ins_left({
 	function()
 		return ""
@@ -108,6 +109,7 @@ ins_left({
 	end,
 	padding = { right = 1, left = 0 },
 })
+
 ins_left({
 	function()
 		return ""

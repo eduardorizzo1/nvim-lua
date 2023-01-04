@@ -1,13 +1,13 @@
 require("catppuccin").setup({
 	-- transparent_background = true,
 	term_colors = false,
-	styles = {
-		-- comments = "italic",
-		functions = "NONE",
-		-- keywords = "italic",
-		strings = "NONE",
-		-- variables = "italic",
-	},
+	-- styles = {
+	-- 	-- comments = "italic",
+	-- 	functions = "NONE",
+	-- 	-- keywords = "italic",
+	-- 	strings = "NONE",
+	-- 	-- variables = "italic",
+	-- },
 	integrations = {
 		treesitter = true,
 		native_lsp = {

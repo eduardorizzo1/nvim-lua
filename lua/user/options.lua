@@ -29,7 +29,7 @@ local options = {
 	timeoutlen = 400,
 	updatetime = 300,
 	completeopt = { "menuone", "noselect" },
-	foldmethod = "expr",
+	foldmethod = "indent",
 	foldlevel = 20,
 	foldexpr = "nvim_treesitter#foldexpr()",
 }

@@ -1,25 +1,34 @@
 local cmd = vim.cmd
 local g = vim.g
 
-g.tokyonight_transparent=true
-g.tokyonight_transparent_sidebar=true
+g.tokyonight_transparent = true
+g.tokyonight_transparent_sidebar = true
+
+g.dracula_transparent_bg = true
+
 -- cmd[[ hi CursorLine guibg=NONE ]]
-cmd[[ hi CursorLineNR cterm=bold guifg=#ffffff gui=bold ]]
-cmd[[ hi SignColumn guibg=NONE ]]
-cmd[[ hi Normal guibg=NONE ]]
-cmd[[ hi NormalNC guibg=NONE ]]
-cmd[[ hi EndOfBuffer guibg=NONE  ]]
+-- cmd[[ hi CursorLineNR cterm=bold guifg=#ffffff gui=bold ]]
+cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
+cmd([[ hi SignColumn guibg=NONE ]])
+cmd([[ hi Normal guibg=NONE ]])
+cmd([[ hi NormalNC guibg=NONE ]])
+cmd([[ hi EndOfBuffer ctermfg=NONE guifg=NONE guibg=NONE ctermbg=NONE ]])
+cmd([[ hi NonText guifg=NONE guibg=NONE ctermbg=NONE ctermfg=NONE ]])
 
 -- Nvimtree
-cmd[[ hi NvimTreeNormal guibg=NONE ]]
-cmd[[ hi NvimTreeNormalNC guibg=NONE ]]
-cmd[[ hi NvimTreeVertSplit guibg=NONE ]]
-cmd[[ hi NvimTreeEndOfBuffer guifg=NONE ]]
+cmd([[ hi NvimTreeNormal guibg=NONE ]])
+cmd([[ hi NvimTreeNormalNC guibg=NONE ]])
+cmd([[ hi NvimTreeVertSplit guibg=NONE ]])
+cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 
-if (g.neosolarized) then
-	cmd[[ hi CursorLine guibg=#073642]]
+if g.dracula_transparent_bg then
+	cmd([[ hi CursorLine guibg=#282a36]])
 end
 
-if (g.tokyonight) then
-	cmd[[ hi LineNr cterm=bold guibg=#24283b ]]
+if g.neosolarized then
+	cmd([[ hi CursorLine guibg=#073642]])
+end
+
+if g.tokyonight then
+	cmd([[ hi LineNr cterm=bold guibg=#24283b ]])
 end

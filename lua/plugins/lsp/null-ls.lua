@@ -11,6 +11,7 @@ null_ls.setup({
 		code_actions.eslint,
 		formatting.prettierd,
 		formatting.stylua,
+		formatting.jq,
 	},
 	on_attach = require("plugins.lsp.handlers").on_attach,
 })

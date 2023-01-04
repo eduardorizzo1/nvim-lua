@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 local g = vim.g
-local cmd = vim.cmd
 
+vim.opt.termguicolors = true
 g.indent_blankline_char = "▏"
 g.indentLine_enabled = 1
 g.indent_blankline_enabled = true
@@ -16,8 +16,9 @@ g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 
 indent_blankline.setup({
 	buftype_exclude = { "terminal" },
-	filetype_exclude = { "dashboard", "NvimTree", "packer", "help" },
+	filetype_exclude = { "dashboard", "nvimtree", "packer", "help", "html" },
 	show_current_context = true,
+	show_current_context_start = false,
 	context_patterns = {
 		"class",
 		"return",
@@ -39,5 +40,13 @@ indent_blankline.setup({
 		"catch_clause",
 		"import_statement",
 		"operation_type",
+	},
+	char_highlight_list = {
+		"IndentBlanklineIndent1",
+		-- "IndentBlanklineIndent2",
+		-- "IndentBlanklineIndent3",
+		-- "IndentBlanklineIndent4",
+		-- "IndentBlanklineIndent5",
+		-- "IndentBlanklineIndent6",
 	},
 })

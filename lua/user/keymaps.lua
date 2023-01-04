@@ -64,19 +64,24 @@ map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 map("n", "<C-M-l>", ":NvimTreeResize +5<CR>", opts)
 map("n", "<C-M-h>", ":NvimTreeResize -5<CR>", opts)
 
+
 -- IndentLine
 map("n", ";i", ":IndentBlanklineToggle<CR>", opts)
+
 
 -- Twilight
 map("n", ";t", ":Twilight<CR>", opts)
 
+
 -- Zen-mode
 map("n", "<leader>z", ":ZenMode<CR>", opts)
+
 
 -- Bufferline
 map("n", "<M-l>", ":bn<CR>", opts)
 map("n", "<M-h>", ":bp<CR>", opts)
 map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
+
 
 -- Telescope
 map("n", "<c-p>", '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
@@ -86,6 +91,7 @@ map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>', op
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
 map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
 map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
+
 
 -- LspSaga Mappings
 map("n", "gc", "<cmd>Lspsaga code_action<CR>", opts)
@@ -101,21 +107,25 @@ map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
 map("n", ";e", "<cmd>lua toggle_diagnostics()<CR>", opts)
 
+
 -- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
 map("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-map("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
+map("n", "<space>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 map("n", "gE", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 
+
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
 
+
 -- Git Blame
 map("n", "<leader>gb", ":GitBlameToggle <CR>", opts)
+
 
 -- Hop
 map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
@@ -123,8 +133,18 @@ map("n", "<leader><leader>b", ":HopWordBC<CR>", opts)
 map("n", "<leader><leader>j", ":HopLineAC<CR>", opts)
 map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
 
+
 -- Code Runner
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
 
+
 -- Trouble
 map("n", "<leader>e", ":TroubleToggle<CR>", opts)
+
+
+-- Debugger (Nvim-Dap)
+map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
+map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
+map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
