@@ -6,6 +6,7 @@ end
 local g = vim.g
 
 vim.opt.termguicolors = true
+-- g:indent_blankline_char_list_blankline = ['|', '¦', '┆', '┊']
 g.indent_blankline_char = "▏"
 g.indentLine_enabled = 1
 g.indent_blankline_enabled = true

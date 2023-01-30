@@ -42,7 +42,7 @@ return packer.startup(function(use)
 	-- Themes
 	use("overcache/NeoSolarized")
 	use("ishan9299/nvim-solarized-lua")
-	use ({"dracula/vim", as = "dracula"})
+	use({ "dracula/vim", as = "dracula" })
 	-- use("Mofiqul/dracula.nvim")
 	use("Mofiqul/vscode.nvim")
 	use("navarasu/onedark.nvim")
@@ -174,7 +174,10 @@ return packer.startup(function(use)
 	})
 
 	-- Debugger (DAP)
-	use({'mfussenegger/nvim-dap'})
+	use({ "mfussenegger/nvim-dap" })
+
+	-- Hologram.nvim
+	use({ "edluffy/hologram.nvim" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
