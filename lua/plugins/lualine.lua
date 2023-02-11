@@ -61,6 +61,7 @@ local conditions = {
 
 local config = {
 	options = {
+		disabled_filetypes = { "NvimTree", "packer" },
 		component_separators = "",
 		section_separators = "",
 		theme = {

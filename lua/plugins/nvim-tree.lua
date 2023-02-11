@@ -12,7 +12,9 @@ local function open_nvim_tree(data)
 
 	vim.cmd.cd(data.file)
 
-	require("nvim-tree.api").tree.open()
+	if not dashboard then
+		require("nvim-tree.api").tree.open()
+	end
 end
 
 vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
