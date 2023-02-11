@@ -3,8 +3,21 @@ if not status_ok then
 	return
 end
 
+local function open_nvim_tree(data)
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not directory then
+		return
+	end
+
+	vim.cmd.cd(data.file)
+
+	require("nvim-tree.api").tree.open()
+end
+
 vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
 vim.cmd([[ au WinLeave * setlocal nocursorline ]])
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvim_tree.setup({
 	auto_reload_on_write = true,
@@ -12,9 +25,6 @@ nvim_tree.setup({
 	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
-	ignore_buffer_on_setup = false,
-	open_on_setup = false,
-	open_on_setup_file = false,
 	open_on_tab = false,
 	sort_by = "name",
 	disable_netrw = true,
@@ -112,8 +122,6 @@ nvim_tree.setup({
 		update_cwd = true,
 		ignore_list = {},
 	},
-
-	ignore_ft_on_setup = { "dashboard" },
 
 	system_open = {
 		cmd = "",

@@ -3,11 +3,6 @@ if not cmp_status_ok then
 	return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-	return
-end
-
 local luasnip = require("luasnip")
 luasnip.filetype_extend("javascript", { "html" })
 luasnip.filetype_extend("javascriptreact", { "html" })
@@ -36,9 +31,9 @@ local icons = {
 	Enum = " ",
 	EnumMember = " ",
 	Keyword = " ",
-	Snippet = "",
+	Snippet = " ",
 	Color = " ",
-	File = " ",
+	File = " ",
 	Reference = " ",
 	Folder = " ",
 	Constant = " ",
@@ -51,15 +46,6 @@ local icons = {
 	String = " ",
 	Boolean = " ",
 	Object = " ",
-	-- Function = " ",
-	-- Class = "ﴯ",
-	-- Keyword = " ",
-	-- Snippet = " ",
-	-- TypeParameter = " ",
-	-- Array = " ",
-	-- String = " ",
-	-- Boolean = "蘒",
-	-- Event = " ",
 }
 
 local custom_icons = {
@@ -68,12 +54,6 @@ local custom_icons = {
 	buffer = "◉ ",
 	path = "🚧",
 	emoji = "😀",
-	-- nvim_lsp = " ",
-	-- path = "",
-	-- file = "",
-	-- luasnip = " ",
-	-- cmp_tabnine = "⭐",
-	-- buffer = " ",
 }
 
 cmp.setup({
