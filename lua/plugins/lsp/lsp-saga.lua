@@ -11,7 +11,7 @@ lspsaga.setup({
 	-- infor_sign = " ",
 	-- error_sign = "",
 	-- warn_sign = "",
-	diagnostic_header_icon = "  ",
+	diagnostic_header_icon = " ",
 	code_action_icon = " ",
 	code_action_prompt = {
 		enable = true,
@@ -19,8 +19,8 @@ lspsaga.setup({
 		sign_priority = 40,
 		virtual_text = true,
 	},
-	finder_definition_icon = "  ",
-	finder_reference_icon = "  ",
+	finder_definition_icon = " ",
+	finder_reference_icon = " ",
 	max_preview_lines = 10,
 	finder_action_keys = {
 		open = "o",
@@ -38,7 +38,7 @@ lspsaga.setup({
 		quit = "<C-c>",
 		exec = "<CR>",
 	},
-	definition_preview_icon = "  ",
+	definition_preview_icon = " ",
 	border_style = "single",
 	rename_prompt_prefix = "➤",
 	server_filetype_map = {},

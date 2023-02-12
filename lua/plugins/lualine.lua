@@ -195,8 +195,8 @@ ins_right({
 	symbols = {
 		error = icons.error,
 		warn = icons.warn,
-		info = icons.info,
-		hint = icons.hint,
+		info = icons.hint,
+		hint = icons.info,
 	},
 	diagnostics_color = {
 		color_error = { fg = colors.red },

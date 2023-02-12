@@ -1,4 +1,5 @@
 return {
+	-- arrows
 	left_arrow = "",
 	right_arrow = "",
 	left_arrow_bold = "",
@@ -10,19 +11,45 @@ return {
 	chevron_right = ">",
 	arrow_closed = "",
 	arrow_open = "",
-	separator_bold = "▊",
+
+	-- geometrics
 	right_half_ball = "",
 	left_half_ball = "",
 	ball = " ",
-	evilline = " ",
-	github_copilot = " ",
+	circle = " ",
+	circlebox = "󱔀 ",
+	circlebox_outline = "󱗜 ",
+	circle_double = "󰺕 ",
+	circle_dot = " ",
+	circle_slash = " ",
+	mod = " ",
+	dots_circle = "󱥸",
+	hexagon = "󰫈",
+	star_circle = "󰦤",
+
+	-- icons
 	github = " ",
-	git = " ",
-	branch = " ",
+	github_copilot = " ",
+	evilline = " ",
 	icon_lualine = " ",
 	robot = "ﮧ ",
+	git = " ",
+
+	-- git
+	added = " ",
+	modified = "柳",
+	removed = " ",
+	branch = " ",
+
+	-- diagnostic
+	error = " ",
+	warn = " ",
+	info = " ",
+	hint = " ",
+
+	-- others
+	separator_bold = "▊",
 	lock = " ",
-	circle = " ",
 	close = "",
 	newFile = " ",
 	search = " ",
@@ -46,18 +73,28 @@ return {
 	pencil = " ",
 	table = " ",
 	calendar = " ",
-	cloudDownload = " ",
-	error = " ",
-	warn = " ",
-	info = " ",
-	hint = " ",
-	added = " ",
-	modified = "柳",
-	removed = " ",
+	cloud_download = " ",
+	eslint = "󰱺 ",
+	diamond = " ",
+	hexagon_bold = " ",
+	hexagon_outline = "󰋙",
+	biohazard = " ",
+	chemical_weapon = "󰄻",
+	snowflake = "󰜗 ",
+	hexagon_breakpoint = " ",
+	globe = " ",
 }
 
 -- ================== More Icons ==================
-
+-- hexagon = "󰫈 ",
+-- dots_circle = "󱥸"
+-- circle_slash = " ",
+-- circle_dot = " "
+-- circlebox = "󱔀 ",
+-- circlebox_outline = "󱗜 ",
+-- circle_double = "󰺕 "
+-- diamond = " "
+-- eslint = "  󰱺",
 -- Github = " ",
 -- Github = " ",
 -- Github = " ",

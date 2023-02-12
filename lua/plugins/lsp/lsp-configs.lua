@@ -1,3 +1,4 @@
+local icons = require("user.icons")
 vim.o.completeopt = "menuone,noselect"
 
 vim.diagnostic.config({
@@ -5,7 +6,7 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	virtual_text = {
 		spacing = 4,
-		prefix = " ",
+		prefix = icons.fire,
 	},
 })
 

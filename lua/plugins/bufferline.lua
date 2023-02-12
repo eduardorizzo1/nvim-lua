@@ -14,7 +14,7 @@ bufferline.setup({
 		close_icon = " ",
 		left_trunc_marker = " ",
 		right_trunc_marker = " ",
-		max_name_length = 15,
+		max_name_length = 20,
 		max_prefix_length = 15,
 		tab_size = 16,
 		enforce_regular_tabs = false,
@@ -27,7 +27,7 @@ bufferline.setup({
 		separator_style = { icons.right_arrow, icons.right_arrow },
 		show_tab_indicators = false,
 		indicator = {
-			icon = "",
+			icon = " ",
 			style = "icon",
 		},
 		hover = {
