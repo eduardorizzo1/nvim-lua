@@ -34,6 +34,11 @@ return {
 	icon_lualine = " ",
 	robot = "ﮧ ",
 	git = " ",
+	vim = " ",
+	cat = "󰄛 ",
+	terminal = " ",
+	terminal_outline = " ",
+	terminal_bash = " ",
 
 	-- git
 	added = " ",
@@ -48,6 +53,7 @@ return {
 	hint = " ",
 
 	-- others
+	file = " ",
 	separator_bold = "▊",
 	lock = " ",
 	close = "",
@@ -86,6 +92,7 @@ return {
 }
 
 -- ================== More Icons ==================
+-- wordpress = "  ",
 -- hexagon = "󰫈 ",
 -- dots_circle = "󱥸"
 -- circle_slash = " ",

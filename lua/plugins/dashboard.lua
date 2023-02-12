@@ -1,4 +1,5 @@
 local ds = require("dashboard")
+local icons = require("user.icons")
 
 local custom_header = {
 	doom = {
@@ -64,9 +65,9 @@ local custom_header = {
 		"│⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠│",
 		"│⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙│",
 		"│⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣│",
-		-- "╰────────  N E OV I M ────────╯",
-		"╰──────────────────────────────╯",
-		"  N E O V I M ",
+		"╰────────  N E O V I M ────────╯",
+		-- "╰──────────────────────────────╯",
+		-- "  N E O V I M ",
 		"",
 	},
 	default = {
@@ -78,36 +79,97 @@ local custom_header = {
 		" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
 		"",
 	},
+	girl_neovim = {
+		"",
+		"",
+		" ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
+		" ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
+		" ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
+		" ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+		" ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+		" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+		"╭──────────────────────────────╮",
+		"│⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ │",
+		"│⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇│",
+		"│⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽│",
+		"│⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕│",
+		"│⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕│",
+		"│⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕│",
+		"│⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄│",
+		"│⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕│",
+		"│⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿│",
+		"│⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿│",
+		"│⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟│",
+		"│⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠│",
+		"│⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙│",
+		"│⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣│",
+		-- "╰────────  N E O V I M ────────╯",
+		"╰──────────────────────────────╯",
+		-- "  N E O V I M ",
+		"",
+	},
 }
 
 local config = {
-	week_header = {},
-	header = custom_header.doom,
+	week_header = {
+		enable = false,
+	},
+	header = custom_header.girl_neovim,
 	center = {
 		{
-			icon = "  ",
+			icon = icons.vim,
 			icon_hl = "Title",
-			desc = "Find File           ",
+			desc = "neovim            ",
+			desc_hl = "String",
+			key = "a",
+			key_hl = "Number",
+			action = "e ~/.config/nvim",
+		},
+		{
+			icon = icons.terminal,
+			icon_hl = "Title",
+			desc = "kitty           ",
 			desc_hl = "String",
 			key = "b",
-			keymap = "SPC f f",
 			key_hl = "Number",
-			action = "cd ~/.config/nvim",
+			action = "e ~/.config/kitty",
+		},
+		{
+			icon = icons.file,
+			icon_hl = "Title",
+			desc = "dotfiles       ",
+			desc_hl = "String",
+			key = "c",
+			key_hl = "Number",
+			action = "e ~/dotfiles",
+		},
+		{
+			icon = icons.file,
+			icon_hl = "Title",
+			desc = "zsh ",
+			desc_hl = "String",
+			key = "d",
+			key_hl = "Number",
+			action = "e ~/.zshrc",
+		},
+		{
+			icon = icons.file,
+			icon_hl = "Title",
+			desc = "p10k ",
+			desc_hl = "String",
+			key = "e",
+			key_hl = "Number",
+			action = "e ~/.p10k.zsh",
 		},
 	},
-	footer = {},
 }
 
 ds.setup({
 	theme = "doom",
 	-- theme = "doom",
-	hide = {},
-	preview = {},
 	config = config,
 })
 
--- local db = require("dashboard")
---
 -- db.custom_center = {
 -- 	{
 -- 		icon = "  ",
