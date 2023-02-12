@@ -1,22 +1,6 @@
 local lualine = require("lualine")
-
-local colors = {
-	bg = "none",
-	rounded_bg = "#1f2335",
-	rounded_fg = "#333952",
-	fg = "#f8f8f2",
-	yellow = "#f1fa8c",
-	cyan = "#8be9fd",
-	darkblue = "#081633",
-	green = "#50fa7b",
-	orange = "#ffb86c",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	pink = "#ff79c6",
-	purple = "#bd93f9",
-	blue = "#51afef",
-	red = "#ec5f67",
-}
+local icons = require("user.icons")
+local colors = require("user.themes.dracula").colors
 
 local mode_color = {
 	n = colors.purple,
@@ -96,9 +80,19 @@ local function ins_right(component)
 end
 
 --------------------------- LEFT ----------------------------------
+-- ins_left({
+-- 	function()
+-- 		return icons.right_arrow_bold
+-- 	end,
+-- 	color = function()
+-- 		return { fg = mode_color[vim.fn.mode()] }
+-- 	end,
+-- 	padding = { left = 0, right = 0 },
+-- })
+
 ins_left({
 	function()
-		return ""
+		return icons.left_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
@@ -106,9 +100,7 @@ ins_left({
 
 ins_left({
 	function()
-		return " "
-		-- return " "
-		-- return ""
+		return icons.github_copilot
 		-- return vim.fn.mode()
 	end,
 	color = function()
@@ -119,7 +111,7 @@ ins_left({
 
 ins_left({
 	function()
-		return ""
+		return icons.right_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 1 },
@@ -128,7 +120,7 @@ ins_left({
 ----------------
 ins_left({
 	function()
-		return ""
+		return icons.left_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
@@ -142,7 +134,7 @@ ins_left({
 
 ins_left({
 	function()
-		return ""
+		return icons.right_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { right = 1 },
@@ -151,7 +143,7 @@ ins_left({
 ----------------
 ins_left({
 	function()
-		return ""
+		return icons.left_half_ball
 	end,
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
@@ -160,24 +152,27 @@ ins_left({
 
 ins_left({
 	"branch",
-	icon = "",
+	icon = "",
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.cyan, bg = colors.rounded_fg },
 })
 
 ins_left({
 	function()
-		return ""
+		return icons.right_half_ball
 	end,
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { right = 1 },
+	padding = { right = 0 },
 })
 
-ins_right({
+ins_left({
 	"diff",
-	-- Is it me or the symbol for modified us really weird
-	symbols = { added = " ", modified = "柳", removed = " " },
+	symbols = {
+		added = icons.added,
+		modified = icons.modified,
+		removed = icons.removed,
+	},
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.orange },
@@ -186,25 +181,52 @@ ins_right({
 	cond = conditions.hide_in_width,
 })
 
----------------------------RIGHT----------------------------------
+-- Others --
+-- ins_left({
+-- 	function()
+-- 		return "%="
+-- 	end,
+-- })
 
+---------------------------RIGHT----------------------------------
 ins_right({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
+	symbols = {
+		error = icons.error,
+		warn = icons.warn,
+		info = icons.info,
+		hint = icons.hint,
+	},
 	diagnostics_color = {
 		color_error = { fg = colors.red },
 		color_warn = { fg = colors.yellow },
 		color_info = { fg = colors.cyan },
 	},
+	gui = "bold",
 	color = { fg = colors.bg },
+	padding = { right = 2, left = 2 },
 })
 
-ins_right({ "location", color = { fg = colors.fg } })
+-- ins_right({
+-- 	"location",
+-- 	color = {
+-- 		fg = colors.fg,
+-- 	},
+-- 	padding = { right = 0, left = 0 },
+-- })
+
+ins_right({
+	"progress",
+	color = {
+		fg = colors.fg,
+	},
+	padding = { right = 1, left = 0 },
+})
 
 ins_right({
 	function()
-		return ""
+		return icons.left_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
@@ -226,13 +248,12 @@ ins_right({
 		end
 		return msg
 	end,
-	-- icon = " LSP:",
 	color = { fg = colors.purple, bg = colors.rounded_fg },
 })
 
 ins_right({
 	function()
-		return ""
+		return icons.right_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { right = 1 },
@@ -240,7 +261,7 @@ ins_right({
 
 ins_right({
 	function()
-		return ""
+		return icons.left_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },
@@ -254,7 +275,7 @@ ins_right({
 
 ins_right({
 	function()
-		return ""
+		return icons.right_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
 	padding = { left = 0, right = 0 },

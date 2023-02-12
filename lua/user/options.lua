@@ -10,6 +10,7 @@ local options = {
 	incsearch = true,
 	termguicolors = true,
 	mouse = "a",
+	mousemev = true,
 	background = "dark",
 	history = 5000,
 	clipboard = "unnamedplus",

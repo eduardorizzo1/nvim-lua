@@ -3,33 +3,40 @@ if not status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 bufferline.setup({
 	options = {
 		numbers = "none",
 		view = "multiwindow",
-		separator_style = { "", "" },
 		buffer_close_icon = "",
 		modified_icon = "",
-		close_icon = "",
-		left_trunc_marker = "",
-		right_trunc_marker = "",
-		max_name_length = 14,
+		close_icon = " ",
+		left_trunc_marker = " ",
+		right_trunc_marker = " ",
+		max_name_length = 15,
 		max_prefix_length = 15,
-		tab_size = 20,
+		tab_size = 16,
 		enforce_regular_tabs = false,
 		always_show_bufferline = true,
 		show_close_icon = true,
 		show_buffer_close_icons = true,
-		show_tab_indicators = false,
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
+		separator_style = { icons.right_arrow, icons.right_arrow },
+		show_tab_indicators = false,
 		indicator = {
 			icon = "",
 			style = "icon",
 		},
+		hover = {
+			enabled = true,
+			delay = 0,
+			reveal = { "close" },
+		},
 
-		diagnostics_indicator = function(count, level, diagnostics_dict)
+		diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			return "(" .. count .. ")"
 		end,
 
@@ -37,7 +44,9 @@ bufferline.setup({
 			{
 				filetype = "NvimTree",
 				highlight = "Directory",
-				padding = 1,
+				padding = 0,
+				-- text = "Explorer",
+				separator = true,
 			},
 		},
 
@@ -71,10 +80,10 @@ bufferline.setup({
 		-- 		guibg = "#1e1c29",
 		-- 	},
 		--
-		-- 	buffer_selected = {
-		-- 		guifg = "#fff",
-		-- 		gui = "bold",
-		-- 	},
+		buffer_selected = {
+			fg = "#ffffff",
+			bold = true,
+		},
 		--
 		-- close_button = {
 		-- 	guibg = "#1e1c29"
@@ -86,35 +95,35 @@ bufferline.setup({
 		-- },
 		--
 		-- indicator_selected = {
-		-- 	guifg = "#1e1c29",
+		-- 	fg = "#1e1c29",
+		-- 	bg = "none",
 		-- },
-		-- --
+		--
 		-- close_button_selected = {
 		-- 	guifg = "#fff",
 		-- 	gui = "bold"
 		-- },
 
 		--
-		--	separator_selected = {
-		--  	guifg = "#0000ff",
-		--    guibg = "#0000ff",
-		--  },
+		separator = {
+			fg = "#6272a4",
+			bg = "none",
+		},
 
-		--
+		separator_selected = {
+			fg = "#ffffff",
+			bg = "none",
+		},
+
+		-- separator_visible = {
+		-- 	fg = "#ABB2BF",
+		-- 	bg = "#ABB2BF",
+		-- },
+
 		--	modified_selected = {
 		--  	guifg = "#F1FA8C",
 		--    guibg = "#191A21",
 		--  },
-
-		--	--separator = {
-		--	--	guifg = "#0000ff",
-		--	--	guibg = "#0000ff",
-		--	--},
-
-		--	--separator_visible = {
-		--	--	guifg = "#ABB2BF",
-		--	--	guibg = "#ABB2BF",
-		--	--},
 
 		--	tab = {
 		--		guifg = "#191A21",
