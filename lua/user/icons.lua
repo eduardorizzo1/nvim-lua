@@ -12,6 +12,14 @@ return {
 	arrow_closed = "",
 	arrow_open = "",
 
+	-- borders
+	border_up_left = "╭",
+	border_up_right = "╮",
+	border_down_left = "╰",
+	border_down_right = "╯",
+	border_horizontal = "─",
+	border_vertical = "│",
+
 	-- geometrics
 	right_half_ball = "",
 	left_half_ball = "",
@@ -58,7 +66,8 @@ return {
 	lock = " ",
 	close = "",
 	newFile = " ",
-	search = " ",
+	search_left = " ",
+	search_right = " ",
 	lightbulb = "",
 	project = " ",
 	dashboard = " ",
@@ -89,12 +98,43 @@ return {
 	snowflake = "󰜗 ",
 	hexagon_breakpoint = " ",
 	globe = " ",
+	cube = " ",
+
+	-- Words
+	e_circle_outline = "Ⓔ ",
+	x_circle_outline = "Ⓧ ",
+	p_circle_outline = "Ⓟ ",
+	l_circle_outline = "Ⓛ ",
+	o_circle_outline = "Ⓞ ",
+	r_circle_outline = "Ⓡ ",
+
+	e_circle = "🅔 ",
+	x_circle = "🅧 ",
+	p_circle = "🅟 ",
+	l_circle = "🅛 ",
+	o_circle = "🅞 ",
+	r_circle = "🅡 ",
+
+	e_square = "🅴 ",
+	x_square = "🆇 ",
+	p_square = "🅿 ",
+	l_square = "🅻 ",
+	o_square = "🅾 ",
+	r_square = "🆁 ",
+
+	e_square_outline = "🄴 ",
+	x_square_outline = "🅇 ",
+	p_square_outline = "🄿 ",
+	l_square_outline = "🄻 ",
+	o_square_outline = "🄾 ",
+	r_square_outline = "🅁 ",
 }
 
 -- ================== More Icons ==================
+-- lsp = " ",
 -- wordpress = "  ",
 -- hexagon = "󰫈 ",
--- dots_circle = "󱥸"
+-- dots_square = "
 -- circle_slash = " ",
 -- circle_dot = " "
 -- circlebox = "󱔀 ",

@@ -45,8 +45,26 @@ bufferline.setup({
 				filetype = "NvimTree",
 				highlight = "Directory",
 				padding = 0,
-				-- text = "Explorer",
 				separator = true,
+				-- text = icons.border_up_left
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.e_circle_outline
+				-- 	.. icons.x_circle_outline
+				-- 	.. icons.p_circle_outline
+				-- 	.. icons.l_circle_outline
+				-- 	.. icons.o_circle_outline
+				-- 	.. icons.r_circle_outline
+				-- 	.. icons.e_circle_outline
+				-- 	.. icons.r_circle_outline
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_horizontal
+				-- 	.. icons.border_up_right,
+				text_align = "left",
 			},
 		},
 

@@ -33,6 +33,7 @@ map("n", ";s", ":wa<CR>", opts)
 map("n", "<C-z>", ":u<CR>", opts)
 map("i", "<C-z>", "<Esc>:u<CR>a", opts)
 map("v", "<C-z>", "<Esc>:u<CR>v", opts)
+map("c", "<C-z>", "<Esc>:u<CR>c", opts)
 
 -- Delete without copy
 map("v", "D", '"_d', opts)
@@ -79,7 +80,12 @@ map("n", "<M-h>", ":bp<CR>", opts)
 map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
 
 -- Telescope
-map("n", "<c-p>", '<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>', opts)
+map(
+	"n",
+	"<c-p>",
+	'<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>',
+	opts
+)
 map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
 map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', opts)
 map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)

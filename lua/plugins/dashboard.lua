@@ -110,102 +110,59 @@ local custom_header = {
 	},
 }
 
-local config = {
-	week_header = {
-		enable = false,
-	},
-	header = custom_header.girl_neovim,
-	center = {
-		{
-			icon = icons.vim,
-			icon_hl = "Title",
-			desc = "neovim            ",
-			desc_hl = "String",
-			key = "a",
-			key_hl = "Number",
-			action = "e ~/.config/nvim",
-		},
-		{
-			icon = icons.terminal,
-			icon_hl = "Title",
-			desc = "kitty           ",
-			desc_hl = "String",
-			key = "b",
-			key_hl = "Number",
-			action = "e ~/.config/kitty",
-		},
-		{
-			icon = icons.file,
-			icon_hl = "Title",
-			desc = "dotfiles       ",
-			desc_hl = "String",
-			key = "c",
-			key_hl = "Number",
-			action = "e ~/dotfiles",
-		},
-		{
-			icon = icons.file,
-			icon_hl = "Title",
-			desc = "zsh ",
-			desc_hl = "String",
-			key = "d",
-			key_hl = "Number",
-			action = "e ~/.zshrc",
-		},
-		{
-			icon = icons.file,
-			icon_hl = "Title",
-			desc = "p10k ",
-			desc_hl = "String",
-			key = "e",
-			key_hl = "Number",
-			action = "e ~/.p10k.zsh",
-		},
-	},
-}
-
 ds.setup({
 	theme = "doom",
-	-- theme = "doom",
-	config = config,
+	config = {
+		week_header = {
+			enable = false,
+		},
+		header = custom_header.girl_neovim,
+		center = {
+			{
+				icon = icons.vim,
+				icon_hl = "Title",
+				desc = "neovim            ",
+				desc_hl = "String",
+				key = "a",
+				key_hl = "Number",
+				action = "e ~/.config/nvim",
+			},
+			{
+				icon = icons.terminal,
+				icon_hl = "Title",
+				desc = "kitty",
+				desc_hl = "String",
+				key = "b",
+				key_hl = "Number",
+				action = "e ~/.config/kitty",
+			},
+			{
+				icon = icons.file,
+				icon_hl = "Title",
+				desc = "dotfiles",
+				desc_hl = "String",
+				key = "c",
+				key_hl = "Number",
+				action = "e ~/dotfiles",
+			},
+			{
+				icon = icons.file,
+				icon_hl = "Title",
+				desc = "zsh",
+				desc_hl = "String",
+				key = "d",
+				key_hl = "Number",
+				action = "e ~/.zshrc",
+			},
+			{
+				icon = icons.file,
+				icon_hl = "Title",
+				desc = "p10k",
+				desc_hl = "String",
+				key = "e",
+				key_hl = "Number",
+				action = "e ~/.p10k.zsh",
+			},
+		},
+	},
 })
-
--- db.custom_center = {
--- 	{
--- 		icon = "  ",
--- 		desc = "Recently latest session                  ",
--- 		shortcut = "SPC s l",
--- 		action = "SessionLoad",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Recently opened files                   ",
--- 		action = "DashboardFindHistory",
--- 		shortcut = "SPC f h",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Find  File                              ",
--- 		action = "Telescope find_files find_command=rg,--hidden,--files",
--- 		shortcut = "SPC f f",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "File Browser                            ",
--- 		action = "Telescope file_browser",
--- 		shortcut = "SPC f b",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Find  word                              ",
--- 		action = "Telescope live_grep",
--- 		shortcut = "SPC f w",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Open Personal dotfiles                  ",
--- 		-- action = "Telescope dotfiles path=" .. home .. "/.dotfiles",
--- 		shortcut = "SPC f d",
--- 	},
--- }
---

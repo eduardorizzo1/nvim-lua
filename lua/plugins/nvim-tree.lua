@@ -1,4 +1,5 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
+local status_ok, dashboard = pcall(require, "dashboard")
 if not status_ok then
 	return
 end

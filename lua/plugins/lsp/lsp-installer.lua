@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"angularls",
 	"vuels",
@@ -63,6 +63,12 @@ for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("plugins.lsp.handlers").on_attach,
 		capabilities = require("plugins.lsp.handlers").capabilities,
+		autostart = true,
+		settings = {
+			Lua = {
+				diagnostics = { globals = { "vim" } },
+			},
+		},
 	}
 
 	if server == "jsonls" then

@@ -3,10 +3,12 @@ vim.o.completeopt = "menuone,noselect"
 
 vim.diagnostic.config({
 	underline = true,
-	update_in_insert = false,
+	-- update_in_insert = false,
+	-- signs = true,
+	-- severity_sort = true,
 	virtual_text = {
 		spacing = 4,
-		prefix = icons.fire,
+		prefix = icons.cube,
 	},
 })
 

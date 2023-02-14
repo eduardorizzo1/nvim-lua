@@ -48,6 +48,7 @@ local config = {
 		disabled_filetypes = { "NvimTree", "packer" },
 		component_separators = "",
 		section_separators = "",
+		fmt = string.lower,
 		theme = {
 			normal = { c = { fg = colors.fg, bg = colors.bg } },
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
@@ -80,16 +81,6 @@ local function ins_right(component)
 end
 
 --------------------------- LEFT ----------------------------------
--- ins_left({
--- 	function()
--- 		return icons.right_arrow_bold
--- 	end,
--- 	color = function()
--- 		return { fg = mode_color[vim.fn.mode()] }
--- 	end,
--- 	padding = { left = 0, right = 0 },
--- })
-
 ins_left({
 	function()
 		return icons.left_half_ball
@@ -99,10 +90,8 @@ ins_left({
 })
 
 ins_left({
-	function()
-		return icons.github_copilot
-		-- return vim.fn.mode()
-	end,
+	"mode",
+	icon = " ",
 	color = function()
 		return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
 	end,
@@ -130,6 +119,7 @@ ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.green, bg = colors.rounded_fg },
+	padding = { right = 0, left = 0 },
 })
 
 ins_left({
@@ -155,6 +145,7 @@ ins_left({
 	icon = "",
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.cyan, bg = colors.rounded_fg },
+	padding = { right = 0, left = 0 },
 })
 
 ins_left({
@@ -163,7 +154,7 @@ ins_left({
 	end,
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { right = 0 },
+	padding = { left = 0, right = 0 },
 })
 
 ins_left({
@@ -208,19 +199,19 @@ ins_right({
 	padding = { right = 2, left = 2 },
 })
 
--- ins_right({
--- 	"location",
--- 	color = {
--- 		fg = colors.fg,
--- 	},
--- 	padding = { right = 0, left = 0 },
--- })
+ins_right({
+	"location",
+	color = {
+		fg = colors.cyan,
+	},
+	padding = { right = 1, left = 0 },
+})
 
 ins_right({
 	"progress",
-	color = {
-		fg = colors.fg,
-	},
+	color = function()
+		return { fg = mode_color[vim.fn.mode()] }
+	end,
 	padding = { right = 1, left = 0 },
 })
 
@@ -248,7 +239,8 @@ ins_right({
 		end
 		return msg
 	end,
-	color = { fg = colors.purple, bg = colors.rounded_fg },
+	color = { fg = colors.orange, bg = colors.rounded_fg },
+	padding = { right = 1, left = 1 },
 })
 
 ins_right({
@@ -256,7 +248,7 @@ ins_right({
 		return icons.right_half_ball
 	end,
 	color = { fg = colors.rounded_fg, bg = colors.bg },
-	padding = { right = 1 },
+	padding = { right = 1, left = 0 },
 })
 
 ins_right({
@@ -271,6 +263,7 @@ ins_right({
 	"filetype",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.pink, bg = colors.rounded_fg },
+	padding = { left = 0, right = 1 },
 })
 
 ins_right({

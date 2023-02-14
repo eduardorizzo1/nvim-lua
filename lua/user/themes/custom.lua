@@ -6,9 +6,6 @@ g.tokyonight_transparent_sidebar = true
 
 g.dracula_transparent_bg = true
 
--- cmd[[ hi CursorLine guibg=NONE ]]
--- cmd[[ hi CursorLineNR cterm=bold guifg=#ffffff gui=bold ]]
-cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
 cmd([[ hi SignColumn guibg=NONE ]])
 cmd([[ hi Normal guibg=NONE ]])
 cmd([[ hi NormalNC guibg=NONE ]])
@@ -22,6 +19,7 @@ cmd([[ hi NvimTreeVertSplit guibg=NONE ]])
 cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 
 if g.dracula_transparent_bg then
+	cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
 	cmd([[ hi CursorLine guibg=#282a36]])
 end
 
@@ -29,6 +27,6 @@ if g.neosolarized then
 	cmd([[ hi CursorLine guibg=#073642]])
 end
 
-if g.tokyonight then
+if g.tokyonight_transaparent then
 	cmd([[ hi LineNr cterm=bold guibg=#24283b ]])
 end
