@@ -201,18 +201,22 @@ ins_right({
 
 ins_right({
 	"location",
+	-- color = function()
+	-- 	return { fg = mode_color[vim.fn.mode()] }
+	-- end,
+	padding = { right = 0, left = 0 },
 	color = {
-		fg = colors.cyan,
+		fg = colors.magenta,
 	},
-	padding = { right = 1, left = 0 },
 })
 
 ins_right({
 	"progress",
-	color = function()
-		return { fg = mode_color[vim.fn.mode()] }
-	end,
-	padding = { right = 1, left = 0 },
+	color = {
+		fg = colors.cyan,
+	},
+	gui = "bold",
+	padding = { right = 1, left = 1 },
 })
 
 ins_right({

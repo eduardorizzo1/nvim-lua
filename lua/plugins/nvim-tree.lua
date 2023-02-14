@@ -1,4 +1,8 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+	return
+end
+
 local status_ok, dashboard = pcall(require, "dashboard")
 if not status_ok then
 	return
@@ -20,6 +24,7 @@ end
 
 vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
 vim.cmd([[ au WinLeave * setlocal nocursorline ]])
+
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvim_tree.setup({
@@ -105,8 +110,7 @@ nvim_tree.setup({
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
-					untracked = "U",
-					-- untracked = "★",
+					untracked = "★",
 					deleted = "",
 					ignored = "◌",
 				},
