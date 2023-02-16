@@ -46,9 +46,12 @@ local mode_color = {
 	},
 }
 
-if g.colors_name == "dracula" then
+if g.colors_name == "catppuccin" then
 	M.color = color.dracula
 	M.mode_color = mode_color.dracula
 end
+
+M.color = color.dracula
+M.mode_color = mode_color.dracula
 
 return M
