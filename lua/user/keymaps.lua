@@ -102,10 +102,11 @@ map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "gi", "<cmd>Lspsaga implement<CR>", opts)
 map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
 map("n", "gn", "<cmd>Lspsaga rename<CR>", opts)
+map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
 map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
-map("n", ";e", "<cmd>lua toggle_diagnostics()<CR>", opts)
+map("n", ";ee", "<cmd>lua toggle_diagnostics()<CR>", opts)
+map("n", ";et", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
 
 -- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
 map("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -121,7 +122,7 @@ map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
 
 -- Git Blame
-map("n", "<leader>gb", ":GitBlameToggle <CR>", opts)
+map("n", ";gg", ":BlamerToggle <CR>", opts)
 
 -- Hop
 map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
@@ -133,7 +134,7 @@ map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
 
 -- Trouble
-map("n", "<leader>e", ":TroubleToggle<CR>", opts)
+map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
 
 -- Debugger (Nvim-Dap)
 map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
