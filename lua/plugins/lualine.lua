@@ -1,29 +1,7 @@
 local lualine = require("lualine")
 local icons = require("user.icons")
-local colors = require("user.themes.dracula").colors
-
-local mode_color = {
-	n = colors.purple,
-	i = colors.green,
-	v = colors.pink,
-	[""] = colors.pink,
-	V = colors.pink,
-	c = colors.magenta,
-	no = colors.red,
-	s = colors.orange,
-	S = colors.orange,
-	[""] = colors.orange,
-	ic = colors.yellow,
-	R = colors.red,
-	Rv = colors.red,
-	cv = colors.red,
-	ce = colors.red,
-	r = colors.cyan,
-	rm = colors.cyan,
-	["r?"] = colors.cyan,
-	["!"] = colors.red,
-	t = colors.red,
-}
+local colors = require("user.themes.colorscheme").color
+local mode_color = require("user.themes.colorscheme").mode_color
 
 local conditions = {
 	buffer_not_empty = function()

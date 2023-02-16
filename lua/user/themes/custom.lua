@@ -18,7 +18,7 @@ cmd([[ hi NvimTreeNormalNC guibg=NONE ]])
 cmd([[ hi NvimTreeVertSplit guibg=NONE ]])
 cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 
-if g.dracula_transparent_bg then
+if g.colors_name == "dracula" then
 	cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
 	cmd([[ hi CursorLine guibg=#282a36]])
 end

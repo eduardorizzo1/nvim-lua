@@ -1,6 +1,5 @@
 local g = vim.g
 local cmd = vim.cmd
-local M = {}
 
 cmd([[ colo dracula ]])
 
@@ -36,23 +35,3 @@ cmd([[ hi IndentBlanklineContextStart guifg=#564f8b gui=underline]])
 cmd([[ hi IndentBlanklineContextChar guifg=#564f8b gui=none]])
 cmd([[ hi IndentBlanklineIndent1 guifg=#282a36 gui=nocombine]])
 -- cmd([[ hi IndentBlanklineIndent2 guifg=#44475a gui=nocombine]])
-
-M.colors = {
-	bg = "none",
-	rounded_bg = "#1f2335",
-	rounded_fg = "#333952",
-	fg = "#f8f8f2",
-	yellow = "#f1fa8c",
-	cyan = "#8be9fd",
-	darkblue = "#081633",
-	green = "#50fa7b",
-	orange = "#ffb86c",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	pink = "#ff79c6",
-	purple = "#bd93f9",
-	blue = "#51afef",
-	red = "#ec5f67",
-}
-
-return M

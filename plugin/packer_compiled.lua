@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/edge",
     url = "https://github.com/sainnhe/edge"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   gruvbox = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -168,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
-  },
-  ["hologram.nvim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/hologram.nvim",
-    url = "https://github.com/edluffy/hologram.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
@@ -284,11 +274,6 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -303,11 +288,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-navic"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-navic",
-    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-solarized-lua"] = {
     loaded = true,
@@ -374,20 +354,15 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["schemastore.nvim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
-    url = "https://github.com/b0o/schemastore.nvim"
-  },
   spaceduck = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/spaceduck",
     url = "https://github.com/pineapplegiant/spaceduck"
   },
-  ["telescope-media-files.nvim"] = {
+  ["symbols-outline.nvim"] = {
     loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
-    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-ui-select.nvim"] = {
     loaded = true,
@@ -437,11 +412,6 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim",
     url = "https://github.com/challenger-deep-theme/vim"
   },
-  ["vim-clap"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-clap",
-    url = "https://github.com/liuchengxu/vim-clap"
-  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vim-illuminate",
@@ -471,16 +441,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/vscode.nvim",
     url = "https://github.com/Mofiqul/vscode.nvim"
-  },
-  ["which-key.nvim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
-  },
-  ["winbar.nvim"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/winbar.nvim",
-    url = "https://github.com/fgheng/winbar.nvim"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
