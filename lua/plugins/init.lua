@@ -39,11 +39,12 @@ packer.init({
 })
 
 return packer.startup(function(use)
+	-- Dashboard
+	use("glepnir/dashboard-nvim")
 	-- Themes
 	use("overcache/NeoSolarized")
 	use("ishan9299/nvim-solarized-lua")
 	use({ "dracula/vim", as = "dracula" })
-	-- use("Mofiqul/dracula.nvim")
 	use("Mofiqul/vscode.nvim")
 	use("navarasu/onedark.nvim")
 	use("olimorris/onedarkpro.nvim")
@@ -65,23 +66,21 @@ return packer.startup(function(use)
 	use("marko-cerovac/material.nvim")
 	use("shaunsingh/nord.nvim")
 	use("mhartington/oceanic-next")
-
-	-- Dashboard
-	use("glepnir/dashboard-nvim")
-	use("liuchengxu/vim-clap")
-
-	-- Nvimtree and Lines
+	-- Telescope
+	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
+	-- Nvimtree, lualine and bufferline
+	use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-web-devicons")
 	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
-
 	--Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")
-
-	-- LSP
+	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
 	use("onsails/lspkind-nvim")
@@ -91,8 +90,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("folke/lsp-colors.nvim")
-
-	-- CMP
+	-- Cmp
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
@@ -100,85 +98,60 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
-
-	-- Luasnip
-	use("l3mon4d3/luasnip")
-	use("rafamadriz/friendly-snippets")
-
+	-- Trouble
+	use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
 	-- Comments
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
-
 	-- Colorizers
 	use("norcalli/nvim-colorizer.lua")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("windwp/nvim-autopairs")
 	use("RRethy/vim-illuminate")
-
-	-- Others
-	use("folke/zen-mode.nvim")
-	use("folke/twilight.nvim")
-	use("akinsho/toggleterm.nvim")
-	use("karb94/neoscroll.nvim")
-	use("lewis6991/impatient.nvim")
-	use({ "mg979/vim-visual-multi", branch = "master" })
-	use("b0o/schemastore.nvim")
-	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
-
-	-- Telescope
-	use("nvim-lua/plenary.nvim")
-	use("nvim-lua/popup.nvim")
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-ui-select.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
-
-	-- Trouble
-	use({
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	})
-
-	-- Styled-components
-	use("fleischie/vim-styled-components")
-
-	-- Hop.nvim (easymotion)
-	use({
-		"phaazon/hop.nvim",
-		branch = "v1",
-	})
-
-	-- Blamer
-	use("APZelos/blamer.nvim")
-
-	-- Whichkey
-	use("folke/which-key.nvim")
-
-	-- Surround
-	use({ "echasnovski/mini.nvim", branch = "stable" })
-
-	-- Markdown
+	-- Markdown Preview
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	-- Others
+	use("l3mon4d3/luasnip")
+	use("folke/zen-mode.nvim")
+	use("folke/twilight.nvim")
+	use("akinsho/toggleterm.nvim")
+	use("karb94/neoscroll.nvim")
+	use("lewis6991/impatient.nvim")
+	use({ "mg979/vim-visual-multi", branch = "master" })
+	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
+	use("fleischie/vim-styled-components")
+	use({ "phaazon/hop.nvim", branch = "v1" })
+	use("APZelos/blamer.nvim") -- Git blamer
+	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
+	use("simrat39/symbols-outline.nvim")
 
-	-- Winbar
-	use({ "fgheng/winbar.nvim" })
-
+	-- TODO: Install navic
 	-- Navic
-	use({
-		"SmiteshP/nvim-navic",
-		requires = "neovim/nvim-lspconfig",
-	})
+	-- use({
+	-- 	"SmiteshP/nvim-navic",
+	-- 	requires = "neovim/nvim-lspconfig",
+	-- })
+	-- Winbar
+	-- use({ "fgheng/winbar.nvim" })
 
-	-- Debugger (DAP)
-	use({ "mfussenegger/nvim-dap" })
-
+	-- TODO: Install some media file preview
+	-- telescope-media-files
+	-- use("nvim-telescope/telescope-media-files.nvim")
 	-- Hologram.nvim
-	use({ "edluffy/hologram.nvim" })
+	-- use({ "edluffy/hologram.nvim" })
+
+	-- TODO: To repair...
+	-- Debugger (DAP)
+	-- use({ "mfussenegger/nvim-dap" })
+
+	-- Whichkey
+	-- use("folke/which-key.nvim")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
