@@ -131,15 +131,6 @@ return packer.startup(function(use)
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use("simrat39/symbols-outline.nvim")
 
-	-- TODO: Install navic
-	-- Navic
-	-- use({
-	-- 	"SmiteshP/nvim-navic",
-	-- 	requires = "neovim/nvim-lspconfig",
-	-- })
-	-- Winbar
-	-- use({ "fgheng/winbar.nvim" })
-
 	-- TODO: Install some media file preview
 	-- telescope-media-files
 	-- use("nvim-telescope/telescope-media-files.nvim")
