@@ -1,6 +1,5 @@
 require("plugins.lsp.lsp-installer")
 require("plugins.lsp.lsp-saga")
 require("plugins.lsp.lsp-signature")
-require("plugins.lsp.lsp-colors")
-require("plugins.lsp.lspconfig")
+require("plugins.lsp.lsp-config")
 require("plugins.lsp.null-ls")

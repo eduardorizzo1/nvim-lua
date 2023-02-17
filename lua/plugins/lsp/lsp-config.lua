@@ -1,4 +1,13 @@
 local lspconfig = require("lspconfig")
+local lspcolors = require("lsp-colors")
+local icons = require("user.icons")
+
+lspcolors.setup({
+	Error = "#db4b4b",
+	Warning = "#e0af68",
+	Information = "#0db9d7",
+	Hint = "#10B981",
+})
 
 lspconfig.tsserver.setup({
 	on_attach = require("plugins.lsp.handlers").on_attach,
@@ -8,8 +17,10 @@ lspconfig.tsserver.setup({
 vim.o.completeopt = "menuone,noselect"
 vim.diagnostic.config({
 	underline = true,
+	signs = true,
 	virtual_text = {
 		spacing = 4,
+		prefix = icons.fire,
 	},
 })
 
