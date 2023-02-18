@@ -130,16 +130,13 @@ return packer.startup(function(use)
 	use("APZelos/blamer.nvim") -- Git blamer
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use("simrat39/symbols-outline.nvim")
+	use({ "mfussenegger/nvim-dap" }) -- Debugger (DAP)
 
 	-- TODO: Install some media file preview
 	-- telescope-media-files
 	-- use("nvim-telescope/telescope-media-files.nvim")
 	-- Hologram.nvim
 	-- use({ "edluffy/hologram.nvim" })
-
-	-- TODO: To repair...
-	-- Debugger (DAP)
-	-- use({ "mfussenegger/nvim-dap" })
 
 	-- Whichkey
 	-- use("folke/which-key.nvim")

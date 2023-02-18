@@ -1,9 +1,11 @@
 local status_ok, bufferline = pcall(require, "bufferline")
+local icons = require("user.icons")
+local colors = require("user.themes.colorscheme")
+local groups = require("bufferline.groups")
+
 if not status_ok then
 	return
 end
-
-local icons = require("user.icons")
 
 bufferline.setup({
 	options = {
@@ -24,21 +26,27 @@ bufferline.setup({
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
-		separator_style = { icons.right_arrow, icons.right_arrow },
 		show_tab_indicators = false,
 		indicator = {
 			icon = " ",
 			style = "icon",
+		},
+		separator_style = {
+			icons.right_arrow,
+			icons.right_arrow,
 		},
 		hover = {
 			enabled = true,
 			delay = 0,
 			reveal = { "close" },
 		},
-
-		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			return "(" .. count .. ")"
-		end,
+		groups = {
+			items = {
+				{ name = "group 1", ... },
+				groups.builtin.ungrouped, -- the ungrouped buffers will be in the middle of the grouped ones
+				{ name = "group 2", ... },
+			},
+		},
 
 		offsets = {
 			{
@@ -46,27 +54,42 @@ bufferline.setup({
 				highlight = "Directory",
 				padding = 0,
 				separator = true,
-				-- text = icons.border_up_left
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.e_circle_outline
-				-- 	.. icons.x_circle_outline
-				-- 	.. icons.p_circle_outline
-				-- 	.. icons.l_circle_outline
-				-- 	.. icons.o_circle_outline
-				-- 	.. icons.r_circle_outline
-				-- 	.. icons.e_circle_outline
-				-- 	.. icons.r_circle_outline
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_horizontal
-				-- 	.. icons.border_up_right,
+				-- text = "File Explorer"
 				text_align = "left",
 			},
 		},
+
+		-- custom_areas = {
+		-- 	right = function()
+		-- 		local result = {}
+		-- 		local seve = vim.diagnostic.severity
+		-- 		local error = #vim.diagnostic.get(0, { severity = seve.ERROR })
+		-- 		local warning = #vim.diagnostic.get(0, { severity = seve.WARN })
+		-- 		local info = #vim.diagnostic.get(0, { severity = seve.INFO })
+		-- 		local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
+		--
+		-- 		if error ~= 0 then
+		-- 			table.insert(result, { text = "  " .. error, fg = colors.color.red })
+		-- 		end
+		--
+		-- 		if warning ~= 0 then
+		-- 			table.insert(result, { text = "  " .. warning, fg = colors.color.yellow })
+		-- 		end
+		--
+		-- 		if hint ~= 0 then
+		-- 			table.insert(result, { text = "  " .. hint, fg = colors.color.green })
+		-- 		end
+		--
+		-- 		if info ~= 0 then
+		-- 			table.insert(result, { text = "  " .. info, fg = colors.color.cyan })
+		-- 		end
+		-- 		return result
+		-- 	end,
+		-- },
+		--
+		-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+		-- 	return "(" .. count .. ")"
+		-- end,
 
 		custom_filter = function(buf_number)
 			-- Func to filter out our managed/persistent split terms
@@ -88,6 +111,67 @@ bufferline.setup({
 	},
 
 	highlights = {
+		separator = {
+			fg = "#564f8b",
+			bg = "none",
+		},
+
+		-- indicator_selected = {
+		-- 	fg = colors.color.fg,
+		-- 	bg = "none",
+		-- 	bold = true,
+		-- },
+
+		buffer_selected = {
+			fg = colors.color.fg,
+			bg = "none",
+			bold = true,
+			italic = true,
+		},
+
+		close_button = {
+			fg = colors.color.rounded_fg,
+			bg = "none",
+		},
+
+		close_button_selected = {
+			fg = colors.color.fg,
+			bg = "none",
+		},
+
+		-- separator_selected = {
+		-- 	fg = "#ff0000",
+		-- 	bg = "#ffff00",
+		-- },
+		--
+		-- separator_visible = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#fffff0",
+		-- },
+		--
+		-- indicator_visible = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#fffff0",
+		-- },
+		-- buffer_visible = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#00ff00",
+		-- },
+		-- tab = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ff0000",
+		-- },
+		--
+		-- tab_selected = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ff0000",
+		-- },
+
+		-- close_button_visible = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#00ff00",
+		-- },
+
 		-- background = {
 		-- 	guifg = "#44475a",
 		-- 	guibg = "#1e1c29",
@@ -98,40 +182,19 @@ bufferline.setup({
 		-- 		guibg = "#1e1c29",
 		-- 	},
 		--
-		buffer_selected = {
-			fg = "#ffffff",
-			bold = true,
-		},
-		--
-		-- close_button = {
-		-- 	guibg = "#1e1c29"
-		-- },
 		--
 		-- tab_close = {
-		-- 	guifg = "#44475a",
-		-- 	guibg = "#1e1c29",
+		-- 	fg = colors.color.rounded_fg,
+		-- 	bg = "#ff0000",
 		-- },
 		--
 		-- indicator_selected = {
 		-- 	fg = "#1e1c29",
-		-- 	bg = "none",
+		-- 	bg = "#ff00ff",
 		-- },
 		--
-		-- close_button_selected = {
-		-- 	guifg = "#fff",
-		-- 	gui = "bold"
-		-- },
 
 		--
-		separator = {
-			fg = "#6272a4",
-			bg = "none",
-		},
-
-		separator_selected = {
-			fg = "#ffffff",
-			bg = "none",
-		},
 
 		-- separator_visible = {
 		-- 	fg = "#ABB2BF",

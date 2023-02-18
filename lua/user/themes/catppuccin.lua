@@ -1,3 +1,5 @@
+local cmd = vim.cmd
+
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
@@ -41,7 +43,13 @@ require("catppuccin").setup({
 	},
 })
 
+cmd([[ hi SignColumn guibg=NONE ]])
+-- IndentBlankLine
+cmd([[ hi IndentBlanklineIndent1 guifg=#282a36 gui=nocombine]])
+cmd([[ hi IndentBlanklineContextStart guifg=#8AADF4 gui=underline]])
+
+-- Bufferline
+cmd([[ hi BufferLineOffsetSeparator guibg=NONE]])
+
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
-vim.cmd([[ hi IndentBlanklineIndent1 guifg=#282a36 gui=nocombine]])
-vim.cmd([[ hi IndentBlanklineContextStart guifg=##8AADF4 gui=underline]])
+cmd.colorscheme("catppuccin")

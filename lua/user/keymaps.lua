@@ -136,6 +136,9 @@ map("n", "<C-M-n>", ":RunCode<CR>", opts)
 -- Trouble
 map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
 
+-- Symbols-outline
+map("n", ";b", ":SymbolsOutline<CR>", opts)
+
 -- Debugger (Nvim-Dap)
 map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)

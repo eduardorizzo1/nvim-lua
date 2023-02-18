@@ -28,8 +28,8 @@ local config = {
 		section_separators = "",
 		fmt = string.lower,
 		theme = {
-			normal = { c = { fg = colors.fg, bg = colors.bg } },
-			inactive = { c = { fg = colors.fg, bg = colors.bg } },
+			normal = { c = { fg = colors.fg, bg = "none" } },
+			inactive = { c = { fg = colors.fg, bg = "none" } },
 		},
 	},
 	sections = {
@@ -63,7 +63,7 @@ ins_left({
 	function()
 		return icons.left_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -80,7 +80,7 @@ ins_left({
 	function()
 		return icons.right_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 1 },
 })
 
@@ -89,7 +89,7 @@ ins_left({
 	function()
 		return icons.left_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -104,7 +104,7 @@ ins_left({
 	function()
 		return icons.right_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { right = 1 },
 })
 
@@ -114,7 +114,7 @@ ins_left({
 		return icons.left_half_ball
 	end,
 	cond = conditions.check_git_workspace,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -131,7 +131,7 @@ ins_left({
 		return icons.right_half_ball
 	end,
 	cond = conditions.check_git_workspace,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -173,15 +173,12 @@ ins_right({
 		color_info = { fg = colors.cyan },
 	},
 	gui = "bold",
-	color = { fg = colors.bg },
+	color = { fg = "none" },
 	padding = { right = 2, left = 2 },
 })
 
 ins_right({
 	"location",
-	-- color = function()
-	-- 	return { fg = mode_color[vim.fn.mode()] }
-	-- end,
 	padding = { right = 0, left = 0 },
 	color = {
 		fg = colors.magenta,
@@ -201,7 +198,7 @@ ins_right({
 	function()
 		return icons.left_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -229,7 +226,7 @@ ins_right({
 	function()
 		return icons.right_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { right = 1, left = 0 },
 })
 
@@ -237,7 +234,7 @@ ins_right({
 	function()
 		return icons.left_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 
@@ -252,7 +249,7 @@ ins_right({
 	function()
 		return icons.right_half_ball
 	end,
-	color = { fg = colors.rounded_fg, bg = colors.bg },
+	color = { fg = colors.rounded_fg, bg = "none" },
 	padding = { left = 0, right = 0 },
 })
 

@@ -21,6 +21,9 @@ cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 if g.colors_name == "dracula" then
 	cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
 	cmd([[ hi CursorLine guibg=#282a36]])
+	cmd([[ hi NvimTreeWinSeparator guibg=#282a36 guifg=#564f8b ]])
+	cmd([[ hi BufferLineOffsetSeparator guibg=#282a36 guifg=#564f8b ]])
+	cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
 end
 
 if g.neosolarized then
