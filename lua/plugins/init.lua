@@ -96,6 +96,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
+	use("l3mon4d3/luasnip")
 	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	-- Trouble
@@ -117,7 +118,6 @@ return packer.startup(function(use)
 		end,
 	})
 	-- Others
-	use("l3mon4d3/luasnip")
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
 	use("akinsho/toggleterm.nvim")

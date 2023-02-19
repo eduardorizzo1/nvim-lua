@@ -3,12 +3,14 @@ if not cmp_status_ok then
 	return
 end
 
-local luasnip = require("luasnip")
-luasnip.filetype_extend("javascript", { "html" })
-luasnip.filetype_extend("javascriptreact", { "html" })
-luasnip.filetype_extend("typescriptreact", { "html" })
+-- local luasnip = require("luasnip")
+-- luasnip.filetype_extend("javascript", { "html" })
+-- luasnip.filetype_extend("javascriptreact", { "html" })
+-- luasnip.filetype_extend("typescriptreact", { "html" })
+--
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
-require("luasnip/loaders/from_vscode").lazy_load()
+local luasnip = require("plugins.luasnip")
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
