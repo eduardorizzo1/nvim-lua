@@ -3,11 +3,6 @@ if not status_ok then
 	return
 end
 
-local status_ok, dashboard = pcall(require, "dashboard")
-if not status_ok then
-	return
-end
-
 local function open_nvim_tree(data)
 	local directory = vim.fn.isdirectory(data.file) == 1
 
@@ -18,7 +13,7 @@ local function open_nvim_tree(data)
 	vim.cmd.cd(data.file)
 
 	require("nvim-tree.api").tree.open({
-		current_window = true
+		current_window = true,
 	})
 end
 
@@ -110,6 +105,7 @@ nvim_tree.setup({
 					unmerged = "",
 					renamed = "➜",
 					untracked = "★",
+					-- untracked = "𝗨",
 					deleted = "",
 					ignored = "◌",
 				},
