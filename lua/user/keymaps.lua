@@ -5,21 +5,31 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Window Navigate
+map("n", "<M-k>", "<C-w>k", opts)
+map("n", "<M-j>", "<C-w>j", opts)
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<M-j>", "<C-w>j", opts)
-map("n", "<M-k>", "<C-w>k", opts)
+-- alternative
+map("n", "<C-Up>", "<C-w>k", opts)
+map("n", "<C-Down>", "<C-w>j", opts)
+map("n", "<C-Left>", "<C-w>h", opts)
+map("n", "<C-Right>", "<C-w>l", opts)
 
+-- Resize Window
+map("n", "<C-M-k>", ":resize -5<CR>", opts)
+map("n", "<C-M-j>", ":resize +5<CR>", opts)
+map("n", "<C-M-h>", ":vertical resize +5<CR>", opts)
+map("n", "<C-M-l>", ":vertical resize -5<CR>", opts)
+
+-- Up and Down lines
 map("n", "J", "5j", opts)
 map("n", "K", "5k", opts)
-map("n", "H", "5h", opts)
-map("n", "L", "5l", opts)
 map("n", "<C-j>", "10j", opts)
 map("n", "<C-k>", "10k", opts)
 
--- Resize Window
-map("n", "<leader>l", ":vertical resize -5<CR>", opts)
-map("n", "<leader>h", ":vertical resize +5<CR>", opts)
+-- Split
+map("n", "<leader>v", ":vsp<CR>", opts)
+map("n", "<leader>h", ":sp<CR>", opts)
 
 -- ctrl+s to save
 map("n", "<C-s>", ":w<CR>", opts)
@@ -47,23 +57,12 @@ map("n", "<leader>*", ":noh<CR>", opts)
 -- Toggle Relative number
 map("n", "<leader>n", ":set relativenumber!<CR>", opts)
 
--- Split
-map("n", "<leader>v", ":vsp<CR>", opts)
-map("n", ";h", ":sp<CR>", opts)
-
--- ESC
-map("n", "<C-]>", "<Esc><Esc>", opts)
-map("i", "<C-]>", "<Esc><Esc>", opts)
-map("v", "<C-]>", "<Esc><Esc>", opts)
-
 -- ========================================================
 ------------------ P L U G I N S --------------------------
 -- ========================================================
 
 -- Nvimtree
 map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
-map("n", "<C-M-l>", ":NvimTreeResize +5<CR>", opts)
-map("n", "<C-M-h>", ":NvimTreeResize -5<CR>", opts)
 
 -- IndentLine
 map("n", ";i", ":IndentBlanklineToggle<CR>", opts)
@@ -74,10 +73,25 @@ map("n", ";t", ":Twilight<CR>", opts)
 -- Zen-mode
 map("n", "<leader>z", ":ZenMode<CR>", opts)
 
+-- Code Runner
+map("n", "<C-M-n>", ":RunCode<CR>", opts)
+
+-- Trouble
+map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
+
+-- Symbols-outline
+map("n", ";b", ":SymbolsOutline<CR>", opts)
+
 -- Bufferline
+map("n", "<S-l>", ":bn<CR>", opts)
+map("n", "<S-h>", ":bp<CR>", opts)
+map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts)
 map("n", "<M-l>", ":bn<CR>", opts)
 map("n", "<M-h>", ":bp<CR>", opts)
 map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
+map("n", "<D-l>", ":bn<CR>", opts)
+map("n", "<D-h>", ":bp<CR>", opts)
+map("n", "<D-x>", ":bd<Esc>:bp<CR>", opts)
 
 -- Telescope
 map(
@@ -129,15 +143,6 @@ map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
 map("n", "<leader><leader>b", ":HopWordBC<CR>", opts)
 map("n", "<leader><leader>j", ":HopLineAC<CR>", opts)
 map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
-
--- Code Runner
-map("n", "<C-M-n>", ":RunCode<CR>", opts)
-
--- Trouble
-map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
-
--- Symbols-outline
-map("n", ";b", ":SymbolsOutline<CR>", opts)
 
 -- Debugger (Nvim-Dap)
 map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
