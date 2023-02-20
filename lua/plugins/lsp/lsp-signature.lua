@@ -9,7 +9,6 @@ local cfg = {
 	fix_pos = false,
 	hint_enable = true,
 	hint_prefix = "🐼 ",
-	-- HINTS => 😏 💀 🐼 🐶 🐵 😜 ⭐ 👉 🪄
 	hint_scheme = "String",
 	use_lspsaga = false,
 	hi_parameter = "LspSignatureActiveParameter",

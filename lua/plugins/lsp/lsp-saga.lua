@@ -7,10 +7,6 @@ lspsaga.setup({
 	warn_sign = " ",
 	hint_sign = " ",
 	infor_sign = " ",
-	-- hint_sign = "",
-	-- infor_sign = " ",
-	-- error_sign = "",
-	-- warn_sign = "",
 	diagnostic_header_icon = " ",
 	code_action_icon = " ",
 	code_action_prompt = {

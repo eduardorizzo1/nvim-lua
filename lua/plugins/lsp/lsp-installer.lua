@@ -6,6 +6,7 @@ end
 local servers = {
 	"lua_ls",
 	"tsserver",
+	"jsonls",
 	"angularls",
 	"vuels",
 	"html",
@@ -19,13 +20,13 @@ local servers = {
 	"dockerls",
 	"dotls",
 	"bashls",
-	"jsonls",
 	"emmet_ls",
 	"solc",
 	"tflint",
 	"pyright",
 	"yamlls",
 	"clangd",
+	"efm",
 }
 
 local settings = {

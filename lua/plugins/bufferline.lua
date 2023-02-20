@@ -27,16 +27,6 @@ bufferline.setup({
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
 		show_tab_indicators = false,
-		offsets = {
-			{
-				filetype = "NvimTree",
-				highlight = "Directory",
-				padding = 0,
-				separator = true,
-				-- text = "File Explorer"
-				text_align = "left",
-			},
-		},
 		indicator = {
 			icon = " ",
 			style = "icon",
@@ -57,6 +47,18 @@ bufferline.setup({
 				{ name = "group 2", ... },
 			},
 		},
+
+		offsets = {
+			{
+				filetype = "NvimTree",
+				highlight = "Directory",
+				padding = 0,
+				separator = true,
+				-- text = "File Explorer"
+				text_align = "left",
+			},
+		},
+
 		-- custom_areas = {
 		-- 	right = function()
 		-- 		local result = {}

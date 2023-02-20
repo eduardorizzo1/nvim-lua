@@ -89,14 +89,13 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("folke/lsp-colors.nvim")
-	-- Cmp
-	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/nvim-cmp") -- cmp
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("l3mon4d3/luasnip")
+	use("l3MON4D3/luasnip")
+	use("rafamadriz/friendly-snippets")
 	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	-- Trouble

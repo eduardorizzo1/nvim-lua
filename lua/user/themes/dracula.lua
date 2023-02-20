@@ -18,8 +18,8 @@ g.dracula_show_end_of_buffer = nil
 cmd([[ hi SignColumn guibg=NONE ]])
 cmd([[ hi LineNr guifg=#564f8b gui=bold ]])
 
-cmd([[ hi CursorLine guibg=#353847 ]])
-cmd([[ hi CursorLineNr guifg=#00ff00 gui=bold ]])
+cmd([[ hi CursorLine guibg=#212136 ]])
+cmd([[ hi CursorLineNr guifg=#564f8b gui=bold ]])
 
 cmd([[ hi NvimTreeFolderName guifg=#f8f8f2 gui=bold]])
 cmd([[ hi NvimTreeFolderIcon guifg=#bd93f9 gui=bold]])
