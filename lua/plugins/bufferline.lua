@@ -28,12 +28,12 @@ bufferline.setup({
 		close_command = "bdelete! %d",
 		show_tab_indicators = false,
 		indicator = {
-			icon = " ",
+			icon = icons.right_arrow .. " ",
 			style = "icon",
 		},
 		separator_style = {
 			icons.right_arrow,
-			icons.right_arrow,
+			"",
 		},
 		hover = {
 			enabled = true,
@@ -112,15 +112,14 @@ bufferline.setup({
 
 	highlights = {
 		separator = {
-			fg = "#564f8b",
+			fg = colors.color.fg,
 			bg = "none",
 		},
 
-		-- indicator_selected = {
-		-- 	fg = colors.color.fg,
-		-- 	bg = "none",
-		-- 	bold = true,
-		-- },
+		buffer_visible = {
+			fg = colors.color.fg,
+			bg = "none",
+		},
 
 		buffer_selected = {
 			fg = colors.color.fg,
@@ -137,26 +136,37 @@ bufferline.setup({
 		close_button_selected = {
 			fg = colors.color.fg,
 			bg = "none",
+			bold = true,
 		},
 
-		-- separator_selected = {
-		-- 	fg = "#ff0000",
-		-- 	bg = "#ffff00",
-		-- },
+		close_button_visible = {
+			fg = colors.color.fg,
+			bg = "none",
+		},
+
+		indicator_selected = {
+			fg = colors.color.fg,
+			bg = "none",
+			bold = true,
+		},
+
+		indicator_visible = {
+			fg = colors.color.fg,
+			bg = "none",
+			bold = true,
+		},
+
+		separator_selected = {
+			fg = "#ff0000",
+			bg = "#ffff00",
+		},
+
+		separator_visible = {
+			fg = "#ff00ff",
+			bg = "#fffff0",
+		},
 		--
-		-- separator_visible = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#fffff0",
-		-- },
-		--
-		-- indicator_visible = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#fffff0",
-		-- },
-		-- buffer_visible = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#00ff00",
-		-- },
+
 		-- tab = {
 		-- 	fg = "#ff00ff",
 		-- 	bg = "#ff0000",
@@ -165,11 +175,6 @@ bufferline.setup({
 		-- tab_selected = {
 		-- 	fg = "#ff00ff",
 		-- 	bg = "#ff0000",
-		-- },
-
-		-- close_button_visible = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#00ff00",
 		-- },
 
 		-- background = {
@@ -189,8 +194,8 @@ bufferline.setup({
 		-- },
 		--
 		-- indicator_selected = {
-		-- 	fg = "#1e1c29",
-		-- 	bg = "#ff00ff",
+		-- 	fg = colors.color.fg,
+		-- 	bg = "none",
 		-- },
 		--
 
