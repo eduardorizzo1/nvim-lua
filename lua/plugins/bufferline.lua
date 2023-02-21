@@ -111,8 +111,20 @@ bufferline.setup({
 	},
 
 	highlights = {
+		indicator_selected = {
+			fg = colors.color.purple_alt,
+			bg = "none",
+			bold = true,
+		},
+
+		indicator_visible = {
+			fg = colors.color.purple_alt,
+			bg = "none",
+			bold = true,
+		},
+
 		separator = {
-			fg = colors.color.fg,
+			fg = colors.color.purple_alt,
 			bg = "none",
 		},
 
@@ -129,8 +141,9 @@ bufferline.setup({
 		},
 
 		close_button = {
-			fg = colors.color.rounded_fg,
+			fg = colors.color.fg,
 			bg = "none",
+			bold = true,
 		},
 
 		close_button_selected = {
@@ -142,29 +155,18 @@ bufferline.setup({
 		close_button_visible = {
 			fg = colors.color.fg,
 			bg = "none",
-		},
-
-		indicator_selected = {
-			fg = colors.color.fg,
-			bg = "none",
 			bold = true,
 		},
 
-		indicator_visible = {
-			fg = colors.color.fg,
-			bg = "none",
-			bold = true,
-		},
-
-		separator_selected = {
-			fg = "#ff0000",
-			bg = "#ffff00",
-		},
-
-		separator_visible = {
-			fg = "#ff00ff",
-			bg = "#fffff0",
-		},
+		-- separator_selected = {
+		-- 	fg = "#ff0000",
+		-- 	bg = "#ffff00",
+		-- },
+		--
+		-- separator_visible = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#fffff0",
+		-- },
 		--
 
 		-- tab = {
