@@ -4,6 +4,12 @@ local map = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- ctrl+c to esc
+map("n", "<C-c>", "<ESC>", opts)
+map("i", "<C-c>", "<Esc>", opts)
+map("v", "<C-c>", "<Esc>", opts)
+map("c", "<C-c>", "<Esc>", opts)
+
 -- Window Navigate
 map("n", "<M-k>", "<C-w>k", opts)
 map("n", "<M-j>", "<C-w>j", opts)
@@ -83,15 +89,14 @@ map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
 map("n", ";b", ":SymbolsOutline<CR>", opts)
 
 -- Bufferline
-map("n", "<S-l>", ":bn<CR>", opts)
-map("n", "<S-h>", ":bp<CR>", opts)
-map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts)
+map("n", "<S-l>", ":bn<CR>", opts) -- next
 map("n", "<M-l>", ":bn<CR>", opts)
+map("n", "<TAB>", ":bn<CR>", opts)
+map("n", "<S-h>", ":bp<CR>", opts) -- previous
 map("n", "<M-h>", ":bp<CR>", opts)
+map("n", "<S-TAB>", ":bp<CR>", opts)
+map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts) -- delete
 map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
-map("n", "<D-l>", ":bn<CR>", opts)
-map("n", "<D-h>", ":bp<CR>", opts)
-map("n", "<D-x>", ":bd<Esc>:bp<CR>", opts)
 
 -- Telescope
 map(
