@@ -26,7 +26,7 @@ local cfg = {
 	shadow_blend = 36,
 	shadow_guibg = "Black",
 	timer_interval = 200,
-	toggle_key = nil,
+	toggle_key = "<C-f>",
 }
 
 require("lsp_signature").setup(cfg)
