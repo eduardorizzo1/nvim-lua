@@ -26,7 +26,6 @@ local servers = {
 	"pyright",
 	"yamlls",
 	"clangd",
-	"efm",
 }
 
 local settings = {
