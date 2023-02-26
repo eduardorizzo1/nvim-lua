@@ -79,11 +79,11 @@ local opts = {
 }
 
 local mappings = {
-	-- Lsp
 	l = {
 		name = "Lsp",
 		o = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
 		i = { "<cmd>TSLspImportAll<CR>", "Import All" },
+		f = { "" },
 	},
 
 	t = {
@@ -97,13 +97,23 @@ local mappings = {
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
 
+	d = {
+		name = "Debugger",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Breakpoint" },
+		c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+		i = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+		o = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
+		r = { "<cmd>lua require'dap'.repl.open()<CR>", "Repl Open" },
+	},
+
 	T = {
 		name = "Treesitter",
 		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
 		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
 	},
+
 	s = {
-		name = "Search",
+		name = "Telescope",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
