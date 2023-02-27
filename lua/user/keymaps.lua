@@ -15,25 +15,16 @@ map("n", "<M-k>", "<C-w>k", opts)
 map("n", "<M-j>", "<C-w>j", opts)
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-Up>", "<C-w>k", opts) -- w arrows
+map("n", "<C-Up>", "<C-w>k", opts)
 map("n", "<C-Down>", "<C-w>j", opts)
 map("n", "<C-Left>", "<C-w>h", opts)
 map("n", "<C-Right>", "<C-w>l", opts)
 
 -- Resize Window
-map("n", "<C-M-k>", ":resize -5<CR>", opts) -- up
-map("n", "<S-up>", ":resize -5<CR>", opts)
-
-map("n", "<C-M-j>", ":resize +5<CR>", opts) --down
-map("n", "<S-down>", ":resize +5<CR>", opts)
-
-map("n", "<C-M-h>", ":vertical resize +5<CR>", opts) -- left
-map("n", "_", ":vertical resize +5<CR>", opts)
-map("n", "<S-left>", ":vertical resize +5<CR>", opts)
-
-map("n", "<C-M-l>", ":vertical resize -5<CR>", opts) -- right
-map("n", "+", ":vertical resize -5<CR>", opts)
-map("n", "<S-right>", ":vertical resize -5<CR>", opts)
+map("n", "<C-S-k>", ":resize -5<CR>", opts)
+map("n", "<C-S-j>", ":resize +5<CR>", opts)
+map("n", "<C-S-h>", ":vertical resize +5<CR>", opts)
+map("n", "<C-S-l>", ":vertical resize -5<CR>", opts)
 
 -- Up and Down lines
 map("n", "J", "5j", opts)
