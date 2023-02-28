@@ -26,6 +26,16 @@ map("n", "<C-S-j>", ":resize +5<CR>", opts)
 map("n", "<C-S-h>", ":vertical resize +5<CR>", opts)
 map("n", "<C-S-l>", ":vertical resize -5<CR>", opts)
 
+map("n", "<C-M-k>", ":resize -5<CR>", opts)
+map("n", "<C-M-j>", ":resize +5<CR>", opts)
+map("n", "<C-M-h>", ":vertical resize +5<CR>", opts)
+map("n", "<C-M-l>", ":vertical resize -5<CR>", opts)
+
+map("n", "<S-up>", ":resize -5<CR>", opts)
+map("n", "<S-down>", ":resize +5<CR>", opts)
+map("n", "<S-left>", ":vertical resize +5<CR>", opts)
+map("n", "<S-right>", ":vertical resize -5<CR>", opts)
+
 -- Up and Down lines
 map("n", "J", "5j", opts)
 map("n", "K", "5k", opts)
