@@ -23,7 +23,8 @@ local conditions = {
 
 local config = {
 	options = {
-		disabled_filetypes = { "NvimTree", "packer" },
+		globalstatus = true,
+		disabled_filetypes = { "packer" },
 		component_separators = "",
 		section_separators = "",
 		fmt = string.lower,

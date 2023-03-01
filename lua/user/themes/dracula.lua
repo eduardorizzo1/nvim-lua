@@ -26,6 +26,6 @@ cmd([[ hi NvimTreeFolderIcon guifg=#bd93f9 gui=bold]])
 cmd([[ hi NvimTreeOpenedFolderName guifg=#bd93f9 gui=bold]])
 cmd([[ hi NvimTreeRootFolder guifg=#6272a4 gui=bold]])
 
-cmd([[ hi IndentBlanklineContextStart guifg=#bd93f9 gui=underline]])
+cmd([[ hi IndentBlanklineContextStart guifg=#bd93f9 gui=none]])
 cmd([[ hi IndentBlanklineContextChar guifg=#bd93f9 gui=none]])
 cmd([[ hi IndentBlanklineIndent1 guifg=#282a36 gui=nocombine]])
