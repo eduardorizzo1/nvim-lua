@@ -59,38 +59,6 @@ bufferline.setup({
 			},
 		},
 
-		-- custom_areas = {
-		-- 	right = function()
-		-- 		local result = {}
-		-- 		local seve = vim.diagnostic.severity
-		-- 		local error = #vim.diagnostic.get(0, { severity = seve.ERROR })
-		-- 		local warning = #vim.diagnostic.get(0, { severity = seve.WARN })
-		-- 		local info = #vim.diagnostic.get(0, { severity = seve.INFO })
-		-- 		local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
-		--
-		-- 		if error ~= 0 then
-		-- 			table.insert(result, { text = "  " .. error, fg = colors.color.red })
-		-- 		end
-		--
-		-- 		if warning ~= 0 then
-		-- 			table.insert(result, { text = "  " .. warning, fg = colors.color.yellow })
-		-- 		end
-		--
-		-- 		if hint ~= 0 then
-		-- 			table.insert(result, { text = "  " .. hint, fg = colors.color.green })
-		-- 		end
-		--
-		-- 		if info ~= 0 then
-		-- 			table.insert(result, { text = "  " .. info, fg = colors.color.cyan })
-		-- 		end
-		-- 		return result
-		-- 	end,
-		-- },
-		--
-		-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-		-- 	return "(" .. count .. ")"
-		-- end,
-
 		custom_filter = function(buf_number)
 			-- Func to filter out our managed/persistent split terms
 			local present_type, type = pcall(function()

@@ -8,8 +8,8 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	sources = {
-		code_actions.eslint,
-		formatting.prettier,
+		code_actions.eslint_d,
+		formatting.prettierd,
 		formatting.stylua,
 		formatting.jq,
 	},
