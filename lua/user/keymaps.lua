@@ -120,6 +120,7 @@ map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>', op
 map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
 map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
 map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
+map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<CR>', opts)
 
 -- LspSaga Mappings
 map("n", "gc", "<cmd>Lspsaga code_action<CR>", opts)

@@ -65,6 +65,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
+	use("nvim-telescope/telescope-media-files.nvim")
 	-- Nvimtree, lualine and bufferline
 	use("kyazdani42/nvim-tree.lua")
 	use("kyazdani42/nvim-web-devicons")
@@ -125,12 +126,6 @@ return packer.startup(function(use)
 	use("simrat39/symbols-outline.nvim")
 	use({ "mfussenegger/nvim-dap" }) -- Debugger (DAP)
 	use("folke/which-key.nvim") -- whichkey
-
-	-- TODO: Install some media file preview
-	-- telescope-media-files
-	-- use("nvim-telescope/telescope-media-files.nvim")
-	-- Hologram.nvim
-	-- use({ "edluffy/hologram.nvim" })
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

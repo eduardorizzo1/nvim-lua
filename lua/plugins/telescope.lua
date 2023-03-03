@@ -6,7 +6,7 @@ end
 local actions = require("telescope.actions")
 
 -- TODO: Install some media file preview
--- telescope.load_extension("media_files")
+telescope.load_extension("media_files")
 
 telescope.setup({
 	defaults = {
