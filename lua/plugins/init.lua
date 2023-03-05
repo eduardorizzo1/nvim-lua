@@ -111,6 +111,12 @@ return packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+
+	-- Debugger (DAP)
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+
 	-- Others
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
@@ -124,7 +130,6 @@ return packer.startup(function(use)
 	use("APZelos/blamer.nvim") -- Git blamer
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use("simrat39/symbols-outline.nvim")
-	use({ "mfussenegger/nvim-dap" }) -- Debugger (DAP)
 	use("folke/which-key.nvim") -- whichkey
 
 	if PACKER_BOOTSTRAP then

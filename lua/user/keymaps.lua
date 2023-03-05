@@ -160,7 +160,7 @@ map("n", "<leader><leader>j", ":HopLineAC<CR>", opts)
 map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
 
 -- Debugger (Nvim-Dap)
-map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+map("n", "1", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
