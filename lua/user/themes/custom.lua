@@ -20,7 +20,7 @@ cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 -- cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE ]])
 
 if g.colors_name == "dracula" then
-	cmd([[ hi CursorLine guibg=#282a36]])
+	cmd([[ hi CursorLine guibg=#333952]])
 	cmd([[ hi CursorLineNR cterm=bold guifg=#8be9fd gui=bold ]])
 	cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
 	cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])

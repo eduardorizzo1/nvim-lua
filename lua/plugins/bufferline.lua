@@ -27,14 +27,8 @@ bufferline.setup({
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
 		show_tab_indicators = false,
-		indicator = {
-			icon = icons.left_half_ball,
-			style = "icon",
-		},
-		separator_style = {
-			icons.right_half_ball,
-			"",
-		},
+		indicator = "none",
+		separator_style = "slope",
 		hover = {
 			enabled = true,
 			delay = 0,
@@ -54,8 +48,8 @@ bufferline.setup({
 				highlight = "Directory",
 				padding = 0,
 				separator = true,
-				-- text = "File Explorer"
-				text_align = "left",
+				-- text = "-----[ File Explorer ]-----",
+				text_align = "center",
 			},
 		},
 
@@ -79,34 +73,33 @@ bufferline.setup({
 	},
 
 	highlights = {
-
-		-- fill = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		-- },
-		-- background = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
+		fill = {
+			fg = colors.color.fg,
+			bg = colors.color.bg_alt,
+		},
+		background = {
+			fg = colors.color.comment,
+			bg = colors.color.bg_alt,
+		},
 		-- tab = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
 		-- },
 		-- tab_selected = {
-		--     fg = tabline_sel_bg,
-		--     bg = '<colour-value-here>'
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
 		-- },
 		-- tab_close = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
 		-- },
 		close_button = {
 			fg = colors.color.fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
 		},
 		close_button_visible = {
 			fg = colors.color.fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
 		},
 		close_button_selected = {
 			fg = colors.color.fg,
@@ -116,7 +109,7 @@ bufferline.setup({
 
 		buffer_visible = {
 			fg = colors.color.fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
 		},
 		buffer_selected = {
 			fg = colors.color.fg,
@@ -282,71 +275,71 @@ bufferline.setup({
 		-- },
 		modified = {
 			-- fg = colors.color.fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
 		},
 		modified_visible = {
 			-- fg = colors.color.fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
 		},
 		modified_selected = {
 			-- fg = colors.color.fg,
 			bg = colors.color.rounded_fg,
 			bold = true,
 		},
-		-- duplicate_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		--     italic = true,
-		-- },
-		-- duplicate_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		--     italic = true
-		-- },
-		-- duplicate = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		--     italic = true
-		-- },
+		duplicate_selected = {
+			fg = colors.color.comment,
+			bg = colors.color.rounded_fg,
+			italic = true,
+		},
+		duplicate_visible = {
+			fg = colors.color.fg,
+			bg = colors.color.bg_alt,
+			italic = true,
+		},
+		duplicate = {
+			fg = colors.color.comment,
+			bg = colors.color.bg_alt,
+			italic = true,
+		},
 		separator_selected = {
-			fg = colors.color.rounded_fg,
-			bg = "none",
+			fg = colors.color.bg_alt,
+			bg = colors.color.rounded_fg,
 		},
 		separator_visible = {
-			fg = colors.color.rounded_fg,
-			bg = "none",
+			fg = colors.color.bg_alt,
+			bg = colors.color.bg_alt,
 		},
 		separator = {
-			fg = colors.color.rounded_fg,
-			bg = "none",
+			bg = colors.color.bg_alt,
+			fg = colors.color.bg_alt,
 		},
 
 		indicator_selected = {
 			fg = colors.color.rounded_fg,
-			bg = "none",
+			bg = colors.color.rounded_fg,
 		},
 
 		-- pick_selected = {
 		-- 	fg = colors.color.rounded_fg,
-		-- 	bg = "none",
+		-- 	bg = colors.color.bg_alt,
 		-- 	bold = true,
 		-- 	italic = true,
 		-- },
 		-- pick_visible = {
 		-- 	fg = colors.color.fg,
-		-- 	bg = "none",
+		-- 	bg = colors.color.bg_alt,
 		-- 	bold = true,
 		-- 	italic = true,
 		-- },
 		-- pick = {
 		-- 	fg = colors.color.rounded_fg,
-		-- 	bg = "none",
+		-- 	bg = colors.color.bg_alt,
 		-- 	bold = true,
 		-- 	italic = true,
 		-- },
-		-- offset_separator = {
-		--     fg = win_separator_fg,
-		--     bg = separator_background_color,
-		-- },
+		offset_separator = {
+			fg = colors.color.orange,
+			bg = colors.color.cyan,
+		},
 	},
 })
