@@ -26,24 +26,25 @@ local dracula = {
 }
 
 local catppuccin = {
-	bg = "#282a36",
-	current_line = "#44475a",
-	fg = "#f8f8f2",
-	comment = "#6272a4",
-	cyan = "#8be9fd",
-	green = "#50fa7b",
-	orange = "#ffb86c",
-	pink = "#ff79c6",
-	purple = "#bd93f9",
-	red = "#ff5555",
-	yellow = "#f1fa8c",
-	purple_alt = "#564f8b",
+	bg = "#1E1E2E",
+	current_line = "#2A2B3C",
+	fg = "#cdd6f4",
+	comment = "#585b70",
+	cyan = "#89dceb",
+	green = "#a6e3a1",
+	orange = "#fab387",
+	pink = "#f5c2e7",
+	purple = "#cba6f7",
+	red = "#f38ba8",
+	yellow = "#f9e2af",
+
+	purple_alt = "#b4befe",
 	rounded_bg = "#1f2335",
-	rounded_fg = "#333952",
+	rounded_fg = "#313244",
 	darkblue = "#081633",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	blue = "#51afef",
+	violet = "#f2cdcd",
+	magenta = "#eba0ac",
+	blue = "#89b4fa",
 }
 
 local tokyonight = {
