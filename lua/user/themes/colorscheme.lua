@@ -1,5 +1,4 @@
 local g = vim.g
-local cmd = vim.cmd
 local M = {}
 
 local dracula = {
@@ -16,6 +15,7 @@ local dracula = {
 	yellow = "#f1fa8c",
 
 	bg_alt = "#212136",
+	bg_dark = "#212136",
 	purple_alt = "#564f8b",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#333952",
@@ -38,6 +38,8 @@ local catppuccin = {
 	red = "#f38ba8",
 	yellow = "#f9e2af",
 
+	bg_alt = "#212136",
+	bg_dark = "#212136",
 	purple_alt = "#b4befe",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#313244",
@@ -53,15 +55,18 @@ local tokyonight = {
 	fg = "#C0CAF5",
 	comment = "#505980",
 	cyan = "#7DCFFF",
-	green = "#9ECE6A",
+	green = "#73daca",
 	orange = "#E0AF68",
 	pink = "#F7768E",
 	purple = "#BB9AF7",
 	red = "#DB4B4B",
-	yellow = "#E0AF68",
+	yellow = "#9ECE6A",
+
+	bg_alt = "#1f2335",
+	bg_dark = "#1A1B26",
 
 	purple_alt = "#564f8b",
-	rounded_bg = "#1f2335",
+	rounded_bg = "#1A1B26",
 	rounded_fg = "#333952",
 	darkblue = "#081633",
 	violet = "#a9a1e1",

@@ -27,7 +27,7 @@ bufferline.setup({
 		close_command = "bdelete! %d",
 		show_tab_indicators = false,
 		indicator = "none",
-		separator_style = "slope", -- "slope | slant"
+		separator_style = "slant", -- "slope | slant"
 		hover = {
 			enabled = true,
 			delay = 0,
@@ -74,11 +74,11 @@ bufferline.setup({
 	highlights = {
 		fill = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 		},
 		background = {
 			fg = colors.color.comment,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 		},
 		-- tab = {
 		-- 	fg = "#ff00ff",
@@ -301,7 +301,7 @@ bufferline.setup({
 			italic = true,
 		},
 		separator_selected = {
-			fg = colors.color.bg_alt,
+			fg = colors.color.bg_dark,
 			bg = colors.color.rounded_fg,
 		},
 		separator_visible = {
@@ -309,8 +309,8 @@ bufferline.setup({
 			bg = colors.color.bg_alt,
 		},
 		separator = {
-			bg = colors.color.bg_alt,
-			fg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
+			fg = colors.color.bg_dark,
 		},
 
 		indicator_selected = {
@@ -337,8 +337,8 @@ bufferline.setup({
 		-- 	italic = true,
 		-- },
 		offset_separator = {
-			fg = colors.color.orange,
-			bg = colors.color.cyan,
+			fg = colors.color.bg,
+			bg = colors.color.bg,
 		},
 	},
 })
