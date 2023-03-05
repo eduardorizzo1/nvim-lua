@@ -1,7 +1,97 @@
-local dap = require("dap")
+local dap_status_ok, dap = pcall(require, "dap")
+if not dap_status_ok then
+	return
+end
+
+local dap_ui_status_ok, dapui = pcall(require, "dapui")
+if not dap_ui_status_ok then
+	return
+end
+
 local icons = require("user.icons")
 
-vim.fn.sign_define("DapBreakpoint", { text = icons.bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+dapui.setup({
+	controls = {
+		element = "repl",
+		enabled = true,
+		icons = {
+			disconnect = "",
+			pause = "",
+			play = "",
+			run_last = "",
+			step_back = "",
+			step_into = "",
+			step_out = "",
+			step_over = "",
+			terminate = "",
+		},
+	},
+	element_mappings = {},
+	expand_lines = true,
+	floating = {
+		border = "single",
+		mappings = {
+			close = { "q", "<Esc>" },
+		},
+	},
+	force_buffers = true,
+	icons = {
+		expanded = "▾",
+		collapsed = "▸",
+		current_frame = "",
+	},
+	layouts = {
+		{
+			elements = {
+				{
+					id = "breakpoints",
+					size = 0.1,
+				},
+				{
+					id = "scopes",
+					size = 0.6,
+				},
+				{
+					id = "stacks",
+					size = 0.2,
+				},
+				{
+					id = "watches",
+					size = 0.1,
+				},
+			},
+			position = "right",
+			size = 40,
+		},
+		{
+			elements = {
+				{
+					id = "repl",
+					size = 0.3,
+				},
+				{
+					id = "console",
+					size = 0.7,
+				},
+			},
+			position = "bottom",
+			size = 15,
+		},
+	},
+	mappings = {
+		edit = "e",
+		expand = { "<CR>", "<2-LeftMouse>" },
+		open = "o",
+		remove = "d",
+		repl = "r",
+		toggle = "t",
+	},
+	render = {
+		indent = 1,
+		max_value_lines = 100,
+	},
+})
+
 --------------------------------
 ---- Javascript/Typescript -----
 --------------------------------
@@ -98,35 +188,14 @@ dap.configurations.python = {
 	},
 }
 
--- local dap_vscodejs = require("dap-vscode-js")
+vim.fn.sign_define("DapBreakpoint", { text = icons.bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
--- dap_vscodejs.setup({
--- 	-- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
--- 	-- debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation.
--- 	-- debugger_cmd = { "js-debug-adapter" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
--- 	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
--- 	-- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
--- 	-- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
--- 	-- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
--- })
---
--- for _, language in ipairs({ "typescript", "javascript" }) do
--- 	require("dap").configurations[language] = {
--- 		{
--- 			{
--- 				type = "pwa-node",
--- 				request = "launch",
--- 				name = "Launch file",
--- 				program = "${file}",
--- 				cwd = "${workspaceFolder}",
--- 			},
--- 			{
--- 				type = "pwa-node",
--- 				request = "attach",
--- 				name = "Attach",
--- 				processId = require("dap.utils").pick_process,
--- 				cwd = "${workspaceFolder}",
--- 			},
--- 		},
--- 	}
--- end
+dap.listeners.after.event_initialized["dapui_config"] = function()
+	dapui.open({})
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+	dapui.close({})
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+	dapui.close({})
+end
