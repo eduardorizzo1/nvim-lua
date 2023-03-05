@@ -11,21 +11,22 @@ map("v", "<C-c>", "<ESC>", opts)
 map("c", "<C-c>", "<ESC>", opts)
 
 -- Window Navigate
-map("n", "<M-k>", "<C-w>k", opts)
-map("n", "<M-j>", "<C-w>j", opts)
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<M-j>", "<C-w>j", opts)
+map("n", "<M-k>", "<C-w>k", opts)
+
 map("n", "<C-Up>", "<C-w>k", opts)
 map("n", "<C-Down>", "<C-w>j", opts)
 map("n", "<C-Left>", "<C-w>h", opts)
 map("n", "<C-Right>", "<C-w>l", opts)
 
--- Resize Window
-map("n", "<C-S-k>", ":resize -5<CR>", opts)
-map("n", "<C-S-j>", ":resize +5<CR>", opts)
-map("n", "<C-S-h>", ":vertical resize +5<CR>", opts)
-map("n", "<C-S-l>", ":vertical resize -5<CR>", opts)
+map("n", "<C-S-k>", "<C-w>k", opts)
+map("n", "<C-S-j>", "<C-w>j", opts)
+map("n", "<C-S-h>", "<C-w>h", opts)
+map("n", "<C-S-l>", "<C-w>l", opts)
 
+-- Resize Window
 map("n", "<C-M-k>", ":resize -5<CR>", opts)
 map("n", "<C-M-j>", ":resize +5<CR>", opts)
 map("n", "<C-M-h>", ":vertical resize +5<CR>", opts)
@@ -75,7 +76,6 @@ map("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- ========================================================
 ------------------ P L U G I N S --------------------------
 -- ========================================================
-
 -- Nvimtree
 map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 

@@ -110,11 +110,15 @@ scrollbar.setup({
 	},
 	excluded_buftypes = {
 		"terminal",
+		"nvimtree",
 	},
 	excluded_filetypes = {
 		"prompt",
 		"TelescopePrompt",
 		"noice",
+		"NvimTree",
+		"packer",
+		"dashboard",
 	},
 	autocmd = {
 		render = {
