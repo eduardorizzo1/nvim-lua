@@ -130,6 +130,7 @@ return packer.startup(function(use)
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use("simrat39/symbols-outline.nvim")
 	use("folke/which-key.nvim") -- whichkey
+	use("petertriho/nvim-scrollbar") -- scrollbar
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
