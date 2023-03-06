@@ -150,8 +150,9 @@ map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
 
--- Git Blame
-map("n", ";gg", ":BlamerToggle <CR>", opts)
+-- Git
+map("n", ";gb", ":BlamerToggle <CR>", opts)
+map("n", ";gs", ":Gitsigns toggle_signs <CR>", opts)
 
 -- Hop
 map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)

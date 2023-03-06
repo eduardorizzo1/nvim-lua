@@ -116,21 +116,24 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
+	-- Git
+	use("APZelos/blamer.nvim")
+	use("lewis6991/gitsigns.nvim")
+
 	-- Others
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("karb94/neoscroll.nvim")
 	use("lewis6991/impatient.nvim")
-	use({ "mg979/vim-visual-multi", branch = "master" })
-	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("fleischie/vim-styled-components")
-	use({ "phaazon/hop.nvim", branch = "v1" })
-	use("APZelos/blamer.nvim") -- Git blamer
-	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use("simrat39/symbols-outline.nvim")
 	use("folke/which-key.nvim") -- whichkey
 	use("petertriho/nvim-scrollbar") -- scrollbar
+	use({ "mg979/vim-visual-multi", branch = "master" })
+	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "phaazon/hop.nvim", branch = "v1" })
+	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

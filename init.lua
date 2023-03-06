@@ -1,8 +1,10 @@
 require("plugins")
+
 require("user.options")
 require("user.keymaps")
 require("user.themes.dracula")
 require("user.themes.custom")
+
 require("plugins.impatient")
 require("plugins.dashboard")
 require("plugins.nvim-tree")
@@ -21,6 +23,7 @@ require("plugins.zen-mode")
 require("plugins.toggleterm")
 require("plugins.telescope")
 require("plugins.blamer")
+require("plugins.gitsigns")
 require("plugins.hop")
 require("plugins.code-runner")
 require("plugins.trouble")
