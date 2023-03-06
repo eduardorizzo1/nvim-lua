@@ -1,4 +1,8 @@
-local scrollbar = require("scrollbar")
+local status, scrollbar = pcall(require, "scrollbar")
+if not status then
+	return
+end
+
 local colors = require("user.themes.colorscheme")
 
 scrollbar.setup({

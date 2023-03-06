@@ -5,7 +5,7 @@ require("user.keymaps")
 require("user.themes.dracula")
 require("user.themes.custom")
 
-require("plugins.impatient")
+require("impatient")
 require("plugins.dashboard")
 require("plugins.nvim-tree")
 require("plugins.bufferline")

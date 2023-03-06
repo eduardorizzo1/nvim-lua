@@ -1,4 +1,9 @@
-local cfg = {
+local status, lsp_signature = pcall(require, "lsp_signature")
+if not status then
+	return
+end
+
+lsp_signature.setup({
 	debug = false,
 	log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log",
 	verbose = false,
@@ -27,6 +32,4 @@ local cfg = {
 	shadow_guibg = "Black",
 	timer_interval = 200,
 	toggle_key = "<C-f>",
-}
-
-require("lsp_signature").setup(cfg)
+})

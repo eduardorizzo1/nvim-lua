@@ -1,4 +1,8 @@
-local lualine = require("lualine")
+local status, lualine = pcall(require, "lualine")
+if not status then
+	return
+end
+
 local icons = require("user.icons")
 local colors = require("user.themes.colorscheme").color
 local mode_color = require("user.themes.colorscheme").mode_color

@@ -2,13 +2,13 @@ local M = {}
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
+local status_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp then
 	return
 end
 
-local status_ok, illuminate = pcall(require, "illuminate")
-if not status_ok then
+local status_illuminate, illuminate = pcall(require, "illuminate")
+if not status_illuminate then
 	return
 end
 

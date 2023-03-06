@@ -1,4 +1,9 @@
-require("symbols-outline").setup({
+local status, symbols_outline = pcall(require, "symbols-outline")
+if not status then
+	return
+end
+
+symbols_outline.setup({
 	highlight_hovered_item = true,
 	show_guides = true,
 	auto_preview = false,

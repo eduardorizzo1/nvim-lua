@@ -1,4 +1,10 @@
-local ds = require("dashboard")
+local status, dashboard = pcall(require, "dashboard")
+
+if not status then
+	return
+end
+
+local dashboard = require("dashboard")
 local icons = require("user.icons")
 
 local custom_header = {
@@ -110,7 +116,7 @@ local custom_header = {
 	},
 }
 
-ds.setup({
+dashboard.setup({
 	theme = "doom",
 	config = {
 		week_header = {

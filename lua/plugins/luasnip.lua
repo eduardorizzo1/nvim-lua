@@ -1,5 +1,5 @@
-local snip_status_ok, ls = pcall(require, "luasnip")
-if not snip_status_ok then
+local status, ls = pcall(require, "luasnip")
+if not status then
 	return
 end
 

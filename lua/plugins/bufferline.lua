@@ -1,8 +1,8 @@
-local status_ok, bufferline = pcall(require, "bufferline")
+local status, bufferline = pcall(require, "bufferline")
 local colors = require("user.themes.colorscheme")
 local groups = require("bufferline.groups")
 
-if not status_ok then
+if not status then
 	return
 end
 

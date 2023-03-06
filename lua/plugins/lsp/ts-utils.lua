@@ -1,4 +1,7 @@
-local ts_utils = require("nvim-lsp-ts-utils")
+local status, ts_utils = pcall(require, "nvim-lsp-ts-utils")
+if not status then
+	return
+end
 
 ts_utils.setup({
 	debug = false,

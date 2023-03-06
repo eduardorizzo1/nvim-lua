@@ -1,4 +1,9 @@
-require("mini.surround").setup({
+local status, surround = pcall(require, "mini.surround")
+if not status then
+	return
+end
+
+surround.setup({
 	-- Add custom surroundings to be used on top of builtin ones. For more
 	-- information with examples, see `:h MiniSurround.config`.
 	custom_surroundings = nil,

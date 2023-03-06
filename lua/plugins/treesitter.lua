@@ -1,10 +1,7 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
+local status, configs = pcall(require, "nvim-treesitter.configs")
+if not status then
 	return
 end
-
--- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
 configs.setup({
 	ensure_installed = "all",
@@ -16,13 +13,6 @@ configs.setup({
 		enable = true,
 		extended_mode = true,
 		max_file_lines = nil,
-		-- colors = {
-		-- 	"#ffa500",
-		-- 	"#ff7699",
-		-- 	"#00ff00",
-		-- 	"#ffff00",
-		-- 	"#ff5555",
-		-- },
 	},
 	indent = {
 		enable = true,
