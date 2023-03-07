@@ -3,6 +3,8 @@ if not status then
 	return
 end
 
+vim.o.timeoutlen = 200
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -71,7 +73,7 @@ local setup = {
 
 local opts = {
 	mode = "n",
-	prefix = "<leader>",
+	prefix = "<C-;>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
@@ -85,7 +87,6 @@ local mappings = {
 		i = { "<cmd>TSLspImportAll<CR>", "Import All" },
 		f = { "" },
 	},
-
 	t = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
@@ -96,7 +97,6 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
-
 	d = {
 		name = "Debugger",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Breakpoint" },
@@ -105,13 +105,11 @@ local mappings = {
 		o = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
 		r = { "<cmd>lua require'dap'.repl.open()<CR>", "Repl Open" },
 	},
-
 	T = {
 		name = "Treesitter",
 		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
 		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
 	},
-
 	s = {
 		name = "Telescope",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

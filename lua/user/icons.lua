@@ -365,6 +365,7 @@ return {
 -- Add = " ",
 -- Add = " ",
 -- NoteBook = " ",
+-- border = {"▄","▄","▄","█","▀","▀","▀","█"},
 
 --      פּ  ﯟ       蘒練       some other good icons
 

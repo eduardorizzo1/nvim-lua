@@ -78,7 +78,7 @@ ins_left({
 	color = function()
 		return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
 	end,
-	padding = { right = 0, left = 0 },
+	padding = { right = 1, left = 1 },
 })
 
 ins_left({
@@ -102,7 +102,7 @@ ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.green, bg = colors.rounded_fg },
-	padding = { right = 0, left = 0 },
+	padding = { right = 1, left = 1 },
 })
 
 ins_left({
@@ -128,7 +128,7 @@ ins_left({
 	icon = "",
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.cyan, bg = colors.rounded_fg },
-	padding = { right = 0, left = 0 },
+	padding = { right = 1, left = 1 },
 })
 
 ins_left({
@@ -186,7 +186,7 @@ ins_right({
 	"location",
 	padding = { right = 0, left = 0 },
 	color = {
-		fg = colors.magenta,
+		fg = colors.purple,
 	},
 })
 

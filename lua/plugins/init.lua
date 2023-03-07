@@ -115,6 +115,7 @@ return packer.startup(function(use)
 	-- Debugger (DAP)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	-- Git
 	use("APZelos/blamer.nvim")
@@ -134,6 +135,8 @@ return packer.startup(function(use)
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "phaazon/hop.nvim", branch = "v1" })
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
+	use({ "fgheng/winbar.nvim" }) -- winbar
+	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
