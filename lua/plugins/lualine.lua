@@ -1,5 +1,10 @@
-local status, lualine = pcall(require, "lualine")
-if not status then
+local lualine_ok, lualine = pcall(require, "lualine")
+if not lualine_ok then
+	return
+end
+
+local navic_ok, navic = pcall(require, "nvim-navic")
+if not navic_ok then
 	return
 end
 
@@ -52,6 +57,27 @@ local config = {
 		lualine_z = {},
 		lualine_c = {},
 		lualine_x = {},
+	},
+	winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {
+			-- { "filename", path = 1, color = { bg = "NONE", fg = colors.purple } },
+			-- { navic.get_location, cond = navic.is_available },
+		},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_winbar = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {
+			-- { "filename", path = 1, color = { bg = "NONE", fg = colors.comment } },
+		},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
 	},
 }
 

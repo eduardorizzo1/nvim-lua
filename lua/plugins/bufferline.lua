@@ -1,6 +1,7 @@
 local status, bufferline = pcall(require, "bufferline")
 local colors = require("user.themes.colorscheme")
 local groups = require("bufferline.groups")
+local icons = require("user.icons")
 
 if not status then
 	return
@@ -25,9 +26,16 @@ bufferline.setup({
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
-		show_tab_indicators = false,
-		indicator = "none",
-		separator_style = "slant", -- "slope | slant"
+		show_tab_indicators = true,
+		indicator = {
+			icon = icons.left_half_ball,
+			style = "icon",
+		},
+		-- separator_style = "slant", -- "slope | slant"
+		separator_style = {
+			icons.right_half_ball,
+			icons.right_parenthesis,
+		},
 		hover = {
 			enabled = true,
 			delay = 0,
@@ -80,18 +88,6 @@ bufferline.setup({
 			fg = colors.color.comment,
 			bg = colors.color.bg_dark,
 		},
-		-- tab = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
-		-- tab_selected = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
-		-- tab_close = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
 		close_button = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_alt,
@@ -116,6 +112,70 @@ bufferline.setup({
 			bold = true,
 			italic = true,
 		},
+		modified = {
+			-- fg = colors.color.fg,
+			bg = colors.color.bg_alt,
+		},
+		modified_visible = {
+			-- fg = colors.color.fg,
+			bg = colors.color.bg_alt,
+		},
+		modified_selected = {
+			-- fg = colors.color.fg,
+			bg = colors.color.rounded_fg,
+			bold = true,
+		},
+		duplicate_selected = {
+			fg = colors.color.comment,
+			bg = colors.color.rounded_fg,
+			italic = true,
+		},
+		duplicate_visible = {
+			fg = colors.color.fg,
+			bg = colors.color.bg_alt,
+			italic = true,
+		},
+		duplicate = {
+			fg = colors.color.comment,
+			bg = colors.color.bg_alt,
+			italic = true,
+		},
+		separator_selected = {
+			fg = colors.color.bg_dark,
+			bg = colors.color.rounded_fg,
+		},
+		separator_visible = {
+			fg = colors.color.bg_alt,
+			bg = colors.color.rounded_fg,
+		},
+		separator = {
+			bg = colors.color.bg_dark,
+			fg = colors.color.rounded_fg,
+		},
+
+		indicator_selected = {
+			fg = colors.color.rounded_fg,
+			bg = colors.color.bg_dark,
+		},
+
+		offset_separator = {
+			fg = colors.color.bg,
+			bg = colors.color.bg,
+		},
+
+		-- tab = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
+		-- },
+		-- tab_selected = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
+		-- },
+		-- tab_close = {
+		-- 	fg = "#ff00ff",
+		-- 	bg = "#ffffff",
+		-- },
+
 		-- numbers = {
 		--     fg = '<colour-value-here>',
 		--     bg = '<colour-value-here>',
@@ -272,51 +332,6 @@ bufferline.setup({
 		--     bold = true,
 		--     italic = true,
 		-- },
-		modified = {
-			-- fg = colors.color.fg,
-			bg = colors.color.bg_alt,
-		},
-		modified_visible = {
-			-- fg = colors.color.fg,
-			bg = colors.color.bg_alt,
-		},
-		modified_selected = {
-			-- fg = colors.color.fg,
-			bg = colors.color.rounded_fg,
-			bold = true,
-		},
-		duplicate_selected = {
-			fg = colors.color.comment,
-			bg = colors.color.rounded_fg,
-			italic = true,
-		},
-		duplicate_visible = {
-			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
-			italic = true,
-		},
-		duplicate = {
-			fg = colors.color.comment,
-			bg = colors.color.bg_alt,
-			italic = true,
-		},
-		separator_selected = {
-			fg = colors.color.bg_dark,
-			bg = colors.color.rounded_fg,
-		},
-		separator_visible = {
-			fg = colors.color.bg_alt,
-			bg = colors.color.bg_alt,
-		},
-		separator = {
-			bg = colors.color.bg_dark,
-			fg = colors.color.bg_dark,
-		},
-
-		indicator_selected = {
-			fg = colors.color.rounded_fg,
-			bg = colors.color.rounded_fg,
-		},
 
 		-- pick_selected = {
 		-- 	fg = colors.color.rounded_fg,
@@ -336,9 +351,5 @@ bufferline.setup({
 		-- 	bold = true,
 		-- 	italic = true,
 		-- },
-		offset_separator = {
-			fg = colors.color.bg,
-			bg = colors.color.bg,
-		},
 	},
 })
