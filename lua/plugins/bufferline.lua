@@ -29,12 +29,12 @@ bufferline.setup({
 		show_tab_indicators = true,
 		indicator = {
 			icon = icons.left_half_ball,
-			style = "icon",
+			style = "none",
 		},
 		-- separator_style = "slant", -- "slope | slant"
 		separator_style = {
-			icons.right_half_ball,
-			icons.right_parenthesis,
+			-- icons.right_half_ball,
+			-- icons.right_parenthesis,
 		},
 		hover = {
 			enabled = true,
@@ -55,7 +55,7 @@ bufferline.setup({
 				highlight = "Directory",
 				padding = 0,
 				separator = true,
-				-- text = "-----[ File Explorer ]-----",
+				text = "Explorer",
 				text_align = "center",
 			},
 		},
@@ -90,7 +90,7 @@ bufferline.setup({
 		},
 		close_button = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 		},
 		close_button_visible = {
 			fg = colors.color.fg,
@@ -98,7 +98,7 @@ bufferline.setup({
 		},
 		close_button_selected = {
 			fg = colors.color.fg,
-			bg = colors.color.rounded_fg,
+			bg = colors.color.bg_dark,
 			bold = true,
 		},
 
@@ -108,7 +108,7 @@ bufferline.setup({
 		},
 		buffer_selected = {
 			fg = colors.color.fg,
-			bg = colors.color.rounded_fg,
+			bg = colors.color.bg_dark,
 			bold = true,
 			italic = true,
 		},

@@ -27,8 +27,8 @@ cmd([[ hi NvimTreeOpenedFolderName guifg=#bd93f9 gui=bold ]])
 cmd([[ hi NvimTreeRootFolder guifg=#6272a4 gui=bold ]])
 cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
 
-cmd([[ hi IndentBlanklineContextStart guifg=#bd93f9 ]])
-cmd([[ hi IndentBlanklineContextChar guifg=#bd93f9 ]])
+cmd([[ hi IndentBlanklineContextStart guifg=#564f8b ]])
+cmd([[ hi IndentBlanklineContextChar guifg=#564f8b ]])
 cmd([[ hi IndentBlanklineIndent1 guifg=#282a36 ]])
 
 cmd([[ hi GitSignsDelete guibg=NONE guifg=#ff5555 ]])

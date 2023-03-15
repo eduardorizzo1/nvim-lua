@@ -74,6 +74,31 @@ local tokyonight = {
 	blue = "#51afef",
 }
 
+local kanagawa = {
+	bg = "#1F1F28",
+	current_line = "#363646",
+	fg = "#DCD7BA",
+	comment = "#727169",
+	cyan = "#7FB4CA",
+	green = "#98BB6C",
+	orange = "#FFA066",
+	pink = "#D27E99",
+	purple = "#957FB8",
+	red = "#E46876",
+	yellow = "#E6C384",
+
+	bg_alt = "#2A2A37",
+	bg_dark = "#16161D",
+
+	purple_alt = "#564f8b",
+	rounded_bg = "#1A1B26",
+	rounded_fg = "#363646",
+	darkblue = "#081633",
+	violet = "#957FB8",
+	magenta = "#957FB8",
+	blue = "#7E9CD8",
+}
+
 local mode_color = function(theme)
 	return {
 		n = theme.purple,
@@ -105,6 +130,9 @@ if g.colors_name == "catppuccin" then
 elseif g.colors_name == "tokyonight" then
 	M.color = tokyonight
 	M.mode_color = mode_color(tokyonight)
+elseif g.colors_name == "kanagawa" then
+	M.color = kanagawa
+	M.mode_color = mode_color(kanagawa)
 else
 	M.color = dracula
 	M.mode_color = mode_color(dracula)
