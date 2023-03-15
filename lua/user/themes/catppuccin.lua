@@ -45,8 +45,8 @@ require("catppuccin").setup({
 
 cmd([[ hi SignColumn guibg=NONE ]])
 -- IndentBlankLine
-cmd([[ hi IndentBlanklineContextStart guifg=#c6a0f6 gui=none]])
-cmd([[ hi IndentBlanklineContextChar guifg=#c6a0f6 gui=none]])
+cmd([[ hi IndentBlanklineContextStart guifg=#C9CBFF gui=none]])
+cmd([[ hi IndentBlanklineContextChar guifg=#C9CBFF gui=none]])
 cmd([[ hi IndentBlanklineIndent1 guifg=#101019 gui=nocombine]])
 
 -- Bufferline

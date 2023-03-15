@@ -26,16 +26,12 @@ bufferline.setup({
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
-		show_tab_indicators = true,
+		show_tab_indicators = false,
 		indicator = {
-			icon = icons.left_half_ball,
+			icon = "",
 			style = "none",
 		},
-		-- separator_style = "slant", -- "slope | slant"
-		separator_style = {
-			-- icons.right_half_ball,
-			-- icons.right_parenthesis,
-		},
+		separator_style = { "", "" }, -- "slope | slant"
 		hover = {
 			enabled = true,
 			delay = 0,
@@ -55,7 +51,7 @@ bufferline.setup({
 				highlight = "Directory",
 				padding = 0,
 				separator = true,
-				text = "Explorer",
+				-- text = "-----[ Explorer ]-----",
 				text_align = "center",
 			},
 		},
@@ -114,15 +110,15 @@ bufferline.setup({
 		},
 		modified = {
 			-- fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 		},
 		modified_visible = {
 			-- fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 		},
 		modified_selected = {
 			-- fg = colors.color.fg,
-			bg = colors.color.rounded_fg,
+			bg = colors.color.bg,
 			bold = true,
 		},
 		duplicate_selected = {
@@ -142,7 +138,7 @@ bufferline.setup({
 		},
 		separator_selected = {
 			fg = colors.color.bg_dark,
-			bg = colors.color.rounded_fg,
+			bg = colors.color.bg_dark,
 		},
 		separator_visible = {
 			fg = colors.color.bg_alt,
@@ -150,18 +146,17 @@ bufferline.setup({
 		},
 		separator = {
 			bg = colors.color.bg_dark,
-			fg = colors.color.rounded_fg,
+			fg = colors.color.bg_dark,
 		},
-
 		indicator_selected = {
-			fg = colors.color.rounded_fg,
+			fg = colors.color.bg_dark,
 			bg = colors.color.bg_dark,
 		},
 
-		offset_separator = {
-			fg = colors.color.bg,
-			bg = colors.color.bg,
-		},
+		-- offset_separator = {
+		-- 	fg = colors.color.bg,
+		-- 	bg = colors.color.bg,
+		-- },
 
 		-- tab = {
 		-- 	fg = "#ff00ff",

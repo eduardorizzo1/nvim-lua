@@ -62,8 +62,8 @@ local config = {
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = {
-			-- { "filename", path = 1, color = { bg = "NONE", fg = colors.purple } },
-			-- { navic.get_location, cond = navic.is_available },
+			{ "filename", path = 1, color = { bg = "NONE", fg = colors.purple } },
+			{ navic.get_location, cond = navic.is_available },
 		},
 		lualine_x = {},
 		lualine_y = {},
