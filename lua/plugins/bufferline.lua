@@ -123,17 +123,17 @@ bufferline.setup({
 		},
 		duplicate_selected = {
 			fg = colors.color.comment,
-			bg = colors.color.rounded_fg,
+			bg = colors.color.bg_dark,
 			italic = true,
 		},
 		duplicate_visible = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 			italic = true,
 		},
 		duplicate = {
 			fg = colors.color.comment,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg_dark,
 			italic = true,
 		},
 		separator_selected = {
@@ -141,7 +141,7 @@ bufferline.setup({
 			bg = colors.color.bg_dark,
 		},
 		separator_visible = {
-			fg = colors.color.bg_alt,
+			fg = colors.color.bg_dark,
 			bg = colors.color.rounded_fg,
 		},
 		separator = {
@@ -153,10 +153,10 @@ bufferline.setup({
 			bg = colors.color.bg_dark,
 		},
 
-		-- offset_separator = {
-		-- 	fg = colors.color.bg,
-		-- 	bg = colors.color.bg,
-		-- },
+		offset_separator = {
+			fg = colors.color.bg_dark,
+			bg = colors.color.bg_dark,
+		},
 
 		-- tab = {
 		-- 	fg = "#ff00ff",

@@ -135,10 +135,17 @@ return packer.startup(function(use)
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "phaazon/hop.nvim", branch = "v1" })
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
-	use({ "fgheng/winbar.nvim" }) -- winbar
 	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
-
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+	use({
+		"utilyre/barbecue.nvim",
+		tag = "*",
+		requires = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		after = "nvim-web-devicons", -- keep this if you're using NvChad
+		config = function()
+			require("plugins.barbecue")
+		end,
+	})
 end)

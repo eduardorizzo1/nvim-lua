@@ -39,15 +39,19 @@ require("catppuccin").setup({
 		telescope = true,
 		notify = false,
 		mini = false,
+		indent_blankline = {
+			enabled = false,
+			colored_indent_levels = false,
+		},
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
 
 cmd([[ hi SignColumn guibg=NONE ]])
 -- IndentBlankLine
-cmd([[ hi IndentBlanklineContextStart guifg=#C9CBFF gui=none]])
-cmd([[ hi IndentBlanklineContextChar guifg=#C9CBFF gui=none]])
-cmd([[ hi IndentBlanklineIndent1 guifg=#101019 gui=nocombine]])
+cmd([[ hi IndentBlanklineContextStart guifg=#CBA6F7 ]])
+cmd([[ hi IndentBlanklineContextChar guifg=#CBA6F7 ]])
+cmd([[ hi IndentBlanklineIndent1 guifg=#101019 ]])
 
 -- Bufferline
 cmd([[ hi BufferLineOffsetSeparator guibg=NONE]])

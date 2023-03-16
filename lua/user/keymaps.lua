@@ -166,3 +166,6 @@ map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
+
+-- Barbecue
+map("n", "<C-;>.", ":Barbecue toggle<CR>", opts)

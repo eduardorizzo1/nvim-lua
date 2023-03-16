@@ -58,27 +58,6 @@ local config = {
 		lualine_c = {},
 		lualine_x = {},
 	},
-	winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {
-			{ "filename", path = 1, color = { bg = "NONE", fg = colors.purple } },
-			{ navic.get_location, cond = navic.is_available },
-		},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
-	inactive_winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {
-			-- { "filename", path = 1, color = { bg = "NONE", fg = colors.comment } },
-		},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
 }
 
 local function ins_left(component)
@@ -180,13 +159,6 @@ ins_left({
 	},
 	cond = conditions.hide_in_width,
 })
-
--- Others --
--- ins_left({
--- 	function()
--- 		return "%="
--- 	end,
--- })
 
 ---------------------------RIGHT----------------------------------
 ins_right({
