@@ -39,7 +39,7 @@ local catppuccin = {
 	yellow = "#f9e2af",
 
 	bg_alt = "#212136",
-	bg_dark = "#212136",
+	bg_dark = "#181825",
 	purple_alt = "#b4befe",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#313244",

@@ -26,12 +26,12 @@ bufferline.setup({
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
-		show_tab_indicators = false,
+		show_tab_indicators = true,
 		indicator = {
 			icon = "",
 			style = "none",
 		},
-		separator_style = { "", "" }, -- "slope | slant"
+		separator_style = "slant", -- "slope | slant"
 		hover = {
 			enabled = true,
 			delay = 0,
@@ -84,73 +84,82 @@ bufferline.setup({
 			fg = colors.color.comment,
 			bg = colors.color.bg_dark,
 		},
-		close_button = {
+
+		-- Selected
+		buffer_selected = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_dark,
-		},
-		close_button_visible = {
-			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			-- bg = colors.color.bg_dark,
+			bg = "none",
+			bold = true,
+			italic = true,
 		},
 		close_button_selected = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_dark,
+			-- bg = colors.color.bg_dark,
+			bg = "none",
 			bold = true,
+		},
+		modified_selected = {
+			-- bg = colors.color.bg_dark,
+			bg = "none",
+			bold = true,
+		},
+		duplicate_selected = {
+			fg = colors.color.comment,
+			-- bg = colors.color.bg_dark,
+			bg = "none",
+			italic = true,
+		},
+		indicator_selected = {
+			fg = colors.color.bg_dark,
+			-- bg = colors.color.bg_dark,
+			bg = "none",
+		},
+		separator_selected = {
+			fg = colors.color.bg_dark,
+			-- bg = colors.color.bg_dark,
+			bg = "none",
+		},
+
+		-- Visible
+		close_button_visible = {
+			fg = colors.color.fg,
+			bg = colors.color.bg_dark,
+		},
+		modified_visible = {
+			bg = colors.color.bg_dark,
 		},
 
 		buffer_visible = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_alt,
 		},
-		buffer_selected = {
+		close_button = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
-			bold = true,
-			italic = true,
-		},
-		modified = {
-			-- fg = colors.color.fg,
-			bg = colors.color.bg_dark,
-		},
-		modified_visible = {
-			-- fg = colors.color.fg,
-			bg = colors.color.bg_dark,
-		},
-		modified_selected = {
-			-- fg = colors.color.fg,
-			bg = colors.color.bg,
-			bold = true,
-		},
-		duplicate_selected = {
-			fg = colors.color.comment,
-			bg = colors.color.bg_dark,
-			italic = true,
 		},
 		duplicate_visible = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
 			italic = true,
 		},
+		separator_visible = {
+			fg = colors.color.bg_dark,
+			bg = colors.color.bg_dark,
+		},
+
+		----------
+		modified = {
+			bg = colors.color.bg_dark,
+		},
 		duplicate = {
 			fg = colors.color.comment,
 			bg = colors.color.bg_dark,
 			italic = true,
 		},
-		separator_selected = {
-			fg = colors.color.bg_dark,
-			bg = colors.color.bg_dark,
-		},
-		separator_visible = {
-			fg = colors.color.bg_dark,
-			bg = colors.color.rounded_fg,
-		},
 		separator = {
 			bg = colors.color.bg_dark,
 			fg = colors.color.bg_dark,
-		},
-		indicator_selected = {
-			fg = colors.color.bg_dark,
-			bg = colors.color.bg_dark,
 		},
 
 		offset_separator = {
