@@ -1,8 +1,7 @@
 local cmd = vim.cmd
 local g = vim.g
 
-cmd([[ hi LineNr guibg=NONE ]])
-
+cmd([[ hi LineNr guibg=NONE guifg=#564f8b gui=bold ]])
 cmd([[ hi SignColumn guibg=NONE ]])
 cmd([[ hi Normal guibg=NONE ]])
 cmd([[ hi NormalNC guibg=NONE ]])
@@ -15,11 +14,9 @@ cmd([[ hi NvimTreeNormalNC guibg=NONE ]])
 cmd([[ hi NvimTreeVertSplit guibg=NONE ]])
 cmd([[ hi NvimTreeEndOfBuffer guifg=NONE ]])
 cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=NONE ]])
--- cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=NONE ]])
--- cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE ]])
-cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
 
-cmd([[ hi LineNr guifg=#564f8b gui=bold ]])
+-- Telescope
+cmd([[ hi TelescopeNormal guibg=NONE ]])
 
 if g.colors_name == "dracula" then
 	g.dracula_transparent_bg = true
@@ -27,8 +24,8 @@ if g.colors_name == "dracula" then
 	cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
 	cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
 	cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
-	cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
 	cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
+	cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
 	cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
 end
 

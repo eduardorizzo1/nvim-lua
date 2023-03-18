@@ -42,9 +42,10 @@ return packer.startup(function(use)
 	-- Dashboard
 	use("glepnir/dashboard-nvim")
 	-- Themes
+	-- use({ "dracula/vim", as = "dracula" })
+	use("Mofiqul/dracula.nvim")
 	use("overcache/NeoSolarized")
 	use("ishan9299/nvim-solarized-lua")
-	use({ "dracula/vim", as = "dracula" })
 	use("Mofiqul/vscode.nvim")
 	use("navarasu/onedark.nvim")
 	use("olimorris/onedarkpro.nvim")

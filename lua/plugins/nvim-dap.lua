@@ -106,6 +106,12 @@ dap.adapters.node2 = {
 	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
 }
 
+dap.adapters.chrome = {
+	type = "executable",
+	command = "node",
+	args = { os.getenv("HOME") .. "~/vscode-chrome-debug/out/src/chromeDebug.js" },
+}
+
 dap.configurations.javascript = {
 	{
 		name = "Launch",
@@ -124,12 +130,6 @@ dap.configurations.javascript = {
 		request = "attach",
 		processId = require("dap.utils").pick_process,
 	},
-}
-
-dap.adapters.chrome = {
-	type = "executable",
-	command = "node",
-	args = { os.getenv("HOME") .. "/path/to/vscode-chrome-debug/out/src/chromeDebug.js" }, -- TODO adjust
 }
 
 dap.configurations.javascriptreact = { -- change this to javascript if needed
