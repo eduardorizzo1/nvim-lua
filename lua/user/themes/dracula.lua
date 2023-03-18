@@ -37,15 +37,25 @@ dracula.setup({
 		IndentBlanklineContextChar = { fg = colors.purple_alt },
 		IndentBlanklineIndent1 = { fg = colors.bg },
 
+		-- Ts Rainbow
+		rainbowcol1 = { fg = colors.yellow },
+		rainbowcol2 = { fg = colors.pink },
+		rainbowcol3 = { fg = colors.cyan },
+		rainbowcol4 = { fg = colors.green },
+		rainbowcol5 = { fg = colors.purple },
+		rainbowcol6 = { fg = colors.blue },
+		rainbowcol7 = { fg = colors.white },
+
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },
 
 		Search = { fg = "#000000", bg = colors.green },
+		Title = { fg = colors.green },
+		Number = { fg = colors.purple },
 	},
 })
 
 cmd([[ colo dracula ]])
--- cmd([[ hi DashboardHeader guifg=#f800ff gui=bold ]])
 
 ---------------------
 ---- Dracula/vim ----

@@ -4,8 +4,8 @@ if not status then
 	return
 end
 
+local dashboard = require("dashboard")
 local icons = require("user.icons")
-local colors = require("user.themes.colorscheme").color
 
 local custom_header = {
 	doom = {
@@ -126,47 +126,47 @@ dashboard.setup({
 		center = {
 			{
 				icon = icons.vim,
-				icon_hl = "Character",
+				icon_hl = "Title",
 				desc = "neovim            ",
 				desc_hl = "String",
 				key = "a",
-				key_hl = "Operator",
+				key_hl = "Number",
 				action = "e ~/.config/nvim",
 			},
 			{
 				icon = icons.terminal,
-				icon_hl = "Character",
+				icon_hl = "Title",
 				desc = "kitty",
 				desc_hl = "String",
 				key = "b",
-				key_hl = "Operator",
+				key_hl = "Number",
 				action = "e ~/.config/kitty",
 			},
 			{
 				icon = icons.file,
-				icon_hl = "Character",
+				icon_hl = "Title",
 				desc = "dotfiles",
 				desc_hl = "String",
 				key = "c",
-				key_hl = "Operator",
+				key_hl = "Number",
 				action = "e ~/dotfiles",
 			},
 			{
 				icon = icons.file,
-				icon_hl = "Character",
+				icon_hl = "Title",
 				desc = "zsh",
 				desc_hl = "String",
 				key = "d",
-				key_hl = "Operator",
+				key_hl = "Number",
 				action = "e ~/.zshrc",
 			},
 			{
 				icon = icons.file,
-				icon_hl = "Character",
+				icon_hl = "Title",
 				desc = "p10k",
 				desc_hl = "String",
 				key = "e",
-				key_hl = "Operator",
+				key_hl = "Number",
 				action = "e ~/.p10k.zsh",
 			},
 		},
