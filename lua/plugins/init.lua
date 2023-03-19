@@ -142,9 +142,9 @@ return packer.startup(function(use)
 		tag = "*",
 		requires = {
 			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
+			"nvim-tree/nvim-web-devicons",
 		},
-		after = "nvim-web-devicons", -- keep this if you're using NvChad
+		after = "nvim-web-devicons",
 		config = function()
 			require("plugins.barbecue")
 		end,

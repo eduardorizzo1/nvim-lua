@@ -8,6 +8,14 @@ dracula.setup({
 	transparent_bg = true,
 	italic_comment = true,
 	overrides = {
+		Search = { fg = "#000000", bg = colors.green },
+		Title = { fg = colors.green },
+		Number = { fg = colors.purple },
+		Function = { fg = colors.green },
+		Keyword = { fg = colors.pink },
+		Keywords = { fg = colors.purple },
+		MatchParen = { fg = colors.cyan, bg = colors.comment, underline = true },
+
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = colors.bg_dark },
@@ -38,20 +46,24 @@ dracula.setup({
 		IndentBlanklineIndent1 = { fg = colors.bg },
 
 		-- Ts Rainbow
-		rainbowcol1 = { fg = colors.yellow },
-		rainbowcol2 = { fg = colors.pink },
-		rainbowcol3 = { fg = colors.cyan },
-		rainbowcol4 = { fg = colors.green },
-		rainbowcol5 = { fg = colors.purple },
-		rainbowcol6 = { fg = colors.blue },
-		rainbowcol7 = { fg = colors.white },
+		rainbowcol1 = { fg = colors.red, bold = true },
+		rainbowcol2 = { fg = colors.pink, bold = true },
+		rainbowcol3 = { fg = colors.cyan, bold = true },
+		rainbowcol4 = { fg = colors.green, bold = true },
+		rainbowcol5 = { fg = colors.purple, bold = true },
+		rainbowcol6 = { fg = colors.orange, bold = true },
+		rainbowcol7 = { fg = colors.yellow, bold = true },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },
 
-		Search = { fg = "#000000", bg = colors.green },
-		Title = { fg = colors.green },
-		Number = { fg = colors.purple },
+		-- Treesitter
+		["@keyword.function"] = { fg = colors.pink },
+		["@property"] = { fg = colors.fg },
+		["@variable"] = { fg = colors.purple },
+		["@punctuation.delimiter"] = { fg = colors.fg },
+		["@punctuation.special"] = { fg = colors.pink },
+		["@string.escape"] = { fg = colors.pink },
 	},
 })
 

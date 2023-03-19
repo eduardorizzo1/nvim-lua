@@ -9,7 +9,7 @@ barbecue.setup({
 	attach_navic = true,
 	create_autocmd = true,
 	include_buftypes = { "" },
-	exclude_filetypes = { "toggleterm" },
+	exclude_filetypes = { "toggleterm", "dashboard", "nvimtree" },
 	show_dirname = true,
 	show_basename = true,
 	show_modified = false,
