@@ -28,7 +28,6 @@ telescope.setup({
 			"--smart-case",
 		},
 
-		-- prompt_prefix = icons.Telescope,
 		prompt_prefix = "❯ ",
 		selection_caret = " ",
 		entry_prefix = "  ",

@@ -28,6 +28,10 @@ dracula.setup({
 		-- Telescope
 		TelescopeMatching = { fg = colors.pink },
 		TelescopeSelection = { fg = colors.white, bg = colors.rounded_fg, bold = true },
+		TelescopePreviewBorder = { fg = colors.fg },
+		TelescopeResultsBorder = { fg = colors.fg },
+		TelescopePromptBorder = { fg = colors.fg },
+		TelescopePromptCounter = { bg = colors.rounded_fg },
 
 		-- Lsp
 		LspReferenceRead = { bg = colors.current_line, fg = "none" },
