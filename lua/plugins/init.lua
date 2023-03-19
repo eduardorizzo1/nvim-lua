@@ -42,10 +42,8 @@ return packer.startup(function(use)
 	-- Dashboard
 	use("glepnir/dashboard-nvim")
 	-- Themes
-	-- use({ "dracula/vim", as = "dracula" })
 	use("Mofiqul/dracula.nvim")
 	use("overcache/NeoSolarized")
-	use("ishan9299/nvim-solarized-lua")
 	use("Mofiqul/vscode.nvim")
 	use("navarasu/onedark.nvim")
 	use("olimorris/onedarkpro.nvim")
@@ -76,6 +74,10 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")
+	use({
+		"m-demare/hlargs.nvim",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	})
 	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")

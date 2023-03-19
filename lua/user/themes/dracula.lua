@@ -61,7 +61,7 @@ dracula.setup({
 		["@keyword.function"] = { fg = colors.pink },
 		["@property"] = { fg = colors.fg },
 		["@variable"] = { fg = colors.purple },
-		["@punctuation.delimiter"] = { fg = colors.fg },
+		["@punctuation.delimiter"] = { fg = colors.pink },
 		["@punctuation.special"] = { fg = colors.pink },
 		["@string.escape"] = { fg = colors.pink },
 	},
