@@ -10,7 +10,6 @@ telescope.load_extension("media_files")
 
 telescope.setup({
 	defaults = {
-
 		layout_config = {
 			width = 0.9,
 			prompt_position = "top",

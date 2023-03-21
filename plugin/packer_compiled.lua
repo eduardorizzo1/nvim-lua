@@ -172,6 +172,11 @@ _G.packer_plugins = {
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
+  ["hlargs.nvim"] = {
+    loaded = true,
+    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
+    url = "https://github.com/m-demare/hlargs.nvim"
+  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/hop.nvim",
@@ -311,11 +316,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
     url = "https://github.com/petertriho/nvim-scrollbar"
-  },
-  ["nvim-solarized-lua"] = {
-    loaded = true,
-    path = "/home/eduardo/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
-    url = "https://github.com/ishan9299/nvim-solarized-lua"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

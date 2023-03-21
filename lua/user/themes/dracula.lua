@@ -14,7 +14,7 @@ dracula.setup({
 		Function = { fg = colors.green },
 		Keyword = { fg = colors.pink },
 		Keywords = { fg = colors.purple },
-		MatchParen = { fg = colors.cyan, bg = colors.comment, underline = true },
+		MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
 
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
@@ -51,12 +51,12 @@ dracula.setup({
 
 		-- Ts Rainbow
 		rainbowcol1 = { fg = colors.red, bold = true },
-		rainbowcol2 = { fg = colors.pink, bold = true },
-		rainbowcol3 = { fg = colors.cyan, bold = true },
-		rainbowcol4 = { fg = colors.green, bold = true },
-		rainbowcol5 = { fg = colors.purple, bold = true },
-		rainbowcol6 = { fg = colors.orange, bold = true },
-		rainbowcol7 = { fg = colors.yellow, bold = true },
+		rainbowcol2 = { fg = colors.blue, bold = true },
+		rainbowcol3 = { fg = colors.green, bold = true },
+		rainbowcol4 = { fg = colors.cyan, bold = true },
+		rainbowcol5 = { fg = colors.green, bold = true },
+		rainbowcol6 = { fg = colors.pink, bold = true },
+		rainbowcol7 = { fg = colors.purple, bold = true },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },

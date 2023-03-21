@@ -22,6 +22,7 @@ local dracula = {
 	darkblue = "#081633",
 	violet = "#a9a1e1",
 	magenta = "#c678dd",
+	darkpink = "#bb00ff",
 	blue = "#51afef",
 }
 
