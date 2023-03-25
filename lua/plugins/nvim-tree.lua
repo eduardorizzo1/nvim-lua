@@ -99,13 +99,11 @@ nvim_tree.setup({
 					symlink_open = "",
 				},
 				git = {
-					-- unstaged = "✗",
 					unstaged = "",
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
 					untracked = "★",
-					-- untracked = "𝗨",
 					deleted = "",
 					ignored = "◌",
 				},
@@ -124,11 +122,6 @@ nvim_tree.setup({
 		update_cwd = true,
 		ignore_list = { "toggleterm" },
 	},
-
-	-- system_open = {
-	-- 	cmd = "",
-	-- 	args = {},
-	-- },
 
 	diagnostics = {
 		enable = true,
@@ -165,7 +158,7 @@ nvim_tree.setup({
 
 	actions = {
 		open_file = {
-			resize_window = true,
+			resize_window = false,
 		},
 	},
 })

@@ -9,9 +9,6 @@ hlargs.setup({
 	color = colors.orange,
 	highlight = {},
 	excluded_filetypes = {},
-	-- disable = function(lang, bufnr) -- If changed, `excluded_filetypes` will be ignored
-	-- 	return vim.tbl_contains(opts.excluded_filetypes, lang)
-	-- end,
 	paint_arg_declarations = true,
 	paint_arg_usages = true,
 	paint_catch_blocks = {
