@@ -15,10 +15,10 @@ local dracula = {
 	yellow = "#f1fa8c",
 
 	bg_alt = "#212136",
-	bg_dark = "#212136",
+	bg_dark = "#21222c",
 	purple_alt = "#564f8b",
 	rounded_bg = "#1f2335",
-	rounded_fg = "#333952",
+	rounded_fg = "#44475a",
 	darkblue = "#081633",
 	violet = "#a9a1e1",
 	magenta = "#c678dd",

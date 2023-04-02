@@ -41,7 +41,7 @@ nvim_tree.setup({
 		centralize_selection = false,
 		hide_root_folder = true,
 		side = "left",
-		preserve_window_proportions = true,
+		preserve_window_proportions = false,
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
@@ -158,7 +158,7 @@ nvim_tree.setup({
 
 	actions = {
 		open_file = {
-			resize_window = false,
+			resize_window = true,
 		},
 	},
 })

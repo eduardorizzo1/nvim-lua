@@ -24,4 +24,7 @@ configs.setup({
 	autotag = {
 		enable = true,
 	},
+	fold = {
+		fold_one_line_after = true,
+	},
 })

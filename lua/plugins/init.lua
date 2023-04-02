@@ -73,7 +73,7 @@ return packer.startup(function(use)
 	--Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("windwp/nvim-ts-autotag")
-	use("p00f/nvim-ts-rainbow")
+	use("mrjones2014/nvim-ts-rainbow")
 	use({
 		"m-demare/hlargs.nvim",
 		requires = { "nvim-treesitter/nvim-treesitter" },
@@ -139,6 +139,7 @@ return packer.startup(function(use)
 	use({ "phaazon/hop.nvim", branch = "v1" })
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
+	use("anuvyklack/pretty-fold.nvim")
 	use({
 		"utilyre/barbecue.nvim",
 		tag = "*",

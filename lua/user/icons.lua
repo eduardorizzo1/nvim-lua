@@ -44,8 +44,6 @@ return {
 	chevron_right = ">",
 	arrow_closed = "",
 	arrow_open = "",
-	left_parenthesis = "(",
-	right_parenthesis = ")",
 	left_parenthesis_upperhook = "⎛",
 	right_parenthesis_upperhook = "⎞",
 	right_ceiling = "⌉",

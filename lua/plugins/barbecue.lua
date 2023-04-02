@@ -6,6 +6,9 @@ if not status then
 end
 
 barbecue.setup({
+	theme = "auto",
+	context_follow_icon_color = false,
+	show_navic = true,
 	attach_navic = true,
 	create_autocmd = true,
 	include_buftypes = { "" },
@@ -13,23 +16,23 @@ barbecue.setup({
 	show_dirname = true,
 	show_basename = true,
 	show_modified = false,
+
 	modified = function(bufnr)
 		return vim.bo[bufnr].modified
 	end,
-	show_navic = true,
 	lead_custom_section = function()
 		return " "
 	end,
 	custom_section = function()
 		return " "
 	end,
-	theme = "auto",
-	context_follow_icon_color = false,
+
 	symbols = {
 		modified = "●",
 		ellipsis = "…",
 		separator = icons.arrow_closed,
 	},
+
 	kinds = {
 		File = "",
 		Module = "",
@@ -59,3 +62,5 @@ barbecue.setup({
 		TypeParameter = "",
 	},
 })
+
+require("barbecue.ui").toggle(false)

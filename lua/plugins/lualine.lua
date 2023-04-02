@@ -3,11 +3,6 @@ if not lualine_ok then
 	return
 end
 
-local navic_ok, navic = pcall(require, "nvim-navic")
-if not navic_ok then
-	return
-end
-
 local icons = require("user.icons")
 local colors = require("user.themes.colorscheme").color
 local mode_color = require("user.themes.colorscheme").mode_color

@@ -97,6 +97,9 @@ map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
 -- Symbols-outline
 map("n", ";b", ":SymbolsOutline<CR>", opts)
 
+-- Barbecue
+map("n", "<leader>.", ":Barbecue toggle<CR>", opts)
+
 -- Bufferline
 map("n", "<S-l>", ":bn<CR>", opts) -- next
 map("n", "<M-l>", ":bn<CR>", opts)
@@ -166,6 +169,3 @@ map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
-
--- Barbecue
-map("n", "<C-;>.", ":Barbecue toggle<CR>", opts)

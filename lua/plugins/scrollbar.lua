@@ -15,7 +15,7 @@ scrollbar.setup({
 	throttle_ms = 100,
 	handle = {
 		text = " ",
-		color = "#000000",
+		color = colors.color.current_line,
 		color_nr = nil, -- cterm
 		highlight = "CursorColumn",
 		hide_if_all_visible = true, -- Hides handle if all lines are visible

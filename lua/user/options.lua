@@ -29,8 +29,8 @@ local options = {
 	showtabline = 2,
 	updatetime = 300,
 	completeopt = { "menuone", "noselect" },
-	foldmethod = "indent",
 	foldlevel = 20,
+	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",
 }
 

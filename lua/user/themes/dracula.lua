@@ -4,7 +4,6 @@ local colors = require("user.themes.colorscheme").color
 local dracula = require("dracula")
 
 dracula.setup({
-	transparent_bg = true,
 	italic_comment = true,
 	overrides = {
 		Search = { fg = "#000000", bg = colors.green },
@@ -14,6 +13,9 @@ dracula.setup({
 		Keyword = { fg = colors.pink },
 		Keywords = { fg = colors.purple },
 		MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
+		NormalFloat = { fg = colors.purple },
+		LineNr = { fg = colors.purple_alt },
+		CursorLineNr = { fg = colors.cyan },
 
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
@@ -41,24 +43,30 @@ dracula.setup({
 		Pmenu = { bg = colors.bg, fg = colors.fg },
 		PmenuSel = { bg = colors.current_line, fg = colors.cyan },
 		PmenuSbar = { bg = colors.bg },
-		PmenuThumb = { bg = colors.bg },
+		PmenuThumb = { bg = colors.current_line },
 
 		-- IndentBlankLine
-		IndentBlanklineContextStart = { fg = colors.purple_alt },
-		IndentBlanklineContextChar = { fg = colors.purple_alt },
+		IndentBlanklineContextStart = { fg = colors.purple },
+		IndentBlanklineContextChar = { fg = colors.purple },
 		IndentBlanklineIndent1 = { fg = colors.bg },
 
 		-- Ts Rainbow
-		rainbowcol1 = { fg = "#ff0000" },
-		rainbowcol2 = { fg = "#0077ff" },
-		rainbowcol3 = { fg = "#00ff00" },
-		rainbowcol4 = { fg = "#ff00ff" },
-		rainbowcol5 = { fg = "#00ffff" },
-		rainbowcol6 = { fg = "#9900ff" },
-		rainbowcol7 = { fg = "#ffff00" },
+		rainbowcol1 = { fg = "#ffff00" },
+		rainbowcol2 = { fg = colors.pink },
+		rainbowcol3 = { fg = colors.cyan },
+		rainbowcol4 = { fg = colors.green },
+		rainbowcol5 = { fg = colors.purple },
+		rainbowcol6 = { fg = colors.orange },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },
+		CmpItemKindMethod = { bg = colors.bg, fg = colors.pink },
+		CmpItemMenu = { bg = colors.bg, fg = colors.comment, bold = true },
+		CmpItemKindFile = { bg = colors.bg, fg = colors.green },
+		CmpItemKindFolder = { bg = colors.bg, fg = colors.yellow },
+
+		-- Debug
+		debugPc = { bg = colors.bg },
 
 		-- Treesitter
 		["@keyword.function"] = { fg = colors.pink },

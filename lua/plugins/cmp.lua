@@ -52,7 +52,7 @@ local custom_icons = {
 	cmp_tabnine = "💡",
 	luasnip = "🌜",
 	buffer = "◉ ",
-	path = "🚧",
+	-- path = "🚧",
 	emoji = "😀",
 }
 
@@ -118,13 +118,13 @@ cmp.setup({
 
 			--NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[Nvim]",
-				luasnip = "[Snippets]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-				emoji = "[Emoji]",
-				cmp_tabnine = "[Tabnine]",
+				nvim_lsp = "⦃Lsp⦄",
+				nvim_lua = "⦃Nvim⦄",
+				luasnip = "⦃Snippets⦄",
+				buffer = "⦃Buffer⦄",
+				-- path = "⦃Path⦄",
+				emoji = "⦃Emoji⦄",
+				cmp_tabnine = "⦃Tabnine⦄",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -135,7 +135,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "cmp_tabnine" },
-		{ name = "path" },
+		-- { name = "path" },
 		{ name = "emoji" },
 		{ name = "tabnine" },
 	},
@@ -145,7 +145,6 @@ cmp.setup({
 	},
 
 	window = {
-		-- documentation = "native",
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
