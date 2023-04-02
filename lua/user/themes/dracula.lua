@@ -15,6 +15,7 @@ dracula.setup({
 		MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
 		NormalFloat = { fg = colors.purple },
 		LineNr = { fg = colors.purple_alt },
+		CursorLine = { bg = colors.current_line_alt },
 		CursorLineNr = { fg = colors.cyan },
 		VertSplit = { fg = colors.purple_alt },
 		Directory = { fg = colors.comment, bg = colors.bg_dark },
