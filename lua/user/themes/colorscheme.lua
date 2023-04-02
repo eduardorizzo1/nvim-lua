@@ -4,6 +4,7 @@ local M = {}
 local dracula = {
 	bg = "#282a36",
 	current_line = "#44475a",
+	current_line_alt = "#363747",
 	fg = "#f8f8f2",
 	comment = "#6272a4",
 	cyan = "#8be9fd",
