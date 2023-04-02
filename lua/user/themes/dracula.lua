@@ -16,6 +16,8 @@ dracula.setup({
 		NormalFloat = { fg = colors.purple },
 		LineNr = { fg = colors.purple_alt },
 		CursorLineNr = { fg = colors.cyan },
+		VertSplit = { fg = colors.purple_alt },
+		Directory = { fg = colors.comment, bg = colors.bg_dark },
 
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
@@ -25,6 +27,7 @@ dracula.setup({
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
 		NvimTreeIndentMarker = { fg = colors.comment },
+		NvimTreeWinSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
 
 		-- Telescope
 		TelescopeMatching = { fg = colors.pink },
@@ -46,9 +49,9 @@ dracula.setup({
 		PmenuThumb = { bg = colors.current_line },
 
 		-- IndentBlankLine
-		IndentBlanklineContextStart = { fg = colors.purple },
-		IndentBlanklineContextChar = { fg = colors.purple },
-		IndentBlanklineIndent1 = { fg = colors.bg },
+		IndentBlanklineContextStart = { fg = colors.purple_alt },
+		IndentBlanklineContextChar = { fg = colors.purple_alt },
+		IndentBlanklineIndent1 = { fg = colors.bg_alt },
 
 		-- Ts Rainbow
 		rainbowcol1 = { fg = "#ffff00" },

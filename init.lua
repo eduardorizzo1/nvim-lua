@@ -3,7 +3,6 @@ require("plugins")
 require("user.options")
 require("user.keymaps")
 require("user.themes.dracula")
--- require("user.themes.custom")
 
 require("impatient")
 require("plugins.dashboard")

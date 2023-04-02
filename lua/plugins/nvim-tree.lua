@@ -24,8 +24,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvim_tree.setup({
 	auto_reload_on_write = true,
-	create_in_closed_folder = false,
-	hijack_cursor = false,
+	hijack_cursor = true,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
 	open_on_tab = false,

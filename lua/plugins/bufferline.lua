@@ -1,7 +1,6 @@
 local status, bufferline = pcall(require, "bufferline")
 local colors = require("user.themes.colorscheme")
 local groups = require("bufferline.groups")
-local icons = require("user.icons")
 
 if not status then
 	return
@@ -51,8 +50,10 @@ bufferline.setup({
 				highlight = "Directory",
 				padding = 0,
 				separator = true,
-				-- text = "-----[ Explorer ]-----",
-				text_align = "center",
+				text = function()
+					return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+				end,
+				text_align = "left",
 			},
 		},
 
@@ -80,83 +81,85 @@ bufferline.setup({
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
 		},
+
 		background = {
-			fg = colors.color.comment,
+			fg = colors.color.current_line,
 			bg = colors.color.bg_dark,
 		},
 
-		-- Selected
 		buffer_selected = {
 			fg = colors.color.fg,
-			-- bg = colors.color.bg_dark,
 			bg = "none",
 			bold = true,
 			italic = true,
 		},
+
 		close_button_selected = {
 			fg = colors.color.fg,
-			-- bg = colors.color.bg_dark,
 			bg = "none",
 			bold = true,
 		},
+
 		modified_selected = {
-			-- bg = colors.color.bg_dark,
 			bg = "none",
 			bold = true,
 		},
+
 		duplicate_selected = {
-			fg = colors.color.comment,
-			-- bg = colors.color.bg_dark,
+			fg = colors.color.current_line,
 			bg = "none",
 			italic = true,
 		},
+
 		indicator_selected = {
 			fg = colors.color.bg_dark,
-			-- bg = colors.color.bg_dark,
 			bg = "none",
 		},
 		separator_selected = {
 			fg = colors.color.bg_dark,
-			-- bg = colors.color.bg_dark,
 			bg = "none",
 		},
 
-		-- Visible
 		close_button_visible = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
 		},
+
 		modified_visible = {
 			bg = colors.color.bg_dark,
 		},
 
 		buffer_visible = {
 			fg = colors.color.fg,
-			bg = colors.color.bg_alt,
+			bg = colors.color.bg,
 		},
+
 		close_button = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
 		},
+
 		duplicate_visible = {
 			fg = colors.color.fg,
 			bg = colors.color.bg_dark,
 			italic = true,
 		},
+
 		separator_visible = {
 			fg = colors.color.bg_dark,
 			bg = colors.color.bg_dark,
 		},
 
-		----------
 		modified = {
 			bg = colors.color.bg_dark,
 		},
+
 		duplicate = {
-			fg = colors.color.comment,
+			fg = colors.color.current_line,
 			bg = colors.color.bg_dark,
 			italic = true,
 		},
+
 		separator = {
 			bg = colors.color.bg_dark,
 			fg = colors.color.bg_dark,
@@ -166,194 +169,5 @@ bufferline.setup({
 			fg = colors.color.bg_dark,
 			bg = colors.color.bg_dark,
 		},
-
-		-- tab = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
-		-- tab_selected = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
-		-- tab_close = {
-		-- 	fg = "#ff00ff",
-		-- 	bg = "#ffffff",
-		-- },
-
-		-- numbers = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		-- },
-		-- numbers_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		-- },
-		-- numbers_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- diagnostic = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		-- },
-		-- diagnostic_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		-- },
-		-- diagnostic_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- hint = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- hint_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- hint_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- hint_diagnostic = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- hint_diagnostic_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- hint_diagnostic_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- info = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- info_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- info_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- info_diagnostic = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- info_diagnostic_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- info_diagnostic_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- warning = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- warning_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- warning_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- warning_diagnostic = {
-		--     fg = '<colour-value-here>',
-		--     sp = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- warning_diagnostic_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- warning_diagnostic_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = warning_diagnostic_fg
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- error = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		-- },
-		-- error_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- error_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-		-- error_diagnostic = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		-- },
-		-- error_diagnostic_visible = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>'
-		-- },
-		-- error_diagnostic_selected = {
-		--     fg = '<colour-value-here>',
-		--     bg = '<colour-value-here>',
-		--     sp = '<colour-value-here>'
-		--     bold = true,
-		--     italic = true,
-		-- },
-
-		-- pick_selected = {
-		-- 	fg = colors.color.rounded_fg,
-		-- 	bg = colors.color.bg_alt,
-		-- 	bold = true,
-		-- 	italic = true,
-		-- },
-		-- pick_visible = {
-		-- 	fg = colors.color.fg,
-		-- 	bg = colors.color.bg_alt,
-		-- 	bold = true,
-		-- 	italic = true,
-		-- },
-		-- pick = {
-		-- 	fg = colors.color.rounded_fg,
-		-- 	bg = colors.color.bg_alt,
-		-- 	bold = true,
-		-- 	italic = true,
-		-- },
 	},
 })

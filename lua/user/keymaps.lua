@@ -4,7 +4,13 @@ local map = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- ctrl+c to esc
+local virtual_text =
+	{
+		spacing = 4,
+		prefix = "●",
+	},
+	
+	-- ctrl+c to esc
 map("n", "<C-c>", "<ESC>", opts)
 map("i", "<C-c>", "<ESC>", opts)
 map("v", "<C-c>", "<ESC>", opts)
@@ -92,7 +98,7 @@ map("n", "<leader>z", ":ZenMode<CR>", opts)
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
 
 -- Trouble
-map("n", "<leader>ee", ":TroubleToggle<CR>", opts)
+map("n", "<leader>e", ":TroubleToggle<CR>", opts)
 
 -- Symbols-outline
 map("n", ";b", ":SymbolsOutline<CR>", opts)
@@ -137,8 +143,8 @@ map("n", "gn", "<cmd>Lspsaga rename<CR>", opts)
 map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
 map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-map("n", ";ee", "<cmd>lua toggle_diagnostics()<CR>", opts)
-map("n", ";et", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
+map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
+map("n", ";e", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
 
 -- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
 map("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
