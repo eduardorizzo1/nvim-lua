@@ -6,7 +6,7 @@ end
 fold.setup({
 	sections = {
 		left = {
-			"+",
+			"",
 			" ",
 			"content",
 		},

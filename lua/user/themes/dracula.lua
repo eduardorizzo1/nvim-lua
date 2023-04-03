@@ -19,6 +19,7 @@ dracula.setup({
 		CursorLineNr = { fg = colors.cyan },
 		VertSplit = { fg = colors.purple_alt },
 		Directory = { fg = colors.comment, bg = colors.bg_dark },
+		Folded = { bg = colors.bg_dark, fg = colors.comment },
 
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
