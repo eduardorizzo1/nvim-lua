@@ -6,7 +6,7 @@ local dracula = require("dracula")
 dracula.setup({
 	italic_comment = true,
 	overrides = {
-		Search = { fg = "#ffffff", bg = "#422fa3" },
+		Search = { fg = "#000000", bg = colors.green },
 		Title = { fg = colors.green },
 		Number = { fg = colors.purple },
 		Function = { fg = colors.green },
