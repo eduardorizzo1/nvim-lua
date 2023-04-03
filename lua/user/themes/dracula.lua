@@ -53,7 +53,7 @@ dracula.setup({
 		-- IndentBlankLine
 		IndentBlanklineContextStart = { fg = colors.purple_alt },
 		IndentBlanklineContextChar = { fg = colors.purple_alt },
-		IndentBlanklineIndent1 = { fg = colors.bg_alt },
+		IndentBlanklineIndent1 = { fg = "#393942" },
 
 		-- Ts Rainbow
 		rainbowcol1 = { fg = "#ffff00" },
