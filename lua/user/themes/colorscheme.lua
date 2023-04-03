@@ -4,7 +4,6 @@ local M = {}
 local dracula = {
 	bg = "#282a36",
 	current_line = "#44475a",
-	current_line_alt = "#363747",
 	fg = "#f8f8f2",
 	comment = "#6272a4",
 	cyan = "#8be9fd",
@@ -18,6 +17,7 @@ local dracula = {
 	bg_alt = "#212136",
 	bg_dark = "#21222c",
 	purple_alt = "#564f8b",
+	current_line_alt = "#363747",
 	rounded_bg = "#1f2335",
 	rounded_fg = "#44475a",
 	darkblue = "#081633",
@@ -25,6 +25,7 @@ local dracula = {
 	magenta = "#c678dd",
 	darkpink = "#bb00ff",
 	blue = "#51afef",
+	search_hl = "#5f5f68",
 }
 
 local catppuccin = {
