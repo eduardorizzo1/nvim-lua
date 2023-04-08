@@ -52,8 +52,6 @@ local custom_icons = {
 	cmp_tabnine = "💡",
 	luasnip = "🌜",
 	buffer = "◉ ",
-	-- path = "🚧",
-	emoji = "😀",
 }
 
 cmp.setup({
@@ -118,26 +116,21 @@ cmp.setup({
 
 			--NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "⦃Lsp⦄",
-				nvim_lua = "⦃Nvim⦄",
-				luasnip = "⦃Snippets⦄",
-				buffer = "⦃Buffer⦄",
-				-- path = "⦃Path⦄",
-				emoji = "⦃Emoji⦄",
-				cmp_tabnine = "⦃Tabnine⦄",
+				nvim_lsp = "❮Lsp❯",
+				cmp_tabnine = "❮Tabnine❯",
+				luasnip = "❮Snippets❯",
+				buffer = "❮Buffer❯",
+				nvim_lua = "❮Nvim❯",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
+		{ name = "cmp_tabnine" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		{ name = "cmp_tabnine" },
-		-- { name = "path" },
-		{ name = "emoji" },
-		{ name = "tabnine" },
+		{ name = "nvim_lua" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

@@ -81,17 +81,37 @@ local opts = {
 }
 
 local mappings = {
+	-- LSP
 	l = {
 		name = " Lsp",
 		o = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
 		i = { "<cmd>TSLspImportAll<CR>", "Import All" },
 	},
+	-- Telescope
+	s = {
+		name = " Telescope",
+		f = { "<cmd>Telescope find_files<cr>", "Find File" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+		l = { "<cmd>Telescope resume<cr>", "Last Search" },
+		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+		R = { "<cmd>Telescope registers<cr>", "Registers" },
+	},
+	-- NvimTree
+	n = {
+		name = " NvimTree",
+		r = { "<cmd>NvimTreeResize +10<CR>", "Resize +10" },
+		R = { "<cmd>:NvimTreeResize -10<CR>", "Resize -10" },
+	},
+	-- Terminal
 	t = {
 		name = " Terminal",
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+	-- Debuger
 	d = {
 		name = " Debugger",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", " Breakpoint" },
@@ -106,26 +126,17 @@ local mappings = {
 		r = { "<cmd>lua require'dap'.repl.open()<CR>", " Repl Open" },
 		d = { "<cmd>lua require'dap'.disconnect()<CR>", " Disconnect" },
 	},
+	-- Git
+	g = {
+		name = " Git",
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+	},
+	-- User
 	u = {
 		name = " User",
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		C = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
-	},
-	g = {
-		name = " Git",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-	},
-
-	s = {
-		name = " Telescope",
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help" },
-		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-		l = { "<cmd>Telescope resume<cr>", "Last Search" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
 	},
 }
 

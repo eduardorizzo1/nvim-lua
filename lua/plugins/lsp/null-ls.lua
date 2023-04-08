@@ -9,6 +9,7 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
 	sources = {
 		code_actions.eslint,
+		code_actions.gitsigns,
 		formatting.prettier,
 		formatting.stylua,
 		formatting.jq,
