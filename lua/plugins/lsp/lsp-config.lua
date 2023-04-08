@@ -42,8 +42,10 @@ end
 function _G.toggle_diagnostics_virtual_text()
 	diagnostics_virtual_text = not diagnostics_virtual_text
 	if diagnostics_virtual_text then
+		vim.api.nvim_echo({ { "Virtual text ON" } }, false, {})
 		vim.diagnostic.config(virtual_text_on)
 	else
+		vim.api.nvim_echo({ { "Virtual text OFF" } }, false, {})
 		vim.diagnostic.config(virtual_text_off)
 	end
 end

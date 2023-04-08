@@ -51,8 +51,8 @@ dracula.setup({
 		PmenuThumb = { bg = colors.current_line },
 
 		-- IndentBlankLine
-		IndentBlanklineContextStart = { fg = colors.purple_alt },
-		IndentBlanklineContextChar = { fg = colors.purple_alt },
+		IndentBlanklineContextStart = { fg = colors.comment },
+		IndentBlanklineContextChar = { fg = colors.comment },
 		IndentBlanklineIndent1 = { fg = "#393942" },
 
 		-- Ts Rainbow
@@ -62,6 +62,7 @@ dracula.setup({
 		rainbowcol4 = { fg = colors.green },
 		rainbowcol5 = { fg = colors.purple },
 		rainbowcol6 = { fg = colors.orange },
+		rainbowcol7 = { fg = colors.blue },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },
@@ -81,6 +82,7 @@ dracula.setup({
 		["@punctuation.special"] = { fg = colors.pink },
 		["@string.escape"] = { fg = colors.pink },
 		["@text"] = { fg = colors.fg },
+		["@text.title"] = { fg = colors.fg },
 	},
 })
 

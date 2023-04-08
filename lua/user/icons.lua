@@ -35,6 +35,7 @@ return {
 	-- arrows
 	left_arrow = "",
 	right_arrow = "",
+	right_arrow_a = "➩ ",
 	left_arrow_bold = "",
 	right_arrow_bold = "",
 	left_arrow_bold_b = "◀",

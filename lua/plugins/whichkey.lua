@@ -38,7 +38,7 @@ local setup = {
 	icons = {
 		breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
 		separator = "➜", -- symbol used between a key and it's label
-		group = "+", -- symbol prepended to a group
+		group = "", -- symbol prepended to a group
 	},
 	popup_mappings = {
 		scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -73,7 +73,7 @@ local setup = {
 
 local opts = {
 	mode = "n",
-	prefix = "<C-;>",
+	prefix = "|",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
@@ -82,38 +82,43 @@ local opts = {
 
 local mappings = {
 	l = {
-		name = "Lsp",
+		name = " Lsp",
 		o = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
 		i = { "<cmd>TSLspImportAll<CR>", "Import All" },
-		f = { "" },
 	},
 	t = {
-		name = "Terminal",
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		name = " Terminal",
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
 	d = {
-		name = "Debugger",
-		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Breakpoint" },
-		c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
-		i = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
-		o = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
-		r = { "<cmd>lua require'dap'.repl.open()<CR>", "Repl Open" },
+		name = " Debugger",
+		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", " Breakpoint" },
+		n = { "<cmd>lua require'dap'.continue()<CR>", " Continue" },
+		P = { "<cmd>lua require'dap'.pause()<CR>", " Pause" },
+		x = { "<cmd>lua require'dap'.close()<CR>", " Terminate" },
+		o = { "<cmd>lua require'dap'.step_over()<CR>", " Step Over" },
+		p = { "<cmd>lua require'dap'.step_back()<CR>", " Step Back" },
+		i = { "<cmd>lua require'dap'.step_into()<CR>", " Step Into" },
+		O = { "<cmd>lua require'dap'.step_out()<CR>", " Step Out" },
+		l = { "<cmd>lua require'dap'.run_last()<CR>", " Run Last" },
+		r = { "<cmd>lua require'dap'.repl.open()<CR>", " Repl Open" },
+		d = { "<cmd>lua require'dap'.disconnect()<CR>", " Disconnect" },
 	},
-	T = {
-		name = "Treesitter",
-		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
+	u = {
+		name = " User",
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		c = { "<cmd>Telescope commands<cr>", "Commands" },
+		C = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
 	},
-	s = {
-		name = "Telescope",
+	g = {
+		name = " Git",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+	},
+
+	s = {
+		name = " Telescope",
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
@@ -121,8 +126,6 @@ local mappings = {
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 }
 
