@@ -78,8 +78,8 @@ map("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- ========================================================
 -- Nvimtree
 map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
-map("n", "<M-->", ":NvimTreeResize -5<CR>", opts)
-map("n", "<M-=>", ":NvimTreeResize +5<CR>", opts)
+map("n", "_", ":NvimTreeResize -5<CR>", opts)
+map("n", "+", ":NvimTreeResize +5<CR>", opts)
 
 -- IndentLine
 map("n", ";i", ":IndentBlanklineToggle<CR>", opts)

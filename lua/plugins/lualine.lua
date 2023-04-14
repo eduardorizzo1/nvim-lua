@@ -146,6 +146,9 @@ ins_left({
 		added = icons.added,
 		modified = icons.modified,
 		removed = icons.removed,
+		-- added = "+",
+		-- modified = "~",
+		-- removed = "-",
 	},
 	diff_color = {
 		added = { fg = colors.green },

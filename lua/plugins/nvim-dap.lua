@@ -106,12 +106,6 @@ dap.adapters.node2 = {
 	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
 }
 
-dap.adapters.chrome = {
-	type = "executable",
-	command = "node",
-	args = { os.getenv("HOME") .. "~/vscode-chrome-debug/out/src/chromeDebug.js" },
-}
-
 dap.configurations.javascript = {
 	{
 		name = "Launch",
@@ -131,6 +125,40 @@ dap.configurations.javascript = {
 		processId = require("dap.utils").pick_process,
 	},
 }
+
+-- dap.configurations.javascript = {
+-- 	{
+-- 		type = "pwa-node",
+-- 		request = "launch",
+-- 		name = "Launch file",
+-- 		program = "${file}",
+-- 		cwd = "${workspaceFolder}",
+-- 	},
+-- }
+
+--------------------------------
+------------ Chrome ------------
+--------------------------------
+dap.adapters.chrome = {
+	type = "executable",
+	command = "node",
+	args = { os.getenv("HOME") .. "~/vscode-chrome-debug/out/src/chromeDebug.js" },
+}
+
+dap.adapters["pwa-node"] = {
+	type = "server",
+	host = "localhost",
+	port = "${port}",
+	executable = {
+		command = "node",
+		-- 💀 Make sure to update this path to point to your installation
+		args = { "/home/eduardo/vscode-js-debug/src/dapDebugServer.ts", "${port}" },
+	},
+}
+
+--------------------------------
+------------ React -------------
+--------------------------------
 
 dap.configurations.javascriptreact = { -- change this to javascript if needed
 	{
@@ -161,37 +189,37 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
 ---------------------------
 --------- Python ----------
 ---------------------------
-dap.adapters.python = {
-	type = "executable",
-	command = "$HOME/.venv/debugpy/bin/python",
-	args = { "-m", "debugpy.adapter" },
-}
-
-dap.configurations.python = {
-	{
-		-- The first three options are required by nvim-dap
-		type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
-		request = "launch",
-		name = "Launch file",
-
-		-- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-
-		program = "${file}", -- This configuration will launch the current file if used.
-		pythonPath = function()
-			-- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
-			-- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
-			-- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
-			local cwd = vim.fn.getcwd()
-			if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
-				return cwd .. "/venv/bin/python"
-			elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
-				return cwd .. "/.venv/bin/python"
-			else
-				return "/usr/bin/python"
-			end
-		end,
-	},
-}
+-- dap.adapters.python = {
+-- 	type = "executable",
+-- 	command = "$HOME/.venv/debugpy/bin/python",
+-- 	args = { "-m", "debugpy.adapter" },
+-- }
+--
+-- dap.configurations.python = {
+-- 	{
+-- 		-- The first three options are required by nvim-dap
+-- 		type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+-- 		request = "launch",
+-- 		name = "Launch file",
+--
+-- 		-- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+--
+-- 		program = "${file}", -- This configuration will launch the current file if used.
+-- 		pythonPath = function()
+-- 			-- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+-- 			-- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+-- 			-- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+-- 			local cwd = vim.fn.getcwd()
+-- 			if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
+-- 				return cwd .. "/venv/bin/python"
+-- 			elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
+-- 				return cwd .. "/.venv/bin/python"
+-- 			else
+-- 				return "/usr/bin/python"
+-- 			end
+-- 		end,
+-- 	},
+-- }
 
 dap_virtual_text.setup({
 	enabled = true, -- enable this plugin (the default)

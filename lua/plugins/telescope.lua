@@ -10,10 +10,17 @@ telescope.load_extension("media_files")
 
 telescope.setup({
 	defaults = {
+		prompt_prefix = "❯ ",
+		selection_caret = " ",
+		entry_prefix = "  ",
+		initial_mode = "insert",
+		layout_strategy = "horizontal",
+
 		layout_config = {
 			width = 0.9,
+			height = 0.9,
 			prompt_position = "top",
-			preview_cutoff = 80,
+			preview_cutoff = 20,
 			horizontal = { mirror = false },
 			vertical = { mirror = false },
 		},
@@ -27,17 +34,15 @@ telescope.setup({
 			"--smart-case",
 		},
 
-		prompt_prefix = "❯ ",
-		selection_caret = " ",
-		entry_prefix = "  ",
-		initial_mode = "insert",
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
-		layout_strategy = "horizontal",
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
 		file_ignore_patterns = { "node_modules", "dist", "build" },
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		path_display = {},
+		path_display = {
+			-- shorten = true,
+			truncate = true,
+		},
 		winblend = 0,
 		border = {},
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },

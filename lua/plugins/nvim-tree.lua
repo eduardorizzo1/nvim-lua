@@ -38,7 +38,6 @@ nvim_tree.setup({
 		adaptive_size = false,
 		width = 30,
 		centralize_selection = false,
-		hide_root_folder = true,
 		side = "left",
 		preserve_window_proportions = false,
 		number = false,
@@ -62,6 +61,7 @@ nvim_tree.setup({
 		full_name = false,
 		highlight_opened_files = "name",
 		root_folder_modifier = ":t",
+		root_folder_label = false,
 		indent_markers = {
 			enable = true,
 			icons = {

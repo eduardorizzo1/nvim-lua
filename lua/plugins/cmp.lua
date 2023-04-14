@@ -116,11 +116,11 @@ cmp.setup({
 
 			--NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "❮Lsp❯",
-				cmp_tabnine = "❮Tabnine❯",
-				luasnip = "❮Snippets❯",
-				buffer = "❮Buffer❯",
-				nvim_lua = "❮Nvim❯",
+				nvim_lsp = "[LSP]",
+				cmp_tabnine = "[Tabnine]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				nvim_lua = "[Nvim]",
 			})[entry.source.name]
 			return vim_item
 		end,
