@@ -74,6 +74,18 @@ dracula.setup({
 		-- Debug
 		debugPc = { bg = colors.bg },
 
+		-- Semantic
+		["@class"] = { fg = colors.cyan },
+		["@struct"] = { fg = colors.cyan },
+		["@enum"] = { fg = colors.cyan },
+		["@enumMember"] = { fg = colors.purple },
+		["@event"] = { fg = colors.cyan },
+		["@interface"] = { fg = colors.cyan },
+		["@modifier"] = { fg = colors.cyan },
+		["@regexp"] = { fg = colors.yellow },
+		["@typeParameter"] = { fg = colors.cyan },
+		["@decorator"] = { fg = colors.cyan },
+
 		-- Treesitter
 		["@keyword.function"] = { fg = colors.pink },
 		["@property"] = { fg = colors.fg },
