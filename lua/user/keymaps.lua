@@ -158,6 +158,7 @@ map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
+map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
 
 -- Git
 map("n", ";gb", ":BlamerToggle <CR>", opts)
