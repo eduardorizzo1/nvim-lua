@@ -1,10 +1,10 @@
+require("impatient").enable_profile()
 require("plugins")
 
 require("user.options")
 require("user.keymaps")
 require("user.themes.dracula")
 
-require("impatient")
 require("plugins.dashboard")
 require("plugins.nvim-tree")
 require("plugins.bufferline")

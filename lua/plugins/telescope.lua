@@ -4,6 +4,7 @@ if not status then
 end
 
 local actions = require("telescope.actions")
+local previewers = require("telescope.previewers")
 
 -- TODO: Install some media file preview
 telescope.load_extension("media_files")
