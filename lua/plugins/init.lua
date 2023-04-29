@@ -140,6 +140,7 @@ return packer.startup(function(use)
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
 	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
 	use("anuvyklack/pretty-fold.nvim")
+	use("m4xshen/smartcolumn.nvim")
 	use({
 		"utilyre/barbecue.nvim",
 		tag = "*",
