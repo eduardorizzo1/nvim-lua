@@ -7,6 +7,7 @@ dracula.setup({
 	italic_comment = true,
 	overrides = {
 		Search = { fg = "#000000", bg = colors.green },
+		-- Search = { gui = "reverse" },
 		Title = { fg = colors.green },
 		Number = { fg = colors.purple },
 		Function = { fg = colors.green },

@@ -25,7 +25,10 @@ vim.diagnostic.config({
 	underline = true,
 	signs = true,
 	severity_sort = true,
-	virtual_text = false,
+	virtual_text = {
+		spacing = 4,
+		prefix = "●",
+	},
 })
 
 function _G.toggle_diagnostics()
