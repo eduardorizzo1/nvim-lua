@@ -301,20 +301,21 @@ local config_default = {
 local modes = {
 	"mode",
 	separator = { left = "", right = "" },
-	icon = " ",
+	color = function()
+		return { fg = mode_color[vim.fn.mode()], bg = "#313244" }
+	end,
+	padding = { left = 1, right = 0 },
+}
+
+local mode_icons = {
+	function()
+		return " "
+	end,
+	separator = { left = "", right = "" },
 	color = function()
 		return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
 	end,
 	padding = { left = 0, right = 0 },
-}
-
-local vim_icons = {
-	function()
-		return " "
-	end,
-	separator = { left = "", right = "" },
-	color = { bg = "#313244", fg = "#80A7EA" },
-	padding = { left = 1, right = 0 },
 }
 
 local space = {
@@ -326,30 +327,12 @@ local space = {
 
 local filename = {
 	"filename",
+	cond = conditions.buffer_not_empty,
+	shorten = true,
 	file_status = false,
 	separator = { left = "", right = "" },
 	color = { fg = "#313244", bg = "#80A7EA" },
-	padding = { left = 1 },
-}
-
-local filetype_icon = {
-	"filetype",
-	icon_only = true,
-	colored = true,
-	color = { bg = "#313244" },
-	separator = { left = "", right = "" },
-}
-
-local fileformat = {
-	"fileformat",
-	color = { bg = "#b4befe", fg = "#313244" },
-	separator = { left = "", right = "" },
-}
-
-local encoding = {
-	"encoding",
-	color = { bg = "#313244", fg = "#80A7EA" },
-	separator = { left = "" },
+	padding = { left = 1, right = 0 },
 }
 
 local diff = {
@@ -361,8 +344,18 @@ local diff = {
 local branch = {
 	"branch",
 	color = { bg = "#a6e3a1", fg = "#313244" },
-	-- color = { bg = colors.cyan, fg = colors.bg },
+	-- color = { bg = colors.green, fg = colors.bg },
 	separator = { left = "", right = "" },
+	icon = "",
+}
+
+local branch_icons = {
+	function()
+		return " "
+	end,
+	separator = { left = "", right = "" },
+	color = { fg = "#a6e3a1", bg = "#313244" },
+	padding = { left = 0, right = 0 },
 }
 
 local diagnostic = {
@@ -386,8 +379,6 @@ local diagnostic = {
 }
 
 local lsp = {
-	separator = { left = "", right = "" },
-	color = { bg = colors.orange, fg = colors.bg },
 	function()
 		local msg = "No Active Lsp"
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
@@ -403,6 +394,8 @@ local lsp = {
 		end
 		return msg
 	end,
+	color = { bg = colors.pink, fg = colors.bg },
+	separator = { left = "", right = "" },
 	padding = { right = 1, left = 1 },
 }
 
@@ -415,23 +408,37 @@ local progress = {
 local location = {
 	"location",
 	separator = { left = "", right = "" },
-	color = { bg = "#313244", fg = "#80A7EA" },
+	color = { bg = "#313244", fg = colors.cyan },
 	padding = { right = 0, left = 0 },
 }
 
 local filetype = {
 	"filetype",
 	icon_only = false,
-	colored = false,
-	separator = { left = "", right = "" },
-	color = { bg = colors.pink, fg = colors.bg },
+	colored = true,
+	separator = { left = "" },
+	color = { bg = "#313244", fg = colors.pink },
 	padding = { left = 1, right = 1 },
+	icon = {
+		"",
+		align = "left",
+	},
+}
+
+local filetype_icon = {
+	"filetype",
+	icon_only = true,
+	colored = true,
+	color = { bg = "#313244" },
+	separator = { left = "", right = "" },
+	padding = { left = 0, right = 1 },
 }
 
 local config_bubbles_custom = {
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
+		fmt = string.lower,
 		theme = {
 			normal = {
 				a = { bg = "none" },
@@ -454,20 +461,20 @@ local config_bubbles_custom = {
 		},
 	},
 	sections = {
-		lualine_a = { modes, space },
+		lualine_a = { mode_icons, modes, space },
 		lualine_b = {
-			filename,
-			diagnostic,
-			space,
-		},
-		lualine_c = {
+			branch_icons,
 			branch,
 			diff,
 			space,
+			filetype_icon,
+			filename,
+			diagnostic,
 		},
-		lualine_x = { location, progress, space },
-		lualine_y = { filetype_icon, lsp, space },
-		lualine_z = { filetype },
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { location, progress, space },
+		lualine_z = { filetype, lsp },
 	},
 	inactive_sections = {
 		lualine_a = {},

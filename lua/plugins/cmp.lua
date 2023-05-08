@@ -5,6 +5,7 @@ end
 
 local luasnip = require("luasnip")
 luasnip.filetype_extend("javascript", { "html" })
+luasnip.filetype_extend("typescript", { "html" })
 luasnip.filetype_extend("javascriptreact", { "html" })
 luasnip.filetype_extend("typescriptreact", { "html" })
 
@@ -49,8 +50,8 @@ local icons = {
 }
 
 local custom_icons = {
-	cmp_tabnine = "💡",
-	luasnip = "🌜",
+	cmp_tabnine = "⚡",
+	luasnip = " ",
 	buffer = "◉ ",
 }
 
@@ -106,6 +107,9 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
+			-- local kind_name = string.lower(string.sub(vim_item.kind, 1, 4))
+			local kind_name = vim_item.kind
+			local space = "     "
 			vim_item.kind = string.format("%s ", icons[vim_item.kind])
 
 			for name, icon in pairs(custom_icons) do
@@ -116,11 +120,11 @@ cmp.setup({
 
 			--NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				cmp_tabnine = "[Tabnine]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				nvim_lua = "[Nvim]",
+				nvim_lsp = space .. "❨" .. kind_name .. "❩",
+				cmp_tabnine = space .. "❨Tabnine❩",
+				luasnip = space .. "❨Luasnip❩",
+				buffer = space .. "❨Buffer❩",
+				nvim_lua = space .. "❨Nvim❩",
 			})[entry.source.name]
 			return vim_item
 		end,

@@ -71,6 +71,7 @@ dracula.setup({
 		CmpItemMenu = { bg = colors.bg, fg = colors.comment, bold = true },
 		CmpItemKindFile = { bg = colors.bg, fg = colors.green },
 		CmpItemKindFolder = { bg = colors.bg, fg = colors.yellow },
+		CmpItemKindSnippet = { fg = colors.yellow },
 
 		-- Debug
 		debugPc = { bg = colors.bg },

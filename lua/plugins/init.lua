@@ -142,6 +142,11 @@ return packer.startup(function(use)
 	use("anuvyklack/pretty-fold.nvim")
 	use("m4xshen/smartcolumn.nvim")
 	use({
+		"williamboman/mason.nvim",
+		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+	})
+	use({ "williamboman/mason-lspconfig.nvim" })
+	use({
 		"utilyre/barbecue.nvim",
 		tag = "*",
 		requires = {
