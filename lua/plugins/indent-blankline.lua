@@ -17,7 +17,7 @@ g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 
 indent_blankline.setup({
 	buftype_exclude = { "terminal" },
-	filetype_exclude = { "dashboard", "nvimtree", "packer", "help", "html" },
+	filetype_exclude = { "dashboard", "nvimtree", "packer", "help" },
 	show_current_context = true,
 	show_current_context_start = false,
 	context_patterns = {

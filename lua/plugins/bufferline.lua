@@ -20,8 +20,8 @@ bufferline.setup({
 		tab_size = 16,
 		enforce_regular_tabs = false,
 		always_show_bufferline = true,
-		show_close_icon = true,
-		show_buffer_close_icons = true,
+		show_close_icon = false,
+		show_buffer_close_icons = false,
 		diagnostic = "nvim_lsp",
 		right_mouse_command = "vertical sbuffer %d",
 		close_command = "bdelete! %d",
@@ -90,7 +90,6 @@ bufferline.setup({
 		buffer_selected = {
 			fg = colors.color.fg,
 			bg = "none",
-			bold = true,
 			italic = true,
 		},
 
@@ -106,9 +105,10 @@ bufferline.setup({
 		},
 
 		duplicate_selected = {
-			fg = colors.color.current_line,
+			fg = colors.color.cyan,
 			bg = "none",
 			italic = true,
+			bold = true,
 		},
 
 		indicator_selected = {
@@ -150,14 +150,14 @@ bufferline.setup({
 			bg = colors.color.bg_dark,
 		},
 
-		modified = {
-			bg = colors.color.bg_dark,
-		},
-
 		duplicate = {
 			fg = colors.color.current_line,
 			bg = colors.color.bg_dark,
 			italic = true,
+		},
+
+		modified = {
+			bg = colors.color.bg_dark,
 		},
 
 		separator = {

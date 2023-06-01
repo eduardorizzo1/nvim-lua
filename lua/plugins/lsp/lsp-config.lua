@@ -13,7 +13,7 @@ local diagnostics_virtual_text = true
 local virtual_text_on = {
 	virtual_text = {
 		spacing = 4,
-		prefix = "●",
+		prefix = " ",
 	},
 }
 local virtual_text_off = {
@@ -27,7 +27,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	virtual_text = {
 		spacing = 4,
-		prefix = "●",
+		prefix = " ",
 	},
 })
 
