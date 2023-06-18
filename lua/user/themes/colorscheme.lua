@@ -26,6 +26,7 @@ local dracula = {
 	darkpink = "#bb00ff",
 	blue = "#51afef",
 	search_hl = "#5f5f68",
+	blue_term = "#422FA3",
 }
 
 local catppuccin = {
