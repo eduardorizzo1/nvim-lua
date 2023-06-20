@@ -16,6 +16,13 @@ map("n", "L", "5l", opts)
 map("n", "<C-j>", "10j", opts)
 map("n", "<C-k>", "10k", opts)
 
+map("v", "J", "5j", opts)
+map("v", "K", "5k", opts)
+map("v", "H", "5h", opts)
+map("v", "L", "5l", opts)
+map("v", "<C-j>", "10j", opts)
+map("v", "<C-k>", "10k", opts)
+
 -- Fold
 map("n", "za", '<Cmd>call VSCodeNotify("editor.toggleFold")<CR>', opts)
 map("n", "zA", '<Cmd>call VSCodeNotify("editor.foldAll")<CR>', opts)
