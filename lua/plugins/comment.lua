@@ -9,11 +9,11 @@ Comment.setup({
 	sticky = true,
 	ignore = nil,
 	toggler = {
-		line = "<C-/>",
+		line = "<leader>cc",
 		block = "<leader>ca",
 	},
 	opleader = {
-		line = "<C-/>",
+		line = "<leader>cc",
 		block = "<leader>ca",
 	},
 	mappings = {
