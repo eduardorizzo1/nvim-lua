@@ -113,7 +113,7 @@ return packer.startup(function(use)
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	})
+	})	
 
 	-- Debugger (DAP)
 	use({ "mfussenegger/nvim-dap" })

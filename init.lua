@@ -14,7 +14,6 @@ if not vim.g.vscode then
 	require("plugins.hlargs")
 	require("plugins.lsp")
 	require("plugins.cmp")
-	require("plugins.mason")
 	require("plugins.neoscroll")
 	require("plugins.colorizer")
 	require("plugins.illuminate")
