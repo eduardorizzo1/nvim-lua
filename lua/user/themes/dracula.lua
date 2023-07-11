@@ -25,6 +25,7 @@ dracula.setup({
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = colors.bg_dark },
 		BufferLineBufferSelected = { bg = "none" },
+		BufferLineSeparator = { bg = "none" },
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },

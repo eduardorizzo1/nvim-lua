@@ -43,22 +43,22 @@ return packer.startup(function(use)
 	use("glepnir/dashboard-nvim")
 	-- Themes
 	use("Mofiqul/dracula.nvim")
-	use("overcache/NeoSolarized")
-	use("Mofiqul/vscode.nvim")
-	use("navarasu/onedark.nvim")
-	use("olimorris/onedarkpro.nvim")
-	use("tiagovla/tokyodark.nvim")
-	use("folke/tokyonight.nvim")
-	use("drewtempelmeyer/palenight.vim")
-	use("morhetz/gruvbox")
-	use("EdenEast/nightfox.nvim")
-	use("rose-pine/neovim")
 	use("rebelot/kanagawa.nvim")
-	use("pineapplegiant/spaceduck")
-	use("lunarvim/darkplus.nvim")
-	use("challenger-deep-theme/vim")
+	use("folke/tokyonight.nvim")
+	use("Mofiqul/vscode.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("shaunsingh/nord.nvim")
+	use("overcache/NeoSolarized")
+	-- use("navarasu/onedark.nvim")
+	-- use("olimorris/onedarkpro.nvim")
+	-- use("tiagovla/tokyodark.nvim")
+	-- use("drewtempelmeyer/palenight.vim")
+	-- use("morhetz/gruvbox")
+	-- use("EdenEast/nightfox.nvim")
+	-- use("rose-pine/neovim")
+	-- use("pineapplegiant/spaceduck")
+	-- use("lunarvim/darkplus.nvim")
+	-- use("challenger-deep-theme/vim")
+	-- use("shaunsingh/nord.nvim")
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
@@ -96,6 +96,11 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets")
 	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({
+		"williamboman/mason.nvim",
+		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+	})
+	use({ "williamboman/mason-lspconfig.nvim" })
 	-- Trouble
 	use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
 	-- Comments
@@ -113,7 +118,7 @@ return packer.startup(function(use)
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	})	
+	})
 
 	-- Debugger (DAP)
 	use({ "mfussenegger/nvim-dap" })
@@ -137,15 +142,10 @@ return packer.startup(function(use)
 	use({ "mg979/vim-visual-multi", branch = "master" })
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "phaazon/hop.nvim", branch = "v1" })
-	use({ "echasnovski/mini.nvim", branch = "stable" }) -- Surround
+	use({ "echasnovski/mini.nvim", branch = "stable" }) -- surround
 	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
 	use("anuvyklack/pretty-fold.nvim")
 	use("m4xshen/smartcolumn.nvim")
-	use({
-		"williamboman/mason.nvim",
-		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
-	})
-	use({ "williamboman/mason-lspconfig.nvim" })
 	use({
 		"utilyre/barbecue.nvim",
 		tag = "*",

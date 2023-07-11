@@ -115,10 +115,6 @@ bufferline.setup({
 			fg = colors.color.bg_dark,
 			bg = "none",
 		},
-		separator_selected = {
-			fg = colors.color.bg_dark,
-			bg = "none",
-		},
 
 		close_button_visible = {
 			fg = colors.color.fg,
@@ -150,6 +146,16 @@ bufferline.setup({
 			bg = colors.color.bg_dark,
 		},
 
+		separator_selected = {
+			fg = colors.color.bg_dark,
+			bg = "none",
+		},
+
+		separator = {
+			bg = colors.color.bg_dark,
+			fg = colors.color.bg_dark,
+		},
+
 		duplicate = {
 			fg = colors.color.current_line,
 			bg = colors.color.bg_dark,
@@ -158,11 +164,6 @@ bufferline.setup({
 
 		modified = {
 			bg = colors.color.bg_dark,
-		},
-
-		separator = {
-			bg = colors.color.bg_dark,
-			fg = colors.color.bg_dark,
 		},
 
 		offset_separator = {
