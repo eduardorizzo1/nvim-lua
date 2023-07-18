@@ -57,13 +57,13 @@ dracula.setup({
 		IndentBlanklineIndent1 = { fg = "#393942" },
 
 		-- Ts Rainbow
-		rainbowcol1 = { fg = "#ffff00" },
-		rainbowcol2 = { fg = colors.pink },
-		rainbowcol3 = { fg = colors.cyan },
-		rainbowcol4 = { fg = colors.green },
-		rainbowcol5 = { fg = colors.purple },
-		rainbowcol6 = { fg = colors.orange },
-		rainbowcol7 = { fg = colors.blue },
+		RainbowDelimiterYellow = { fg = "#ffff00" },
+		RainbowDelimiterPink = { fg = colors.pink },
+		RainbowDelimiterCyan = { fg = colors.cyan },
+		RainbowDelimiterGreen = { fg = colors.green },
+		RainbowDelimiterPurple = { fg = colors.purple },
+		RainbowDelimiterOrange = { fg = colors.orange },
+		RainbowDelimiterBlue = { fg = colors.blue },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },

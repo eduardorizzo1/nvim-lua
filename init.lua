@@ -1,15 +1,16 @@
 require("impatient").enable_profile()
-require("plugins")
 
 require("user.options")
 require("user.keymaps")
 require("user.themes.dracula")
 
+require("plugins")
 require("plugins.dashboard")
 require("plugins.nvim-tree")
 require("plugins.bufferline")
 require("plugins.lualine")
 require("plugins.treesitter")
+require("plugins.rainbow-delimiters")
 require("plugins.hlargs")
 require("plugins.lsp")
 require("plugins.cmp")

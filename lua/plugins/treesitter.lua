@@ -11,9 +11,8 @@ configs.setup({
 	},
 	rainbow = {
 		enable = true,
-		extended_mode = true,
-		max_file_lines = nil,
-		-- disable = { "html" },
+		query = "rainbow-parens",
+		disable = { "nvimtree" },
 	},
 	indent = {
 		enable = true,
