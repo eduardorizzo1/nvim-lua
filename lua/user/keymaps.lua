@@ -131,36 +131,34 @@ map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>'
 map("n", "<leader>gf", '<cmd>lua require("telescope.builtin").git_bcommits()<CR>', opts)
 map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
 
--- LspSaga Mappings
+-- Lsp and Saga Mappings
 map("n", "gc", "<cmd>Lspsaga code_action<CR>", opts)
-map("n", "ga", "<cmd>Lspsaga range_code_action<CR>", opts)
 map("n", "gh", "<cmd>Lspsaga hover_doc<CR>", opts)
 map("n", "gD", "<cmd>Lspsaga preview_definition<CR>", opts)
 map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-map("n", "gi", "<cmd>Lspsaga implement<CR>", opts)
-map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
 map("n", "gn", "<cmd>Lspsaga rename<CR>", opts)
 map("n", "gH", "<cmd>Lspsaga signature_help<CR>", opts)
 map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
-map("n", ";e", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
-
--- Lsp Mappings (See `:help vim.lsp.*` for documentation on any of the below functions)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-map("n", "<space>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-map("n", "gE", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+map("n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+-- map("n", "gE", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+-- map("n", "gi", "<cmd>Lspsaga implement<CR>", opts)
+-- map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+-- map("n", "ga", "<cmd>Lspsaga range_code_action<CR>", opts)
 
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
 map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
 
--- Git
+-- Toggles
 map("n", ";gb", ":BlamerToggle <CR>", opts)
 map("n", ";gs", ":Gitsigns toggle_signs <CR>", opts)
+map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
+map("n", ";e", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
 
 -- Hop
 map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
@@ -174,3 +172,7 @@ map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
+
+-- typescript
+map("n", "gi", ":TypescriptAddMissingImports<CR>", opts)
+map("n", "go", ":TypescriptOrganizeImports<CR>", opts)

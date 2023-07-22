@@ -41,6 +41,7 @@ packer.init({
 return packer.startup(function(use)
 	-- Dashboard
 	use("glepnir/dashboard-nvim")
+
 	-- Themes
 	use("Mofiqul/dracula.nvim")
 	use("rebelot/kanagawa.nvim")
@@ -59,17 +60,20 @@ return packer.startup(function(use)
 	-- use("lunarvim/darkplus.nvim")
 	-- use("challenger-deep-theme/vim")
 	-- use("shaunsingh/nord.nvim")
+
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
+
 	-- Nvimtree, lualine and bufferline
 	use("kyazdani42/nvim-tree.lua")
 	use("kyazdani42/nvim-web-devicons")
 	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
+
 	--Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("windwp/nvim-ts-autotag")
@@ -78,6 +82,7 @@ return packer.startup(function(use)
 		"m-demare/hlargs.nvim",
 		requires = { "nvim-treesitter/nvim-treesitter" },
 	})
+
 	-- Lsp
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
@@ -87,6 +92,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("jose-elias-alvarez/typescript.nvim")
 	use("hrsh7th/nvim-cmp") -- cmp
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
@@ -101,17 +107,21 @@ return packer.startup(function(use)
 		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
 	})
 	use({ "williamboman/mason-lspconfig.nvim" })
+
 	-- Trouble
 	use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+
 	-- Comments
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
+
 	-- Colorizers
 	use("norcalli/nvim-colorizer.lua")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("windwp/nvim-autopairs")
 	use("RRethy/vim-illuminate")
+
 	-- Markdown Preview
 	use({
 		"iamcco/markdown-preview.nvim",

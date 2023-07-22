@@ -11,6 +11,8 @@ vim.g.rainbow_delimiters = {
 	},
 	query = {
 		[""] = "rainbow-delimiters",
+		tsx = "rainbow-parens",
+		javascript = "rainbow_delimiters-react",
 		-- lua = "rainbow-blocks",
 	},
 	highlight = {

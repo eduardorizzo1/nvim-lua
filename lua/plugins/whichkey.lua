@@ -7,10 +7,10 @@ vim.o.timeoutlen = 200
 
 local setup = {
 	plugins = {
-		marks = true, -- shows a list of your marks on ' and `
+		marks = false, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 		spelling = {
-			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
 		},
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
@@ -21,8 +21,8 @@ local setup = {
 			text_objects = false, -- help for text objects triggered after entering an operator
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
-			z = true, -- bindings for folds, spelling and others prefixed with z
-			g = true, -- bindings for prefixed with g
+			z = false, -- bindings for folds, spelling and others prefixed with z
+			g = false, -- bindings for prefixed with g
 		},
 	},
 	-- add operators that will trigger motion and text object completion
@@ -73,7 +73,7 @@ local setup = {
 
 local opts = {
 	mode = "n",
-	prefix = "<c-a-\\>",
+	prefix = "<c-\\>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
@@ -83,37 +83,52 @@ local opts = {
 local mappings = {
 	-- LSP
 	l = {
-		name = " Lsp",
+		name = "Lsp",
 		o = { "<cmd>TSLspOrganize<CR>", "Organize Imports" },
 		i = { "<cmd>TSLspImportAll<CR>", "Import All" },
+		c = { "<cmd>Lspsaga code_action<CR>", "Code Actions" },
+		h = { "<cmd>Lspsaga hover_doc<CR>", "Hover doc" },
+		D = { "<cmd>Lspsaga preview_definition<CR>", "Preview Definitions" },
+		e = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
+		n = { "<cmd>Lspsaga rename<CR>", "Rename" },
+		H = { "<cmd>Lspsaga signature_help<CR>", "Signature Help" },
+		j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Diagnostics Jump Next" },
+		k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Diagnostics Jump Prev" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Difinitions" },
+		r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+		f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
+		I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementations" },
+		t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definitions" },
 	},
+
 	-- Telescope
-	s = {
-		name = " Telescope",
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help" },
-		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-		l = { "<cmd>Telescope resume<cr>", "Last Search" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
+	f = {
+		name = "Telescope",
+		f = { '<cmd>lua require("telescope.builtin").find_files()<CR>', "" },
+		g = { '<cmd>lua require("telescope.builtin").live_grep()<CR>', "" },
+		b = { '<cmd>lua require("telescope.builtin").buffers()<CR>', "" },
+		h = { '<cmd>lua require("telescope.builtin").help_tags()<CR>', "" },
+		a = { '<cmd>lua require("telescope.builtin").grep_string()<CR>', "" },
+		m = { '<cmd>lua require("telescope").extensions.media_files.media_files()<CR>', "" },
 	},
+
 	-- NvimTree
 	n = {
-		name = " NvimTree",
+		name = "NvimTree",
 		r = { "<cmd>NvimTreeResize +10<CR>", "Resize +10" },
 		R = { "<cmd>:NvimTreeResize -10<CR>", "Resize -10" },
 	},
+
 	-- Terminal
 	t = {
-		name = " Terminal",
+		name = "Terminal",
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
 	-- Debuger
 	d = {
-		name = " Debugger",
+		name = "Debugger",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", " Breakpoint" },
 		n = { "<cmd>lua require'dap'.continue()<CR>", " Continue" },
 		P = { "<cmd>lua require'dap'.pause()<CR>", " Pause" },
@@ -126,17 +141,31 @@ local mappings = {
 		r = { "<cmd>lua require'dap'.repl.open()<CR>", " Repl Open" },
 		d = { "<cmd>lua require'dap'.disconnect()<CR>", " Disconnect" },
 	},
+
 	-- Git
 	g = {
-		name = " Git",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		name = "Git",
+		g = { '<cmd>lua require("telescope.builtin").git_status()<CR>', "Status" },
+		b = { '<cmd>lua require("telescope.builtin").git_branches()<CR>', "Branches" },
+		c = { '<cmd>lua require("telescope.builtin").git_commits()<CR>', "Commits" },
+		f = { '<cmd>lua require("telescope.builtin").git_bcommits()<CR>', "BCommits" },
+		s = { '<cmd>lua require("telescope.builtin").git_stash()<CR>', "Stash" },
 	},
-	-- User
-	u = {
-		name = " User",
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		c = { "<cmd>Telescope commands<cr>", "Commands" },
-		C = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
+
+	-- Keymaps
+	[";"] = {
+		name = "Toggles",
+		d = { "<cmd>lua toggle_diagnostics()<CR>", "Diagnostics" },
+		e = { "<cmd>lua toggle_diagnostics_virtual_text()<CR>", "Diagnostics Virtual Text" },
+		i = { ":IndentBlanklineToggle<CR>", "IndentBlankLine" },
+		t = { ":Twilight<CR>", "Twilight" },
+		b = { ":SymbolsOutline<CR>", "SymbolsOutline" },
+		s = { ":wa<CR>", "Save All Files" },
+		g = {
+			name = "Git",
+			b = { ":BlamerToggle <CR>" },
+			s = { ":Gitsigns toggle_signs <CR>" },
+		},
 	},
 }
 
