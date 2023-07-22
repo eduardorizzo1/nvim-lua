@@ -43,7 +43,7 @@ local servers = {
 
 mason_lspconfig.setup({
 	ensure_installed = servers,
-	automatic_installation = false,
+	automatic_installation = true,
 })
 
 local opts = {}
