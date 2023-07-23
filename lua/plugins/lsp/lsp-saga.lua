@@ -10,7 +10,7 @@ lspsaga.setup({
 		hide_keyword = false,
 		show_file = true,
 		folder_level = 1,
-		color_mode = true,
+		color_mode = false,
 		delay = 300,
 	},
 	callhierarchy = {
@@ -44,7 +44,7 @@ lspsaga.setup({
 			split = "<C-c>i",
 			tabe = "<C-c>t",
 			quit = "q",
-			close = "<C-c>k",
+			close = { "<C-c>", "<ESC>", "<C-b>", "<C-l>", "<C-h>" },
 		},
 	},
 	diagnostic = {
