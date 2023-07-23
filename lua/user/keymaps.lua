@@ -96,12 +96,6 @@ map("n", "<C-M-n>", ":RunCode<CR>", opts)
 -- Trouble
 map("n", "<leader>e", ":TroubleToggle<CR>", opts)
 
--- Symbols-outline
-map("n", ";b", ":SymbolsOutline<CR>", opts)
-
--- Barbecue
-map("n", "<leader>.", ":Barbecue toggle<CR>", opts)
-
 -- Bufferline
 map("n", "<S-l>", ":bn<CR>", opts) -- next
 map("n", "<M-l>", ":bn<CR>", opts)
@@ -131,24 +125,22 @@ map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>'
 map("n", "<leader>gf", '<cmd>lua require("telescope.builtin").git_bcommits()<CR>', opts)
 map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
 
--- Lsp and Saga Mappings
-map("n", "gc", "<cmd>Lspsaga code_action<CR>", opts)
-map("n", "gh", "<cmd>Lspsaga hover_doc<CR>", opts)
-map("n", "gD", "<cmd>Lspsaga preview_definition<CR>", opts)
-map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-map("n", "gn", "<cmd>Lspsaga rename<CR>", opts)
-map("n", "gs", "<cmd>Lspsaga signature_help<CR>", opts)
-map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- Lsp Saga
+map("n", "gi", ":Lspsaga incoming_calls<CR>", opts)
+map("n", "go", ":Lspsaga outgoing_calls<CR>", opts)
+map("n", "gc", ":Lspsaga code_action<CR>", opts)
+map("n", "gd", ":Lspsaga goto_definition<CR>", opts)
+map("n", "gD", ":Lspsaga peek_definition<CR>", opts)
+map("n", "gt", ":Lspsaga goto_type_definition<CR>", opts)
+map("n", "gT", ":Lspsaga peek_type_definition<CR>", opts)
+map("n", "gn", ":Lspsaga rename<CR>", opts)
+map("n", "gh", ":Lspsaga hover_doc<CR>", opts)
+map("n", "gj", ":Lspsaga diagnostic_jump_next<CR>", opts)
+map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
+map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "gr", ":Lspsaga finder<CR>", opts)
 map("n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-map("n", "gd", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
---  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
--- map("n", "gE", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
--- map("n", "gi", "<cmd>Lspsaga implement<CR>", opts)
--- map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
--- map("n", "ga", "<cmd>Lspsaga range_code_action<CR>", opts)
+map("n", "<M-b>", ":Lspsaga outline<CR>", opts)
 
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
@@ -174,6 +166,6 @@ map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
 
 -- typescript
-map("n", "gi", ":TypescriptAddMissingImports<CR>", opts)
-map("n", "gI", ":TypescriptRemoveUnused<CR>", opts)
-map("n", "go", ":TypescriptOrganizeImports<CR>", opts)
+map("n", "gI", ":TypescriptAddMissingImports<CR>", opts)
+map("n", "gU", ":TypescriptRemoveUnused<CR>", opts)
+map("n", "gO", ":TypescriptOrganizeImports<CR>", opts)

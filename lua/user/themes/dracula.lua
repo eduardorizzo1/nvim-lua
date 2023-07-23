@@ -45,6 +45,23 @@ dracula.setup({
 		LspReferenceText = { bg = colors.current_line, fg = "none" },
 		LspReferenceWrite = { bg = colors.current_line, fg = "none" },
 
+		--LSP Saga
+		LspFloatWinNormal = { fg = colors.fg },
+		LspFloatWinBorder = { fg = colors.comment },
+		LspSagaHoverBorder = { fg = colors.comment },
+		LspSagaSignatureHelpBorder = { fg = colors.comment },
+		LspSagaCodeActionBorder = { fg = colors.comment },
+		LspSagaDefPreviewBorder = { fg = colors.comment },
+		LspLinesDiagBorder = { fg = colors.comment },
+		LspSagaRenameBorder = { fg = colors.comment },
+		LspSagaBorderTitle = { fg = colors.pink },
+		LSPSagaDiagnosticTruncateLine = { fg = colors.comment },
+		LspSagaDiagnosticBorder = { fg = colors.comment },
+		LspSagaShTruncateLine = { fg = colors.comment },
+		LspSagaDocTruncateLine = { fg = colors.comment },
+		LspSagaLspFinderBorder = { fg = colors.comment },
+		CodeActionNumber = { bg = "NONE", fg = colors.cyan },
+
 		-- Pmenu
 		Pmenu = { bg = colors.bg, fg = colors.fg },
 		PmenuSel = { bg = colors.current_line, fg = colors.cyan },

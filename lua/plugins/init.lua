@@ -88,12 +88,12 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer")
 	use("onsails/lspkind-nvim")
 	use("ray-x/lsp_signature.nvim")
-	use("tami5/lspsaga.nvim")
+	use("nvimdev/lspsaga.nvim")
 	use("tamago324/nlsp-settings.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jose-elias-alvarez/typescript.nvim")
-	use("hrsh7th/nvim-cmp") -- cmp
+	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
@@ -156,16 +156,4 @@ return packer.startup(function(use)
 	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
 	use("anuvyklack/pretty-fold.nvim")
 	use("m4xshen/smartcolumn.nvim")
-	use({
-		"utilyre/barbecue.nvim",
-		tag = "*",
-		requires = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons",
-		},
-		after = "nvim-web-devicons",
-		config = function()
-			require("plugins.barbecue")
-		end,
-	})
 end)
