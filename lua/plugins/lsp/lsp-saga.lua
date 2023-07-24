@@ -23,7 +23,7 @@ lspsaga.setup({
 			quit = "q",
 			shuttle = "[w",
 			toggle_or_req = "u",
-			close = { "<C-c>", "<ESC>", "<C-b>", "<C-l>", "<C-h>" },
+			close = { "<C-c>k" },
 		},
 	},
 	code_action = {
@@ -44,7 +44,7 @@ lspsaga.setup({
 			split = "<C-c>i",
 			tabe = "<C-c>t",
 			quit = "q",
-			close = { "<C-c>", "<ESC>", "<C-b>", "<C-l>", "<C-h>" },
+			close = { "<C-c>k" },
 		},
 	},
 	diagnostic = {
@@ -84,7 +84,7 @@ lspsaga.setup({
 			tabe = "t",
 			tabnew = "r",
 			quit = "q",
-			close = { "<C-c>", "<ESC>", "<C-b>", "<C-l>", "<C-h>" },
+			close = { "<C-c>k" },
 		},
 	},
 	hover = {
