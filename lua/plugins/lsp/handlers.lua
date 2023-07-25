@@ -12,25 +12,12 @@ if not status_illuminate then
 	return
 end
 
-local status_navic, navic = pcall(require, "nvim-navic")
-if not status_navic then
-	return
-end
-
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.on_attach = function(client, bufnr)
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
 	illuminate.on_attach(client)
-
-	-- navic
-	if client.server_capabilities.documentSymbolProvider then
-		vim.g.navic_silence = true
-		navic.attach(client, bufnr)
-	end
 
 	-- null-ls
 	if client.supports_method("textDocument/formatting") then
@@ -54,9 +41,6 @@ M.on_attach = function(client, bufnr)
 		local ts_utils = require("nvim-lsp-ts-utils")
 		require("plugins.lsp.ts-utils")
 		ts_utils.setup_client(client)
-		local opts = { silent = true }
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "go", ":TSLspOrganize<CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", ":TSLspImportAll<CR>", opts)
 	end
 end
 

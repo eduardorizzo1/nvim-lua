@@ -142,18 +142,14 @@ return packer.startup(function(use)
 	-- Others
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
+	use("folke/which-key.nvim") -- whichkey
 	use("akinsho/toggleterm.nvim")
 	use("karb94/neoscroll.nvim")
 	use("lewis6991/impatient.nvim")
-	use("fleischie/vim-styled-components")
-	use("simrat39/symbols-outline.nvim")
-	use("folke/which-key.nvim") -- whichkey
 	use("petertriho/nvim-scrollbar") -- scrollbar
 	use({ "mg979/vim-visual-multi", branch = "master" })
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "phaazon/hop.nvim", branch = "v1" })
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- surround
-	use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" }) -- navic
 	use("anuvyklack/pretty-fold.nvim")
-	use("m4xshen/smartcolumn.nvim")
 end)
