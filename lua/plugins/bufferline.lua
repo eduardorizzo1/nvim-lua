@@ -170,5 +170,9 @@ bufferline.setup({
 			fg = colors.color.bg_dark,
 			bg = colors.color.bg_dark,
 		},
+		trunc_marker = {
+			fg = colors.color.purple_alt,
+			bg = colors.color.bg_dark,
+		},
 	},
 })
