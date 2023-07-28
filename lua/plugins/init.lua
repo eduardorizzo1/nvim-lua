@@ -152,4 +152,5 @@ return packer.startup(function(use)
 	use({ "phaazon/hop.nvim", branch = "v1" })
 	use({ "echasnovski/mini.nvim", branch = "stable" }) -- surround
 	use("anuvyklack/pretty-fold.nvim")
+	use("nvim-pack/nvim-spectre")
 end)
