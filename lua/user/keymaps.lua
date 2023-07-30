@@ -166,9 +166,9 @@ map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
 
 -- typescript
-map("n", "gI", ":TypescriptAddMissingImports<CR>", opts)
+map("n", "gI", ":TSLspImportAll<CR>", opts)
 map("n", "gU", ":TypescriptRemoveUnused<CR>", opts)
-map("n", "gO", ":TypescriptOrganizeImports<CR>", opts)
+map("n", "gO", ":TSLspOrganize<CR>", opts)
 
 -- Spectre
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {

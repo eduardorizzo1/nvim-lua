@@ -84,8 +84,8 @@ local mappings = {
 	-- LSP
 	l = {
 		name = "Lsp",
-		o = { ":TypescriptOrganizeImports<CR>", "Organize Imports" },
-		i = { ":TypescriptAddMissingImports<CR>", "Import All" },
+		o = { ":TSLspOrganize<CR>", "Organize Imports" },
+		i = { ":TSLspImportAll<CR>", "Import All" },
 		I = { ":TypescriptRemoveUnused<CR>", "Remove Unused Imports" },
 		c = { "<cmd>Lspsaga code_action<CR>", "Code Actions" },
 		h = { "<cmd>Lspsaga hover_doc<CR>", "Hover doc" },
