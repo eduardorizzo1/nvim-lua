@@ -19,7 +19,7 @@ end
 local icons = {
 	Text = " ",
 	Method = " ",
-	Function = " ",
+	Function = "󰡱 ",
 	Constructor = " ",
 	Field = " ",
 	Variable = " ",
