@@ -129,6 +129,12 @@ dap.configurations.javascript = {
 		console = "integratedTerminal",
 	},
 	{
+		name = "Attach to process",
+		type = "node2",
+		request = "attach",
+		processId = require("dap.utils").pick_process,
+	},
+	{
 		name = "Launch (Chrome)",
 		type = "chrome",
 		request = "launch",

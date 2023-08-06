@@ -37,17 +37,3 @@ local options = {
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
-
--- cmd([[ filetype plugin indent on ]])
--- cmd([[ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o ]])
--- cmd([[ autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ]])
--- cmd([[ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ]])
---
--- cmd([[ set autoread ]])
--- cmd([[ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif ]])
--- cmd([[ autocmd FileChangedShellPost *
---         \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None ]])
---
--- cmd([[ set whichwrap+=<,>,[,],h,l ]])
--- cmd([[ set iskeyword+=- ]])
--- cmd([[ syntax enable ]])
