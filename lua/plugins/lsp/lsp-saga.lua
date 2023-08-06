@@ -6,7 +6,7 @@ end
 lspsaga.setup({
 	symbol_in_winbar = {
 		enable = true,
-		separator = " › ",
+		separator = "  ",
 		hide_keyword = false,
 		show_file = true,
 		folder_level = 1,

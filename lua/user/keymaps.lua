@@ -60,6 +60,7 @@ map("n", "<C-z>", ":u<CR>", opts)
 map("i", "<C-z>", "<Esc>:u<CR>a", opts)
 map("v", "<C-z>", "<Esc>:u<CR>v", opts)
 map("c", "<C-z>", "<Esc>:u<CR>c", opts)
+map("x", "<C-z>", "<Esc>:u<CR>", opts)
 
 -- Delete without copy
 map("v", "D", '"_d', opts)

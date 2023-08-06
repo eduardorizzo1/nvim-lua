@@ -179,7 +179,7 @@ return {
 -- BigUnfilledCircle = "   ",
 -- Border = {"▄","▄","▄","█","▀","▀","▀","█"},
 -- BookMark = " ",
--- ChevronRight = "  >  ",
+-- ChevronRight = "  > › ",
 -- Check = "   ",
 -- Calendar = "   ",
 -- CloudDownload = "   ",

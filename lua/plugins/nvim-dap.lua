@@ -145,24 +145,6 @@ dap.configurations.javascript = {
 	},
 }
 
--- {
--- 	-- For this to work you need to make sure the node process is started with the `--inspect` flag.
--- 	name = "Attach to process",
--- 	type = "node2",
--- 	request = "attach",
--- 	processId = require("dap.utils").pick_process,
--- },
-
--- dap.configurations.javascript = {
--- 	{
--- 		type = "pwa-node",
--- 		request = "launch",
--- 		name = "Launch file",
--- 		program = "${file}",
--- 		cwd = "${workspaceFolder}",
--- 	},
--- }
-
 dap.adapters["pwa-node"] = {
 	type = "server",
 	host = "localhost",
