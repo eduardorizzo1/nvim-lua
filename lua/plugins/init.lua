@@ -39,23 +39,25 @@ packer.init({
 })
 
 return packer.startup(function(use)
-	-- Dashboard
-	use("glepnir/dashboard-nvim")
-
 	-- Themes
 	use("Mofiqul/dracula.nvim")
 	use("rebelot/kanagawa.nvim")
 	use("folke/tokyonight.nvim")
 	use("Mofiqul/vscode.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("overcache/NeoSolarized")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("morhetz/gruvbox")
+	use("navarasu/onedark.nvim")
+	use("drewtempelmeyer/palenight.vim")
+	use("lunarvim/darkplus.nvim")
 
-	-- Telescope
+	-- Telescope and finders
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
+	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
+	use("nvim-pack/nvim-spectre")
 
 	-- Nvimtree, lualine and bufferline
 	use("kyazdani42/nvim-tree.lua")
@@ -63,14 +65,15 @@ return packer.startup(function(use)
 	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
 
-	--Treesitter
+	--Treesitter and code colors
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("windwp/nvim-ts-autotag")
+	use("windwp/nvim-autopairs")
 	use("HiPhish/rainbow-delimiters.nvim")
-	use({
-		"m-demare/hlargs.nvim",
-		requires = { "nvim-treesitter/nvim-treesitter" },
-	})
+	use({ "m-demare/hlargs.nvim", requires = { "nvim-treesitter/nvim-treesitter" } })
+	use("norcalli/nvim-colorizer.lua")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("RRethy/vim-illuminate")
 
 	-- Lsp
 	use("neovim/nvim-lspconfig")
@@ -91,54 +94,40 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets")
 	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
-	use({
-		"williamboman/mason.nvim",
-		run = ":MasonUpdate",
-	})
+	use({ "williamboman/mason.nvim", run = ":MasonUpdate" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 
-	-- Trouble
-	use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
-
-	-- Comments
+	-- Git, DAP and Comments
+	use("APZelos/blamer.nvim")
+	use("lewis6991/gitsigns.nvim")
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
-	-- Colorizers
-	use("norcalli/nvim-colorizer.lua")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("windwp/nvim-autopairs")
-	use("RRethy/vim-illuminate")
+	-- UI
+	use("glepnir/dashboard-nvim")
+	use("petertriho/nvim-scrollbar")
+	use("folke/zen-mode.nvim")
+	use("folke/twilight.nvim")
+	use("anuvyklack/pretty-fold.nvim")
+	use("karb94/neoscroll.nvim")
+	use({ "phaazon/hop.nvim", branch = "v1" })
 
-	-- Markdown Preview
+	-- Others
+	use("stevearc/dressing.nvim")
+	use("akinsho/toggleterm.nvim")
+	use("folke/which-key.nvim")
+	use({ "folke/trouble.nvim", cmd = "TroubleToggle" })
+	use({ "mg979/vim-visual-multi", branch = "master" })
+	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "echasnovski/mini.nvim", branch = "stable" })
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
-
-	-- Debugger (DAP)
-	use({ "mfussenegger/nvim-dap" })
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	use({ "theHamsta/nvim-dap-virtual-text" })
-
-	-- Git
-	use("APZelos/blamer.nvim")
-	use("lewis6991/gitsigns.nvim")
-
-	-- Others
-	use("folke/zen-mode.nvim")
-	use("folke/twilight.nvim")
-	use("folke/which-key.nvim")
-	use("akinsho/toggleterm.nvim")
-	use("karb94/neoscroll.nvim")
-	use("petertriho/nvim-scrollbar")
-	use({ "mg979/vim-visual-multi", branch = "master" })
-	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
-	use({ "phaazon/hop.nvim", branch = "v1" })
-	use({ "echasnovski/mini.nvim", branch = "stable" })
-	use("anuvyklack/pretty-fold.nvim")
-	use("nvim-pack/nvim-spectre")
 end)

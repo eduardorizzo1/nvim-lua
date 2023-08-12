@@ -1,5 +1,3 @@
-require("impatient").enable_profile()
-
 require("user.options")
 require("user.keymaps")
 require("user.themes.dracula")
