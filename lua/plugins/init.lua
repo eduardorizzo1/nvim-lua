@@ -49,17 +49,6 @@ return packer.startup(function(use)
 	use("Mofiqul/vscode.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("overcache/NeoSolarized")
-	-- use("navarasu/onedark.nvim")
-	-- use("olimorris/onedarkpro.nvim")
-	-- use("tiagovla/tokyodark.nvim")
-	-- use("drewtempelmeyer/palenight.vim")
-	-- use("morhetz/gruvbox")
-	-- use("EdenEast/nightfox.nvim")
-	-- use("rose-pine/neovim")
-	-- use("pineapplegiant/spaceduck")
-	-- use("lunarvim/darkplus.nvim")
-	-- use("challenger-deep-theme/vim")
-	-- use("shaunsingh/nord.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -104,7 +93,7 @@ return packer.startup(function(use)
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use({
 		"williamboman/mason.nvim",
-		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+		run = ":MasonUpdate",
 	})
 	use({ "williamboman/mason-lspconfig.nvim" })
 
@@ -142,15 +131,14 @@ return packer.startup(function(use)
 	-- Others
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
-	use("folke/which-key.nvim") -- whichkey
+	use("folke/which-key.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("karb94/neoscroll.nvim")
-	use("lewis6991/impatient.nvim")
-	use("petertriho/nvim-scrollbar") -- scrollbar
+	use("petertriho/nvim-scrollbar")
 	use({ "mg979/vim-visual-multi", branch = "master" })
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
 	use({ "phaazon/hop.nvim", branch = "v1" })
-	use({ "echasnovski/mini.nvim", branch = "stable" }) -- surround
+	use({ "echasnovski/mini.nvim", branch = "stable" })
 	use("anuvyklack/pretty-fold.nvim")
 	use("nvim-pack/nvim-spectre")
 end)
