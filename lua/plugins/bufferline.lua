@@ -94,7 +94,7 @@ bufferline.setup({
 		},
 
 		close_button_selected = {
-			fg = colors.color.fg,
+			fg = colors.color.comment,
 			bg = "none",
 			bold = true,
 		},
