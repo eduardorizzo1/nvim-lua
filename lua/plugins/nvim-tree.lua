@@ -167,7 +167,7 @@ nvim_tree.setup({
 			show = {
 				file = true,
 				folder = true,
-				folder_arrow = false,
+				folder_arrow = true,
 				git = true,
 			},
 

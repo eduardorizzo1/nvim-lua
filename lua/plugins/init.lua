@@ -67,10 +67,10 @@ return packer.startup(function(use)
 
 	--Treesitter and code colors
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "m-demare/hlargs.nvim", requires = { "nvim-treesitter/nvim-treesitter" } })
 	use("windwp/nvim-ts-autotag")
 	use("windwp/nvim-autopairs")
 	use("HiPhish/rainbow-delimiters.nvim")
-	use({ "m-demare/hlargs.nvim", requires = { "nvim-treesitter/nvim-treesitter" } })
 	use("norcalli/nvim-colorizer.lua")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("RRethy/vim-illuminate")
