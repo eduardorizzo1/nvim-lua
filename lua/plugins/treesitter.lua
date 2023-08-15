@@ -22,29 +22,31 @@ return {
   },
   ---@type TSConfig
   opts = {
-    highlight = { enable = true },
-    indent = { enable = true },
-    ensure_installed = {
-      "bash",
-      "c",
-      "html",
-      "javascript",
-      "jsdoc",
-      "json",
-      "lua",
-      "luadoc",
-      "luap",
-      "markdown",
-      "markdown_inline",
-      "python",
-      "query",
-      "regex",
-      "tsx",
-      "typescript",
-      "vim",
-      "vimdoc",
-      "yaml",
-    },
+	  ensure_installed = "all",
+	  highlight = {
+	  	enable = true,
+	  	additional_vim_regex_highlighting = true,
+	  },
+	  rainbow = {
+	  	enable = true,
+	  	query = "rainbow-parens",
+	  	disable = { "nvimtree" },
+	  },
+	  indent = {
+	  	enable = true,
+	  },
+	  autopairs = {
+	  	enable = true,
+	  },
+	  autotag = {
+	  	enable = true,
+	  	enable_rename = true,
+	  	enable_close = true,
+	  	enable_close_on_slash = false,
+	  },
+	  fold = {
+	  	fold_one_line_after = true,
+	  },
     incremental_selection = {
       enable = true,
       keymaps = {

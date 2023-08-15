@@ -492,7 +492,5 @@ local config_bubbles_custom = {
 
 return {
   "nvim-lualine/lualine.nvim",
-  config = function ()
-    require("lualine").setup(config_bubbles_custom)
-  end
+	opts = config_bubbles_custom,
 }
