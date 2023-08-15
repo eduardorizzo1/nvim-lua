@@ -1,17 +1,3 @@
-local function open_nvim_tree(data)
-	local directory = vim.fn.isdirectory(data.file) == 1
-
-	if not directory then
-		return
-	end
-
-	vim.cmd.cd(data.file)
-
-	require("nvim-tree.api").tree.open({
-		current_window = true,
-	})
-end
-
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 
@@ -19,9 +5,6 @@ local function on_attach(bufnr)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
 
-	-- Default mappings. Feel free to modify or remove as you wish.
-
-	-- BEGIN_DEFAULT_ON_ATTACH
 	vim.keymap.set("n", "<C-]>", api.tree.change_root_to_node, opts("CD"))
 	vim.keymap.set("n", "<C-e>", api.node.open.replace_tree_buffer, opts("Open: In Place"))
 	vim.keymap.set("n", "<C-k>", api.node.show_info_popup, opts("Info"))
@@ -74,16 +57,7 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
 	vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts("CD"))
-	-- END_DEFAULT_ON_ATTACH
-
-	-- Mappings removed via:
-	--   remove_keymaps
-	--   OR
-	--   view.mappings.list..action = ""
-	--
-	-- The dummy set before del is done for safety, in case a default mapping does not exist.
-	--
-	-- You might tidy things by removing these along with their default mapping.
+	-- Custom 
 	vim.keymap.set("n", "J", "", { buffer = bufnr })
 	vim.keymap.del("n", "J", { buffer = bufnr })
 	vim.keymap.set("n", "K", "", { buffer = bufnr })
@@ -125,15 +99,6 @@ local opts = {
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
-		mappings = {
-			custom_only = false,
-			list = {
-				{ key = "J", action = "" },
-				{ key = "K", action = "" },
-				{ key = "<C-k>", action = "" },
-				{ key = "<C-j>", action = "" },
-			},
-		},
 	},
 
 	renderer = {
