@@ -117,5 +117,5 @@ return {
   "Mofiqul/dracula.nvim",
   config = function ()
     require('dracula').setup(opts)
-  end
+  end,
 }
