@@ -24,27 +24,27 @@ return {
     })
 
     local servers = {
-        "lua_ls",
-	      "tsserver",
-	      "jsonls",
-	      "angularls",
-	      "vuels",
-	      "html",
-	      "cssls",
-	      "cssmodules_ls",
-	      "tailwindcss",
-	      "prismals",
-	      "graphql",
-	      "marksman",
-	      "dockerls",
-	      "dotls",
-	      "bashls",
-	      "emmet_ls",
-	      "solc",
-	      "tflint",
-	      "pyright",
-	      "yamlls",
-	      "clangd",
+      "lua_ls",
+	    "tsserver",
+	    "jsonls",
+	    "angularls",
+	    "vuels",
+	    "html",
+	    "cssls",
+	    "cssmodules_ls",
+	    "tailwindcss",
+	    "prismals",
+	    "graphql",
+	    "marksman",
+	    "dockerls",
+	    "dotls",
+	    "bashls",
+	    "emmet_ls",
+	    "solc",
+	    "tflint",
+	    "pyright",
+	    "yamlls",
+	    "clangd",
     }
 
     mason_lspconfig.setup({
@@ -67,5 +67,27 @@ return {
 	    	},
       })
     end
+
+    local signs = {
+    	Error = " ",
+    	Warn = " ",
+    	Hint = " ",
+    	Info = " ",
+    }
+
+    for type, icon in pairs(signs) do
+	    local hl = "DiagnosticSign" .. type
+	    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "none" })
+    end
+
+    vim.diagnostic.config({
+	    signs = true,
+	    update_in_insert = false,
+	    underline = true,
+	    severity_sort = true,
+	    virtual_text = {
+		    source = true,
+	    },
+    })
   end
 }
