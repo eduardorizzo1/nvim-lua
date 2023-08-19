@@ -19,14 +19,15 @@ return  {
       layout.prompt.title = 'Find Files'
       layout.prompt.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
       layout.results.title = ''
-      layout.results.borderchars = { '─', '│', '─', '│', '├', '┤', '┘', '└' }
+      layout.results.borderchars = { '─', '│', '─', '│', '├', '┤', '╯', '╰' }
    	  layout.results.line = layout.results.line - 1
    	  layout.results.height = layout.results.height + 1
       layout.preview.title = 'Preview'
       layout.preview.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
 
-   	    return layout
-      end
+   	  return layout
+    end
+
     require("telescope").setup({
       defaults = {
       prompt_prefix = "❯ ",

@@ -1,0 +1,71 @@
+return {
+  "neovim/nvim-lspconfig",
+	event = { "BufReadPost", "BufNewFile" },
+  dependencies = {
+    { "folke/neodev.nvim", opts = {} },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+		{ "hrsh7th/cmp-nvim-lsp" },
+  },
+  config = function ()
+    local lspconfig = require('lspconfig')
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
+
+    mason.setup({
+	    ui = {
+	    	border = "rounded",
+	    	icons = {
+	    		package_installed = "✓",
+	    		package_pending = "➜",
+	    		package_uninstalled = "✗",
+	    	},
+	    },
+    })
+
+    local servers = {
+        "lua_ls",
+	      "tsserver",
+	      "jsonls",
+	      "angularls",
+	      "vuels",
+	      "html",
+	      "cssls",
+	      "cssmodules_ls",
+	      "tailwindcss",
+	      "prismals",
+	      "graphql",
+	      "marksman",
+	      "dockerls",
+	      "dotls",
+	      "bashls",
+	      "emmet_ls",
+	      "solc",
+	      "tflint",
+	      "pyright",
+	      "yamlls",
+	      "clangd",
+    }
+
+    mason_lspconfig.setup({
+      automatic_installation = false,
+      ensure_installed = servers
+    })
+
+    for _, server in pairs(servers) do
+	    lspconfig[server].setup({
+	    	on_attach = function (client, bufnr)
+					vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+					require("illuminate").on_attach(client)
+				end,
+				capabilities = vim.lsp.protocol.make_client_capabilities(),
+	    	autostart = true,
+	    	settings = {
+	    		Lua = {
+	    			diagnostics = { globals = { "vim" } },
+	    		},
+	    	},
+      })
+    end
+  end
+}

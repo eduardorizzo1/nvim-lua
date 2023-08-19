@@ -21,6 +21,28 @@ local dracula = {
 			Directory = { fg = colors.comment, bg = colors.bg_dark },
 			Folded = { bg = colors.bg_dark, fg = colors.comment },
 
+			-- Semantic
+			["@class"] = { fg = colors.cyan },
+			["@struct"] = { fg = colors.cyan },
+			["@enum"] = { fg = colors.cyan },
+			["@enumMember"] = { fg = colors.purple },
+			["@event"] = { fg = colors.cyan },
+			["@interface"] = { fg = colors.cyan },
+			["@modifier"] = { fg = colors.cyan },
+			["@regexp"] = { fg = colors.yellow },
+			["@typeParameter"] = { fg = colors.cyan },
+			["@decorator"] = { fg = colors.cyan },
+
+			-- -- Treesitter
+			["@keyword.function"] = { fg = colors.pink },
+			["@property"] = { fg = colors.fg },
+			["@variable"] = { fg = colors.purple },
+			["@punctuation.delimiter"] = { fg = colors.pink },
+			["@punctuation.special"] = { fg = colors.pink },
+			["@string.escape"] = { fg = colors.pink },
+			["@text"] = { fg = colors.fg },
+			["@text.title"] = { fg = colors.fg },
+
 			-- Bufferline
 			BufferLineIndicatorSelected = { fg = colors.purple },
 			BufferLineFill = { bg = colors.bg_dark },
@@ -92,28 +114,6 @@ local dracula = {
 
 			-- Debug
 			debugPc = { bg = colors.bg },
-
-			-- Semantic
-			["@class"] = { fg = colors.cyan },
-			["@struct"] = { fg = colors.cyan },
-			["@enum"] = { fg = colors.cyan },
-			["@enumMember"] = { fg = colors.purple },
-			["@event"] = { fg = colors.cyan },
-			["@interface"] = { fg = colors.cyan },
-			["@modifier"] = { fg = colors.cyan },
-			["@regexp"] = { fg = colors.yellow },
-			["@typeParameter"] = { fg = colors.cyan },
-			["@decorator"] = { fg = colors.cyan },
-
-			-- Treesitter
-			["@keyword.function"] = { fg = colors.pink },
-			["@property"] = { fg = colors.fg },
-			["@variable"] = { fg = colors.purple },
-			["@punctuation.delimiter"] = { fg = colors.pink },
-			["@punctuation.special"] = { fg = colors.pink },
-			["@string.escape"] = { fg = colors.pink },
-			["@text"] = { fg = colors.fg },
-			["@text.title"] = { fg = colors.fg },
 		},
 	},
 	init = function()
@@ -137,45 +137,24 @@ local tokyonight = {
 	  },
 
 	  on_highlights = function(hl, c)
-	  	local prompt = "#ff00ff"
-	  	hl.TelescopeNormal = {
-	  		bg = c.bg_dark,
-	  		fg = c.fg_dark,
-	  	}
 	  	hl.TelescopeBorder = {
 	  		bg = c.bg_dark,
-	  		fg = c.bg_dark,
+	  		fg = c.blue,
 	  	}
-	  	hl.TelescopePromptNormal = {
-	  		bg = prompt,
+	  	hl.NvimTreeOpenedFolderName = {
+	  		bg = c.bg_highlight,
+	  		fg = c.magenta,
 	  	}
-	  	hl.TelescopePromptBorder = {
-	  		bg = prompt,
-	  		fg = prompt,
-	  	}
-	  	hl.TelescopePromptTitle = {
-	  		bg = prompt,
-	  		fg = prompt,
-	  	}
-	  	hl.TelescopePreviewTitle = {
+	  	hl.NvimTreeOpenedFile = {
 	  		bg = c.bg_dark,
-	  		fg = c.bg_dark,
-	  	}
-	  	hl.TelescopeResultsTitle = {
-	  		bg = c.bg_dark,
-	  		fg = c.bg_dark,
+	  		fg = c.cyan,
 	  	}
 	  end,
   },
 	init = function()
 		vim.cmd([[ colo tokyonight ]])
-		vim.cmd([[ hi NvimTreeVertSplit guifg=#1f2335 guibg=#1f2335 ]])
-		vim.cmd([[ hi NvimTreeFolderIcon guifg=#7aa2f7 gui=bold]])
-		vim.cmd([[ hi NvimTreeOpenedFolderName guifg=#bb9af7 gui=bold]])
-		vim.cmd([[ hi NvimTreeRootFolder guifg=#6272a4 gui=bold]])
-		vim.cmd([[ hi NvimTreeOpenedFile guifg=#73daca guibg=NONE gui=bold]])
-		vim.cmd([[ hi IndentBlanklineContextStart guifg=#BB9AF7 gui=none]])
-		vim.cmd([[ hi IndentBlanklineContextChar guifg=#BB9AF7 gui=none]])
+		vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
+		vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
 		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
 	end
 }
