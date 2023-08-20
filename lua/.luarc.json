@@ -33,6 +33,7 @@
         "/home/eduardo/.local/share/nvim/lazy/cmp_luasnip/lua",
         "/home/eduardo/.local/share/nvim/lazy/cmp-nvim-lua/lua",
         "/home/eduardo/.config/nvim/lua",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ]
 }

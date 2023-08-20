@@ -2,11 +2,9 @@ return {
   "neovim/nvim-lspconfig",
 	event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    { "folke/neodev.nvim", opts = {} },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
 		{ "hrsh7th/cmp-nvim-lsp" },
-    { "jose-elias-alvarez/null-ls.nvim" },
   },
   config = function ()
     local lspconfig = require('lspconfig')

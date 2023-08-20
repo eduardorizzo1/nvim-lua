@@ -1,10 +1,14 @@
 local M = {}
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local illuminate = require("illuminate")
+
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.on_attach = function(client, bufnr)
+	illuminate.on_attach(client)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	client.server_capabilities.semanticTokensProvider = nil
-	require("illuminate").on_attach(client)
 
   -- null-ls
 	if client.supports_method("textDocument/formatting") then
@@ -23,8 +27,5 @@ M.on_attach = function(client, bufnr)
 		})
 	end
 end
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 return M

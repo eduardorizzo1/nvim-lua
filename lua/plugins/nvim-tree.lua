@@ -70,7 +70,10 @@ end
 
 return {
   "nvim-tree/nvim-tree.lua",
-  dependencies = {"nvim-tree/nvim-web-devicons"},
+  dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		lazy = true
+	},
 	opts = {
 		on_attach = on_attach,
 		auto_reload_on_write = true,

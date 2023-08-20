@@ -2,17 +2,19 @@ return {
   "jose-elias-alvarez/null-ls.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
-  opts = function(_, opts)
+  opts = function()
     local nls = require("null-ls")
     local code_actions = nls.builtins.code_actions
     local formatting = nls.builtins.formatting
 
-    opts.sources = {
-		  code_actions.eslint_d,
-		  formatting.prettierd,
-		  formatting.stylua,
-		  formatting.jq,
-	  }
+    return {
+      sources = {
+		    code_actions.eslint_d,
+		    formatting.prettierd,
+		    formatting.stylua,
+		    formatting.jq,
+	    },
+    }
 
   end,
 }
