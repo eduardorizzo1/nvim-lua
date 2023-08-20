@@ -3,6 +3,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	client.server_capabilities.semanticTokensProvider = nil
 	require("illuminate").on_attach(client)
 
   -- null-ls
