@@ -12,6 +12,8 @@ return {
     local lspconfig = require('lspconfig')
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
+    local on_attach = require("utils.handlers").on_attach
+    local capabilities = require("utils.handlers").capabilities
 
     mason.setup({
 	    ui = {
@@ -55,11 +57,8 @@ return {
 
     for _, server in pairs(servers) do
 	    lspconfig[server].setup({
-	    	on_attach = function (client, bufnr)
-					vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-					require("illuminate").on_attach(client)
-				end,
-				capabilities = vim.lsp.protocol.make_client_capabilities(),
+	    	on_attach = on_attach,
+				capabilities = capabilities,
 	    	autostart = true,
 	    	settings = {
 	    		Lua = {
