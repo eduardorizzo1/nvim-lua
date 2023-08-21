@@ -1,11 +1,6 @@
-local lualine_ok, lualine = pcall(require, "lualine")
-if not lualine_ok then
-	return
-end
-
-local icons = require("user.icons")
-local colors = require("user.themes.colorscheme").color
-local mode_color = require("user.themes.colorscheme").mode_color
+local icons = require("utils.icons")
+local colors = require("utils.colors").color
+local mode_color = require("utils.colors").mode_color
 
 local conditions = {
 	buffer_not_empty = function()
@@ -495,4 +490,11 @@ local config_bubbles_custom = {
 ---------------------------------------------------------
 ---------------------------------------------------------
 
-lualine.setup(config_bubbles_custom)
+return {
+  "nvim-lualine/lualine.nvim",
+	dependencies = { 
+		"nvim-tree/nvim-web-devicons",
+    opts = true,
+  },
+	opts = config_bubbles_custom,
+}

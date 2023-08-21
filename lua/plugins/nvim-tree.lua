@@ -1,22 +1,3 @@
-local status, nvim_tree = pcall(require, "nvim-tree")
-if not status then
-	return
-end
-
-local function open_nvim_tree(data)
-	local directory = vim.fn.isdirectory(data.file) == 1
-
-	if not directory then
-		return
-	end
-
-	vim.cmd.cd(data.file)
-
-	require("nvim-tree.api").tree.open({
-		current_window = true,
-	})
-end
-
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 
@@ -76,7 +57,7 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
 	vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts("CD"))
-	-- Custom Keymaps
+	-- Custom 
 	vim.keymap.set("n", "J", "", { buffer = bufnr })
 	vim.keymap.del("n", "J", { buffer = bufnr })
 	vim.keymap.set("n", "K", "", { buffer = bufnr })
@@ -87,139 +68,145 @@ local function on_attach(bufnr)
 	vim.keymap.del("n", "<C-j>", { buffer = bufnr })
 end
 
-vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
-vim.cmd([[ au WinLeave * setlocal nocursorline ]])
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-
-nvim_tree.setup({
-	on_attach = on_attach,
-	auto_reload_on_write = true,
-	hijack_cursor = true,
-	hijack_netrw = true,
-	disable_netrw = false,
-	hijack_unnamed_buffer_when_opening = false,
-	open_on_tab = false,
-	sort_by = "name",
-	update_cwd = true,
-	reload_on_bufenter = false,
-	respect_buf_cwd = false,
-
-	view = {
-		adaptive_size = false,
-		width = 30,
-		centralize_selection = false,
-		side = "left",
-		preserve_window_proportions = false,
-		number = false,
-		relativenumber = false,
-		signcolumn = "yes",
+return {
+  "nvim-tree/nvim-tree.lua",
+  dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		lazy = true
 	},
-
-	renderer = {
-		add_trailing = false,
-		group_empty = false,
-		highlight_git = false,
-		full_name = false,
-		highlight_opened_files = "name",
-		root_folder_modifier = ":t",
-		root_folder_label = false,
-		indent_markers = {
-			enable = true,
-			icons = {
-				corner = "└",
-				edge = "│",
-				item = "│",
-				none = " ",
-			},
-		},
-
-		icons = {
-			webdev_colors = true,
-			git_placement = "before",
-			padding = " ",
-			symlink_arrow = " ➛ ",
-			show = {
-				file = true,
-				folder = true,
-				folder_arrow = true,
-				git = true,
-			},
-
-			glyphs = {
-				default = "",
-				symlink = "",
-				folder = {
-					arrow_closed = "",
-					arrow_open = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-					symlink_open = "",
-				},
-				git = {
-					unstaged = "",
-					staged = "✓",
-					unmerged = "",
-					renamed = "➜",
-					untracked = "★",
-					deleted = "",
-					ignored = "◌",
-				},
-			},
-		},
-		special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-	},
-
-	hijack_directories = {
-		enable = true,
-		auto_open = true,
-	},
-
-	update_focused_file = {
-		enable = true,
+	opts = {
+		on_attach = on_attach,
+		auto_reload_on_write = true,
+		hijack_cursor = true,
+		hijack_netrw = true,
+		disable_netrw = false,
+		hijack_unnamed_buffer_when_opening = false,
+		open_on_tab = false,
+		sort_by = "name",
 		update_cwd = true,
-		ignore_list = { "toggleterm" },
-	},
+		reload_on_bufenter = false,
+		respect_buf_cwd = false,
 
-	diagnostics = {
-		enable = true,
-		show_on_dirs = true,
-		icons = {
-			hint = " ",
-			info = " ",
-			warning = " ",
-			error = " ",
+		view = {
+			adaptive_size = false,
+			width = 30,
+			centralize_selection = false,
+			side = "left",
+			preserve_window_proportions = false,
+			number = false,
+			relativenumber = false,
+			signcolumn = "yes",
+		},
+
+		renderer = {
+			add_trailing = false,
+			group_empty = false,
+			highlight_git = false,
+			full_name = false,
+			highlight_opened_files = "name",
+			root_folder_modifier = ":t",
+			root_folder_label = false,
+			indent_markers = {
+				enable = true,
+				icons = {
+					corner = "└",
+					edge = "│",
+					item = "│",
+					none = " ",
+				},
+			},
+
+			icons = {
+				webdev_colors = true,
+				git_placement = "before",
+				padding = " ",
+				symlink_arrow = " ➛ ",
+				show = {
+					file = true,
+					folder = true,
+					folder_arrow = true,
+					git = true,
+				},
+
+				glyphs = {
+					default = "",
+					symlink = "",
+					folder = {
+						arrow_closed = "",
+						arrow_open = "",
+						default = "",
+						open = "",
+						empty = "",
+						empty_open = "",
+						symlink = "",
+						symlink_open = "",
+					},
+					git = {
+						unstaged = "",
+						staged = "✓",
+						unmerged = "",
+						renamed = "➜",
+						untracked = "★",
+						deleted = "",
+						ignored = "◌",
+					},
+				},
+			},
+			special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+		},
+
+		hijack_directories = {
+			enable = true,
+			auto_open = true,
+		},
+
+		update_focused_file = {
+			enable = true,
+			update_cwd = true,
+			ignore_list = { "toggleterm" },
+		},
+
+		diagnostics = {
+			enable = true,
+			show_on_dirs = true,
+			icons = {
+				hint = " ",
+				info = " ",
+				warning = " ",
+				error = " ",
+			},
+		},
+
+		filters = {
+			dotfiles = false,
+			custom = {},
+			exclude = {},
+		},
+
+		filesystem_watchers = {
+			enable = false,
+			debounce_delay = 50,
+		},
+
+		git = {
+			enable = true,
+			ignore = true,
+			timeout = 400,
+		},
+
+		trash = {
+			cmd = "trash",
+			require_confirm = true,
+		},
+
+		actions = {
+			open_file = {
+				resize_window = true,
+			},
 		},
 	},
-
-	filters = {
-		dotfiles = false,
-		custom = {},
-		exclude = {},
-	},
-
-	filesystem_watchers = {
-		enable = false,
-		debounce_delay = 50,
-	},
-
-	git = {
-		enable = true,
-		ignore = true,
-		timeout = 400,
-	},
-
-	trash = {
-		cmd = "trash",
-		require_confirm = true,
-	},
-
-	actions = {
-		open_file = {
-			resize_window = true,
-		},
-	},
-})
+	init = function() 
+		vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
+		vim.cmd([[ au WinLeave * setlocal nocursorline ]])
+	end
+}

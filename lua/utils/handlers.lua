@@ -1,26 +1,16 @@
 local M = {}
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-local status_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp then
-	return
-end
-
-local status_illuminate, illuminate = pcall(require, "illuminate")
-if not status_illuminate then
-	return
-end
+local illuminate = require("illuminate")
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.on_attach = function(client, bufnr)
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	illuminate.on_attach(client)
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	client.server_capabilities.semanticTokensProvider = nil
 
-	-- null-ls
+  -- null-ls
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
@@ -35,13 +25,6 @@ M.on_attach = function(client, bufnr)
 				})
 			end,
 		})
-	end
-
-	-- tsserver
-	if client.name == "tsserver" then
-		local ts_utils = require("nvim-lsp-ts-utils")
-		require("plugins.lsp.ts-utils")
-		ts_utils.setup_client(client)
 	end
 end
 

@@ -1,11 +1,6 @@
-local status, scrollbar = pcall(require, "scrollbar")
-if not status then
-	return
-end
+local colors = require("utils.colors")
 
-local colors = require("user.themes.colorscheme")
-
-scrollbar.setup({
+local opts = {
 	show = true,
 	show_in_active_only = false,
 	set_highlights = true,
@@ -150,4 +145,11 @@ scrollbar.setup({
 		search = false, -- Requires hlslens
 		ale = false, -- Requires ALE
 	},
-})
+}
+
+return {
+  "petertriho/nvim-scrollbar",
+  config = function ()
+    require('scrollbar').setup(opts)
+  end
+}

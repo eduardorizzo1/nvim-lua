@@ -1,154 +1,63 @@
-local status, telescope = pcall(require, "telescope")
-if not status then
-	return
-end
+return  {
+  'nvim-telescope/telescope.nvim',
+  branch = '0.1.x',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make',
+      cond = function()
+        return vim.fn.executable 'make' == 1
+      end,
+    },
+  },
+  event = "BufEnter",
+  config = function()
+    local actions = require("telescope.actions")
+    require('telescope.pickers.layout_strategies').horizontal_merged = function(picker, max_columns, max_lines, layout_config)
+	    local layout = require('telescope.pickers.layout_strategies').horizontal(picker, max_columns, max_lines, layout_config)
+      layout.prompt.title = 'Find Files'
+      layout.prompt.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+      layout.results.title = ''
+      layout.results.borderchars = { '─', '│', '─', '│', '├', '┤', '╯', '╰' }
+   	  layout.results.line = layout.results.line - 1
+   	  layout.results.height = layout.results.height + 1
+      layout.preview.title = 'Preview'
+      layout.preview.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
 
-local actions = require("telescope.actions")
-local previewers = require("telescope.previewers")
+   	  return layout
+    end
 
--- TODO: Install some media file preview
-telescope.load_extension("media_files")
-
-telescope.setup({
-	defaults = {
-		prompt_prefix = "❯ ",
-		selection_caret = " ",
-		entry_prefix = "  ",
-		initial_mode = "insert",
-		layout_strategy = "horizontal",
-
-		layout_config = {
-			width = 0.9,
-			height = 0.9,
-			prompt_position = "top",
-			preview_cutoff = 20,
-			horizontal = { mirror = false },
-			vertical = { mirror = false },
-		},
-
-		find_command = {
-			"rg",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-		},
-
-		selection_strategy = "reset",
-		sorting_strategy = "ascending",
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		file_ignore_patterns = { "node_modules", "dist", "build" },
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		path_display = {
-			-- shorten = true,
-			truncate = true,
-		},
-		winblend = 0,
-		border = {},
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-		color_devicons = true,
-		use_less = true,
-		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-
-		extensions = {
-			media_files = {
-				filetypes = { "png", "webp", "jpg", "jpeg", "pdf" },
-				find_cmd = "rg", -- find command (defaults to `fd`)
-			},
-			file_browser = {
-				-- theme = "ivy",
-				-- require("telescope.themes").get_dropdown {
-				--   previewer = false,
-				--   -- even more opts
-				-- },
-				mappings = {
-					["i"] = {
-						-- your custom insert mode mappings
-					},
-					["n"] = {
-						-- your custom normal mode mappings
-					},
-				},
-			},
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown({
-					previewer = false,
-					-- even more opts
-				}),
-			},
-		},
-
-		mappings = {
-			i = {
-				["<C-n>"] = actions.cycle_history_next,
-				["<C-p>"] = actions.cycle_history_prev,
-
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-
-				["<C-c>"] = actions.close,
-				["<esc>"] = actions.close,
-
-				["<Down>"] = actions.move_selection_next,
-				["<Up>"] = actions.move_selection_previous,
-
-				["<CR>"] = actions.select_default,
-				["<C-x>"] = actions.select_horizontal,
-				["<C-v>"] = actions.select_vertical,
-				["<C-t>"] = actions.select_tab,
-
-				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
-
-				["<PageUp>"] = actions.results_scrolling_up,
-				["<PageDown>"] = actions.results_scrolling_down,
-
-				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-				["<C-l>"] = actions.complete_tag,
-				["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
-			},
-
-			n = {
-				["<C-c>"] = actions.close,
-				["<esc>"] = actions.close,
-
-				["<CR>"] = actions.select_default,
-				["<C-x>"] = actions.select_horizontal,
-				["<C-v>"] = actions.select_vertical,
-				["<C-t>"] = actions.select_tab,
-
-				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
-				["j"] = actions.move_selection_next,
-				["k"] = actions.move_selection_previous,
-				["H"] = actions.move_to_top,
-				["M"] = actions.move_to_middle,
-				["L"] = actions.move_to_bottom,
-
-				["<Down>"] = actions.move_selection_next,
-				["<Up>"] = actions.move_selection_previous,
-				["gg"] = actions.move_to_top,
-				["G"] = actions.move_to_bottom,
-
-				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
-
-				["<PageUp>"] = actions.results_scrolling_up,
-				["<PageDown>"] = actions.results_scrolling_down,
-
-				["?"] = actions.which_key,
-			},
-		},
-	},
-})
+    require("telescope").setup({
+      defaults = {
+      prompt_prefix = "❯ ",
+		  selection_caret = " ",
+		  entry_prefix = "  ",
+		  initial_mode = "insert",
+		  layout_strategy = "horizontal_merged",
+		  layout_config = {
+			  width = 0.9,
+			  height = 0.9,
+			  prompt_position = "top",
+			  preview_cutoff = 10,
+			  horizontal = { mirror = false },
+			  vertical = { mirror = true },
+		  },
+		  borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+      selection_strategy = "reset",
+		  sorting_strategy = "ascending",
+		  file_ignore_patterns = { "node_modules", "dist", "build" },
+      path_display = {
+        truncate = true,
+      },
+      mappings = {
+        i = {
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-c>"] = actions.close
+        }
+      }
+    }
+    })  
+  end
+}
