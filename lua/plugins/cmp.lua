@@ -9,6 +9,11 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		{
+			"tzachar/cmp-tabnine",
+			build = "./install.sh",
+			dependencies = "hrsh7th/nvim-cmp",
+		},
 	},
 	config = function()
 		local cmp = require("cmp")
