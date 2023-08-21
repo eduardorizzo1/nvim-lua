@@ -492,5 +492,9 @@ local config_bubbles_custom = {
 
 return {
   "nvim-lualine/lualine.nvim",
+	dependencies = { 
+		"nvim-tree/nvim-web-devicons",
+    opts = true,
+  },
 	opts = config_bubbles_custom,
 }

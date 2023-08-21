@@ -10,8 +10,7 @@ return {
     local lspconfig = require('lspconfig')
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
-    local on_attach = require("utils.handlers").on_attach
-    local capabilities = require("utils.handlers").capabilities
+    local handlers = require("utils.handlers")
 
     mason.setup({
 	    ui = {
@@ -49,14 +48,14 @@ return {
     }
 
     mason_lspconfig.setup({
-      automatic_installation = false,
+      automatic_installation = true,
       ensure_installed = servers
     })
 
     for _, server in pairs(servers) do
 	    lspconfig[server].setup({
-	    	on_attach = on_attach,
-				capabilities = capabilities,
+	    	on_attach = handlers.on_attach,
+				capabilities = handlers.capabilities,
 	    	autostart = true,
 	    	settings = {
 	    		Lua = {
@@ -84,7 +83,9 @@ return {
 	    underline = true,
 	    severity_sort = true,
 	    virtual_text = {
-		    source = true,
+				spacing = 4,
+				source = "if_many",
+				prefix = "●",
 	    },
     })
   end

@@ -1,6 +1,5 @@
 {
     "workspace.library": [
-        "/home/eduardo/.local/share/nvim/lazy/neodev.nvim/types/stable",
         "/usr/share/nvim/runtime/lua",
         "/home/eduardo/.local/share/nvim/lazy/vim-illuminate/lua",
         "/home/eduardo/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
@@ -22,7 +21,6 @@
         "/home/eduardo/.local/share/nvim/lazy/nvim-web-devicons/lua",
         "/home/eduardo/.local/share/nvim/lazy/nvim-autopairs/lua",
         "/home/eduardo/.local/share/nvim/lazy/mini.surround/lua",
-        "/home/eduardo/.local/share/nvim/lazy/neodev.nvim/lua",
         "/home/eduardo/.local/share/nvim/lazy/cmp-buffer/lua",
         "/home/eduardo/.local/share/nvim/lazy/hop.nvim/lua",
         "/home/eduardo/.local/share/nvim/lazy/indent-blankline.nvim/lua",
