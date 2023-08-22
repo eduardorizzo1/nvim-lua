@@ -123,7 +123,7 @@ ins_left({
 	icon = "",
 	cond = conditions.check_git_workspace,
 	color = { fg = colors.cyan, bg = colors.rounded_fg },
-	padding = { right = 1, left = 1 },
+	padding = { right = 0, left = 1 },
 })
 
 ins_left({
@@ -326,7 +326,7 @@ local filename = {
 	shorten = true,
 	file_status = false,
 	separator = { left = "", right = "" },
-	color = { fg = "#313244", bg = "#80A7EA" },
+	color = { bg = colors.bg },
 	padding = { left = 1, right = 0 },
 }
 
@@ -338,7 +338,7 @@ local diff = {
 
 local branch = {
 	"branch",
-	color = { bg = "#a6e3a1", fg = "#313244" },
+	color = { fg = "#a6e3a1", bg = "#313244" },
 	-- color = { bg = colors.green, fg = colors.bg },
 	separator = { left = "", right = "" },
 	icon = "",
@@ -348,15 +348,15 @@ local branch_icons = {
 	function()
 		return " "
 	end,
+	color = { bg = "#a6e3a1", fg = "#313244" },
 	separator = { left = "", right = "" },
-	color = { fg = "#a6e3a1", bg = "#313244" },
 	padding = { left = 0, right = 0 },
 }
 
 local diagnostic = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	color = { bg = "#313244", fg = "#80A7EA" },
+	color = { bg = colors.bg, fg = "#80A7EA" },
 	separator = { left = "", right = "" },
 	symbols = {
 		error = icons.error,
@@ -402,9 +402,9 @@ local progress = {
 
 local location = {
 	"location",
-	separator = { left = "", right = "" },
+	separator = { left = "" },
 	color = { bg = "#313244", fg = colors.cyan },
-	padding = { right = 0, left = 0 },
+	padding = { right = 1, left = 0 },
 }
 
 local filetype = {
@@ -424,9 +424,9 @@ local filetype_icon = {
 	"filetype",
 	icon_only = true,
 	colored = true,
-	color = { bg = "#313244" },
 	separator = { left = "", right = "" },
-	padding = { left = 0, right = 1 },
+	color = { fg = "#313244", bg = colors.bg },
+	padding = { left = 0, right = 0 },
 }
 
 local config_bubbles_custom = {
@@ -491,10 +491,10 @@ local config_bubbles_custom = {
 ---------------------------------------------------------
 
 return {
-  "nvim-lualine/lualine.nvim",
-	dependencies = { 
+	"nvim-lualine/lualine.nvim",
+	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-    opts = true,
-  },
+		opts = true,
+	},
 	opts = config_bubbles_custom,
 }
