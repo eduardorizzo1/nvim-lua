@@ -1,7 +1,7 @@
 local colors = require("utils.colors").color
 
 local dracula = {
-  "Mofiqul/dracula.nvim",
+	"Mofiqul/dracula.nvim",
 	lazy = false,
 	opts = {
 		italic_comment = true,
@@ -118,45 +118,147 @@ local dracula = {
 	},
 	init = function()
 		vim.cmd([[ colo dracula ]])
-	end
+	end,
 }
 
 local tokyonight = {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  opts = {
-    style = "moon" ,
-	  transparent = false,
-	  styles = {
-	  	comments = { italic = false },
-	  	keywords = { italic = true },
-	  	functions = {},
-	  	variables = {},
-	  	sidebars = "dark",
-	  	floats = "dark",
-	  },
+	"folke/tokyonight.nvim",
+	lazy = false,
+	opts = {
+		style = "moon",
+		transparent = false,
+		styles = {
+			comments = { italic = false },
+			keywords = { italic = true },
+			functions = {},
+			variables = {},
+			sidebars = "dark",
+			floats = "dark",
+		},
 
-	  on_highlights = function(hl, c)
-	  	hl.TelescopeBorder = {
-	  		bg = c.bg_dark,
-	  		fg = c.blue,
-	  	}
-	  	hl.NvimTreeOpenedFolderName = {
-	  		bg = c.bg_highlight,
-	  		fg = c.magenta,
-	  	}
-	  	hl.NvimTreeOpenedFile = {
-	  		bg = c.bg_dark,
-	  		fg = c.cyan,
-	  	}
-	  end,
-  },
+		on_highlights = function(hl, c)
+			hl.TelescopeBorder = {
+				bg = c.bg_dark,
+				fg = c.blue,
+			}
+			hl.NvimTreeOpenedFolderName = {
+				bg = c.bg_highlight,
+				fg = c.magenta,
+			}
+			hl.NvimTreeOpenedFile = {
+				bg = c.bg_dark,
+				fg = c.cyan,
+			}
+		end,
+	},
 	init = function()
 		vim.cmd([[ colo tokyonight ]])
 		vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
 		vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
 		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
-	end
+	end,
+}
+
+local kanagawa = {
+	"rebelot/kanagawa.nvim",
+	opts = {
+		globalStatus = true,
+	},
+	init = function()
+		vim.cmd([[ colo kanagawa ]])
+
+		vim.cmd([[ hi NvimTreeVertSplit guifg=#16161d ]])
+		vim.cmd([[ hi VertSplit guibg=#1f1f28]])
+		vim.cmd([[ hi LineNr guibg=#1f1f28]])
+		vim.cmd([[ hi CursorLineNr guibg=#1f1f28]])
+		vim.cmd([[ hi SignColumn guibg=#1f1f28]])
+
+		vim.cmd([[ hi DiagnosticSignHint guibg=#1f1f28]])
+		vim.cmd([[ hi DiagnosticSignError guibg=#1f1f28]])
+		vim.cmd([[ hi DiagnosticSignInformation guibg=#1f1f28]])
+		vim.cmd([[ hi DiagnosticSignWarning guibg=#1f1f28]])
+
+		vim.cmd([[ hi GitSignsAdd guibg=#1f1f28 ]])
+		vim.cmd([[ hi GitSignsChange guibg=#1f1f28 ]])
+		vim.cmd([[ hi GitSignsDelete guibg=#1f1f28 ]])
+		vim.cmd([[ hi GitSignsUntracked guibg=#1f1f28 ]])
+
+		vim.cmd([[ hi IndentBlanklineContextStart guifg=#938AA9 ]])
+		vim.cmd([[ hi IndentBlanklineContextChar guifg=#938AA9 ]])
+		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2A2A37 ]])
+
+		vim.cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
+		vim.cmd([[ hi NvimTreeNormal guibg=#16161D ]])
+		vim.cmd([[ hi NvimTreeNormalNC guibg=#16161D ]])
+		vim.cmd([[ hi NvimTreeWinSeparator guibg=#16161D guifg=#16161D ]])
+
+		vim.opt.laststatus = 3
+		vim.opt.fillchars:append({
+			horiz = "━",
+			horizup = "┻",
+			horizdown = "┳",
+			vert = "┃",
+			vertleft = "┨",
+			vertright = "┣",
+			verthoriz = "╋",
+		})
+	end,
+}
+
+local catppuccin = {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	flavour = "macchiato", -- latte, frappe, macchiato, mocha
+	background = { -- :h background
+		light = "latte",
+		dark = "macchiato",
+	},
+	transparent_background = false,
+	show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+	term_colors = false,
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
+	no_italic = false, -- Force no italic
+	no_bold = false, -- Force no bold
+	styles = {
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
+	},
+	color_overrides = {},
+	custom_highlights = {},
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		telescope = true,
+		notify = false,
+		mini = false,
+		indent_blankline = {
+			enabled = false,
+			colored_indent_levels = false,
+		},
+	},
+	init = function()
+		vim.cmd.colorscheme("catppuccin")
+		vim.cmd([[ hi SignColumn guibg=NONE ]])
+		vim.cmd([[ hi IndentBlanklineContextStart guifg=#CBA6F7 ]])
+		vim.cmd([[ hi IndentBlanklineContextChar guifg=#CBA6F7 ]])
+		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#101019 ]])
+		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE]])
+	end,
 }
 
 return dracula
