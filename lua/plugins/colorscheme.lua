@@ -94,6 +94,8 @@ local dracula = {
 			IndentBlanklineContextStart = { fg = colors.comment },
 			IndentBlanklineContextChar = { fg = colors.comment },
 			IndentBlanklineIndent1 = { fg = "#393942" },
+			-- Indentscope
+			MiniIndentscopeSymbol = { fg = colors.cyan },
 
 			-- Ts Rainbow
 			RainbowDelimiterYellow = { fg = "#ffff00" },
