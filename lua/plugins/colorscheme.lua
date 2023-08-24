@@ -2,6 +2,13 @@ local colors = require("utils.colors").color
 
 local dracula_init = function()
 	vim.cmd([[ colo dracula ]])
+	-- vim.cmd([[ hi CursorLine guibg=#333952]])
+	-- vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
+	-- vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
+	-- vim.cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
+	-- vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
+	-- vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
+	-- vim.cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
 end
 
 local tokyonight_init = function()
@@ -64,6 +71,7 @@ local dracula = {
 	"Mofiqul/dracula.nvim",
 	lazy = false,
 	opts = {
+		transparent_bg = false,
 		italic_comment = true,
 		overrides = {
 			Search = { fg = colors.green, bg = colors.comment, bold = true },
