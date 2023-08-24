@@ -1,5 +1,65 @@
 local colors = require("utils.colors").color
 
+local dracula_init = function()
+	vim.cmd([[ colo dracula ]])
+end
+
+local tokyonight_init = function()
+	vim.cmd([[ colo tokyonight ]])
+	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
+	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
+	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
+end
+
+local kanagawa_init = function()
+	vim.cmd([[ colo kanagawa ]])
+
+	vim.cmd([[ hi NvimTreeVertSplit guifg=#16161d ]])
+	vim.cmd([[ hi VertSplit guibg=#1f1f28]])
+	vim.cmd([[ hi LineNr guibg=#1f1f28]])
+	vim.cmd([[ hi CursorLineNr guibg=#1f1f28]])
+	vim.cmd([[ hi SignColumn guibg=#1f1f28]])
+
+	vim.cmd([[ hi DiagnosticSignHint guibg=#1f1f28]])
+	vim.cmd([[ hi DiagnosticSignError guibg=#1f1f28]])
+	vim.cmd([[ hi DiagnosticSignInformation guibg=#1f1f28]])
+	vim.cmd([[ hi DiagnosticSignWarning guibg=#1f1f28]])
+
+	vim.cmd([[ hi GitSignsAdd guibg=#1f1f28 ]])
+	vim.cmd([[ hi GitSignsChange guibg=#1f1f28 ]])
+	vim.cmd([[ hi GitSignsDelete guibg=#1f1f28 ]])
+	vim.cmd([[ hi GitSignsUntracked guibg=#1f1f28 ]])
+
+	vim.cmd([[ hi IndentBlanklineContextStart guifg=#938AA9 ]])
+	vim.cmd([[ hi IndentBlanklineContextChar guifg=#938AA9 ]])
+	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2A2A37 ]])
+
+	vim.cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
+	vim.cmd([[ hi NvimTreeNormal guibg=#16161D ]])
+	vim.cmd([[ hi NvimTreeNormalNC guibg=#16161D ]])
+	vim.cmd([[ hi NvimTreeWinSeparator guibg=#16161D guifg=#16161D ]])
+
+	vim.opt.laststatus = 3
+	vim.opt.fillchars:append({
+		horiz = "━",
+		horizup = "┻",
+		horizdown = "┳",
+		vert = "┃",
+		vertleft = "┨",
+		vertright = "┣",
+		verthoriz = "╋",
+	})
+end
+
+local catppuccin_init = function()
+	vim.cmd.colorscheme("catppuccin")
+	vim.cmd([[ hi SignColumn guibg=NONE ]])
+	vim.cmd([[ hi IndentBlanklineContextStart guifg=#CBA6F7 ]])
+	vim.cmd([[ hi IndentBlanklineContextChar guifg=#CBA6F7 ]])
+	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#101019 ]])
+	vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE]])
+end
+
 local dracula = {
 	"Mofiqul/dracula.nvim",
 	lazy = false,
@@ -95,7 +155,7 @@ local dracula = {
 			IndentBlanklineContextChar = { fg = colors.comment },
 			IndentBlanklineIndent1 = { fg = "#393942" },
 			-- Indentscope
-			MiniIndentscopeSymbol = { fg = colors.cyan },
+			MiniIndentscopeSymbol = { fg = colors.comment },
 
 			-- Ts Rainbow
 			RainbowDelimiterYellow = { fg = "#ffff00" },
@@ -118,9 +178,7 @@ local dracula = {
 			debugPc = { bg = colors.bg },
 		},
 	},
-	init = function()
-		vim.cmd([[ colo dracula ]])
-	end,
+	init = dracula_init,
 }
 
 local tokyonight = {
@@ -153,12 +211,7 @@ local tokyonight = {
 			}
 		end,
 	},
-	init = function()
-		vim.cmd([[ colo tokyonight ]])
-		vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
-		vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
-		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
-	end,
+	-- init = tokyonight_init,
 }
 
 local kanagawa = {
@@ -166,45 +219,7 @@ local kanagawa = {
 	opts = {
 		globalStatus = true,
 	},
-	init = function()
-		vim.cmd([[ colo kanagawa ]])
-
-		vim.cmd([[ hi NvimTreeVertSplit guifg=#16161d ]])
-		vim.cmd([[ hi VertSplit guibg=#1f1f28]])
-		vim.cmd([[ hi LineNr guibg=#1f1f28]])
-		vim.cmd([[ hi CursorLineNr guibg=#1f1f28]])
-		vim.cmd([[ hi SignColumn guibg=#1f1f28]])
-
-		vim.cmd([[ hi DiagnosticSignHint guibg=#1f1f28]])
-		vim.cmd([[ hi DiagnosticSignError guibg=#1f1f28]])
-		vim.cmd([[ hi DiagnosticSignInformation guibg=#1f1f28]])
-		vim.cmd([[ hi DiagnosticSignWarning guibg=#1f1f28]])
-
-		vim.cmd([[ hi GitSignsAdd guibg=#1f1f28 ]])
-		vim.cmd([[ hi GitSignsChange guibg=#1f1f28 ]])
-		vim.cmd([[ hi GitSignsDelete guibg=#1f1f28 ]])
-		vim.cmd([[ hi GitSignsUntracked guibg=#1f1f28 ]])
-
-		vim.cmd([[ hi IndentBlanklineContextStart guifg=#938AA9 ]])
-		vim.cmd([[ hi IndentBlanklineContextChar guifg=#938AA9 ]])
-		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2A2A37 ]])
-
-		vim.cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
-		vim.cmd([[ hi NvimTreeNormal guibg=#16161D ]])
-		vim.cmd([[ hi NvimTreeNormalNC guibg=#16161D ]])
-		vim.cmd([[ hi NvimTreeWinSeparator guibg=#16161D guifg=#16161D ]])
-
-		vim.opt.laststatus = 3
-		vim.opt.fillchars:append({
-			horiz = "━",
-			horizup = "┻",
-			horizdown = "┳",
-			vert = "┃",
-			vertleft = "┨",
-			vertright = "┣",
-			verthoriz = "╋",
-		})
-	end,
+	-- init = kanagawa_init,
 }
 
 local catppuccin = {
@@ -253,14 +268,7 @@ local catppuccin = {
 			colored_indent_levels = false,
 		},
 	},
-	init = function()
-		vim.cmd.colorscheme("catppuccin")
-		vim.cmd([[ hi SignColumn guibg=NONE ]])
-		vim.cmd([[ hi IndentBlanklineContextStart guifg=#CBA6F7 ]])
-		vim.cmd([[ hi IndentBlanklineContextChar guifg=#CBA6F7 ]])
-		vim.cmd([[ hi IndentBlanklineIndent1 guifg=#101019 ]])
-		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE]])
-	end,
+	-- init = catppuccin_init,
 }
 
-return dracula
+return { dracula, tokyonight, kanagawa, catppuccin }
