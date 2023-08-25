@@ -1,5 +1,3 @@
-local cmd = vim.cmd
-
 vim.api.nvim_exec("language en_US.UTF-8", true)
 
 local options = {
@@ -27,7 +25,7 @@ local options = {
 	splitright = true,
 	splitbelow = true,
 	showtabline = 2,
-	updatetime = 300,
+	updatetime = 200,
 	completeopt = "menu,menuone,noselect",
 	foldlevel = 20,
 	foldmethod = "expr",

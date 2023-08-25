@@ -184,3 +184,6 @@ map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
 map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
 	desc = "Search on current file",
 })
+
+-- Barbecue
+map("n", ";.", '<cmd>lua require("barbecue.ui").toggle()<CR>', opts)
