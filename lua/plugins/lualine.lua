@@ -383,7 +383,8 @@ local lsp = {
 		end
 		for _, client in ipairs(clients) do
 			local filetypes = client.config.filetypes
-			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+			local nls = client.config.name == "null-ls"
+			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 and not nls then
 				return client.name
 			end
 		end

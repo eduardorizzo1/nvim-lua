@@ -31,8 +31,7 @@ return {
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
-			require("config.lsp").config()
-			require("config.lsp").config_servers(lspconfig)
+			require("config.lsp").config(lspconfig)
 		end,
 	},
 
