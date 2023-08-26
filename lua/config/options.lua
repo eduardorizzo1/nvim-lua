@@ -30,6 +30,7 @@ local options = {
 	foldlevel = 20,
 	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",
+	wrap = false
 }
 
 vim.opt.shortmess:append({ W = true, I = true, c = true })
