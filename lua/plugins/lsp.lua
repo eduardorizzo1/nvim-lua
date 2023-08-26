@@ -16,8 +16,20 @@ return {
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
 		},
-		-- opts = require("config.lsp").opts,
-		config = function() 
+		opts = {
+			diagnostics = {
+				signs = true,
+				update_in_insert = false,
+				underline = true,
+				severity_sort = true,
+				virtual_text = {
+					spacing = 4,
+					source = "if_many",
+					prefix = "●",
+				},
+			},
+		},
+		config = function()
 			local lspconfig = require("lspconfig")
 			require("config.lsp").config()
 			require("config.lsp").config_servers(lspconfig)

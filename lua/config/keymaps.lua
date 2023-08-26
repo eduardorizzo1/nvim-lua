@@ -151,7 +151,7 @@ map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
 map("n", ";gb", ":BlamerToggle <CR>", opts)
 map("n", ";gs", ":Gitsigns toggle_signs <CR>", opts)
 map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
-map("n", ";e", "<cmd>lua toggle_diagnostics_virtual_text()<CR>", opts)
+map("n", ";e", "<cmd>lua toggle_virtual_text()<CR>", opts)
 
 -- Hop
 map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
