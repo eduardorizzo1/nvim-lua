@@ -27,7 +27,7 @@ return {
 		Package = " ",
 		Property = " ",
 		Reference = " ",
-		Snippet = " ",
+		Snippet = " ",
 		String = " ",
 		Struct = "  ",
 		Text = " ",
@@ -36,31 +36,50 @@ return {
 		Value = " ",
 		Variable = " ",
 	},
-	-- arrows
-	left_arrow = "",
-	right_arrow = "",
-	right_arrow_a = "➩ ",
-	left_arrow_bold = "",
-	right_arrow_bold = "",
-	left_arrow_bold_b = "◀",
-	right_arrow_bold_b = "▶",
-	left_arrow_bold_b_thin = "❮",
-	right_arrow_bold_b_thin = "❯",
+
+	signs = {
+		Error = " ",
+		Warn = " ",
+		Hint = " ",
+		-- Hint = " ",
+		Info = " ",
+	},
+
+	arrows = {
+		left = "",
+		left_bold = "",
+		left_bold_b = "◀",
+		left_bold_b_thin = "❮",
+		right = "",
+		right_a = "➩ ",
+		right_bold = "",
+		right_bold_b = "▶",
+		right_bold_b_thin = "❯",
+		closed = "",
+		open = "",
+	},
+
+	borders = {
+		up_left = "╭",
+		up_right = "╮",
+		down_left = "╰",
+		down_right = "╯",
+		horizontal = "─",
+		vertical = "│",
+	},
+
+	git_status = {
+		added = " ",
+		modified = "柳",
+		removed = " ",
+		branch = " ",
+	},
+
 	chevron_right = ">",
-	arrow_closed = "",
-	arrow_open = "",
 	left_parenthesis_upperhook = "⎛",
 	right_parenthesis_upperhook = "⎞",
 	right_ceiling = "⌉",
 	left_ceiling = "",
-
-	-- borders
-	border_up_left = "╭",
-	border_up_right = "╮",
-	border_down_left = "╰",
-	border_down_right = "╯",
-	border_horizontal = "─",
-	border_vertical = "│",
 
 	-- geometrics
 	right_half_ball = "",
@@ -89,18 +108,6 @@ return {
 	terminal = " ",
 	terminal_outline = " ",
 	terminal_bash = " ",
-
-	-- git
-	added = " ",
-	modified = "柳",
-	removed = " ",
-	branch = " ",
-
-	-- diagnostic
-	error = " ",
-	warn = " ",
-	info = " ",
-	hint = " ",
 
 	-- others
 	file = " ",

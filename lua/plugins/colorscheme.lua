@@ -1,7 +1,7 @@
-local dracula = require("config.themes.dracula")
-local tokyonight = require("config.themes.tokyonight")
-local kanagawa = require("config.themes.kanagawa")
-local catppuccin = require("config.themes.catppuccin")
+local dracula = require("config.colorscheme.dracula")
+local tokyonight = require("config.colorscheme.tokyonight")
+local kanagawa = require("config.colorscheme.kanagawa")
+local catppuccin = require("config.colorscheme.catppuccin")
 
 return {
 	{

@@ -57,7 +57,7 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("Copy Relative Path"))
 	vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
 	vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts("CD"))
-	-- Custom 
+	-- Custom
 	vim.keymap.set("n", "J", "", { buffer = bufnr })
 	vim.keymap.del("n", "J", { buffer = bufnr })
 	vim.keymap.set("n", "K", "", { buffer = bufnr })
@@ -68,11 +68,13 @@ local function on_attach(bufnr)
 	vim.keymap.del("n", "<C-j>", { buffer = bufnr })
 end
 
+local icons = require("utils.icons")
+
 return {
-  "nvim-tree/nvim-tree.lua",
-  dependencies = {
+	"nvim-tree/nvim-tree.lua",
+	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		lazy = true
+		lazy = true,
 	},
 	opts = {
 		on_attach = on_attach,
@@ -132,8 +134,8 @@ return {
 					default = "",
 					symlink = "",
 					folder = {
-						arrow_closed = "",
-						arrow_open = "",
+						arrow_closed = icons.arrows.closed,
+						arrow_open = icons.arrows.open,
 						default = "",
 						open = "",
 						empty = "",
@@ -170,10 +172,10 @@ return {
 			enable = true,
 			show_on_dirs = true,
 			icons = {
-				hint = " ",
-				info = " ",
-				warning = " ",
-				error = " ",
+				hint = icons.signs.Hint,
+				info = icons.signs.Info,
+				warning = icons.signs.Warn,
+				error = icons.signs.Error,
 			},
 		},
 
@@ -205,8 +207,8 @@ return {
 			},
 		},
 	},
-	init = function() 
+	init = function()
 		vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
 		vim.cmd([[ au WinLeave * setlocal nocursorline ]])
-	end
+	end,
 }

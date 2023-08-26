@@ -30,38 +30,7 @@ return {
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 		end
 
-		local icons = {
-			Text = " ",
-			Method = " ",
-			Function = "󰡱 ",
-			Constructor = " ",
-			Field = " ",
-			Variable = " ",
-			Class = " ",
-			Interface = " ",
-			Module = " ",
-			Property = " ",
-			Unit = " ",
-			Value = " ",
-			Enum = " ",
-			EnumMember = " ",
-			Keyword = " ",
-			Snippet = " ",
-			Color = " ",
-			File = " ",
-			Reference = " ",
-			Folder = " ",
-			Constant = " ",
-			Struct = " ",
-			Event = " ",
-			Operator = "",
-			TypeParameter = " ",
-			Array = " ",
-			Number = " ",
-			String = " ",
-			Boolean = " ",
-			Object = " ",
-		}
+		local icons = require("utils.icons").kinds
 
 		local custom_icons = {
 			cmp_tabnine = "⚡",
