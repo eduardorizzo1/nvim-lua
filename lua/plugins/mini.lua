@@ -27,7 +27,7 @@ return {
 			symbol = "│",
 			options = { try_as_border = true },
 			draw = {
-				delay = 75,
+				delay = 50,
 			},
 		},
 		init = function()

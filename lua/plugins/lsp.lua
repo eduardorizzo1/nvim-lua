@@ -15,6 +15,10 @@ return {
 				},
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
+			{
+				"jose-elias-alvarez/typescript.nvim",
+				opts = require("config.lsp").typescript_opts
+			},
 		},
 		opts = {
 			diagnostics = {

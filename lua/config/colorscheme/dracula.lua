@@ -1,20 +1,23 @@
 local colors = require("utils.colors").color
 
 local M = {}
+local transparent = false
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
-	-- vim.cmd([[ hi CursorLine guibg=#333952]])
-	-- vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
-	-- vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
-	-- vim.cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
-	-- vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
-	-- vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-	-- vim.cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
+	if transparent then
+		vim.cmd([[ hi CursorLine guibg=#333952]])
+		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
+		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
+		vim.cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
+		vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
+		vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
+		vim.cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
+	end
 end
 
 M.opts = {
-	transparent_bg = false,
+	transparent_bg = transparent,
 	italic_comment = true,
 	overrides = {
 		Search = { fg = colors.green, bg = colors.comment, bold = true },

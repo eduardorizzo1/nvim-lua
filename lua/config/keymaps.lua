@@ -140,8 +140,8 @@ map("n", "gj", ":Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
 map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "gr", ":Lspsaga finder<CR>", opts)
-map("n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-map("n", "<M-b>", ":Lspsaga outline<CR>", opts)
+map("n", ";b", ":Lspsaga outline<CR>", opts)
+map("n", "gf", ":lua vim.lsp.buf.format()<CR>", opts)
 
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
@@ -167,9 +167,10 @@ map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
 
 -- typescript
-map("n", "gI", ":TSLspImportAll<CR>", opts)
+map("n", "gI", ":TypescriptAddMissingImports<CR>", opts)
+map("n", "gO", ":TypescriptOrganizeImports<CR>", opts)
 map("n", "gU", ":TypescriptRemoveUnused<CR>", opts)
-map("n", "gO", ":TSLspOrganize<CR>", opts)
+map("n", "gF", ":TypescriptFixAll<CR>", opts)
 
 -- Spectre
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {

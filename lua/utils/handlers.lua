@@ -11,6 +11,7 @@ M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	client.server_capabilities.semanticTokensProvider = nil
 	vim.g.navic_silence = true
+	vim.lsp.buf.inlay_hint(bufnr, true)
 
 	-- Null-ls
 	if client.supports_method("textDocument/formatting") then
