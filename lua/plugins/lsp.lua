@@ -68,14 +68,15 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "mason.nvim", "nvim-lspconfig" },
 		opts = function()
-			local nls = require("null-ls")
+			local nls = require("null-ls").builtins
 
 			return {
 				sources = {
-					nls.builtins.code_actions.eslint_d,
-					nls.builtins.formatting.prettierd,
-					nls.builtins.formatting.stylua,
-					nls.builtins.formatting.jq,
+					nls.code_actions.eslint_d,
+					nls.formatting.prettierd,
+					nls.formatting.stylua,
+					nls.formatting.jq,
+					nls.formatting.black.with { extra_args = { "--fast" } },
 				},
 			}
 		end,

@@ -1,17 +1,10 @@
 local M = {}
 
-M.tokyonight_init = function()
-	vim.cmd([[ colo tokyonight ]])
-	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
-	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
-	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
-end
-
 M.opts = {
 	style = "moon",
 	transparent = false,
 	styles = {
-		comments = { italic = false },
+		comments = { italic = true },
 		keywords = { italic = true },
 		functions = {},
 		variables = {},
@@ -34,5 +27,12 @@ M.opts = {
 		}
 	end,
 }
+
+M.init = function()
+	vim.cmd([[ colo tokyonight ]])
+	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
+	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
+	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
+end
 
 return M

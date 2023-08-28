@@ -4,7 +4,7 @@ M.opts = {
 	globalStatus = true,
 }
 
-M.kanagawa_init = function()
+M.init = function()
 	vim.cmd([[ colo kanagawa ]])
 
 	vim.cmd([[ hi NvimTreeVertSplit guifg=#16161d ]])

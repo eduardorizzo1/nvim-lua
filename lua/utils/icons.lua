@@ -40,9 +40,9 @@ return {
 	signs = {
 		Error = " ",
 		Warn = " ",
+		Info = " ",
 		Hint = " ",
 		-- Hint = " ",
-		Info = " ",
 	},
 
 	arrows = {

@@ -123,7 +123,6 @@ map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.med
 map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
 map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>', opts)
 map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>', opts)
-map("n", "<leader>gf", '<cmd>lua require("telescope.builtin").git_bcommits()<CR>', opts)
 map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
 
 -- Lsp Saga
