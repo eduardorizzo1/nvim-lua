@@ -36,6 +36,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			require("config.lsp").config(lspconfig)
+			require("lspconfig.ui.windows").default_options.border = "rounded"
 		end,
 	},
 
