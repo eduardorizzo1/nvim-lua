@@ -1,11 +1,11 @@
 local colors = require("utils.colors").color
 
 local M = {}
-local transparent = false
+M.transparent = false
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
-	if transparent then
+	if M.transparent then
 		vim.cmd([[ hi CursorLine guibg=#333952]])
 		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
 		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
@@ -17,7 +17,7 @@ M.init = function()
 end
 
 M.opts = {
-	transparent_bg = transparent,
+	transparent_bg = M.transparent,
 	italic_comment = true,
 	overrides = {
 		Search = { fg = colors.green, bg = colors.comment, bold = true },
@@ -53,6 +53,7 @@ M.opts = {
 		["@variable"] = { fg = colors.purple },
 		["@punctuation.delimiter"] = { fg = colors.pink },
 		["@punctuation.special"] = { fg = colors.pink },
+		["@punctuation.bracket"] = { fg = "#ffff00" },
 		["@string.escape"] = { fg = colors.pink },
 		["@text"] = { fg = colors.fg },
 		["@text.title"] = { fg = colors.fg },

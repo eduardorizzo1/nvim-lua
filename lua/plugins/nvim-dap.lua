@@ -2,7 +2,7 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
-			--:PERF DapUI
+			--:PERF: DapUI
 			{
 				"rcarriga/nvim-dap-ui",
 				opts = {
@@ -24,7 +24,7 @@ return {
 					element_mappings = {},
 					expand_lines = true,
 					floating = {
-						border = "single",
+						border = "rounded",
 						mappings = {
 							close = { "q", "<Esc>" },
 						},
@@ -32,7 +32,8 @@ return {
 					force_buffers = true,
 					icons = {
 						expanded = "▾",
-						collapsed = "▸",
+						-- expanded = "",
+						collapsed = "",
 						current_frame = "",
 					},
 					layouts = {
@@ -56,7 +57,7 @@ return {
 								},
 							},
 							position = "right",
-							size = 40,
+							size = 60,
 						},
 						{
 							elements = {
@@ -107,10 +108,37 @@ return {
 						dapui.close({})
 					end
 
+					-- PERF: Chrome
 					dap.adapters.node2 = {
 						type = "executable",
 						command = "node",
 						args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
+					}
+
+					dap.configurations.javascriptreact = {
+						{
+							type = "chrome",
+							request = "attach",
+							program = "${file}",
+							cwd = vim.fn.getcwd(),
+							sourceMaps = true,
+							protocol = "inspector",
+							port = 9222,
+							webRoot = "${workspaceFolder}",
+						},
+					}
+
+					dap.configurations.typescriptreact = { -- change to typescript if needed
+						{
+							type = "chrome",
+							request = "attach",
+							program = "${file}",
+							cwd = vim.fn.getcwd(),
+							sourceMaps = true,
+							protocol = "inspector",
+							port = 9222,
+							webRoot = "${workspaceFolder}",
+						},
 					}
 
 					dap.configurations.javascript = {
@@ -124,27 +152,27 @@ return {
 							protocol = "inspector",
 							console = "integratedTerminal",
 						},
-						{
-							name = "Attach to process",
-							type = "node2",
-							request = "attach",
-							processId = require("dap.utils").pick_process,
-						},
-						{
-							name = "Launch (Chrome)",
-							type = "chrome",
-							request = "launch",
-							program = "${file}",
-							cwd = vim.fn.getcwd(),
-							sourceMaps = true,
-							protocol = "inspector",
-							webRoot = "${workspaceFolder}",
-							url = "http://localhost:3000",
-							sourceMapPathOverrides = {
-								["webpack:///*"] = "${webRoot}/*",
-								["/*"] = "*",
-							},
-						},
+						-- {
+						-- 	name = "Attach to process",
+						-- 	type = "node2",
+						-- 	request = "attach",
+						-- 	processId = require("dap.utils").pick_process,
+						-- },
+						-- {
+						-- 	name = "Launch (Chrome)",
+						-- 	type = "chrome",
+						-- 	request = "launch",
+						-- 	program = "${file}",
+						-- 	cwd = vim.fn.getcwd(),
+						-- 	sourceMaps = true,
+						-- 	protocol = "inspector",
+						-- 	webRoot = "${workspaceFolder}",
+						-- 	url = "http://localhost:3000",
+						-- 	sourceMapPathOverrides = {
+						-- 		["webpack:///*"] = "${webRoot}/*",
+						-- 		["/*"] = "*",
+						-- 	},
+						-- },
 					}
 				end,
 			},

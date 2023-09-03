@@ -188,3 +188,6 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 
 -- Barbecue
 map("n", ";.", '<cmd>lua require("barbecue.ui").toggle()<CR>', opts)
+
+-- Rest
+map("n", "gR", '<cmd>lua require("rest-nvim").run()<CR>', opts)

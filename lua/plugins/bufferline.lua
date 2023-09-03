@@ -1,4 +1,5 @@
 local colors = require("utils.colors")
+local transparent = require("config.colorscheme.dracula").transparent
 
 return {
 	"akinsho/bufferline.nvim",
@@ -28,7 +29,7 @@ return {
 				icon = "",
 				style = "icon",
 			},
-			separator_style = "slant", -- "slope | slant"
+			separator_style = transparent and " " or "slant", -- "slope | slant"
 			hover = {
 				enabled = true,
 				delay = 0,
