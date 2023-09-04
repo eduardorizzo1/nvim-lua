@@ -4,39 +4,12 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
-		{
-			{
-				"HiPhish/rainbow-delimiters.nvim",
-				config = function()
-					local rainbow_delimiters = require("rainbow-delimiters")
-
-					vim.g.rainbow_delimiters = {
-						strategy = {
-							[""] = rainbow_delimiters.strategy["global"],
-							vim = rainbow_delimiters.strategy["global"],
-						},
-						query = {
-							[""] = "rainbow-delimiters",
-							lua = "rainbow-blocks",
-						},
-						highlight = {
-							"RainbowDelimiterYellow",
-							"RainbowDelimiterBlue",
-							"RainbowDelimiterViolet",
-							"RainbowDelimiterRed",
-							"RainbowDelimiterOrange",
-							"RainbowDelimiterGreen",
-							"RainbowDelimiterCyan",
-						},
-					}
-				end,
-			},
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			init = function()
-				require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-				load_textobjects = true
-			end,
-		},
+		"HiPhish/rainbow-delimiters.nvim",
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		init = function()
+			require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+			load_textobjects = true
+		end,
 	},
 	cmd = { "TSUpdateSync" },
 	keys = {
