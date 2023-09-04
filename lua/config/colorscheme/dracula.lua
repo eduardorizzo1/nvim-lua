@@ -53,7 +53,7 @@ M.opts = {
 		["@variable"] = { fg = colors.purple },
 		["@punctuation.delimiter"] = { fg = colors.pink },
 		["@punctuation.special"] = { fg = colors.pink },
-		["@punctuation.bracket"] = { fg = "#ffff00" },
+		-- ["@punctuation.bracket"] = { fg = "#ffff00" },
 		["@string.escape"] = { fg = colors.pink },
 		["@text"] = { fg = colors.fg },
 		["@text.title"] = { fg = colors.fg },
@@ -61,7 +61,7 @@ M.opts = {
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = "#16171d" },
-		BufferLineBufferSelected = { bg = "none" },
+		BufferLineBufferSelected = { bg = "none", italic = true },
 		BufferLineSeparator = { bg = "none" },
 
 		-- NvimTree
