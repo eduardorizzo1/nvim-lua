@@ -56,6 +56,7 @@ M.opts = {
 		-- ["@punctuation.bracket"] = { fg = "#ffff00" },
 		["@string.escape"] = { fg = colors.pink },
 		["@text"] = { fg = colors.fg },
+		["@tag"] = { fg = colors.pink },
 		["@text.title"] = { fg = colors.fg },
 
 		-- Bufferline
@@ -120,6 +121,7 @@ M.opts = {
 		RainbowDelimiterPurple = { fg = colors.purple },
 		RainbowDelimiterOrange = { fg = colors.orange },
 		RainbowDelimiterBlue = { fg = colors.blue },
+		RainbowDelimiterRed = { fg = colors.red },
 
 		-- Cmp
 		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },

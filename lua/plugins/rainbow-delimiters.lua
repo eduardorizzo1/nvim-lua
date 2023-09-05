@@ -10,17 +10,20 @@ return {
 			},
 			query = {
 				[""] = "rainbow-delimiters",
-				lua = "rainbow-blocks",
+				javascript = "rainbow-parens",
+				tsx = "rainbow-parens",
 			},
 			highlight = {
 				"RainbowDelimiterYellow",
-				"RainbowDelimiterBlue",
-				"RainbowDelimiterCyan",
 				"RainbowDelimiterPink",
+				"RainbowDelimiterCyan",
 				"RainbowDelimiterGreen",
 				"RainbowDelimiterPurple",
 				"RainbowDelimiterOrange",
+				-- "RainbowDelimiterBlue",
+				-- "RainbowDelimiterRed",
 			},
+			blacklist = { "html" },
 		}
 	end,
 }

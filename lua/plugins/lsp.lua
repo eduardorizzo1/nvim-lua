@@ -17,7 +17,7 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{
 				"jose-elias-alvarez/typescript.nvim",
-				opts = require("config.lsp").typescript_opts
+				opts = require("config.lsp").typescript_opts,
 			},
 		},
 		opts = {
@@ -74,10 +74,13 @@ return {
 			return {
 				sources = {
 					nls.code_actions.eslint_d,
+					-- nls.diagnostics.eslint_d.with({
+					-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
+					-- }),
 					nls.formatting.prettierd,
 					nls.formatting.stylua,
 					nls.formatting.jq,
-					nls.formatting.black.with { extra_args = { "--fast" } },
+					nls.formatting.black.with({ extra_args = { "--fast" } }),
 				},
 			}
 		end,
