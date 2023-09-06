@@ -29,7 +29,7 @@ return {
 				icon = "",
 				style = "icon",
 			},
-			separator_style = transparent and " " or "slant", -- "slope | slant"
+			separator_style = "slant", -- "slope | slant"
 			hover = {
 				enabled = true,
 				delay = 0,
@@ -141,10 +141,10 @@ return {
 			-- 		bg = colors.color.bg_dark,
 			-- 	},
 			--
-			-- 	separator_selected = {
-			-- 		fg = colors.color.bg_dark,
-			-- 		bg = "none",
-			-- 	},
+			separator_selected = {
+				fg = colors.color.bg_dark,
+				bg = "none",
+			},
 			--
 			-- 	separator = {
 			-- 		bg = colors.color.bg_dark,

@@ -1,7 +1,7 @@
 local colors = require("utils.colors").color
 
 local M = {}
-M.transparent = false
+M.transparent = true
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
@@ -64,6 +64,7 @@ M.opts = {
 		BufferLineFill = { bg = "#16171d" },
 		BufferLineBufferSelected = { bg = "none", italic = true },
 		BufferLineSeparator = { bg = "none" },
+		BufferLineSeparatorSelected = { fg = "none" },
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
@@ -71,6 +72,7 @@ M.opts = {
 		NvimTreeWinSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
 
 		-- Telescope
+		TelescopeNormal = { bg = "none" },
 		TelescopeMatching = { fg = colors.pink },
 		TelescopeSelection = { fg = colors.white, bg = colors.rounded_fg, bold = true },
 		TelescopePreviewBorder = { fg = colors.fg },
@@ -93,7 +95,7 @@ M.opts = {
 		LspLinesDiagBorder = { fg = colors.comment },
 		LspSagaRenameBorder = { fg = colors.comment },
 		LspSagaBorderTitle = { fg = colors.pink },
-		LSPSagaDiagnosticTruncateLine = { fg = colors.comment },
+		LspSagaDiagnosticTruncateLine = { fg = colors.comment },
 		LspSagaDiagnosticBorder = { fg = colors.comment },
 		LspSagaShTruncateLine = { fg = colors.comment },
 		LspSagaDocTruncateLine = { fg = colors.comment },
