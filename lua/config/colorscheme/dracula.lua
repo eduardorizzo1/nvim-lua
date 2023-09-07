@@ -62,8 +62,10 @@ M.opts = {
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = "#16171d" },
-		BufferLineBufferSelected = { bg = "none", italic = true },
-		BufferLineSeparator = { bg = "none" },
+		BufferLineBufferSelected = { bg = colors.bg, italic = true },
+		BufferLineSeparator = { bg = "#1e1f28", fg = "#16171d" },
+		BufferLineSeparatorVisible = { bg = colors.bg, fg = "#16171d" },
+		BufferLineBufferVisible = { bg = colors.bg, fg = colors.fg },
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
