@@ -492,7 +492,7 @@ local location_default = {
 		return { bg = mode_color[vim.fn.mode()], fg = colors.rounded_fg }
 	end,
 	separator = { left = "" },
-	padding = { right = 1, left = 0 },
+	padding = { right = 1, left = 1 },
 }
 
 local lsp_default = {
@@ -612,10 +612,6 @@ local filetype_default = {
 	padding = { right = 1, left = 0 },
 }
 
-local diff_default = {
-	"diff",
-}
-
 local default = {
 	options = {
 		icons_enabled = true,
@@ -647,7 +643,7 @@ local default = {
 	sections = {
 		lualine_a = { mode_default_icons, modes_default },
 		lualine_b = { branch_default },
-		lualine_c = { filetype_icon_default, filename_default, diff_default },
+		lualine_c = { filetype_icon_default, filename_default, "diff" },
 		lualine_x = { diagnostic_default, separator_left_default },
 		lualine_y = { lsp_default, separator_left_default, filetype_default },
 		lualine_z = { progress_default, location_default },
