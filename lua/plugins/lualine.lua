@@ -488,14 +488,14 @@ local config_bubbles_custom = {
 
 local location_default = {
 	"location",
-	color = { fg = colors.cyan },
-	separator = { left = "" },
+	color = { fg = colors.purple },
+	separator = { left = "" },
 	padding = { right = 0, left = 0 },
 }
 
 local lsp_default = {
 	function()
-		local msg = "No Active Lsp"
+		local msg = "No Lsp"
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
@@ -528,7 +528,9 @@ local modes_default = {
 local branch_default = {
 	"branch",
 	separator = { right = "" },
-	color = { bg = "#42455a", fg = colors.cyan },
+	color = function()
+		return { bg = colors.bg_alt, fg = mode_color[vim.fn.mode()] }
+	end,
 	padding = { left = 1, right = 1 },
 }
 
@@ -536,20 +538,21 @@ local separator_left_default = {
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg },
+	color = { fg = colors.comment },
 }
 
 local separator_right_default = {
 	function()
 		return ""
 	end,
-	color = { fg = colors.rounded_fg },
+	color = { fg = colors.comment },
 }
 
 local progress_default = {
 	"progress",
-	color = { fg = colors.purple },
+	color = { fg = colors.cyan },
 	padding = { right = 1, left = 0 },
+	separator = { left = "" },
 }
 
 local diagnostic_default = {
@@ -576,6 +579,7 @@ local filename_default = {
 	color = { fg = colors.fg },
 	shorten = true,
 	file_status = false,
+	padding = { left = 1, right = 0 },
 }
 
 local filetype_icon_default = {
@@ -588,7 +592,9 @@ local filetype_icon_default = {
 
 local filetype_default = {
 	"filetype",
-	color = { bg = "#42455a", fg = colors.pink },
+	color = function()
+		return { bg = colors.bg_alt, fg = mode_color[vim.fn.mode()] }
+	end,
 	separator = { left = "" },
 	padding = { right = 1, left = 1 },
 }
@@ -602,12 +608,12 @@ local default = {
 		icons_enabled = true,
 		theme = {
 			normal = {
-				a = { bg = colors.bg_alt },
-				b = { bg = colors.bg_alt },
-				c = { bg = colors.bg_alt },
-				x = { bg = colors.bg_alt },
-				y = { bg = colors.bg_alt },
-				z = { bg = colors.bg_alt },
+				a = { bg = colors.bg_dark },
+				b = { bg = colors.bg_dark },
+				c = { bg = colors.bg_dark },
+				x = { bg = colors.bg_dark },
+				y = { bg = colors.bg_dark },
+				z = { bg = colors.bg_dark },
 			},
 		},
 		component_separators = { left = "", right = "" },
@@ -628,9 +634,9 @@ local default = {
 	sections = {
 		lualine_a = { modes_default },
 		lualine_b = { branch_default },
-		lualine_c = { filetype_icon_default, filename_default, separator_right_default, diagnostic_default },
-		lualine_x = {},
-		lualine_y = { separator_left_default, location_default, separator_left_default, progress_default },
+		lualine_c = { filetype_icon_default, filename_default, diff_default },
+		lualine_x = { diagnostic_default },
+		lualine_y = { location_default, separator_left_default, progress_default },
 		lualine_z = { filetype_default, lsp_default },
 	},
 	inactive_sections = {
