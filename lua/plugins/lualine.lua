@@ -255,7 +255,8 @@ local config_default = {
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
-		section_separators = { left = icons.right_half_ball, right = icons.left_half_ball },
+		section_separators = { left = "", right = "" },
+		-- section_separators = { left = icons.right_half_ball, right = icons.left_half_ball },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -485,6 +486,163 @@ local config_bubbles_custom = {
 	extensions = {},
 }
 
+local location_default = {
+	"location",
+	color = { fg = colors.cyan },
+	separator = { left = "" },
+	padding = { right = 0, left = 0 },
+}
+
+local lsp_default = {
+	function()
+		local msg = "No Active Lsp"
+		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		local clients = vim.lsp.get_active_clients()
+		if next(clients) == nil then
+			return msg
+		end
+		for _, client in ipairs(clients) do
+			local filetypes = client.config.filetypes
+			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+				return client.name
+			end
+		end
+		return msg
+	end,
+	color = function()
+		return { bg = mode_color[vim.fn.mode()], fg = colors.rounded_fg }
+	end,
+	separator = { left = "" },
+	padding = { right = 1, left = 1 },
+}
+
+local modes_default = {
+	"mode",
+	separator = { right = "" },
+	color = function()
+		return { bg = mode_color[vim.fn.mode()], fg = colors.bg_alt }
+	end,
+	padding = { left = 1, right = 1 },
+}
+
+local branch_default = {
+	"branch",
+	separator = { right = "" },
+	color = { bg = "#42455a", fg = colors.cyan },
+	padding = { left = 1, right = 1 },
+}
+
+local separator_left_default = {
+	function()
+		return ""
+	end,
+	color = { fg = colors.rounded_fg },
+}
+
+local separator_right_default = {
+	function()
+		return ""
+	end,
+	color = { fg = colors.rounded_fg },
+}
+
+local progress_default = {
+	"progress",
+	color = { fg = colors.purple },
+	padding = { right = 1, left = 0 },
+}
+
+local diagnostic_default = {
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = {
+		error = icons.error,
+		warn = icons.warn,
+		info = icons.hint,
+		hint = icons.info,
+	},
+	diagnostics_color = {
+		color_error = { fg = colors.red },
+		color_warn = { fg = colors.yellow },
+		color_info = { fg = colors.cyan },
+	},
+	gui = "bold",
+	padding = { right = 1, left = 1 },
+}
+
+local filename_default = {
+	"filename",
+	cond = conditions.buffer_not_empty,
+	color = { fg = colors.fg },
+	shorten = true,
+	file_status = false,
+}
+
+local filetype_icon_default = {
+	"filetype",
+	icon_only = true,
+	colored = true,
+	separator = { left = "", right = "" },
+	padding = { left = 1, right = 0 },
+}
+
+local filetype_default = {
+	"filetype",
+	color = { bg = "#42455a", fg = colors.pink },
+	separator = { left = "" },
+	padding = { right = 1, left = 1 },
+}
+
+local diff_default = {
+	"diff",
+}
+
+local default = {
+	options = {
+		icons_enabled = true,
+		theme = {
+			normal = {
+				a = { bg = colors.bg_alt },
+				b = { bg = colors.bg_alt },
+				c = { bg = colors.bg_alt },
+				x = { bg = colors.bg_alt },
+				y = { bg = colors.bg_alt },
+				z = { bg = colors.bg_alt },
+			},
+		},
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		globalstatus = true,
+		refresh = {
+			statusline = 1000,
+			tabline = 1000,
+			winbar = 1000,
+		},
+	},
+	sections = {
+		lualine_a = { modes_default },
+		lualine_b = { branch_default },
+		lualine_c = { filetype_icon_default, filename_default, separator_right_default, diagnostic_default },
+		lualine_x = {},
+		lualine_y = { separator_left_default, location_default, separator_left_default, progress_default },
+		lualine_z = { filetype_default, lsp_default },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+}
+
 ---------------------------------------------------------
 ---------------------------------------------------------
 ---------------------------------------------------------
@@ -496,5 +654,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		opts = true,
 	},
-	opts = config_bubbles_custom,
+	-- opts = config_bubbles_custom,
+	opts = default,
 }

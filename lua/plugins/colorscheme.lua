@@ -27,4 +27,12 @@ return {
 		opts = catppuccin.opts,
 		-- init = catppuccin.init,
 	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		opts = {},
+	},
+	{
+		"sainnhe/everforest",
+		opts = {},
+	},
 }
