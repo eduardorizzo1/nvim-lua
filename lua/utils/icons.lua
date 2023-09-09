@@ -200,6 +200,7 @@ return {
 -- Color = "   ",
 -- Constant = "   ",
 -- Circle = "   ",
+-- Clock = " 󰥔 󰅐 "
 -- Close = "  ",
 -- Circle_slash = " ",
 -- Circle_dot = " "
@@ -257,6 +258,7 @@ return {
 -- Rename = "    ",
 -- Repo = "   ",
 -- Robot = "ﮧ  ",
+-- Separators = " ▌ ▐    "
 -- Snippet = "      ",
 -- Struct = "   ",
 -- String = " ",

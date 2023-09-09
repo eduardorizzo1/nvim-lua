@@ -1,7 +1,7 @@
 local colors = require("utils.colors").color
 
 local M = {}
-M.transparent = false
+M.transparent = true
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
@@ -62,12 +62,12 @@ M.opts = {
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = "#16171d" },
-		BufferLineBufferSelected = { bg = colors.bg, italic = true, bold = true },
-		BufferLineSeparator = { bg = "#1e1f28", fg = "#16171d" },
-		BufferLineSeparatorSelected = { bg = colors.bg, fg = "#16171d" },
-		BufferLineSeparatorVisible = { bg = colors.bg, fg = "#16171d" },
-		BufferLineBufferVisible = { bg = colors.bg, fg = colors.fg },
-		BufferLineCloseButtonSelected = { bg = colors.bg, fg = colors.fg },
+		BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
+		BufferLineSeparator = { bg = M.transparent and "none" or "#1e1f28", fg = "#16171d" },
+		BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = "#16171d" },
+		BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = "#16171d" },
+		BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
+		BufferLineCloseButtonSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
@@ -75,6 +75,7 @@ M.opts = {
 		NvimTreeWinSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
 
 		-- Telescope
+		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 		TelescopeMatching = { fg = colors.pink },
 		TelescopeSelection = { fg = colors.white, bg = colors.rounded_fg, bold = true },
 		TelescopePreviewBorder = { fg = colors.fg, bg = "none" },
