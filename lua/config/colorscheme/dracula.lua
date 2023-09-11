@@ -6,7 +6,7 @@ M.transparent = true
 M.init = function()
 	vim.cmd([[ colo dracula ]])
 	if M.transparent then
-		vim.cmd([[ hi CursorLine guibg=#333952]])
+		vim.cmd([[ hi CursorLine guibg=#44475a]])
 		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
 		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
 		vim.cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
@@ -61,18 +61,20 @@ M.opts = {
 
 		-- Bufferline
 		BufferLineIndicatorSelected = { fg = colors.purple },
-		BufferLineFill = { bg = "#16171d" },
+		BufferLineFill = { bg = colors.bg_dark },
 		BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
-		BufferLineSeparator = { bg = M.transparent and "none" or "#1e1f28", fg = "#16171d" },
-		BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = "#16171d" },
-		BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = "#16171d" },
+		BufferLineSeparator = { bg = M.transparent and "none" or colors.bg_dark, fg = colors.bg_dark },
+		BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
+		BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
 		BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 		BufferLineCloseButtonSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
 		NvimTreeIndentMarker = { fg = colors.comment },
-		NvimTreeWinSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
+		NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
+		NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
+		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },

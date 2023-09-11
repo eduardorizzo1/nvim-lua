@@ -521,14 +521,14 @@ local default_dracula = {
 					return " "
 				end,
 				color = function()
-					return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
+					return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
 				end,
 				padding = { left = 1, right = 0 },
 			},
 			{
 				"mode",
 				color = function()
-					return { bg = mode_color[vim.fn.mode()], fg = colors.bg_alt }
+					return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
 				end,
 				separator = { right = "" },
 				padding = { left = 0, right = 1 },
@@ -631,7 +631,7 @@ local default_dracula = {
 			{
 				"location",
 				color = function()
-					return { bg = mode_color[vim.fn.mode()], fg = colors.rounded_fg }
+					return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
 				end,
 				separator = { left = "" },
 				padding = { right = 1, left = 1 },
