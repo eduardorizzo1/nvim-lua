@@ -72,7 +72,7 @@ M.opts = {
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
 		NvimTreeIndentMarker = { fg = colors.comment },
-		NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
+		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
 		NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 
