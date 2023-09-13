@@ -34,18 +34,18 @@ return {
 				delay = 0,
 				reveal = { "close" },
 			},
-			-- offsets = {
-			-- 	{
-			-- 		filetype = "NvimTree",
-			-- 		highlight = "Directory",
-			-- 		padding = 0,
-			-- 		separator = true,
-			-- 		text = function()
-			-- 			return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-			-- 		end,
-			-- 		text_align = "left",
-			-- 	},
-			-- },
+			offsets = {
+				{
+					filetype = "NvimTree",
+					highlight = "Directory",
+					padding = 0,
+					separator = true,
+					text = function()
+						return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+					end,
+					text_align = "left",
+				},
+			},
 
 			custom_filter = function(buf_number)
 				-- Func to filter out our managed/persistent split terms

@@ -667,7 +667,7 @@ local default = {
 		lualine_a = {
 			{
 				"mode",
-				icon = " ",
+				icon = "",
 				separator = { right = "" },
 				padding = { left = 1, right = 1 },
 			},
@@ -766,6 +766,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		opts = true,
 	},
-	-- opts = config_bubbles_custom,
 	opts = default_dracula,
+	-- opts = default,
+	-- opts = config_bubbles_custom,
 }

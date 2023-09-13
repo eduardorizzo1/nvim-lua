@@ -1,7 +1,7 @@
 local colors = require("utils.colors").color
 
 local M = {}
-M.transparent = true
+M.transparent = false
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
@@ -105,6 +105,10 @@ M.opts = {
 		LspSagaShTruncateLine = { fg = colors.comment },
 		LspSagaDocTruncateLine = { fg = colors.comment },
 		LspSagaLspFinderBorder = { fg = colors.comment },
+		DiagnosticVirtualTextError = { bg = colors.bg_alt, fg = colors.red },
+		DiagnosticVirtualTextHint = { bg = colors.bg_alt, fg = colors.cyan },
+		DiagnosticVirtualTextInfo = { bg = colors.bg_alt, fg = colors.cyan },
+		DiagnosticVirtualTextWarn = { bg = colors.bg_alt, fg = colors.yellow },
 		CodeActionNumber = { bg = "NONE", fg = colors.cyan },
 
 		-- Pmenu
