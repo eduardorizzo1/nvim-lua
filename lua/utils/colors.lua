@@ -68,7 +68,7 @@ local tokyonight = {
 	yellow = "#9ECE6A",
 
 	bg_alt = "#1f2335",
-	bg_dark = "#1A1B26",
+	bg_dark = "#222436",
 
 	purple_alt = "#564f8b",
 	rounded_bg = "#1A1B26",

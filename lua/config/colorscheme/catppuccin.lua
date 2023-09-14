@@ -10,7 +10,7 @@ M.init = function()
 end
 
 M.opts = {
-	flavour = "macchiato", -- latte, frappe, macchiato, mocha
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
 		dark = "macchiato",

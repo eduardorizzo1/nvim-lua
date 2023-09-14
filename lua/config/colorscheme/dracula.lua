@@ -60,6 +60,7 @@ M.opts = {
 		["@text.title"] = { fg = colors.fg },
 
 		-- Bufferline
+		BufferLineOffsetSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
 		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = colors.bg_dark },
 		BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
@@ -71,10 +72,11 @@ M.opts = {
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
-		NvimTreeIndentMarker = { fg = colors.comment },
-		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
+		-- NvimTreeOpenedFile = { fg = colors.fg, bg = colors.current_line },
 		NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
+		NvimTreeIndentMarker = { fg = colors.comment },
+		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },

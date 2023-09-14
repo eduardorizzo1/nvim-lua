@@ -67,10 +67,10 @@ return {
 		},
 
 		highlights = {
-			offset_separator = {
-				fg = colors.color.bg_dark,
-				bg = colors.color.bg_dark,
-			},
+			-- offset_separator = {
+			-- 	fg = colors.color.bg_dark,
+			-- 	bg = colors.color.bg_dark,
+			-- },
 			-- fill = {
 			-- 	fg = colors.color.fg,
 			-- 	bg = colors.color.bg_dark,
