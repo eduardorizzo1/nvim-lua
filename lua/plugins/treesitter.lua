@@ -5,6 +5,7 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"HiPhish/rainbow-delimiters.nvim",
+		"windwp/nvim-ts-autotag",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		init = function()
 			require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")

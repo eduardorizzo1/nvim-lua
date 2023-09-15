@@ -74,13 +74,13 @@ return {
 			return {
 				sources = {
 					nls.code_actions.eslint_d,
-					-- nls.diagnostics.eslint_d.with({
-					-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
-					-- }),
 					nls.formatting.prettierd,
 					nls.formatting.stylua,
 					nls.formatting.jq,
 					nls.formatting.black.with({ extra_args = { "--fast" } }),
+					-- nls.diagnostics.eslint_d.with({
+					-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
+					-- }),
 				},
 			}
 		end,

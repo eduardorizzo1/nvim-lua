@@ -4,7 +4,7 @@ local kanagawa = require("config.colorscheme.kanagawa")
 local catppuccin = require("config.colorscheme.catppuccin")
 
 return {
-	-- Dracula
+	--TEST: Dracula
 	{
 		"Mofiqul/dracula.nvim",
 		lazy = false,
@@ -12,7 +12,7 @@ return {
 		init = dracula.init,
 	},
 
-	-- Tokyonight
+	--TEST: Tokyonight
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -20,14 +20,14 @@ return {
 		-- init = tokyonight.init,
 	},
 
-	-- kanagawa
+	--TEST: kanagawa
 	{
 		"rebelot/kanagawa.nvim",
 		opts = kanagawa.opts,
 		-- init = kanagawa.init,
 	},
 
-	-- Catppuccin
+	--TEST: Catppuccin
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -35,19 +35,19 @@ return {
 		-- init = catppuccin.init,
 	},
 
-	-- Gruvbox
+	--TEST: Gruvbox
 	{
 		"ellisonleao/gruvbox.nvim",
 		opts = {},
 	},
 
-	-- Everforest
+	--TEST: Everforest
 	{
 		"sainnhe/everforest",
 		opts = {},
 	},
 
-	-- Neosolarized
+	--TEST: Neosolarized
 	{
 		"svrana/neosolarized.nvim",
 		dependencies = {
@@ -56,13 +56,20 @@ return {
 		-- opts = {},
 	},
 
-	-- Nightfox
+	--TEST: Nightfox
 	{
 		"EdenEast/nightfox.nvim",
 	},
 
-	-- Onedark
+	--TEST: Onedark
 	{
 		"navarasu/onedark.nvim",
+		opts = {
+			style = "dark", -- dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+		},
+	},
+	--TEST: Material
+	{
+		"marko-cerovac/material.nvim",
 	},
 }
