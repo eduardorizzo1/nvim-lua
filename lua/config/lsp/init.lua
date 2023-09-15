@@ -23,6 +23,7 @@ local servers = {
 	"pyright",
 	"yamlls",
 	"clangd",
+	"rust_analyzer",
 }
 
 M.config = function(lspconfig)
@@ -82,6 +83,5 @@ M.typescript_opts = {
 		},
 	},
 }
-
 
 return M
