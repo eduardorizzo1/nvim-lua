@@ -17,13 +17,28 @@ M.opts = {
 			bg = c.bg_dark,
 			fg = c.blue,
 		}
+		hl.TelescopePromptCounter = {
+			bg = c.bg_dark,
+			fg = c.cyan,
+		}
 		hl.NvimTreeOpenedFolderName = {
 			bg = c.bg_highlight,
 			fg = c.magenta,
 		}
 		hl.NvimTreeOpenedFile = {
-			bg = c.bg_dark,
+			bg = c.bg_highlight,
 			fg = c.cyan,
+		}
+		hl.NvimTreeWinSeparator = {
+			bg = c.bg,
+			fg = c.bg_dark,
+		}
+		hl.CursorLineNr = {
+			fg = c.orange,
+		}
+		hl.BufferLineOffsetSeparator = {
+			bg = c.bg,
+			fg = c.bg_dark,
 		}
 	end,
 }
