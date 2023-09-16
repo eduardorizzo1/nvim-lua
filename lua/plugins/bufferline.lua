@@ -20,7 +20,7 @@ return {
 			always_show_bufferline = true,
 			show_close_icon = true,
 			show_buffer_close_icons = true,
-			diagnostic = "nvim_lsp",
+			diagnostics = "nvim_lsp",
 			right_mouse_command = "vertical sbuffer %d",
 			close_command = "bdelete! %d",
 			show_tab_indicators = true,
@@ -39,13 +39,18 @@ return {
 					filetype = "NvimTree",
 					highlight = "Directory",
 					padding = 0,
-					separator = true,
+					separator = false,
 					text = function()
 						return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 					end,
 					text_align = "left",
 				},
 			},
+
+			diagnostics_indicator = function(count, level)
+				local icon = level:match("error") and " " or " "
+				return " " .. icon .. count
+			end,
 
 			custom_filter = function(buf_number)
 				-- Func to filter out our managed/persistent split terms
