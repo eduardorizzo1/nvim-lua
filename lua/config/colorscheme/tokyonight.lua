@@ -22,19 +22,19 @@ M.opts = {
 			fg = c.cyan,
 		}
 		hl.NvimTreeOpenedFolderName = {
-			bg = c.bg_highlight,
+			bg = "none",
 			fg = c.magenta,
 		}
 		hl.NvimTreeOpenedFile = {
-			bg = c.bg_highlight,
+			bg = "none",
 			fg = c.cyan,
 		}
 		hl.NvimTreeWinSeparator = {
 			bg = c.bg,
-			fg = c.bg_dark,
+			fg = c.bg,
 		}
 		hl.CursorLineNr = {
-			fg = c.orange,
+			fg = c.cyan,
 		}
 		hl.BufferLineOffsetSeparator = {
 			bg = c.bg,
@@ -47,7 +47,7 @@ M.init = function()
 	vim.cmd([[ colo tokyonight ]])
 	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
 	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
-	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#333952 gui=nocombine]])
+	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2d3047 gui=nocombine]])
 end
 
 return M
