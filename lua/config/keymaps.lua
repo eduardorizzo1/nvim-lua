@@ -121,7 +121,7 @@ map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', 
 map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
 map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<CR>', opts)
 map("n", "<leader>ft", ":TodoTelescope<CR>", opts)
-map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
+-- map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
 map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>', opts)
 map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>', opts)
 map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
@@ -146,6 +146,9 @@ map("n", "gf", ":lua vim.lsp.buf.format()<CR>", opts)
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)
 map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
+
+-- Lazygit
+map("n", "<leader>gg", ":LazyGit<CR>", opts)
 
 -- Toggles
 map("n", ";gb", ":BlamerToggle <CR>", opts)
