@@ -4,7 +4,6 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
-		"HiPhish/rainbow-delimiters.nvim",
 		"windwp/nvim-ts-autotag",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		init = function()
