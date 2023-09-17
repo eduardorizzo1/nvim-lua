@@ -38,7 +38,7 @@ return {
 				{
 					filetype = "NvimTree",
 					highlight = "Directory",
-					padding = 0,
+					padding = 1,
 					separator = false,
 					text = function()
 						return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")

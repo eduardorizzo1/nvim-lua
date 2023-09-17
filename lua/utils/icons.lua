@@ -57,6 +57,8 @@ return {
 		right_bold_b_thin = "❯",
 		closed = "",
 		open = "",
+		up = "",
+		down = "",
 	},
 
 	borders = {
@@ -274,6 +276,7 @@ return {
 -- Tag = "   ",
 -- Text = "   ",
 -- Unit = "塞    ",
+-- User = " "
 -- Value = "   ",
 -- Variable = "   ",
 -- Warning = "   ",

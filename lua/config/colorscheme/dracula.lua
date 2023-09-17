@@ -1,18 +1,18 @@
 local colors = require("utils.colors").color
 
 local M = {}
-M.transparent = false
+M.transparent = true
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
 	if M.transparent then
-		vim.cmd([[ hi CursorLine guibg=#44475a]])
+		vim.cmd([[ hi CursorLine guibg=#282a36]])
 		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
 		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
-		vim.cmd([[ hi NvimTreeWinSeparator guibg=NONE guifg=#564f8b ]])
+		vim.cmd([[ hi NvimTreeCursorLine guibg=#282a36]])
 		vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
 		vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-		vim.cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
+		vim.cmd([[ hi EndOfBuffer guifg=#564f8b ]])
 	end
 end
 
@@ -60,14 +60,17 @@ M.opts = {
 		["@text.title"] = { fg = colors.fg },
 
 		-- Bufferline
-		BufferLineOffsetSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
-		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineFill = { bg = colors.bg_dark },
+		BufferLineBackground = { fg = M.transparent and colors.bg or colors.comment },
+		BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 		BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
+		BufferLineDuplicate = { fg = M.transparent and colors.bg or colors.comment },
+		BufferLineDuplicateSelected = { fg = colors.comment, bold = false, italic = false },
+		BufferLineIndicatorSelected = { fg = colors.purple },
 		BufferLineSeparator = { bg = M.transparent and "none" or colors.bg_dark, fg = colors.bg_dark },
 		BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
 		BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
-		BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
+		BufferLineOffsetSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
 		BufferLineCloseButtonSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 
 		-- NvimTree
@@ -76,7 +79,10 @@ M.opts = {
 		NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 		NvimTreeIndentMarker = { fg = colors.comment },
-		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
+		NvimTreeWinSeparator = {
+			fg = M.transparent and colors.bg_dark_alt or colors.bg_dark_alt,
+			bg = colors.bg_dark_alt,
+		},
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
@@ -122,7 +128,7 @@ M.opts = {
 		-- IndentBlankLine
 		IndentBlanklineContextStart = { fg = colors.comment },
 		IndentBlanklineContextChar = { fg = colors.comment },
-		IndentBlanklineIndent1 = { fg = "#393942" },
+		IndentBlanklineIndent1 = { fg = M.transparent and "#222222" or "#393942" },
 		-- Indentscope
 		MiniIndentscopeSymbol = { fg = colors.comment },
 

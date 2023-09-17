@@ -1,5 +1,7 @@
 local M = {}
 
+local transparent = false
+
 M.opts = {
 	style = "moon",
 	transparent = false,
@@ -48,6 +50,24 @@ M.init = function()
 	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
 	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
 	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2d3047 gui=nocombine]])
+
+	if transparent then
+		vim.cmd([[ hi EndOfBuffer guifg=#564f8b guibg=NONE  ]])
+
+		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#7DCFFF gui=bold ]])
+
+		vim.cmd([[ hi DiagnosticVirtualTextHint guibg=NONE ]])
+		vim.cmd([[ hi DiagnosticVirtualTextError guibg=NONE ]])
+		vim.cmd([[ hi DiagnosticVirtualTextInfo guibg=NONE ]])
+		vim.cmd([[ hi DiagnosticVirtualTextWarn guibg=NONE ]])
+
+		vim.cmd([[ hi GitSignsAdd guibg=NONE ]])
+		vim.cmd([[ hi GitSignsChange guibg=NONE ]])
+		vim.cmd([[ hi GitSignsDelete guibg=NONE ]])
+
+		vim.cmd([[ hi NvimTreeNormal guibg=NONE ]])
+		vim.cmd([[ hi NvimTreeNormalNC guibg=NONE ]])
+	end
 end
 
 return M
