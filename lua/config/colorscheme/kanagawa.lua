@@ -30,7 +30,8 @@ M.init = function()
 	vim.cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
 	vim.cmd([[ hi NvimTreeNormal guibg=#16161D ]])
 	vim.cmd([[ hi NvimTreeNormalNC guibg=#16161D ]])
-	vim.cmd([[ hi NvimTreeWinSeparator guibg=#16161D guifg=#16161D ]])
+	vim.cmd([[ hi NvimTreeWinSeparator guibg=#1f1f28 guifg=#1f1f28 ]])
+	vim.cmd([[ hi TelescopePromptCounter guibg=#1f1f28 guifg=#E0AF68 ]])
 
 	vim.opt.laststatus = 3
 	vim.opt.fillchars:append({

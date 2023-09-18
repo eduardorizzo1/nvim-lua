@@ -50,8 +50,10 @@ return {
 		left_bold = "",
 		left_bold_b = "◀",
 		left_bold_b_thin = "❮",
+		left_1 = " ",
 		right = "",
 		right_a = "➩ ",
+		right_1 = " ",
 		right_bold = "",
 		right_bold_b = "▶",
 		right_bold_b_thin = "❯",
@@ -192,6 +194,7 @@ return {
 -- BigUnfilledCircle = "   ",
 -- Border = {"▄","▄","▄","█","▀","▀","▀","█"},
 -- BookMark = " ",
+-- Branch = " "
 -- ChevronRight = "  > › ",
 -- Check = "   ",
 -- Calendar = "   ",

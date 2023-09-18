@@ -12,7 +12,8 @@ M.init = function()
 		vim.cmd([[ hi NvimTreeCursorLine guibg=#282a36]])
 		vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
 		vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-		vim.cmd([[ hi EndOfBuffer guifg=#564f8b ]])
+		vim.cmd([[ hi NvimTreeWinSeparator guifg=#6272a4 guibg=#1e1f28 ]])
+		vim.cmd([[ hi EndOfBuffer guifg=#6272a4 ]])
 	end
 end
 
@@ -61,7 +62,7 @@ M.opts = {
 
 		-- Bufferline
 		BufferLineFill = { bg = colors.bg_dark },
-		BufferLineBackground = { fg = M.transparent and colors.bg or colors.comment },
+		BufferLineBackground = { fg = M.transparent and colors.current_line or colors.comment },
 		BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 		BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
 		BufferLineDuplicate = { fg = M.transparent and colors.bg or colors.comment },
@@ -79,10 +80,7 @@ M.opts = {
 		NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 		NvimTreeIndentMarker = { fg = colors.comment },
-		NvimTreeWinSeparator = {
-			fg = M.transparent and colors.bg_dark_alt or colors.bg_dark_alt,
-			bg = colors.bg_dark_alt,
-		},
+		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
