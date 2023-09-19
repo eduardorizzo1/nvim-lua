@@ -218,6 +218,7 @@ return {
 -- Dots_square = "
 -- Diamond = " "
 -- Diff = "   ",
+-- Dollar = ""
 -- Eslint = "  󰱺",
 -- Error = "   ",
 -- Enum = "   ",
