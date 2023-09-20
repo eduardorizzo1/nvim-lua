@@ -766,7 +766,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		opts = true,
 	},
-	-- opts = default_dracula,
-	opts = default,
+	opts = default_dracula,
+	-- opts = default,
 	-- opts = config_bubbles_custom,
 }

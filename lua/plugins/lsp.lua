@@ -15,9 +15,18 @@ return {
 				},
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
+			-- Typescript-tools
 			{
-				"jose-elias-alvarez/typescript.nvim",
-				opts = require("config.lsp").typescript_opts,
+				"pmizio/typescript-tools.nvim",
+				dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+				opts = {
+					settings = {
+						tsserver_plugins = {
+							"@styled/typescript-styled-plugin", -- for TypeScript v4.9+
+							-- "typescript-styled-plugin", -- or for older TypeScript versions
+						},
+					},
+				},
 			},
 		},
 		opts = {
@@ -73,13 +82,15 @@ return {
 
 			return {
 				sources = {
-					nls.code_actions.eslint_d,
 					nls.formatting.prettierd,
 					nls.formatting.stylua,
 					nls.formatting.jq,
 					nls.formatting.black.with({ extra_args = { "--fast" } }),
+					-- nls.code_actions.eslint_d,
+					-- nls.code_actions.gitsigns,
 					-- nls.diagnostics.eslint_d.with({
-					-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
+					-- 	diagnostics_format = "[eslint] #{m}",
+					-- 	-- diagnostics_format = "[eslint] #{m}\n(#{c})",
 					-- }),
 				},
 			}

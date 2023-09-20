@@ -3,7 +3,7 @@ local signs = require("utils.icons").signs
 
 local servers = {
 	"lua_ls",
-	-- "tsserver", -- typescript.nvim
+	-- "tsserver", --typescript-tools
 	"jsonls",
 	"angularls",
 	"vuels",

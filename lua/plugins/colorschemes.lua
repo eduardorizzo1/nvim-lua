@@ -9,7 +9,7 @@ return {
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 		opts = dracula.opts,
-		-- init = dracula.init,
+		init = dracula.init,
 	},
 
 	--TEST: Tokyonight
@@ -17,7 +17,7 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = tokyonight.opts,
-		init = tokyonight.init,
+		-- init = tokyonight.init,
 	},
 
 	--TEST: kanagawa
