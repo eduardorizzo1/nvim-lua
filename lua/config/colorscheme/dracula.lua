@@ -118,9 +118,9 @@ M.opts = {
 		CodeActionNumber = { bg = "NONE", fg = colors.cyan },
 
 		-- Pmenu
-		Pmenu = { bg = colors.bg, fg = colors.fg },
-		PmenuSel = { bg = colors.current_line, fg = colors.cyan },
-		PmenuSbar = { bg = colors.bg },
+		Pmenu = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
+		PmenuSel = { bg = M.transparent and "none" or colors.current_line, fg = colors.cyan },
+		PmenuSbar = { bg = M.transparent and "none" or colors.bg },
 		PmenuThumb = { bg = colors.current_line },
 
 		-- IndentBlankLine
@@ -141,11 +141,11 @@ M.opts = {
 		RainbowDelimiterRed = { fg = colors.red },
 
 		-- Cmp
-		CmpItemAbbrMatch = { bg = colors.bg, fg = colors.pink },
-		CmpItemKindMethod = { bg = colors.bg, fg = colors.pink },
-		CmpItemMenu = { bg = colors.bg, fg = colors.comment, bold = true },
-		CmpItemKindFile = { bg = colors.bg, fg = colors.green },
-		CmpItemKindFolder = { bg = colors.bg, fg = colors.yellow },
+		CmpItemAbbrMatch = { bg = M.transparent and "none" or colors.bg, fg = colors.pink },
+		CmpItemKindMethod = { bg = M.transparent and "none" or colors.bg, fg = colors.pink },
+		CmpItemMenu = { bg = M.transparent and "none" or colors.bg, fg = colors.comment, bold = true },
+		CmpItemKindFile = { bg = M.transparent and "none" or colors.bg, fg = colors.green },
+		CmpItemKindFolder = { bg = M.transparent and "none" or colors.bg, fg = colors.yellow },
 		CmpItemKindSnippet = { fg = colors.yellow },
 
 		-- Fidget

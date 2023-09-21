@@ -85,12 +85,6 @@ map("n", "+", ":NvimTreeResize +5<CR>", opts)
 -- IndentLine
 map("n", ";i", ":IndentBlanklineToggle<CR>", opts)
 
--- Twilight
-map("n", ";t", ":Twilight<CR>", opts)
-
--- Zen-mode
-map("n", "<leader>z", ":ZenMode<CR>", opts)
-
 -- Code Runner
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
 
@@ -141,7 +135,7 @@ map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
 map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "gr", ":Lspsaga finder<CR>", opts)
 map("n", ";b", ":Lspsaga outline<CR>", opts)
-map("n", "gf", ":lua vim.lsp.buf.format()<CR>", opts)
+map("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)
 
 -- ToggleTerm
 map("n", "<leader>t", ":ToggleTerm <CR>", opts)

@@ -3,7 +3,7 @@ local signs = require("utils.icons").signs
 
 local servers = {
 	"lua_ls",
-	-- "tsserver", --typescript-tools
+	-- "tsserver", -- (typescript-tools)
 	"jsonls",
 	"angularls",
 	"vuels",
@@ -53,35 +53,5 @@ M.config = function(lspconfig)
 		})
 	end
 end
-
-M.typescript_opts = {
-	server = {
-		on_attach = require("utils.handlers").on_attach,
-		settings = {
-			javascript = {
-				inlayHints = {
-					includeInlayEnumMemberValueHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayFunctionParameterTypeHints = true,
-					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayVariableTypeHints = true,
-				},
-			},
-			typescript = {
-				inlayHints = {
-					includeInlayEnumMemberValueHints = true,
-					includeInlayFunctionLikeReturnTypeHints = true,
-					includeInlayFunctionParameterTypeHints = true,
-					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayVariableTypeHints = true,
-				},
-			},
-		},
-	},
-}
 
 return M
