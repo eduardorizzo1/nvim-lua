@@ -119,8 +119,8 @@ M.opts = {
 
 		-- Pmenu
 		Pmenu = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
-		PmenuSel = { bg = M.transparent and "none" or colors.current_line, fg = colors.cyan },
-		PmenuSbar = { bg = M.transparent and "none" or colors.bg },
+		PmenuSel = { bg = colors.current_line, fg = colors.cyan, bold = true },
+		PmenuSbar = { bg = colors.bg },
 		PmenuThumb = { bg = colors.current_line },
 
 		-- IndentBlankLine
