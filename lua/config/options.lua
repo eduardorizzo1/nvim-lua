@@ -30,7 +30,7 @@ local options = {
 	foldlevel = 20,
 	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",
-	formatoptions = "jcroqlnt", -- tcqj
+	formatoptions = "tcqj", -- jcroqlnt -- tcqj
 	wrap = false,
 }
 

@@ -12,8 +12,8 @@ M.init = function()
 		vim.cmd([[ hi NvimTreeCursorLine guibg=#282a36]])
 		vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
 		vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-		vim.cmd([[ hi NvimTreeWinSeparator guifg=#6272a4 guibg=#1e1f28 ]])
-		vim.cmd([[ hi EndOfBuffer guifg=#6272a4 ]])
+		vim.cmd([[ hi NvimTreeWinSeparator guifg=#564f8b guibg=NONE]])
+		vim.cmd([[ hi EndOfBuffer guifg=#282a36 ]])
 	end
 end
 
@@ -90,6 +90,7 @@ M.opts = {
 		TelescopeResultsBorder = { fg = colors.fg, bg = "none" },
 		TelescopePromptBorder = { fg = colors.fg, bg = "none" },
 		TelescopePromptCounter = { fg = colors.fg, bg = colors.current_line_alt },
+		TelescopeSelectionCaret = { bold = true },
 
 		-- Lsp
 		LspReferenceRead = { bg = colors.current_line, fg = "none" },
