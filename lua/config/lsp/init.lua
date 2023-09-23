@@ -26,7 +26,10 @@ local servers = {
 	"rust_analyzer",
 }
 
-M.config = function(lspconfig)
+M.config = function()
+	local lspconfig = require("lspconfig")
+	require("lspconfig.ui.windows").default_options.border = "rounded"
+
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "none" })
@@ -53,5 +56,19 @@ M.config = function(lspconfig)
 		})
 	end
 end
+
+M.opts = {
+	diagnostics = {
+		signs = true,
+		update_in_insert = false,
+		underline = true,
+		severity_sort = true,
+		virtual_text = {
+			spacing = 4,
+			source = "if_many",
+			prefix = "●",
+		},
+	},
+}
 
 return M
