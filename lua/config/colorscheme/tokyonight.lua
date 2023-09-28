@@ -4,7 +4,7 @@ local transparent = false
 
 M.opts = {
 	style = "moon",
-	transparent = false,
+	transparent = transparent,
 	styles = {
 		comments = { italic = true },
 		keywords = { italic = true },

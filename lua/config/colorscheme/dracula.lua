@@ -20,6 +20,7 @@ end
 M.opts = {
 	transparent_bg = M.transparent,
 	italic_comment = true,
+	lualine_bg_color = "#16161d",
 	overrides = {
 		Search = { fg = colors.green, bg = colors.comment, bold = true },
 		Title = { fg = colors.green },

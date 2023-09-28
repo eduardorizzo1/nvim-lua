@@ -27,12 +27,12 @@ local dracula = {
 	darkpink = "#bb00ff",
 	blue = "#51afef",
 	search_hl = "#5f5f68",
-	blue_term = "#422FA3",
+	blue_term = "#422fa3",
 }
 
 local catppuccin = {
-	bg = "#1E1E2E",
-	current_line = "#2A2B3C",
+	bg = "#1e1e2e",
+	current_line = "#2a2b3c",
 	fg = "#cdd6f4",
 	comment = "#585b70",
 	cyan = "#89dceb",
@@ -55,23 +55,23 @@ local catppuccin = {
 }
 
 local tokyonight = {
-	bg = "#24283B",
-	current_line = "#292E42",
-	fg = "#C0CAF5",
+	bg = "#24283b",
+	current_line = "#292e42",
+	fg = "#c0caf5",
 	comment = "#505980",
-	cyan = "#7DCFFF",
+	cyan = "#7dcfff",
 	green = "#73daca",
-	orange = "#E0AF68",
-	pink = "#F7768E",
-	purple = "#BB9AF7",
-	red = "#DB4B4B",
-	yellow = "#9ECE6A",
+	orange = "#e0af68",
+	pink = "#f7768e",
+	purple = "#bb9af7",
+	red = "#db4b4b",
+	yellow = "#9ece6a",
 
 	bg_alt = "#1f2335",
 	bg_dark = "#222436",
 
 	purple_alt = "#564f8b",
-	rounded_bg = "#1A1B26",
+	rounded_bg = "#1a1b26",
 	rounded_fg = "#333952",
 	darkblue = "#081633",
 	violet = "#a9a1e1",
@@ -80,28 +80,28 @@ local tokyonight = {
 }
 
 local kanagawa = {
-	bg = "#1F1F28",
+	bg = "#1f1f28",
 	current_line = "#363646",
-	fg = "#DCD7BA",
+	fg = "#dcd7ba",
 	comment = "#727169",
-	cyan = "#7FB4CA",
-	green = "#98BB6C",
-	orange = "#FFA066",
-	pink = "#D27E99",
-	purple = "#957FB8",
-	red = "#E46876",
-	yellow = "#E6C384",
+	cyan = "#7fb4ca",
+	green = "#97bb6c",
+	orange = "#ffa066",
+	pink = "#d27e99",
+	purple = "#957fb8",
+	red = "#e46876",
+	yellow = "#e6c384",
 
-	bg_alt = "#2A2A37",
-	bg_dark = "#16161D",
+	bg_alt = "#2a2a37",
+	bg_dark = "#16161d",
 
 	purple_alt = "#564f8b",
-	rounded_bg = "#1A1B26",
+	rounded_bg = "#1a1b26",
 	rounded_fg = "#363646",
 	darkblue = "#081633",
-	violet = "#957FB8",
-	magenta = "#957FB8",
-	blue = "#7E9CD8",
+	violet = "#957fb8",
+	magenta = "#957fb8",
+	blue = "#7e9cd8",
 }
 
 local mode_color = function(theme)

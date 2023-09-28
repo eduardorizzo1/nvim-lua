@@ -25,10 +25,11 @@ return {
 			close_command = "bdelete! %d",
 			show_tab_indicators = true,
 			indicator = {
-				icon = "",
+				-- icon = "❯ ",
+				-- icon = "▏",
 				style = "icon",
 			},
-			separator_style = "slant", -- "slope | slant"
+			separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }
 			hover = {
 				enabled = true,
 				delay = 0,

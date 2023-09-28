@@ -11,7 +11,7 @@ return {
 				"williamboman/mason-lspconfig.nvim",
 				opts = {
 					ensure_installed = {},
-					automatic_installation = false,
+					automatic_installation = true,
 				},
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },

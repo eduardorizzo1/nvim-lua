@@ -43,7 +43,7 @@ local virtual_text_on = {
 	virtual_text = {
 		spacing = 4,
 		source = "if_many",
-		prefix = "●",
+		-- prefix = "●",
 	},
 }
 

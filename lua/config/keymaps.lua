@@ -151,10 +151,10 @@ map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
 map("n", ";e", "<cmd>lua toggle_virtual_text()<CR>", opts)
 
 -- Hop
-map("n", "<leader><leader>w", ":HopWordAC<CR>", opts)
-map("n", "<leader><leader>b", ":HopWordBC<CR>", opts)
-map("n", "<leader><leader>j", ":HopLineAC<CR>", opts)
-map("n", "<leader><leader>k", ":HopLineBC<CR>", opts)
+map("n", "<leader>w", ":HopWordAC<CR>", opts)
+map("n", "<leader>b", ":HopWordBC<CR>", opts)
+map("n", "<leader>j", ":HopLineAC<CR>", opts)
+map("n", "<leader>k", ":HopLineBC<CR>", opts)
 
 -- Debugger (Nvim-Dap)
 map("n", "<leader>1", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
