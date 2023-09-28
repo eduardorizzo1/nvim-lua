@@ -9,7 +9,16 @@ return {
 		show_trailing_blankline_indent = false,
 		show_current_context = false,
 		show_current_context_start = false,
-		char = "▏",
+		indent = {
+			highlight = {
+				"IndentBlanklineIndent1",
+			},
+			char = "▏",
+		},
+		whitespace = {
+			remove_blankline_trail = false,
+		},
+		scope = { enabled = false },
 		buftype_exclude = { "terminal" },
 		filetype_exclude = {
 			"help",
@@ -23,9 +32,6 @@ return {
 			"notify",
 			"toggleterm",
 			"lazyterm",
-		},
-		char_highlight_list = {
-			"IndentBlanklineIndent1",
 		},
 	},
 }
