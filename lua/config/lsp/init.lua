@@ -24,6 +24,7 @@ local servers = {
 	"yamlls",
 	"clangd",
 	"rust_analyzer",
+	"astro",
 }
 
 M.config = function()
