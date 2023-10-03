@@ -20,12 +20,13 @@ M.on_attach = function(client, bufnr)
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
-				vim.lsp.buf.format({
-					bufnr = bufnr,
-					filter = function(client)
-						return client.name == "null-ls"
-					end,
-				})
+				vim.lsp.buf.format()
+				-- vim.lsp.buf.format({
+				-- 	bufnr = bufnr,
+				-- 	filter = function(client)
+				-- 		return client.name == "null-ls"
+				-- 	end,
+				-- })
 			end,
 		})
 	end
