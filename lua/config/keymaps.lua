@@ -83,7 +83,7 @@ map("n", "_", ":NvimTreeResize -5<CR>", opts)
 map("n", "+", ":NvimTreeResize +5<CR>", opts)
 
 -- IndentLine
-map("n", ";i", ":IndentBlanklineToggle<CR>", opts)
+map("n", ";i", ":IBLToggle<CR>", opts)
 
 -- Code Runner
 map("n", "<C-M-n>", ":RunCode<CR>", opts)
