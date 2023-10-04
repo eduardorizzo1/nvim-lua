@@ -27,6 +27,7 @@ return {
 			indicator = {
 				-- icon = "❯ ",
 				-- icon = "▏",
+				icon = "",
 				style = "icon",
 			},
 			separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }

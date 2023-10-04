@@ -82,6 +82,7 @@ M.opts = {
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 		NvimTreeIndentMarker = { fg = colors.comment },
 		NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
+		NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
