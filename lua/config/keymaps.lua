@@ -77,114 +77,125 @@ map("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- ========================================================
 ------------------ P L U G I N S --------------------------
 -- ========================================================
--- Nvimtree
-map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
-map("n", "_", ":NvimTreeResize -5<CR>", opts)
-map("n", "+", ":NvimTreeResize +5<CR>", opts)
+if not vim.g.vscode then
+	-- Nvimtree
+	map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+	map("n", "_", ":NvimTreeResize -5<CR>", opts)
+	map("n", "+", ":NvimTreeResize +5<CR>", opts)
 
--- IndentLine
-map("n", ";i", ":IBLToggle<CR>", opts)
+	-- IndentLine
+	map("n", ";i", ":IBLToggle<CR>", opts)
 
--- Code Runner
-map("n", "<C-M-n>", ":RunCode<CR>", opts)
+	-- Code Runner
+	map("n", "<C-M-n>", ":RunCode<CR>", opts)
 
--- Trouble
-map("n", "<leader>e", ":TroubleToggle<CR>", opts)
+	-- Trouble
+	map("n", "<leader>e", ":TroubleToggle<CR>", opts)
 
--- Bufferline
-map("n", "<S-l>", ":bn<CR>", opts) -- next
-map("n", "<M-l>", ":bn<CR>", opts)
-map("n", "<TAB>", ":bn<CR>", opts)
-map("n", "<S-h>", ":bp<CR>", opts) -- previous
-map("n", "<M-h>", ":bp<CR>", opts)
-map("n", "<S-TAB>", ":bp<CR>", opts)
-map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts) -- delete
-map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
+	-- Bufferline
+	map("n", "<S-l>", ":bn<CR>", opts) -- next
+	map("n", "<M-l>", ":bn<CR>", opts)
+	map("n", "<TAB>", ":bn<CR>", opts)
+	map("n", "<S-h>", ":bp<CR>", opts) -- previous
+	map("n", "<M-h>", ":bp<CR>", opts)
+	map("n", "<S-TAB>", ":bp<CR>", opts)
+	map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts) -- delete
+	map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
 
--- Telescope
-map(
-	"n",
-	"<c-p>",
-	'<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>',
-	opts
-)
-map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
-map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', opts)
-map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
-map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
-map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
-map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<CR>', opts)
-map("n", "<leader>ft", ":TodoTelescope<CR>", opts)
--- map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
-map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>', opts)
-map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>', opts)
-map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
+	-- Telescope
+	map(
+		"n",
+		"<c-p>",
+		'<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>',
+		opts
+	)
+	map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', opts)
+	map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', opts)
+	map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
+	map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
+	map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<CR>', opts)
+	map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<CR>', opts)
+	map("n", "<leader>ft", ":TodoTelescope<CR>", opts)
+	-- map("n", "<leader>gg", '<cmd>lua require("telescope.builtin").git_status()<CR>', opts)
+	map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>', opts)
+	map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>', opts)
+	map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<CR>', opts)
 
--- Lsp Saga
-map("n", "gi", ":Lspsaga incoming_calls<CR>", opts)
-map("n", "go", ":Lspsaga outgoing_calls<CR>", opts)
-map("n", "gc", ":Lspsaga code_action<CR>", opts)
-map("n", "gd", ":Lspsaga goto_definition<CR>", opts)
-map("n", "gD", ":Lspsaga peek_definition<CR>", opts)
-map("n", "gt", ":Lspsaga goto_type_definition<CR>", opts)
-map("n", "gT", ":Lspsaga peek_type_definition<CR>", opts)
-map("n", "gn", ":Lspsaga rename<CR>", opts)
-map("n", "gh", ":Lspsaga hover_doc<CR>", opts)
-map("n", "gj", ":Lspsaga diagnostic_jump_next<CR>", opts)
-map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
-map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
-map("n", "gr", ":Lspsaga finder<CR>", opts)
-map("n", ";b", ":Lspsaga outline<CR>", opts)
-map("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)
+	-- Lsp Saga
+	map("n", "gi", ":Lspsaga incoming_calls<CR>", opts)
+	map("n", "go", ":Lspsaga outgoing_calls<CR>", opts)
+	map("n", "gc", ":Lspsaga code_action<CR>", opts)
+	map("n", "gd", ":Lspsaga goto_definition<CR>", opts)
+	map("n", "gD", ":Lspsaga peek_definition<CR>", opts)
+	map("n", "gt", ":Lspsaga goto_type_definition<CR>", opts)
+	map("n", "gT", ":Lspsaga peek_type_definition<CR>", opts)
+	map("n", "gn", ":Lspsaga rename<CR>", opts)
+	map("n", "gh", ":Lspsaga hover_doc<CR>", opts)
+	map("n", "gj", ":Lspsaga diagnostic_jump_next<CR>", opts)
+	map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
+	map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
+	map("n", "gr", ":Lspsaga finder<CR>", opts)
+	map("n", ";b", ":Lspsaga outline<CR>", opts)
+	map("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)
 
--- ToggleTerm
-map("n", "<leader>t", ":ToggleTerm <CR>", opts)
-map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
+	-- ToggleTerm
+	map("n", "<leader>t", ":ToggleTerm <CR>", opts)
+	map("n", "<leader>T", ':ToggleTerm direction="horizontal"<CR>', opts)
 
--- Lazygit
-map("n", "<leader>gg", ":LazyGit<CR>", opts)
+	-- Lazygit
+	map("n", "<leader>gg", ":LazyGit<CR>", opts)
 
--- Toggles
-map("n", ";gb", ":BlamerToggle <CR>", opts)
-map("n", ";gs", ":Gitsigns toggle_signs <CR>", opts)
-map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
-map("n", ";e", "<cmd>lua toggle_virtual_text()<CR>", opts)
+	-- Toggles
+	map("n", ";gb", ":BlamerToggle <CR>", opts)
+	map("n", ";gs", ":Gitsigns toggle_signs <CR>", opts)
+	map("n", ";d", "<cmd>lua toggle_diagnostics()<CR>", opts)
+	map("n", ";e", "<cmd>lua toggle_virtual_text()<CR>", opts)
 
--- Hop
-map("n", "<leader>w", ":HopWordAC<CR>", opts)
-map("n", "<leader>b", ":HopWordBC<CR>", opts)
-map("n", "<leader>j", ":HopLineAC<CR>", opts)
-map("n", "<leader>k", ":HopLineBC<CR>", opts)
+	-- Hop
+	map("n", "<leader>w", ":HopWordAC<CR>", opts)
+	map("n", "<leader>b", ":HopWordBC<CR>", opts)
+	map("n", "<leader>j", ":HopLineAC<CR>", opts)
+	map("n", "<leader>k", ":HopLineBC<CR>", opts)
 
--- Debugger (Nvim-Dap)
-map("n", "<leader>1", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
-map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
-map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
-map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
+	-- Debugger (Nvim-Dap)
+	map("n", "<leader>1", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+	map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
+	map("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+	map("n", "<F8>", "<cmd>lua require'dap'.step_into()<CR>", opts)
+	map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
 
--- typescript-tools
-map("n", "gI", ":TSToolsAddMissingImports<CR>", opts)
-map("n", "gO", ":TSToolsOrganizeImports<CR>", opts)
-map("n", "gU", ":TSToolsRemoveUnused<CR>", opts)
-map("n", "gF", ":TSToolsFixAll<CR>", opts)
+	-- typescript-tools
+	map("n", "gI", ":TSToolsAddMissingImports<CR>", opts)
+	map("n", "gO", ":TSToolsOrganizeImports<CR>", opts)
+	map("n", "gU", ":TSToolsRemoveUnused<CR>", opts)
+	map("n", "gF", ":TSToolsFixAll<CR>", opts)
 
--- Spectre
-map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
-	desc = "Toggle Spectre",
-})
-map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-	desc = "Search current word",
-})
-map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-	desc = "Search current word",
-})
-map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-	desc = "Search on current file",
-})
+	-- Spectre
+	map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
+		desc = "Toggle Spectre",
+	})
+	map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+		desc = "Search current word",
+	})
+	map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+		desc = "Search current word",
+	})
+	map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+		desc = "Search on current file",
+	})
 
--- Barbecue
-map("n", ";.", '<cmd>lua require("barbecue.ui").toggle()<CR>', opts)
+	-- Barbecue
+	map("n", ";.", '<cmd>lua require("barbecue.ui").toggle()<CR>', opts)
 
--- Rest
-map("n", "gR", '<cmd>lua require("rest-nvim").run()<CR>', opts)
+	-- Rest
+	map("n", "gR", '<cmd>lua require("rest-nvim").run()<CR>', opts)
+else
+	-- Fold
+	map("n", "za", '<Cmd>call VSCodeNotify("editor.toggleFold")<CR>', opts)
+	map("n", "zA", '<Cmd>call VSCodeNotify("editor.foldAll")<CR>', opts)
+	-- Buffer
+	map("n", "<S-l>", '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts) -- next
+	map("n", "<S-h>", '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts) -- next
+	-- Ctrl + D
+	map("n", "<S-h>", '<Cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<CR>', opts) -- next
+end
