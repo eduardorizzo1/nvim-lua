@@ -25,7 +25,7 @@ M.init = function()
 
 	vim.cmd([[ hi IndentBlanklineContextStart guifg=#938AA9 ]])
 	vim.cmd([[ hi IndentBlanklineContextChar guifg=#938AA9 ]])
-	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2A2A37 ]])
+	-- vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2A2A37 ]])
 
 	vim.cmd([[ hi NvimTreeIndentMarker guifg=#6272a4 gui=bold ]])
 	vim.cmd([[ hi NvimTreeNormal guibg=#16161D ]])

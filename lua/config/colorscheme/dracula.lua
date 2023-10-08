@@ -129,7 +129,6 @@ M.opts = {
 		-- IndentBlankLine
 		IndentBlanklineContextStart = { fg = colors.comment },
 		IndentBlanklineContextChar = { fg = colors.comment },
-		IndentBlanklineIndent1 = { fg = M.transparent and "#222222" or "#393942" },
 		-- Indentscope
 		MiniIndentscopeSymbol = { fg = colors.comment },
 

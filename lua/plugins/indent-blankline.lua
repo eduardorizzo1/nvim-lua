@@ -4,10 +4,9 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		indent = {
-			char = "▏",
-			-- char = "│",
+			char = "▏", -- "│"
 			highlight = {
-				"IndentBlanklineIndent1",
+				"NonText",
 			},
 		},
 		scope = {

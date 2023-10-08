@@ -11,7 +11,6 @@ M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 	vim.g.navic_silence = true
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-	-- vim.lsp.buf.inlay_hint(bufnr, true)
 
 	-- Null-ls
 	if client.supports_method("textDocument/formatting") then
@@ -21,12 +20,6 @@ M.on_attach = function(client, bufnr)
 			buffer = bufnr,
 			callback = function()
 				vim.lsp.buf.format()
-				-- vim.lsp.buf.format({
-				-- 	bufnr = bufnr,
-				-- 	filter = function(client)
-				-- 		return client.name == "null-ls"
-				-- 	end,
-				-- })
 			end,
 		})
 	end
@@ -35,6 +28,8 @@ M.on_attach = function(client, bufnr)
 	if client.server_capabilities.documentSymbolProvider then
 		navic.attach(client, bufnr)
 	end
+
+	vim.lsp.codelens.display(null, bufnr, client)
 end
 
 local diagnostics_active = true

@@ -3,9 +3,6 @@ local M = {}
 M.init = function()
 	vim.cmd.colorscheme("catppuccin")
 	vim.cmd([[ hi SignColumn guibg=NONE ]])
-	vim.cmd([[ hi IndentBlanklineContextStart guifg=#CBA6F7 ]])
-	vim.cmd([[ hi IndentBlanklineContextChar guifg=#CBA6F7 ]])
-	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#101019 ]])
 	vim.cmd([[ hi BufferLineSeparator guifg=#101019 guibg=#161623]])
 	vim.cmd([[ hi BufferLineFill guibg=#101019]])
 end

@@ -47,9 +47,6 @@ M.opts = {
 
 M.init = function()
 	vim.cmd([[ colo tokyonight ]])
-	vim.cmd([[ hi IndentBlanklineContextStart guifg=#7dcfff gui=none]])
-	vim.cmd([[ hi IndentBlanklineContextChar guifg=#7dcfff gui=none]])
-	vim.cmd([[ hi IndentBlanklineIndent1 guifg=#2d3047 gui=nocombine]])
 	vim.cmd([[ hi typescriptImport gui=italic]])
 
 	if transparent then
