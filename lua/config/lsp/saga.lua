@@ -91,13 +91,13 @@ M.opts = {
 		open_cmd = "!chrome",
 	},
 	implement = {
-		enable = true,
+		enable = false,
 		sign = true,
 		virtual_text = true,
 		priority = 100,
 	},
 	lightbulb = {
-		enable = true,
+		enable = false,
 		sign = true,
 		virtual_text = false,
 		debounce = 10,
