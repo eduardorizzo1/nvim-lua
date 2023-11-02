@@ -156,6 +156,15 @@ M.opts = {
 
 		-- Debug
 		debugPc = { bg = colors.bg },
+
+		-- Dashboard
+		DashboardShortCut = { fg = colors.cyan },
+		DashboardHeader = { fg = colors.fg },
+		DashboardCenter = { fg = colors.fg },
+		DashboardFooter = { fg = colors.cyan, italic = true },
+		DashboardKey = { fg = colors.orange },
+		DashboardDesc = { fg = colors.cyan },
+		DashboardIcon = { fg = colors.cyan, bold = true },
 	},
 }
 
