@@ -112,6 +112,7 @@ M.opts = {
 		},
 	},
 	rename = {
+		enable = false,
 		in_select = true,
 		auto_save = false,
 		project_max_width = 0.5,

@@ -130,7 +130,7 @@ if not vim.g.vscode then
 	map("n", "gD", ":Lspsaga peek_definition<CR>", opts)
 	map("n", "gt", ":Lspsaga goto_type_definition<CR>", opts)
 	map("n", "gT", ":Lspsaga peek_type_definition<CR>", opts)
-	map("n", "gn", ":Lspsaga rename<CR>", opts)
+	-- map("n", "gn", ":Lspsaga rename<CR>", opts)
 	map("n", "gh", ":Lspsaga hover_doc<CR>", opts)
 	map("n", "gj", ":Lspsaga diagnostic_jump_next<CR>", opts)
 	map("n", "gk", ":Lspsaga diagnostic_jump_prev<CR>", opts)
@@ -190,6 +190,9 @@ if not vim.g.vscode then
 
 	-- Rest
 	map("n", "gR", '<cmd>lua require("rest-nvim").run()<CR>', opts)
+
+	-- IncRename
+	map("n", "gn", ":IncRename ", opts)
 else
 	-- Fold
 	map("n", "za", '<Cmd>call VSCodeNotify("editor.toggleFold")<CR>', opts)
