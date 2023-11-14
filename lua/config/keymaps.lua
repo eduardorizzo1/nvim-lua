@@ -48,9 +48,10 @@ map("n", "<leader>v", ":vsp<CR>", opts)
 map("n", "<leader>h", ":sp<CR>", opts)
 
 -- ctrl+s to save
-map("n", "<C-s>", ":w<CR>", opts)
-map("i", "<C-s>", "<Esc>:w<CR>a", opts)
-map("v", "<C-s>", "<Esc>:w<CR>v", opts)
+map("n", "<C-s>", "<CMD>w<CR><ESC>", opts)
+map("i", "<C-s>", "<CMD>w<CR><ESC>", opts)
+map("v", "<C-s>", "<CMD>w<CR><ESC>", opts)
+map("x", "<C-s>", "<CMD>w<CR><ESC>", opts)
 
 -- save all files
 map("n", ";s", ":wa<CR>", opts)
@@ -195,7 +196,7 @@ else
 	map("n", "zA", '<Cmd>call VSCodeNotify("editor.foldAll")<CR>', opts)
 	-- Buffer
 	map("n", "<S-l>", '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts) -- next
-	map("n", "<S-h>", '<Cmd>call VSCodeNotify("workbench.action.nextEditor")<CR>', opts) -- next
+	map("n", "<S-h>", '<Cmd>call VSCodeNotify("workbench.action.previousEditor")<CR>', opts) -- previous
 	-- Ctrl + D
-	map("n", "<S-h>", '<Cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<CR>', opts) -- next
+	map("v", "<C-n>", '<Cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<CR>', opts) -- next
 end
