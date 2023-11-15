@@ -18,7 +18,7 @@ return {
 			max_prefix_length = 15,
 			tab_size = 16,
 			enforce_regular_tabs = false,
-			always_show_bufferline = false,
+			always_show_bufferline = true,
 			show_close_icon = false,
 			show_buffer_close_icons = false,
 			diagnostics = "nvim_lsp",
