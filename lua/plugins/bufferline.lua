@@ -6,6 +6,7 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
+			mode = "buffer",
 			numbers = "none",
 			view = "multiwindow",
 			buffer_close_icon = "",
@@ -17,9 +18,9 @@ return {
 			max_prefix_length = 15,
 			tab_size = 16,
 			enforce_regular_tabs = false,
-			always_show_bufferline = true,
-			show_close_icon = true,
-			show_buffer_close_icons = true,
+			always_show_bufferline = false,
+			show_close_icon = false,
+			show_buffer_close_icons = false,
 			diagnostics = "nvim_lsp",
 			right_mouse_command = "vertical sbuffer %d",
 			close_command = "bdelete! %d",
@@ -30,7 +31,7 @@ return {
 				icon = "",
 				style = "icon",
 			},
-			separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }
+			separator_style = "slant", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }
 			hover = {
 				enabled = true,
 				delay = 0,
