@@ -48,13 +48,13 @@ map("n", "<leader>v", ":vsp<CR>", opts)
 map("n", "<leader>h", ":sp<CR>", opts)
 
 -- ctrl+s to save
-map("n", "<C-s>", "<CMD>w<CR><ESC>", opts)
-map("i", "<C-s>", "<CMD>w<CR><ESC>", opts)
-map("v", "<C-s>", "<CMD>w<CR><ESC>", opts)
-map("x", "<C-s>", "<CMD>w<CR><ESC>", opts)
+map("n", "<C-s>", "<CMD>w<CR>", opts)
+map("i", "<C-s>", "<CMD>w<CR>", opts)
+map("v", "<C-s>", "<CMD>w<CR>", opts)
+map("x", "<C-s>", "<CMD>w<CR>", opts)
 
 -- save all files
-map("n", ";s", ":wa<CR>", opts)
+map("n", ";s", "<CMD>wa<CR>", opts)
 
 -- ctrl+z
 map("n", "<C-z>", ":u<CR>", opts)
