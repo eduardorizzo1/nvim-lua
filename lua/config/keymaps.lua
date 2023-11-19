@@ -94,14 +94,14 @@ if not vim.g.vscode then
 	map("n", "<leader>e", ":TroubleToggle<CR>", opts)
 
 	-- Bufferline
-	map("n", "<S-l>", ":bn<CR>", opts) -- next
-	map("n", "<M-l>", ":bn<CR>", opts)
-	map("n", "<TAB>", ":bn<CR>", opts)
-	map("n", "<S-h>", ":bp<CR>", opts) -- previous
-	map("n", "<M-h>", ":bp<CR>", opts)
-	map("n", "<S-TAB>", ":bp<CR>", opts)
-	map("n", "<S-x>", ":bd<Esc>:bp<CR>", opts) -- delete
-	map("n", "<M-x>", ":bd<Esc>:bp<CR>", opts)
+	map("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>", opts) -- next
+	map("n", "<M-l>", "<CMD>BufferLineCycleNext<CR>", opts)
+	map("n", "<TAB>", "<CMD>BufferLineCycleNext<CR>", opts)
+	map("n", "<S-h>", "<CMD>BufferLineCyclePrevious<CR>", opts) -- previous
+	map("n", "<M-h>", "<CMD>BufferLineCyclePrevious<CR>", opts)
+	map("n", "<S-TAB>", "<CMD>BufferLineCyclePrevious<CR>", opts)
+	map("n", "<S-x>", "<CMD>bd<Esc><CMD>bp<CR>", opts) -- delete
+	map("n", "<M-x>", "<CMD>bd<Esc><CMD>bp<CR>", opts)
 
 	-- Telescope
 	map(

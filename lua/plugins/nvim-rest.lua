@@ -1,5 +1,6 @@
 return {
 	"rest-nvim/rest.nvim",
+	enabled = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
 		result_split_horizontal = false,
