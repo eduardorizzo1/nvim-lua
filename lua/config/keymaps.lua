@@ -100,8 +100,8 @@ if not vim.g.vscode then
 	map("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>", opts) -- previous
 	map("n", "<M-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
 	map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<CR>", opts)
-	map("n", "<S-x>", "<CMD>bd<Esc><CMD>bp<CR>", opts) -- delete
-	map("n", "<M-x>", "<CMD>bd<Esc><CMD>bp<CR>", opts)
+	map("n", "<S-x>", "<CMD>bd<CR>", opts) -- delete
+	map("n", "<M-x>", "<CMD>bd<CR>", opts)
 
 	-- Telescope
 	map(
