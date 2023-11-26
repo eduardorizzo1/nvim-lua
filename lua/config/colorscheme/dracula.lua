@@ -82,14 +82,13 @@ M.opts = {
 		NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
 		NvimTreeIndentMarker = { fg = colors.comment },
 		NvimTreeWinSeparator = {
-			fg = M.transparent and "#564f8b" or colors.bg_dark_alt,
-			bg = M.transparent and "none" or colors.bg_dark_alt,
+			fg = M.transparent and "#564f8b" or colors.bg,
+			bg = M.transparent and "none" or colors.bg,
 		},
 		NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
+		-- NvimTreeStatusLineNC = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
+		-- NvimTreeStatusLine = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
 		-- NvimTreeWinSeparator = { fg = "#564f8b", bg = "none" }
-		-- vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
-		-- vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-		-- vim.cmd([[ hi NvimTreeWinSeparator guifg=#564f8b guibg=NONE]])
 
 		-- Telescope
 		TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
