@@ -8,7 +8,7 @@ return {
 			themable = true,
 			numbers = "none",
 			max_name_length = 16,
-			max_prefix_length = 15,
+			max_prefix_length = 16,
 			tab_size = 16,
 			truncate_name = true,
 			enforce_regular_tabs = false,

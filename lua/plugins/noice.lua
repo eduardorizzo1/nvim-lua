@@ -51,15 +51,15 @@ return {
 		},
 		smart_move = {
 			enabled = false,
-			excluded_filetypes = { "cmp_menu", "cmp_docs", "notify", "inc_rename" },
+			excluded_filetypes = { "cmp_menu", "cmp_docs", "notify" },
 		},
 		messages = {
 			-- NOTE: If you enable messages, then the cmdline is enabled automatically.
 			-- This is a current Neovim limitation.
-			enabled = true, -- enables the Noice messages UI
-			view = "notify", -- default view for messages
-			view_error = "notify", -- view for errors
-			view_warn = "notify", -- view for warnings
+			enabled = true,         -- enables the Noice messages UI
+			view = "notify",        -- default view for messages
+			view_error = "notify",  -- view for errors
+			view_warn = "notify",   -- view for warnings
 			view_history = "messages", -- view for :messages
 			view_search = "notify",
 			-- view_search = "virtualtext",
