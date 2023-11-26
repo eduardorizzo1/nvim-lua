@@ -8,7 +8,7 @@ local noice = {
 	cond = function()
 		return package.loaded["noice"] and require("noice").api.status.command.has()
 	end,
-	color = { fg = colors.cyan },
+	color = { fg = colors.comment },
 }
 
 local conditions = {
@@ -572,7 +572,6 @@ local default_dracula = {
 			"diff",
 		},
 		lualine_x = {
-			-- noice,
 			{ "searchcount", color = { fg = colors.comment } },
 			{
 				"diagnostics",
@@ -591,6 +590,7 @@ local default_dracula = {
 				gui = "bold",
 				padding = { right = 1, left = 1 },
 			},
+			noice,
 			{
 				function()
 					return ""
