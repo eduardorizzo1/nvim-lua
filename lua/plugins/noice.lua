@@ -1,6 +1,7 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+	enabled = true,
 	opts = {
 		-- add any options here
 		override = {
@@ -10,10 +11,10 @@ return {
 		},
 		presets = {
 			bottom_search = true,
-			command_palette = false,
+			command_palette = true,
 			long_message_to_split = false,
 			inc_rename = true,
-			lsp_doc_border = false,
+			lsp_doc_border = true,
 		},
 		cmdline = {
 			enabled = true,
@@ -60,8 +61,9 @@ return {
 			view_error = "notify", -- view for errors
 			view_warn = "notify", -- view for warnings
 			view_history = "messages", -- view for :messages
+			view_search = "notify",
 			-- view_search = "virtualtext",
-			view_search = false,
+			-- view_search = false,
 		},
 	},
 	dependencies = {

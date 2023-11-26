@@ -573,6 +573,7 @@ local default_dracula = {
 		},
 		lualine_x = {
 			-- noice,
+			{ "searchcount", color = { fg = colors.comment } },
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
@@ -590,7 +591,6 @@ local default_dracula = {
 				gui = "bold",
 				padding = { right = 1, left = 1 },
 			},
-			{ "searchcount", color = { fg = colors.comment } },
 			{
 				function()
 					return ""
