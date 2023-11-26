@@ -5,6 +5,7 @@ return {
 	opts = {
 		indent = {
 			char = "▏", -- "│"
+			tab_char = "▏", -- "│"
 			highlight = {
 				"NonText",
 			},
@@ -35,10 +36,3 @@ return {
 		},
 	},
 }
-
--- enabled = true,
--- use_treesitter = true,
--- show_first_indent_level = false,
--- show_trailing_blankline_indent = false,
--- show_current_context = false,
--- show_current_context_start = false,

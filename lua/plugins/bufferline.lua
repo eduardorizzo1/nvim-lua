@@ -9,7 +9,7 @@ return {
 			numbers = "none",
 			max_name_length = 16,
 			max_prefix_length = 16,
-			tab_size = 16,
+			-- tab_size = 16,
 			truncate_name = true,
 			enforce_regular_tabs = false,
 			move_wraps_at_ends = false,

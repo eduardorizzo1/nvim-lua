@@ -708,12 +708,14 @@ local default = {
 			"diff",
 		},
 		lualine_x = {
+			{ "searchcount", color = { fg = colors.comment } },
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
 				gui = "bold",
 				padding = { right = 1, left = 1 },
 			},
+			noice,
 			{
 				function()
 					return ""

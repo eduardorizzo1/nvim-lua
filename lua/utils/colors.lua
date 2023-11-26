@@ -15,8 +15,8 @@ local dracula = {
 	yellow = "#f1fa8c",
 
 	bg_alt = "#393a4d",
-	-- bg_dark = "#1e1f28",
-	bg_dark = "#252630",
+	bg_dark = "#1e1f28",
+	-- bg_dark = "#252630",
 	bg_dark_alt = "#21222c",
 	purple_alt = "#564f8b",
 	current_line_alt = "#363747",
