@@ -1,6 +1,15 @@
 local icons = require("utils.icons")
 local colors = require("utils.colors").color
 local mode_color = require("utils.colors").mode_color
+local noice = {
+	function()
+		return require("noice").api.status.command.get()
+	end,
+	cond = function()
+		return package.loaded["noice"] and require("noice").api.status.command.has()
+	end,
+	color = { fg = colors.cyan },
+}
 
 local conditions = {
 	buffer_not_empty = function()
@@ -563,6 +572,7 @@ local default_dracula = {
 			"diff",
 		},
 		lualine_x = {
+			-- noice,
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
@@ -580,6 +590,7 @@ local default_dracula = {
 				gui = "bold",
 				padding = { right = 1, left = 1 },
 			},
+			{ "searchcount", color = { fg = colors.comment } },
 			{
 				function()
 					return ""

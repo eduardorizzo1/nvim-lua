@@ -31,7 +31,7 @@ local options = {
 	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",
 	formatoptions = "tcqj", -- jcroqlnt -- tcqj
-	wrap = false,
+	wrap = true, -- break line or side scroll
 }
 
 vim.opt.shortmess:append({ W = true, I = true, c = true })
