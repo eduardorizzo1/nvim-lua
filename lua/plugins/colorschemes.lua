@@ -49,10 +49,7 @@ return {
 
 	--TEST: Neosolarized
 	{
-		"svrana/neosolarized.nvim",
-		dependencies = {
-			"tjdevries/colorbuddy.nvim",
-		},
+		"Tsuzat/NeoSolarized.nvim",
 		-- opts = {},
 	},
 
@@ -71,5 +68,6 @@ return {
 	--TEST: Material
 	{
 		"marko-cerovac/material.nvim",
+		opts = {},
 	},
 }

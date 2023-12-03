@@ -5,16 +5,6 @@ M.transparent = true
 
 M.init = function()
 	vim.cmd([[ colo dracula ]])
-	if M.transparent then
-		vim.cmd([[ hi CursorLine guibg=#282a36]])
-		vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
-		vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
-		vim.cmd([[ hi NvimTreeCursorLine guibg=#282a36]])
-		-- vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
-		-- vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-		-- vim.cmd([[ hi NvimTreeWinSeparator guifg=#564f8b guibg=NONE]])
-		vim.cmd([[ hi EndOfBuffer guifg=#282a36 ]])
-	end
 end
 
 M.opts = {
@@ -31,7 +21,7 @@ M.opts = {
 		NormalFloat = { fg = colors.purple },
 		LineNr = { fg = colors.purple_alt },
 		CursorLine = { bg = colors.current_line_alt },
-		CursorLineNr = { fg = colors.cyan },
+		CursorLineNr = { fg = colors.cyan, bold = true },
 		VertSplit = { fg = colors.purple_alt },
 		Directory = { fg = colors.comment, bg = colors.bg_dark },
 		Folded = { bg = colors.bg_dark, fg = colors.comment },
@@ -71,7 +61,10 @@ M.opts = {
 		BufferLineSeparator = { bg = M.transparent and "none" or colors.bg_dark, fg = colors.bg_dark },
 		BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
 		BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
-		BufferLineOffsetSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
+		BufferLineOffsetSeparator = {
+			fg = M.transparent and "#564f8b" or colors.bg_dark,
+			bg = M.transparent and "none" or colors.bg_dark,
+		},
 		BufferLineTruncMarker = { fg = colors.comment, bg = colors.bg_dark },
 		-- BufferLineCloseButtonSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
 
@@ -86,6 +79,7 @@ M.opts = {
 			bg = M.transparent and "none" or colors.bg,
 		},
 		NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
+		NvimTreeCursorLine = { bg = colors.current_line },
 		-- NvimTreeStatusLineNC = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
 		-- NvimTreeStatusLine = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
 		-- NvimTreeWinSeparator = { fg = "#564f8b", bg = "none" }
