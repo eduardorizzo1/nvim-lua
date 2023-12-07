@@ -491,12 +491,12 @@ local default_dracula = {
 		icons_enabled = true,
 		theme = {
 			normal = {
-				a = { bg = colors.bg_dark },
-				b = { bg = colors.bg_dark },
-				c = { bg = colors.bg_dark },
-				x = { bg = colors.bg_dark },
-				y = { bg = colors.bg_dark },
-				z = { bg = colors.bg_dark },
+				a = { bg = colors.bg },
+				b = { bg = colors.bg },
+				c = { bg = colors.bg },
+				x = { bg = colors.bg },
+				y = { bg = colors.bg },
+				z = { bg = colors.bg },
 			},
 		},
 		component_separators = { left = "", right = "" },

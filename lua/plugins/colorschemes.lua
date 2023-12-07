@@ -70,4 +70,10 @@ return {
 		"marko-cerovac/material.nvim",
 		opts = {},
 	},
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 }
