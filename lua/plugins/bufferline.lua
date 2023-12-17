@@ -73,7 +73,6 @@ return {
         return true
       end,
     },
-
     highlights = {},
   },
 }

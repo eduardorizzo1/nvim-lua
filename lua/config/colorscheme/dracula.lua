@@ -30,7 +30,7 @@ M.opts = {
     MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
     NormalFloat = { fg = colors.purple },
     LineNr = { fg = colors.purple_alt },
-    CursorLine = { bg = colors.current_line_alt },
+    CursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
     CursorLineNr = { fg = colors.cyan },
     VertSplit = { fg = colors.purple_alt },
     Directory = { fg = colors.comment, bg = colors.bg_dark },
@@ -82,6 +82,7 @@ M.opts = {
     NvimTreeIndentMarker = { fg = colors.comment },
     NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
     NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
+    NvimTreeCursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
 
     -- Telescope
     TelescopeNormal = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
