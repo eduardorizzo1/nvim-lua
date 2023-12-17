@@ -137,7 +137,7 @@ if not vim.g.vscode then
 	map("n", "ge", ":Lspsaga show_line_diagnostics<CR>", opts)
 	map("n", "gr", ":Lspsaga finder<CR>", opts)
 	map("n", ";b", ":Lspsaga outline<CR>", opts)
-	map("n", "<leader>f", "<CMD>lua vim.lsp.buf.format()<CR>", opts)
+	map("n", ";f", "<CMD>lua vim.lsp.buf.format()<CR>", opts)
 
 	-- ToggleTerm
 	map("n", "<leader>t", ":ToggleTerm <CR>", opts)
