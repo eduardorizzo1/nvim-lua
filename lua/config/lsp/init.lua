@@ -31,13 +31,15 @@ M.config = function()
 	local lspconfig = require("lspconfig")
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 
-	for type, icon in pairs(signs) do
-		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "none" })
-	end
-
 	vim.diagnostic.config({
-		signs = true,
+		signs = {
+			text = {
+				signs.Error,
+				signs.Warn,
+				signs.Info,
+				signs.Hint,
+			},
+		},
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,

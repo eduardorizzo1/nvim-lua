@@ -41,8 +41,8 @@ return {
 		Error = " ",
 		Warn = " ",
 		Info = " ",
-		Hint = " ",
-		-- Hint = " ",
+		-- Hint = " ",
+		Hint = " ",
 	},
 
 	arrows = {
