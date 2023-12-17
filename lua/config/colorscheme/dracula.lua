@@ -20,7 +20,7 @@ M.opts = {
 		MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
 		NormalFloat = { fg = colors.purple },
 		LineNr = { fg = colors.purple_alt },
-		CursorLine = { bg = colors.current_line_alt },
+		CursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
 		CursorLineNr = { fg = colors.cyan, bold = true },
 		VertSplit = { fg = colors.purple_alt },
 		Directory = { fg = colors.comment, bg = colors.bg_dark },
@@ -79,7 +79,7 @@ M.opts = {
 			bg = M.transparent and "none" or colors.bg,
 		},
 		NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
-		NvimTreeCursorLine = { bg = colors.current_line },
+		NvimTreeCursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
 		-- NvimTreeStatusLineNC = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
 		-- NvimTreeStatusLine = { guibg = M.transparent and "none", guifg = M.transparent and "#564f8b" },
 		-- NvimTreeWinSeparator = { fg = "#564f8b", bg = "none" }
