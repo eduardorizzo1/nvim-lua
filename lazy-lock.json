@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
-  "LuaSnip": { "branch": "master", "commit": "6a001360cea89df50f7c5cc8c7a75e6a21f1ef5c" },
+  "LuaSnip": { "branch": "master", "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1" },
   "NeoSolarized.nvim": { "branch": "master", "commit": "c28b7f9bdc48a9017480da41529ef63ab6ccb885" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "blamer.nvim": { "branch": "master", "commit": "e0d43c11697300eb68f00d69df8b87deb0bf52dc" },
