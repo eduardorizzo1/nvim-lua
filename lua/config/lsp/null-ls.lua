@@ -5,7 +5,7 @@ M.opts = function()
 
 	return {
 		sources = {
-			nls.formatting.prettier,
+			nls.formatting.prettierd,
 			nls.formatting.stylua,
 			nls.formatting.jq,
 			nls.formatting.black.with({ extra_args = { "--fast" } }),
