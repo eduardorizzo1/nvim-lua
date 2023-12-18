@@ -41,8 +41,9 @@ return {
 		Error = " ",
 		Warn = " ",
 		Info = " ",
-		-- Hint = " ",
-		Hint = " ",
+		-- Hint = " ",
+		Hint = " ",
+		-- Hint = " ",
 	},
 
 	arrows = {
@@ -74,7 +75,7 @@ return {
 
 	git_status = {
 		added = " ",
-		modified = "柳",
+		modified = " ", -- "柳",
 		removed = " ",
 		branch = " ",
 	},

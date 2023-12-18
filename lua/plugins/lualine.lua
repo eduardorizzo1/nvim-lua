@@ -560,7 +560,20 @@ local default_dracula = {
 				file_status = false,
 				padding = { left = 1, right = 0 },
 			},
-			"diff",
+			-- {
+			-- 	function()
+			-- 		return icons.arrows.right
+			-- 	end,
+			-- 	color = { fg = colors.comment },
+			-- },
+			{
+				"diff",
+				symbols = {
+					added = icons.git_status.added,
+					modified = icons.git_status.modified,
+					removed = icons.git_status.removed,
+				},
+			},
 		},
 		lualine_x = {
 			{ "searchcount", color = { fg = colors.comment } },
@@ -568,10 +581,10 @@ local default_dracula = {
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
 				symbols = {
-					error = icons.error,
-					warn = icons.warn,
-					info = icons.hint,
-					hint = icons.info,
+					-- error = icons.error,
+					-- warn = icons.warn,
+					-- info = icons.hint,
+					-- hint = icons.info,
 				},
 				diagnostics_color = {
 					color_error = { fg = colors.red },
