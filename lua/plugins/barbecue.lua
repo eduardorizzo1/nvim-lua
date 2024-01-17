@@ -21,4 +21,7 @@ return {
 
 		kinds = require("utils.icons").kinds,
 	},
+	-- init = function()
+	-- 	require("barbecue.ui").toggle(false)
+	-- end,
 }

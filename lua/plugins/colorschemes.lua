@@ -2,6 +2,9 @@ local dracula = require("config.colorscheme.dracula")
 local tokyonight = require("config.colorscheme.tokyonight")
 local kanagawa = require("config.colorscheme.kanagawa")
 local catppuccin = require("config.colorscheme.catppuccin")
+local init = dracula
+-- local init = tokyonight
+-- local init = kanagawa
 
 return {
 	--TEST: Dracula
@@ -9,7 +12,7 @@ return {
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 		opts = dracula.opts,
-		init = dracula.init,
+		init = init.init,
 	},
 
 	--TEST: Tokyonight
@@ -17,14 +20,14 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = tokyonight.opts,
-		-- init = tokyonight.init,
+		init = init.init,
 	},
 
 	--TEST: kanagawa
 	{
 		"rebelot/kanagawa.nvim",
 		opts = kanagawa.opts,
-		-- init = kanagawa.init,
+		init = init.init,
 	},
 
 	--TEST: Catppuccin
@@ -32,7 +35,7 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		opts = catppuccin.opts,
-		-- init = catppuccin.init,
+		init = init.init,
 	},
 
 	--TEST: Gruvbox
