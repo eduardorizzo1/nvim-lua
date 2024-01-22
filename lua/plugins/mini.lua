@@ -72,4 +72,9 @@ return {
 			}
 		end,
 	},
+	{
+		"echasnovski/mini.bufremove",
+		version = "*",
+		opts = {},
+	},
 }

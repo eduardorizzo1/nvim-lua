@@ -23,7 +23,9 @@ return {
 			show_buffer_close_icons = false,
 			diagnostics = "nvim_lsp",
 			right_mouse_command = "vertical sbuffer %d",
-			close_command = "bdelete! %d",
+			close_command = function(n)
+				require("mini.bufremove").delete(n, false)
+			end,
 			show_tab_indicators = false,
 			indicator = {
 				-- icon = "❯ ",
