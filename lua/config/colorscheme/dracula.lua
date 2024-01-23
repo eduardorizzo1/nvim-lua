@@ -40,7 +40,7 @@ M.opts = {
 
 		-- -- Treesitter
 		["@keyword.function"] = { fg = colors.pink },
-		["@property"] = { fg = colors.fg },
+		["@property"] = { fg = colors.cyan },
 		["@variable"] = { fg = colors.purple },
 		["@punctuation.delimiter"] = { fg = colors.pink },
 		["@punctuation.special"] = { fg = colors.pink },
