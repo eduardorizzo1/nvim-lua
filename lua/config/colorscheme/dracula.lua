@@ -15,8 +15,8 @@ M.opts = {
 		Title = { fg = colors.green },
 		Number = { fg = colors.purple },
 		Function = { fg = colors.green },
-		Keyword = { fg = colors.pink },
-		Keywords = { fg = colors.purple },
+		Keyword = { fg = colors.pink, italic = true },
+		Keywords = { fg = colors.purple, italic = true },
 		MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
 		NormalFloat = { fg = colors.purple },
 		LineNr = { fg = colors.purple_alt },
@@ -40,6 +40,7 @@ M.opts = {
 
 		-- -- Treesitter
 		["@keyword.function"] = { fg = colors.pink },
+		["@keyword"] = { fg = colors.pink, italic = true },
 		["@property"] = { fg = colors.cyan },
 		["@variable"] = { fg = colors.purple },
 		["@punctuation.delimiter"] = { fg = colors.pink },
