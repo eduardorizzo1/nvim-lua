@@ -102,6 +102,9 @@ if not vim.g.vscode then
 	map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<CR>", opts)
 	map("n", "<S-x>", "<CMD>bd<CR>", opts) -- delete
 	map("n", "<M-x>", "<CMD>bd<CR>", opts)
+	map("n", "<M-t>", "<CMD>tabnew<CR>", opts) -- tabs
+	map("n", "<M-[>", "<CMD>tabnext<CR>", opts)
+	map("n", "<M-]>", "<CMD>tabprevious<CR>", opts)
 
 	-- Telescope
 	map(
