@@ -133,6 +133,8 @@ return {
 				glyphs = {
 					default = "",
 					symlink = "",
+					bookmark = "󰆤",
+					modified = "●",
 					folder = {
 						arrow_closed = icons.arrows.closed,
 						arrow_open = icons.arrows.open,
