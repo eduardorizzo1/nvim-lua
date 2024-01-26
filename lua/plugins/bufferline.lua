@@ -26,7 +26,7 @@ return {
 			close_command = function(n)
 				require("mini.bufremove").delete(n, false)
 			end,
-			show_tab_indicators = false,
+			show_tab_indicators = true,
 			indicator = {
 				-- icon = "❯ ",
 				-- icon = "▏",

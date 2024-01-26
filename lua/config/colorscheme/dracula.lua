@@ -68,6 +68,18 @@ M.opts = {
 			bg = M.transparent and "none" or colors.bg_dark,
 		},
 		BufferLineTruncMarker = { fg = colors.comment, bg = colors.bg_dark },
+		BufferLineTab = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.comment },
+		BufferLineTabClose = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.comment },
+		BufferLineTabSelected = {
+			bg = M.transparent and colors.bg_dark or colors.bg_dark,
+			fg = colors.cyan,
+			bold = true,
+		},
+		BufferLineTabSeparator = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.bg_dark },
+		BufferLineTabSeparatorSelected = {
+			bg = M.transparent and colors.bg_dark or colors.bg_dark,
+			fg = colors.bg_dark,
+		},
 
 		-- NvimTree
 		NvimTreeOpenedFolderName = { fg = colors.purple },
