@@ -196,6 +196,9 @@ if not vim.g.vscode then
 
 	-- IncRename
 	map("n", "gn", ":IncRename ", opts)
+
+	-- Markdown Preview
+	map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", opts)
 else
 	-- Fold
 	map("n", "za", '<Cmd>call VSCodeNotify("editor.toggleFold")<CR>', opts)
