@@ -77,12 +77,6 @@ local default_dracula = {
 				end,
 				padding = { left = 1, right = 1 },
 			},
-			{
-				"diagnostics",
-				sources = { "nvim_diagnostic" },
-				gui = "bold",
-				padding = { right = 1, left = 1 },
-			},
 			-- {
 			-- 	function()
 			-- 		return icons.arrows.right
@@ -91,6 +85,12 @@ local default_dracula = {
 			-- },
 		},
 		lualine_c = {
+			{
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				gui = "bold",
+				padding = { right = 0, left = 1 },
+			},
 			{
 				"filetype",
 				icon_only = true,
@@ -104,7 +104,7 @@ local default_dracula = {
 				color = { fg = colors.fg },
 				shorten = true,
 				file_status = false,
-				padding = { left = 1, right = 0 },
+				padding = { left = 1, right = 1 },
 			},
 		},
 		lualine_x = {
@@ -116,18 +116,19 @@ local default_dracula = {
 					removed = icons.git_status.removed,
 				},
 			},
-		},
-		lualine_y = {
-			{ "searchcount", color = { fg = colors.orange } },
 			-- {
 			-- 	function()
-			-- 		return "󰥻 " .. require("noice").api.status.command.get()
+			-- 		-- return "󰥻 " .. require("noice").api.status.command.get()
+			-- 		return require("noice").api.status.command.get()
 			-- 	end,
 			-- 	cond = function()
 			-- 		return package.loaded["noice"] and require("noice").api.status.command.has()
 			-- 	end,
-			-- 	color = { fg = colors.cyan },
+			-- 	color = { fg = colors.pink },
 			-- },
+		},
+		lualine_y = {
+			{ "searchcount", color = { fg = colors.orange } },
 			{
 				function()
 					local msg = " Lsp"
@@ -139,9 +140,6 @@ local default_dracula = {
 					for _, client in ipairs(clients) do
 						local filetypes = client.config.filetypes
 						if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-							if client.name == "typescript-tools" then
-								client.name = "ts-tools"
-							end
 							return " " .. client.name
 						end
 					end
