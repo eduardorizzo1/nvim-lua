@@ -53,7 +53,7 @@ return {
 				selection_caret = " ", -- "  "
 				entry_prefix = "  ",
 				initial_mode = "insert",
-				layout_strategy = "horizontal_merged",
+				layout_strategy = "flex",
 				layout_config = {
 					width = 0.9,
 					height = 0.9,
