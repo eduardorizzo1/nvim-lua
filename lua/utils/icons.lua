@@ -239,6 +239,8 @@ return {
 -- Interface = "   ",
 -- Ignore = "   ",
 -- Keyword = "     ",
+-- Keyboard = "󰌌 ",
+-- Keyboard = "󰥻 "
 -- Lsp = " ",
 -- Lock = "   ",
 -- Lightbulb = "   ",
