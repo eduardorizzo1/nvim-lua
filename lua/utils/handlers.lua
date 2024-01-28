@@ -10,7 +10,6 @@ M.on_attach = function(client, bufnr)
 	client.server_capabilities.semanticTokensProvider = nil
 	illuminate.on_attach(client)
 	vim.g.navic_silence = true
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	-- Null-ls
 	if client.supports_method("textDocument/formatting") then

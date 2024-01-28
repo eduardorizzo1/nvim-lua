@@ -8,6 +8,11 @@ return {
 		dependencies = {
 			{ "williamboman/mason.nvim", opts = {} },
 			{
+				"pmizio/typescript-tools.nvim",
+				dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+				opts = require("config.lsp.typescript-tools").opts,
+			},
+			{
 				"williamboman/mason-lspconfig.nvim",
 				opts = {
 					ensure_installed = {},
@@ -15,11 +20,6 @@ return {
 				},
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
-			{
-				"pmizio/typescript-tools.nvim",
-				dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-				opts = require("config.lsp.typescript-tools").opts,
-			},
 		},
 		opts = require("config.lsp").opts,
 		config = require("config.lsp").config,
