@@ -80,14 +80,15 @@ local default_dracula = {
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
-				diagnostics_color = {
-					color_error = { fg = colors.red },
-					color_warn = { fg = colors.yellow },
-					color_info = { fg = colors.cyan },
-				},
 				gui = "bold",
 				padding = { right = 1, left = 1 },
 			},
+			-- {
+			-- 	function()
+			-- 		return icons.arrows.right
+			-- 	end,
+			-- 	color = { fg = colors.comment },
+			-- },
 		},
 		lualine_c = {
 			{
@@ -117,7 +118,7 @@ local default_dracula = {
 			},
 		},
 		lualine_y = {
-			{ "searchcount", color = { fg = colors.yellow } },
+			{ "searchcount", color = { fg = colors.orange } },
 			-- {
 			-- 	function()
 			-- 		return "󰥻 " .. require("noice").api.status.command.get()
