@@ -4,37 +4,31 @@ local M = {}
 M.transparent = true
 
 M.init = function()
-  if M.transparent then
-    vim.cmd([[ hi CursorLine guibg=#282a36]])
-    vim.cmd([[ hi CursorLineNr cterm=bold guifg=#8be9fd gui=bold ]])
-    vim.cmd([[ hi BufferLineOffsetSeparator guibg=NONE guifg=#564f8b ]])
-    vim.cmd([[ hi NvimTreeCursorLine guibg=#282a36]])
-    vim.cmd([[ hi NvimTreeStatusLine guibg=NONE guifg=NONE]])
-    vim.cmd([[ hi NvimTreeStatusLineNC guibg=NONE guifg=#564f8b ]])
-    vim.cmd([[ hi NvimTreeWinSeparator guifg=#564f8b guibg=NONE]])
-    vim.cmd([[ hi EndOfBuffer guifg=#282a36 ]])
-  end
+  vim.cmd([[ colo dracula ]])
 end
 
 M.opts = {
   transparent_bg = M.transparent,
   italic_comment = true,
-  lualine_bg_color = "#16161d",
   overrides = {
     Search = { fg = colors.green, bg = colors.comment, bold = true },
     Title = { fg = colors.green },
     Number = { fg = colors.purple },
     Function = { fg = colors.green },
-    Keyword = { fg = colors.pink },
-    Keywords = { fg = colors.purple },
+    Keyword = { fg = colors.pink, italic = true },
+    Keywords = { fg = colors.purple, italic = true },
     MatchParen = { fg = "#ffffff", bg = colors.bg_dark, underline = true, bold = true },
     NormalFloat = { fg = colors.purple },
     LineNr = { fg = colors.purple_alt },
     CursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
-    CursorLineNr = { fg = colors.cyan },
+    CursorLineNr = { fg = colors.cyan, bold = true },
     VertSplit = { fg = colors.purple_alt },
     Directory = { fg = colors.comment, bg = colors.bg_dark },
     Folded = { bg = colors.bg_dark, fg = colors.comment },
+    WinSeparator = {
+      fg = M.transparent and "#564f8b" or colors.bg,
+      bg = M.transparent and "none" or colors.bg,
+    },
 
     -- Semantic
     ["@class"] = { fg = colors.cyan },
@@ -50,37 +44,52 @@ M.opts = {
 
     -- -- Treesitter
     ["@keyword.function"] = { fg = colors.pink },
-    ["@property"] = { fg = colors.fg },
+    ["@keyword"] = { fg = colors.pink, italic = true },
+    ["@property"] = { fg = colors.cyan },
     ["@variable"] = { fg = colors.purple },
     ["@punctuation.delimiter"] = { fg = colors.pink },
     ["@punctuation.special"] = { fg = colors.pink },
-    -- ["@punctuation.bracket"] = { fg = "#ffff00" },
     ["@string.escape"] = { fg = colors.pink },
     ["@text"] = { fg = colors.fg },
     ["@tag"] = { fg = colors.pink },
     ["@text.title"] = { fg = colors.fg },
+    ["@variable.member"] = { fg = colors.orange },
+    ["@markup.heading"] = { fg = colors.fg, italic = true, bold = true },
 
     -- Bufferline
     BufferLineFill = { bg = colors.bg_dark },
-    BufferLineBackground = { fg = M.transparent and colors.current_line or colors.comment },
     BufferLineBufferVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
     BufferLineBufferSelected = { bg = M.transparent and "none" or colors.bg, italic = true, bold = true },
-    BufferLineDuplicate = { fg = M.transparent and colors.bg or colors.comment },
-    BufferLineDuplicateSelected = { fg = colors.comment, bold = false, italic = false },
-    BufferLineIndicatorSelected = { fg = colors.purple },
     BufferLineSeparator = { bg = M.transparent and "none" or colors.bg_dark, fg = colors.bg_dark },
     BufferLineSeparatorSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
     BufferLineSeparatorVisible = { bg = M.transparent and "none" or colors.bg, fg = colors.bg_dark },
-    BufferLineOffsetSeparator = { fg = colors.bg_dark, bg = colors.bg_dark },
-    BufferLineCloseButtonSelected = { bg = M.transparent and "none" or colors.bg, fg = colors.fg },
+    BufferLineOffsetSeparator = {
+      fg = M.transparent and "#564f8b" or colors.bg_dark,
+      bg = M.transparent and "none" or colors.bg_dark,
+    },
+    BufferLineTruncMarker = { fg = colors.comment, bg = colors.bg_dark },
+    BufferLineTab = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.comment },
+    BufferLineTabClose = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.comment },
+    BufferLineTabSelected = {
+      bg = M.transparent and colors.bg_dark or colors.bg_dark,
+      fg = colors.cyan,
+      bold = true,
+    },
+    BufferLineTabSeparator = { bg = M.transparent and colors.bg_dark or colors.bg_dark, fg = colors.bg_dark },
+    BufferLineTabSeparatorSelected = {
+      bg = M.transparent and colors.bg_dark or colors.bg_dark,
+      fg = colors.bg_dark,
+    },
 
     -- NvimTree
     NvimTreeOpenedFolderName = { fg = colors.purple },
-    -- NvimTreeOpenedFile = { fg = colors.fg, bg = colors.current_line },
     NvimTreeFolderArrowClosed = { fg = colors.comment, bg = "none" },
     NvimTreeFolderArrowOpen = { fg = colors.comment, bg = "none" },
     NvimTreeIndentMarker = { fg = colors.comment },
-    NvimTreeWinSeparator = { fg = colors.bg_dark_alt, bg = colors.bg_dark_alt },
+    NvimTreeWinSeparator = {
+      fg = M.transparent and "#564f8b" or colors.bg,
+      bg = M.transparent and "none" or colors.bg,
+    },
     NvimTreeWindowPicker = { fg = colors.green, bg = colors.current_line, bold = true },
     NvimTreeCursorLine = { bg = M.transparent and colors.bg or colors.current_line_alt },
 
@@ -129,6 +138,7 @@ M.opts = {
     -- IndentBlankLine
     IndentBlanklineContextStart = { fg = colors.comment },
     IndentBlanklineContextChar = { fg = colors.comment },
+
     -- Indentscope
     MiniIndentscopeSymbol = { fg = colors.comment },
 
@@ -143,6 +153,7 @@ M.opts = {
     RainbowDelimiterRed = { fg = colors.red },
 
     -- Cmp
+    CmpItemAbbr = { bg = M.transparent and "none" or colors.bg },
     CmpItemAbbrMatch = { bg = M.transparent and "none" or colors.bg, fg = colors.pink },
     CmpItemKindMethod = { bg = M.transparent and "none" or colors.bg, fg = colors.pink },
     CmpItemMenu = { bg = M.transparent and "none" or colors.bg, fg = colors.comment, bold = true },

@@ -1,6 +1,7 @@
 local icons = require("utils.icons")
 local colors = require("utils.colors").color
 local mode_color = require("utils.colors").mode_color
+local dracula = true
 
 local conditions = {
   buffer_not_empty = function()
@@ -16,489 +17,95 @@ local conditions = {
   end,
 }
 
--- =============================================
--- ================ Bubbles ====================
--- =============================================
+-- ======================================================
+local color_bg_mode = function()
+  return dracula and { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark } or { bg = mode_color[vim.fn.mode()] }
+end
 
-local config_bubbles = {
-  options = {
-    globalstatus = true,
-    disabled_filetypes = { "packer" },
-    component_separators = "",
-    section_separators = "",
-    -- fmt = string.lower,
-    theme = {
-      normal = { c = { fg = colors.fg, bg = "none" } },
-      inactive = { c = { fg = colors.fg, bg = "none" } },
-    },
+local color_fg_mode = function()
+  return dracula and { bg = colors.bg_alt, fg = mode_color[vim.fn.mode()] } or {
+    fg = mode_color[vim.fn.mode()],
+  }
+end
+
+--PERF: =========== Mode ==============
+local mode = {
+  {
+    function()
+      return " "
+    end,
+    color = color_bg_mode,
+    padding = { left = 1, right = 0 },
   },
-  sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
+  {
+    "mode",
+    color = color_bg_mode,
+    separator = { right = "" },
+    padding = { left = 0, right = 1 },
   },
 }
 
-local function ins_left(component)
-  table.insert(config_bubbles.sections.lualine_c, component)
-end
-
-local function ins_right(component)
-  table.insert(config_bubbles.sections.lualine_x, component)
-end
-
---------------------------- LEFT ----------------------------------
-ins_left({
-  function()
-    return icons.left_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_left({
-  "mode",
-  icon = " ",
-  color = function()
-    return { fg = mode_color[vim.fn.mode()], bg = colors.rounded_fg }
-  end,
-  padding = { right = 1, left = 1 },
-})
-
-ins_left({
-  function()
-    return icons.right_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 1 },
-})
-
-----------------
-ins_left({
-  function()
-    return icons.left_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_left({
-  "filename",
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.green, bg = colors.rounded_fg },
-  padding = { right = 1, left = 1 },
-})
-
-ins_left({
-  function()
-    return icons.right_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { right = 1 },
-})
-
-----------------
-ins_left({
-  function()
-    return icons.left_half_ball
-  end,
-  cond = conditions.check_git_workspace,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_left({
-  "branch",
-  icon = "",
-  cond = conditions.check_git_workspace,
-  color = { fg = colors.cyan, bg = colors.rounded_fg },
-  padding = { right = 0, left = 1 },
-})
-
-ins_left({
-  function()
-    return icons.right_half_ball
-  end,
-  cond = conditions.check_git_workspace,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_left({
-  "diff",
-  symbols = {
-    added = "+",
-    modified = "~",
-    removed = "-",
-  },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-  cond = conditions.hide_in_width,
-})
-
----------------------------RIGHT----------------------------------
-ins_right({
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  symbols = {
-    error = icons.error,
-    warn = icons.warn,
-    info = icons.hint,
-    hint = icons.info,
-  },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
-  gui = "bold",
-  color = { fg = "none" },
-  padding = { right = 2, left = 2 },
-})
-
-ins_right({
-  "location",
-  padding = { right = 0, left = 0 },
-  color = {
-    fg = colors.purple,
-  },
-})
-
-ins_right({
-  "progress",
-  color = {
-    fg = colors.cyan,
-  },
-  gui = "bold",
-  padding = { right = 1, left = 1 },
-})
-
-ins_right({
-  function()
-    return icons.left_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_right({
-  function()
-    local msg = "No Active Lsp"
-    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
+--PERF: =========== Server ==============
+local server = function()
+  local msg = " Lsp"
+  local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+  local clients = vim.lsp.get_active_clients()
+  if next(clients) == nil then
     return msg
-  end,
-  color = { fg = colors.orange, bg = colors.rounded_fg },
-  padding = { right = 1, left = 1 },
-})
+  end
+  for _, client in ipairs(clients) do
+    local filetypes = client.config.filetypes
+    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+      return " " .. client.name
+    end
+  end
+  return msg
+end
 
-ins_right({
-  function()
-    return icons.right_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { right = 1, left = 0 },
-})
-
-ins_right({
-  function()
-    return icons.left_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
-ins_right({
-  "filetype",
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.pink, bg = colors.rounded_fg },
-  padding = { left = 0, right = 1 },
-})
-
-ins_right({
-  function()
-    return icons.right_half_ball
-  end,
-  color = { fg = colors.rounded_fg, bg = "none" },
-  padding = { left = 0, right = 0 },
-})
-
--- =============================================
--- ================ Default ====================
--- =============================================
-local config_default = {
-  options = {
-    globalstatus = true,
-    icons_enabled = true,
-    theme = "auto",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    -- section_separators = { left = icons.right_half_ball, right = icons.left_half_ball },
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    },
-  },
-  sections = {
-    lualine_a = {
-      { "mode" },
-    },
-    lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { "filename" },
-    lualine_x = { "filetype" },
-    lualine_y = { "progress" },
-    lualine_z = { "location" },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { "filename" },
-    lualine_x = { "location" },
-    lualine_y = {},
-    lualine_z = {},
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {},
-}
-----------------------------------------------
-
-local modes = {
-  "mode",
-  separator = { left = "", right = "" },
-  color = function()
-    return { fg = mode_color[vim.fn.mode()], bg = "#313244" }
-  end,
-  padding = { left = 1, right = 0 },
-}
-
-local mode_icons = {
-  function()
-    return " "
-  end,
-  separator = { left = "", right = "" },
-  color = function()
-    return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
-  end,
-  padding = { left = 0, right = 0 },
-}
-
-local space = {
-  function()
-    return " "
-  end,
-  color = { bg = "none" },
-}
-
-local filename = {
-  "filename",
-  cond = conditions.buffer_not_empty,
-  shorten = true,
-  file_status = false,
-  separator = { left = "", right = "" },
-  color = { bg = colors.bg },
-  padding = { left = 1, right = 0 },
-}
-
-local diff = {
-  "diff",
-  color = { bg = "#313244", fg = "#313244" },
-  separator = { left = "", right = "" },
-}
-
+--PERF: =========== Branch ==============
 local branch = {
   "branch",
-  color = { fg = "#a6e3a1", bg = "#313244" },
-  -- color = { bg = colors.green, fg = colors.bg },
-  separator = { left = "", right = "" },
-  icon = "",
-}
-
-local branch_icons = {
-  function()
-    return " "
-  end,
-  color = { bg = "#a6e3a1", fg = "#313244" },
-  separator = { left = "", right = "" },
-  padding = { left = 0, right = 0 },
-}
-
-local diagnostic = {
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  color = { bg = colors.bg, fg = "#80A7EA" },
-  separator = { left = "", right = "" },
-  symbols = {
-    error = icons.error,
-    warn = icons.warn,
-    info = icons.hint,
-    hint = icons.info,
-  },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
-  gui = "bold",
-  padding = { right = 1, left = 1 },
-}
-
-local lsp = {
-  function()
-    local msg = "No Active Lsp"
-    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  color = { bg = colors.pink, fg = colors.bg },
-  separator = { left = "", right = "" },
-  padding = { right = 1, left = 1 },
-}
-
-local progress = {
-  "progress",
-  color = { bg = colors.cyan, fg = colors.bg },
-  separator = { left = "", right = "" },
-}
-
-local location = {
-  "location",
-  separator = { left = "" },
-  color = { bg = "#313244", fg = colors.cyan },
-  padding = { right = 1, left = 0 },
-}
-
-local filetype = {
-  "filetype",
-  icon_only = false,
-  colored = true,
-  separator = { left = "" },
-  color = { bg = "#313244", fg = colors.pink },
+  separator = { right = "" },
+  color = dracula and color_fg_mode or {},
   padding = { left = 1, right = 1 },
-  icon = {
-    "",
-    align = "left",
-  },
 }
 
-local filetype_icon = {
-  "filetype",
-  icon_only = true,
-  colored = true,
-  separator = { left = "", right = "" },
-  color = { fg = "#313244", bg = colors.bg },
-  padding = { left = 0, right = 0 },
+--PERF: =========== Noice ==============
+local noice = {
+  function()
+    return "󰥻 " .. require("noice").api.status.command.get()
+  end,
+  cond = function()
+    return package.loaded["noice"] and require("noice").api.status.command.has()
+  end,
+  color = dracula and { fg = colors.pink } or {},
 }
 
-local config_bubbles_custom = {
-  options = {
-    globalstatus = true,
-    icons_enabled = true,
-    fmt = string.lower,
-    theme = {
-      normal = {
-        a = { bg = "none" },
-        b = { bg = "none" },
-        c = { bg = "none" },
-        x = { bg = "none" },
-        y = { bg = "none" },
-        z = { bg = "none" },
-      },
-    },
-    component_separators = "",
-    section_separators = "",
-    disabled_filetypes = { "packer" },
-    ignore_focus = {},
-    always_divide_middle = true,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    },
-  },
-  sections = {
-    lualine_a = { mode_icons, modes, space },
-    lualine_b = {
-      branch_icons,
-      branch,
-      diff,
-      space,
-      filetype_icon,
-      filename,
-      diagnostic,
-    },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { location, progress, space },
-    lualine_z = { filetype, lsp },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {},
+--PERF: ========= Left Arrow ===========
+local left_arrow = {
+  function()
+    return icons.arrows.left
+  end,
+  color = dracula and { fg = colors.comment } or {},
+  padding = { right = 0, left = 0 },
 }
 
-local default_dracula = {
+--HACK: =================================
+--HACK: =========== DEFAULT =============
+--HACK: =================================
+local default = {
   options = {
     icons_enabled = true,
-    theme = {
+    theme = dracula and {
       normal = {
-        a = { bg = colors.bg_dark },
-        b = { bg = colors.bg_dark },
-        c = { bg = colors.bg_dark },
-        x = { bg = colors.bg_dark },
-        y = { bg = colors.bg_dark },
-        z = { bg = colors.bg_dark },
+        a = { bg = colors.bg },
+        b = { bg = colors.bg },
+        c = { bg = colors.bg },
+        x = { bg = colors.bg },
+        y = { bg = colors.bg },
+        z = { bg = colors.bg },
       },
-    },
+    } or "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {
@@ -515,36 +122,17 @@ local default_dracula = {
     },
   },
   sections = {
-    lualine_a = {
-      {
-        function()
-          return " "
-        end,
-        color = function()
-          return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
-        end,
-        padding = { left = 1, right = 0 },
-      },
-      {
-        "mode",
-        color = function()
-          return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
-        end,
-        separator = { right = "" },
-        padding = { left = 0, right = 1 },
-      },
-    },
+    lualine_a = mode,
     lualine_b = {
-      {
-        "branch",
-        separator = { right = "" },
-        color = function()
-          return { bg = colors.bg_alt, fg = mode_color[vim.fn.mode()] }
-        end,
-        padding = { left = 1, right = 1 },
-      },
+      branch,
     },
     lualine_c = {
+      {
+        "diagnostics",
+        sources = { "nvim_diagnostic" },
+        gui = "bold",
+        padding = { right = 0, left = 1 },
+      },
       {
         "filetype",
         icon_only = true,
@@ -555,194 +143,43 @@ local default_dracula = {
       {
         "filename",
         cond = conditions.buffer_not_empty,
-        color = { fg = colors.fg },
+        color = dracula and { fg = colors.fg } or {},
         shorten = true,
         file_status = false,
-        padding = { left = 1, right = 0 },
+        padding = { left = 1, right = 1 },
       },
-      "diff",
     },
     lualine_x = {
       {
-        "diagnostics",
-        sources = { "nvim_diagnostic" },
+        "diff",
         symbols = {
-          error = icons.error,
-          warn = icons.warn,
-          info = icons.hint,
-          hint = icons.info,
+          added = icons.git_status.added,
+          modified = icons.git_status.modified,
+          removed = icons.git_status.removed,
         },
-        diagnostics_color = {
-          color_error = { fg = colors.red },
-          color_warn = { fg = colors.yellow },
-          color_info = { fg = colors.cyan },
-        },
-        gui = "bold",
-        padding = { right = 1, left = 1 },
       },
-      {
-        function()
-          return ""
-        end,
-        color = { fg = colors.comment },
-      },
+      { "searchcount", color = dracula and { fg = colors.yellow } or {} },
     },
     lualine_y = {
       {
-        function()
-          local msg = " Lsp"
-          local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-          local clients = vim.lsp.get_active_clients()
-          if next(clients) == nil then
-            return msg
-          end
-          for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              return " " .. client.name
-            end
-          end
-          return msg
-        end,
-        color = { fg = colors.purple },
-        padding = { right = 0, left = 0 },
-      },
-      {
-        function()
-          return ""
-        end,
-        color = { fg = colors.comment },
-      },
-      {
-        "filetype",
-        color = { fg = colors.cyan },
-        padding = { right = 1, left = 0 },
+        server,
+        color = dracula and color_fg_mode or {},
+        separator = { left = "" },
+        padding = { right = 1, left = 1 },
       },
     },
     lualine_z = {
       {
         "progress",
-        color = function()
-          return { bg = colors.bg_alt, fg = mode_color[vim.fn.mode()] }
-        end,
-        padding = { right = 1, left = 1 },
+        color = color_bg_mode,
+        padding = { right = 0, left = 1 },
         separator = { left = "" },
       },
       {
         "location",
-        color = function()
-          return { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark }
-        end,
-        separator = { left = "" },
-        padding = { right = 1, left = 1 },
+        color = color_bg_mode,
+        padding = { right = 1, left = 0 },
       },
-    },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-}
-
-local default = {
-  options = {
-    icons_enabled = true,
-    theme = "auto",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = true,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    },
-  },
-  sections = {
-    lualine_a = {
-      {
-        "mode",
-        icon = "",
-        separator = { right = "" },
-        padding = { left = 1, right = 1 },
-      },
-    },
-    lualine_b = {
-      {
-        "branch",
-        separator = { right = "" },
-        padding = { left = 1, right = 1 },
-      },
-    },
-    lualine_c = {
-      {
-        "filetype",
-        icon_only = true,
-        colored = true,
-        separator = { left = "", right = "" },
-        padding = { left = 1, right = 0 },
-      },
-      {
-        "filename",
-        cond = conditions.buffer_not_empty,
-        shorten = true,
-        file_status = false,
-        padding = { left = 1, right = 0 },
-      },
-      "diff",
-    },
-    lualine_x = {
-      {
-        "diagnostics",
-        sources = { "nvim_diagnostic" },
-        gui = "bold",
-        padding = { right = 1, left = 1 },
-      },
-      {
-        function()
-          return ""
-        end,
-      },
-      {
-        function()
-          local msg = "No Lsp"
-          local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-          local clients = vim.lsp.get_active_clients()
-          if next(clients) == nil then
-            return msg
-          end
-          for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              return " " .. client.name
-            end
-          end
-          return msg
-        end,
-        padding = { right = 1, left = 1 },
-      },
-      {
-        function()
-          return ""
-        end,
-      },
-      {
-        "filetype",
-        padding = { right = 1, left = 1 },
-      },
-    },
-    lualine_y = {
-      {
-        "progress",
-      },
-    },
-    lualine_z = {
-      "location",
     },
   },
   inactive_sections = {
@@ -766,7 +203,6 @@ return {
     "nvim-tree/nvim-web-devicons",
     opts = true,
   },
-  opts = default_dracula,
-  -- opts = default,
-  -- opts = config_bubbles_custom,
+  opts = default,
+  -- opts = require("utils.bubbles"),
 }
