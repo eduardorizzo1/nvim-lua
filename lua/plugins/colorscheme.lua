@@ -1,4 +1,4 @@
-local dracula = require("config.colorscheme.dracula")
+local dracula = require("config.dracula")
 
 return {
   {
