@@ -158,7 +158,7 @@ local default = {
 					removed = icons.git_status.removed,
 				},
 			},
-			{ "searchcount", color = dracula and { fg = colors.orange } or {} },
+			{ "searchcount", color = dracula and { fg = colors.yellow } or {} },
 		},
 		lualine_y = {
 			{
