@@ -4,11 +4,7 @@ return {
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     keys[#keys + 1] = { "K", false }
   end,
-  opts = {
-    settings = {
-      Lua = {
-        diagnostics = { globals = { "vim" } },
-      },
-    },
-  },
+  config = function()
+    require("lspconfig.ui.windows").default_options.border = "rounded"
+  end,
 }
