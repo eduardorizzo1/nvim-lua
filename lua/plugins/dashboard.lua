@@ -29,7 +29,7 @@ local custom_header = {
 
 
 return {
-  "glepnir/dashboard-nvim",
+  "nvimdev/dashboard-nvim",
 	opts = {
 		theme = "doom",
 		config = {
