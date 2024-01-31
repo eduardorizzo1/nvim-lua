@@ -6,18 +6,10 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {} },
 			{
 				"pmizio/typescript-tools.nvim",
 				dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 				opts = require("config.lsp.typescript-tools").opts,
-			},
-			{
-				"williamboman/mason-lspconfig.nvim",
-				opts = {
-					ensure_installed = {},
-					automatic_installation = true,
-				},
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
 		},
@@ -47,7 +39,7 @@ return {
 	},
 
 	-----------------------------------
-	------------[ Null-ls ]------------
+	------------[ None-ls ]------------
 	-----------------------------------
 	{
 		"nvimtools/none-ls.nvim",
