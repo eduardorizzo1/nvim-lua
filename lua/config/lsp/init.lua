@@ -5,7 +5,7 @@ local servers = {
 	"lua_ls",
 	-- "tsserver", -- (typescript-tools)
 	"jsonls",
-	"angularls",
+	-- "angularls",
 	"vuels",
 	"html",
 	"cssls",
