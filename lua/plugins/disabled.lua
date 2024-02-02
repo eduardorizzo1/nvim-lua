@@ -7,4 +7,9 @@ return {
 	{ "Exafunction/codeium.nvim", enabled = false },
 	{ "echasnovski/mini.pairs", enabled = false },
 	{ "echasnovski/mini.pairs", enabled = false },
+	{ "Saecki/crates.nvim", enabled = false },
+	{ "stevearc/conform.nvim", enabled = false },
+	{ "echasnovski/mini.ai", enabled = false },
+	{ "echasnovski/mini.comment", enabled = false },
+	{ "mfussenegger/nvim-lint", enabled = false },
 }

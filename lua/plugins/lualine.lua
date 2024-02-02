@@ -90,6 +90,15 @@ local left_arrow = {
 	padding = { right = 0, left = 0 },
 }
 
+--PERF: ========= Right Arrow ===========
+local right_arrow = {
+	function()
+		return icons.arrows.right
+	end,
+	color = dracula and { fg = colors.comment } or {},
+	padding = { right = 0, left = 0 },
+}
+
 --HACK: =================================
 --HACK: =========== DEFAULT =============
 --HACK: =================================
@@ -122,14 +131,15 @@ local default = {
 		lualine_a = mode,
 		lualine_b = {
 			branch,
-		},
-		lualine_c = {
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
 				gui = "bold",
-				padding = { right = 0, left = 1 },
+				padding = { right = 1, left = 1 },
 			},
+			-- right_arrow,
+		},
+		lualine_c = {
 			{
 				"filetype",
 				icon_only = true,
@@ -147,6 +157,7 @@ local default = {
 			},
 		},
 		lualine_x = {
+			-- left_arrow,
 			{
 				"diff",
 				symbols = {
@@ -179,14 +190,6 @@ local default = {
 			},
 		},
 	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
 }
 
 ---------------------------------------------------------
@@ -195,11 +198,30 @@ local default = {
 ---------------------------------------------------------
 
 return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-		opts = true,
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = default,
+		-- opts = require("utils.bubbles"),
 	},
-	opts = default,
-	-- opts = require("utils.bubbles"),
+	{
+		"nvim-lualine/lualine.nvim",
+		optional = true,
+		event = "VeryLazy",
+		opts = function(_, opts)
+			table.insert(opts.sections.lualine_y, 1, {
+				function()
+					return icons.arrows.left
+				end,
+				cond = require("lazy.status").has_updates,
+				color = dracula and { fg = colors.comment } or {},
+				padding = { right = 0, left = 0 },
+			})
+			table.insert(opts.sections.lualine_y, 2, {
+				require("lazy.status").updates,
+				cond = require("lazy.status").has_updates,
+				color = dracula and { fg = colors.cyan } or {},
+				padding = { right = 1, left = 1 },
+			})
+		end,
+	},
 }

@@ -1,14 +1,12 @@
 local M = {}
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local illuminate = require("illuminate")
-local navic = require("nvim-navic")
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
-	vim.g.navic_silence = true
 
 	-- Null-ls
 	if client.supports_method("textDocument/formatting") then
@@ -20,11 +18,6 @@ M.on_attach = function(client, bufnr)
 				vim.lsp.buf.format()
 			end,
 		})
-	end
-
-	-- Navic
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
 	end
 end
 
