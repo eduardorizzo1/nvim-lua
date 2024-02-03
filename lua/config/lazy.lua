@@ -17,7 +17,7 @@ require("lazy").setup({
 			"LazyVim/LazyVim",
 			import = "lazyvim.plugins",
 			opts = {
-				colorscheme = "dracula",
+				colorscheme = "tokyonight",
 			},
 		},
 		{ import = "lazyvim.plugins.extras.lang.typescript" },

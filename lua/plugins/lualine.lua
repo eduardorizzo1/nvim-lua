@@ -1,7 +1,7 @@
 local icons = require("utils.icons")
 local colors = require("utils.colors").color
 local mode_color = require("utils.colors").mode_color
-local dracula = true
+local dracula = false
 
 local conditions = {
 	buffer_not_empty = function()
@@ -19,7 +19,7 @@ local conditions = {
 
 -- ======================================================
 local color_bg_mode = function()
-	return dracula and { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark } or { bg = mode_color[vim.fn.mode()] }
+	return dracula and { bg = mode_color[vim.fn.mode()], fg = colors.bg_dark } or {}
 end
 
 local color_fg_mode = function()
@@ -131,6 +131,8 @@ local default = {
 		lualine_a = mode,
 		lualine_b = {
 			branch,
+		},
+		lualine_c = {
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
@@ -138,8 +140,6 @@ local default = {
 				padding = { right = 1, left = 1 },
 			},
 			-- right_arrow,
-		},
-		lualine_c = {
 			{
 				"filetype",
 				icon_only = true,
@@ -208,7 +208,7 @@ return {
 		optional = true,
 		event = "VeryLazy",
 		opts = function(_, opts)
-			table.insert(opts.sections.lualine_y, 1, {
+			table.insert(opts.sections.lualine_x, 3, {
 				function()
 					return icons.arrows.left
 				end,
@@ -216,7 +216,7 @@ return {
 				color = dracula and { fg = colors.comment } or {},
 				padding = { right = 0, left = 0 },
 			})
-			table.insert(opts.sections.lualine_y, 2, {
+			table.insert(opts.sections.lualine_x, 4, {
 				require("lazy.status").updates,
 				cond = require("lazy.status").has_updates,
 				color = dracula and { fg = colors.cyan } or {},
