@@ -93,7 +93,7 @@ return {
 					-- local kind_name = string.lower(string.sub(vim_item.kind, 1, 4))
 					local kind_name = vim_item.kind
 					local space = "     "
-					vim_item.kind = string.format("%s ", icons[vim_item.kind])
+					vim_item.kind = string.format("%s", icons[vim_item.kind])
 
 					for name, icon in pairs(custom_icons) do
 						if entry.source.name == name then
