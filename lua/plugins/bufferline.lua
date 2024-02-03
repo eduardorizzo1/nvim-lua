@@ -4,45 +4,19 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
-			-- mode = "buffer",
-			-- themable = true,
-			-- numbers = "none",
-			-- max_name_length = 16,
-			-- max_prefix_length = 16,
-			-- tab_size = 16,
-			-- truncate_name = true,
-			-- enforce_regular_tabs = false,
-			-- move_wraps_at_ends = false,
-			buffer_close_icon = "",
-			modified_icon = "",
-			close_icon = " ",
-			left_trunc_marker = " ",
-			right_trunc_marker = " ",
+			show_tab_indicators = true,
 			always_show_bufferline = true,
 			show_close_icon = true,
 			show_buffer_close_icons = false,
-			diagnostics = "nvim_lsp",
-			right_mouse_command = "vertical sbuffer %d",
-			close_command = function(n)
-				require("mini.bufremove").delete(n, false)
-			end,
-			show_tab_indicators = true,
 			indicator = {
-				-- icon = "❯ ",
-				-- icon = "▏",
 				icon = "",
 				style = "icon",
 			},
 			separator_style = "slant", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }
-			hover = {
-				enabled = true,
-				delay = 0,
-				reveal = { "close" },
-			},
 			offsets = {
 				{
 					filetype = "NvimTree",
-					highlight = "Directory",
+					-- highlight = "Directory",
 					padding = 0,
 					separator = false,
 					text = function()
