@@ -64,6 +64,7 @@ M.opts = {
 			fg = custom_bg,
 		} or {}
 		hl.BufferLineBufferVisible = { fg = c.fg }
+		hl.BufferLineBufferSelected = { fg = c.fg, italic = true, bold = true }
 
 		--HACK:======== Fidget ========
 		hl.FidgetTask = { fg = c.comment, italic = true }
