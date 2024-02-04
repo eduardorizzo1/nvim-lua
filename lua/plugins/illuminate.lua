@@ -1,13 +1,13 @@
-return { 
-	'RRethy/vim-illuminate',
- 	lazy = true,
-  enabled = true,
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  },
-  event = { 'CursorMoved', 'InsertLeave' },
-  config = function()
-    require'illuminate'.configure {
+return {
+	"RRethy/vim-illuminate",
+	lazy = true,
+	enabled = true,
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	event = { "CursorMoved", "InsertLeave" },
+	config = function()
+		require("illuminate").configure({
 			providers = {
 				"lsp",
 				"treesitter",
@@ -19,6 +19,7 @@ return {
 				"dirvish",
 				"fugitive",
 				"nvimtree",
+				"dashboard",
 			},
 			filetypes_allowlist = {},
 			modes_denylist = {},
@@ -29,6 +30,6 @@ return {
 			large_file_cutoff = nil,
 			large_file_overrides = nil,
 			min_count_to_highlight = 1,
-    }
-  end
+		})
+	end,
 }

@@ -16,6 +16,7 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = tokyonight.opts,
+		cmd = tokyonight.cmd,
 	},
 
 	--TEST: kanagawa
@@ -27,6 +28,7 @@ return {
 	--TEST: Catppuccin
 	{
 		"catppuccin/nvim",
+		lazy = true,
 		name = "catppuccin",
 		opts = catppuccin.opts,
 	},

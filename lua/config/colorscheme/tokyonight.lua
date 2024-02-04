@@ -72,4 +72,8 @@ M.opts = {
 	end,
 }
 
+M.cmd = function()
+	vim.cmd([[ hi typescriptImport gui=italic ]])
+end
+
 return M
