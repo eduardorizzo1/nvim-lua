@@ -50,6 +50,9 @@ M.opts = {
 		hl.BufferLineFill = transparent and {
 			bg = custom_bg,
 		} or {}
+		hl.BufferLineBackground = transparent and {
+			fg = "#2f334d",
+		} or {}
 		hl.BufferLineOffsetSeparator = {
 			bg = c.bg,
 			fg = c.bg_dark,
@@ -70,6 +73,7 @@ M.opts = {
 		hl.FidgetTask = { fg = c.comment, italic = true }
 		hl.FidgetTitle = { fg = c.cyan, italic = true, bold = true }
 
+		--HACK:====== Typescript =======
 		hl.typescriptImport = { italic = true }
 	end,
 }
