@@ -134,15 +134,17 @@ if not vim.g.vscode then
 	-- ToggleTerm
 	map("n", "<leader>t", "<cmd>ToggleTerm <cr>", opts)
 	map("n", "<leader>T", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
-
-	-- LazyTerm
-	local lazyterm = function()
-		Util.terminal(nil, { cwd = Util.root() })
-	end
-	map("n", "<c-\\>", lazyterm, { desc = "Terminal (root dir)" })
+	map("n", "<C-\\>", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
 	map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
+
+	-- LazyTerm
+	-- local lazyterm = function()
+	-- 	Util.terminal(nil, { cwd = Util.root() })
+	-- end
+	-- map("n", "<C-\\>", lazyterm, { desc = "Terminal (root dir)" })
+	-- map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 	-- Lazygit
 	map("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)

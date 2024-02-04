@@ -20,6 +20,7 @@ M.opts = {
 		hl.CursorLineNr = {
 			fg = c.cyan,
 		}
+		hl.WinSeparator = { fg = c.comment }
 
 		--HACK:======== NvimTree ========
 		hl.NvimTreeOpenedFolderName = {

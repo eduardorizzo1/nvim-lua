@@ -18,7 +18,7 @@ return {
 			-- separator = "",
 			separator = "›",
 		},
-
+		exclude_filetypes = { "toggleterm" },
 		kinds = require("utils.icons").kinds,
 	},
 	-- init = function()
