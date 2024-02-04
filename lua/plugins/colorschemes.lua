@@ -16,7 +16,6 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = tokyonight.opts,
-		cmd = tokyonight.cmd,
 	},
 
 	--TEST: kanagawa

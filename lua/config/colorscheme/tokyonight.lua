@@ -69,11 +69,9 @@ M.opts = {
 		--HACK:======== Fidget ========
 		hl.FidgetTask = { fg = c.comment, italic = true }
 		hl.FidgetTitle = { fg = c.cyan, italic = true, bold = true }
+
+		hl.typescriptImport = { italic = true }
 	end,
 }
-
-M.cmd = function()
-	vim.cmd([[ hi typescriptImport gui=italic ]])
-end
 
 return M
