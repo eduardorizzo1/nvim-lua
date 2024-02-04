@@ -15,22 +15,6 @@ return {
 			show_start = true,
 			show_end = true,
 		},
-		exclude = {
-			filetypes = {
-				"help",
-				"alpha",
-				"dashboard",
-				"neo-tree",
-				"nvim-tree",
-				"Trouble",
-				"lazy",
-				"mason",
-				"notify",
-				"toggleterm",
-				"lazyterm",
-			},
-			buftypes = { "terminal" },
-		},
 		whitespace = {
 			remove_blankline_trail = false,
 		},
