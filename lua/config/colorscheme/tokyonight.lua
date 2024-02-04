@@ -2,6 +2,7 @@ local M = {}
 
 local transparent = true
 local custom_bg = "#1E2030"
+local custom_fg = "#2f334d"
 
 M.opts = {
 	style = "moon",
@@ -51,7 +52,7 @@ M.opts = {
 			bg = custom_bg,
 		} or {}
 		hl.BufferLineBackground = transparent and {
-			fg = "#2f334d",
+			fg = custom_fg,
 		} or {}
 		hl.BufferLineOffsetSeparator = {
 			bg = c.bg,
@@ -68,6 +69,14 @@ M.opts = {
 		} or {}
 		hl.BufferLineBufferVisible = { fg = c.fg }
 		hl.BufferLineBufferSelected = { fg = c.fg, italic = true, bold = true }
+		hl.BufferLineTab = transparent and { fg = c.comment, bg = custom_bg } or {}
+		hl.BufferLineTabSeparator = transparent and { fg = custom_bg, bg = custom_bg } or {}
+		hl.BufferLineTabSeparatorSelected = transparent and { fg = custom_bg } or {}
+
+		--HACK:========= Cmp =========
+		hl.Pmenu = transparent and {
+			bg = c.none,
+		} or {}
 
 		--HACK:======== Fidget ========
 		hl.FidgetTask = { fg = c.comment, italic = true }
