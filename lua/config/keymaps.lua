@@ -202,13 +202,4 @@ if not vim.g.vscode then
 
 	-- Markdown Preview
 	map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", opts)
-else
-	-- Fold
-	map("n", "za", '<cmd>call VSCodeNotify("editor.toggleFold")<cr>', opts)
-	map("n", "zA", '<cmd>call VSCodeNotify("editor.foldAll")<cr>', opts)
-	-- Buffer
-	map("n", "<S-l>", '<cmd>call VSCodeNotify("workbench.action.nextEditor")<cr>', opts) -- next
-	map("n", "<S-h>", '<cmd>call VSCodeNotify("workbench.action.previousEditor")<cr>', opts) -- previous
-	-- Ctrl + D
-	map("v", "<C-n>", '<cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<cr>', opts) -- next
 end
