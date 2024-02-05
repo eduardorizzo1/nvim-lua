@@ -68,8 +68,8 @@ map("n", "gc", '<cmd>call VSCodeNotify("editor.action.quickFix")<cr>', opts)
 map("n", "gO", '<cmd>call VSCodeNotify("editor.action.organizeImports")<cr>', opts)
 
 -- Comment
-map("n", "<leader>cc", '<cmd>call VSCodeNotify("editor.action.commentLine")<cr>', opts)
-map("n", "<leader>ca", '<cmd>call VSCodeNotify("editor.action.blockComment")<cr>', opts)
+map({ "v", "x", "n" }, "<leader>cc", '<cmd>call VSCodeNotify("editor.action.commentLine")<cr>', opts)
+map({ "v", "x", "n" }, "<leader>ca", '<cmd>call VSCodeNotify("editor.action.blockComment")<cr>', opts)
 
 -- Git
 map("n", "<leader>gg", '<cmd>call VSCodeNotify("workbench.view.scm")<cr>', opts)
