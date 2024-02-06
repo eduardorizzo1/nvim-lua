@@ -8,7 +8,6 @@ return {
 				enabled = true,
 				view = "cmdline_popup",
 				opts = {},
-				---@type table<string, CmdlineFormat>
 			},
 			presets = {
 				bottom_search = true, -- use a classic bottom cmdline for search
