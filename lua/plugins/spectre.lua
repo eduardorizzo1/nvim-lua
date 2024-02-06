@@ -3,7 +3,7 @@ return {
 	cmd = "Spectre",
 	opts = {
 		color_devicons = true,
-		open_cmd = "vnew",
+		open_cmd = { "noswapfile vnew" },
 		live_update = false, -- auto execute search again when you write to any file in vim
 		line_sep_start = "╭─────────────────────────────────────────",
 		result_padding = "│  ",

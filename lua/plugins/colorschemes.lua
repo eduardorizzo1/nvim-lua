@@ -4,27 +4,27 @@ local kanagawa = require("config.colorscheme.kanagawa")
 local catppuccin = require("config.colorscheme.catppuccin")
 
 return {
-	--TEST: Dracula
+	--TEST:===== Dracula =====
 	{
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 		opts = dracula.opts,
 	},
 
-	--TEST: Tokyonight
+	--TEST:===== Tokyonight =====
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = tokyonight.opts,
 	},
 
-	--TEST: kanagawa
+	--TEST:===== kanagawa =====
 	{
 		"rebelot/kanagawa.nvim",
 		opts = kanagawa.opts,
 	},
 
-	--TEST: Catppuccin
+	--TEST:===== Catppuccin =====
 	{
 		"catppuccin/nvim",
 		lazy = true,
@@ -32,45 +32,52 @@ return {
 		opts = catppuccin.opts,
 	},
 
-	--TEST: Gruvbox
+	--TEST:===== Gruvbox =====
 	{
 		"ellisonleao/gruvbox.nvim",
 		opts = {},
 	},
 
-	--TEST: Everforest
+	--TEST:===== Everforest =====
 	{
 		"sainnhe/everforest",
 		opts = {},
 	},
 
-	--TEST: Neosolarized
+	--TEST:===== Neosolarized =====
 	{
 		"Tsuzat/NeoSolarized.nvim",
-		-- opts = {},
+		opts = {},
 	},
 
-	--TEST: Nightfox
+	--TEST:===== Nightfox =====
 	{
 		"EdenEast/nightfox.nvim",
 	},
 
-	--TEST: Onedark
+	--TEST:===== Onedark =====
 	{
 		"navarasu/onedark.nvim",
 		opts = {
 			style = "dark", -- dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
 		},
 	},
-	--TEST: Material
+
+	--TEST:===== Material =====
 	{
 		"marko-cerovac/material.nvim",
 		opts = {},
 	},
+
+	--TEST:===== Solarized Osaka =====
 	{
 		"craftzdog/solarized-osaka.nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {},
+	},
+	{
+		"Mofiqul/vscode.nvim",
 		opts = {},
 	},
 }
