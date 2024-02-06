@@ -32,7 +32,6 @@ if not vim.g.vscode then
 			{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 			{ import = "lazyvim.plugins.extras.ui.edgy" },
 			{ import = "lazyvim.plugins.extras.vscode" },
-			{ import = "lazyvim.plugins.extras.coding.native_snippets" },
 			{ import = "plugins" },
 		},
 		ui = {
