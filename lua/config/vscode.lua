@@ -28,6 +28,9 @@ map("n", "<leader>h", '<cmd>call VSCodeNotify("workbench.action.splitEditorDown"
 -- save all files
 map("n", ";s", '<cmd>call VSCodeNotify("workbench.action.files.saveAll")<cr>', opts)
 
+-- Undo
+map({ "n", "x", "v" }, "u", '<cmd>call VSCodeNotify("undo")<cr>', opts)
+
 -- Redo
 map({ "n", "i", "x", "v" }, "<C-r>", '<cmd>call VSCodeNotify("redo")<cr>', opts)
 
@@ -94,23 +97,5 @@ return {
 		opts = {
 			jump_on_sole_occurrence = false,
 		},
-	},
-	{
-		"mg979/vim-visual-multi",
-		init = function()
-			local cmd = vim.cmd
-			cmd([[ let g:VM_theme = 'neon' ]])
-			cmd([[ let g:VM_maps = {} ]])
-			cmd([[ let g:VM_default_mappings = 0 ]])
-			cmd([[ let g:VM_mouse_mappings = 1 ]])
-			cmd([[ let g:VM_maps["Find Under"] = "<C-n>" ]])
-			cmd([[ let g:VM_maps["Find Subword Under"] = "<C-n>" ]])
-			cmd([[ let g:VM_maps["Undo"] = "<C-z>" ]])
-			cmd([[ let g:VM_maps["Redo"] = "<C-r>" ]])
-			cmd([[ let g:VM_maps["Select Cursor Down"] = "<M-C-Down>" ]])
-			cmd([[ let g:VM_maps["Select Cursor Up"] = "<M-C-Up>" ]])
-			cmd([[ let g:VM_maps["Select All"] = "<M-n>" ]])
-			cmd([[ let g:VM_maps["Skip Region"] = "<C-x>" ]])
-		end,
 	},
 }
