@@ -53,7 +53,7 @@ map("n", "<S-l>", '<cmd>call VSCodeNotify("workbench.action.nextEditor")<cr>', o
 map("n", "<S-h>", '<cmd>call VSCodeNotify("workbench.action.previousEditor")<cr>', opts)
 
 -- Ctrl + D
-map({ "i" }, "<C-d>", '<cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<cr>', opts)
+map({ "i", "v", "x", "n" }, "<C-d>", '<cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<cr>', opts)
 
 -- Terminal
 map("n", "<leader>t", '<cmd>call VSCodeNotify("workbench.action.togglePanel")<cr>', opts)
@@ -83,7 +83,9 @@ map("n", "<leader>b", "<cmd>HopWordBC<cr>", opts)
 map("n", "<leader>j", "<cmd>HopLineAC<cr>", opts)
 map("n", "<leader>k", "<cmd>HopLineBC<cr>", opts)
 
---BUG: ====== [ Plugins ] ==============
+--HACK:=================================
+--HACK:====== [ Plugins ] ==============
+--HACK:=================================
 return {
 	--======== Hop ========
 	{
@@ -92,5 +94,23 @@ return {
 		opts = {
 			jump_on_sole_occurrence = false,
 		},
+	},
+	{
+		"mg979/vim-visual-multi",
+		init = function()
+			local cmd = vim.cmd
+			cmd([[ let g:VM_theme = 'neon' ]])
+			cmd([[ let g:VM_maps = {} ]])
+			cmd([[ let g:VM_default_mappings = 0 ]])
+			cmd([[ let g:VM_mouse_mappings = 1 ]])
+			cmd([[ let g:VM_maps["Find Under"] = "<C-n>" ]])
+			cmd([[ let g:VM_maps["Find Subword Under"] = "<C-n>" ]])
+			cmd([[ let g:VM_maps["Undo"] = "<C-z>" ]])
+			cmd([[ let g:VM_maps["Redo"] = "<C-r>" ]])
+			cmd([[ let g:VM_maps["Select Cursor Down"] = "<M-C-Down>" ]])
+			cmd([[ let g:VM_maps["Select Cursor Up"] = "<M-C-Up>" ]])
+			cmd([[ let g:VM_maps["Select All"] = "<M-n>" ]])
+			cmd([[ let g:VM_maps["Skip Region"] = "<C-x>" ]])
+		end,
 	},
 }
