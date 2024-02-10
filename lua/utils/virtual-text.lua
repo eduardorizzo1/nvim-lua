@@ -1,25 +1,4 @@
 local M = {}
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local illuminate = require("illuminate")
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-M.on_attach = function(client, bufnr)
-  illuminate.on_attach(client)
-
-  -- None-ls
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format()
-      end,
-    })
-  end
-end
 
 local diagnostics_active = true
 local diagnostics_virtual_text = true
@@ -28,7 +7,6 @@ local virtual_text_on = {
   virtual_text = {
     spacing = 4,
     source = "if_many",
-    -- prefix = "●",
   },
 }
 
