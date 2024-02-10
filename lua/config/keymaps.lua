@@ -135,16 +135,8 @@ if not vim.g.vscode then
 	map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
 	-- ToggleTerm
-	map("n", "<leader>t", "<cmd>ToggleTerm <cr>", opts)
-	map("n", "<leader>T", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
-	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
-	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
-
-	-- LazyTerm
-	local lazyterm = function()
-		Util.terminal(nil, { cwd = Util.root() })
-	end
-	map("n", "<C-\\>", lazyterm, { desc = "Terminal (root dir)" })
+	map("n", "<leader>t", '<cmd>ToggleTerm direction="float"<cr>', opts)
+	map("n", "<C-\\>", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
 	map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
