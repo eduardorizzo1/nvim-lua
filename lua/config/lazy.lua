@@ -25,6 +25,7 @@ if not vim.g.vscode then
 			{ import = "lazyvim.plugins.extras.lang.json" },
 			{ import = "lazyvim.plugins.extras.lang.rust" },
 			{ import = "lazyvim.plugins.extras.lang.tailwind" },
+			{ import = "lazyvim.plugins.extras.lang.markdown" },
 			{ import = "lazyvim.plugins.extras.lsp.none-ls" },
 			{ import = "lazyvim.plugins.extras.test.core" },
 			{ import = "lazyvim.plugins.extras.dap.core" },

@@ -1,9 +1,10 @@
 return {
 	"nvim-pack/nvim-spectre",
+	build = false,
 	cmd = "Spectre",
 	opts = {
 		color_devicons = true,
-		open_cmd = { "noswapfile vnew" },
+		open_cmd = "vnew",
 		live_update = false, -- auto execute search again when you write to any file in vim
 		line_sep_start = "╭─────────────────────────────────────────",
 		result_padding = "│  ",
