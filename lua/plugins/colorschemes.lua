@@ -27,7 +27,7 @@ return {
 	--TEST:===== Catppuccin =====
 	{
 		"catppuccin/nvim",
-		lazy = true,
+		lazy = false,
 		name = "catppuccin",
 		opts = catppuccin.opts,
 	},

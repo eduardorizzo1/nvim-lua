@@ -165,7 +165,10 @@ local default = {
 					removed = icons.git_status.removed,
 				},
 			},
-			{ "searchcount", color = dracula and { fg = colors.yellow } or {} },
+			{
+				"searchcount",
+				color = dracula and { fg = colors.yellow } or { fg = "#E0AF68" },
+			},
 		},
 		lualine_y = {
 			{
@@ -207,7 +210,7 @@ return {
 		optional = true,
 		event = "VeryLazy",
 		opts = function(_, opts)
-			table.insert(opts.sections.lualine_x, 3, {
+			table.insert(opts.sections.lualine_x, 4, {
 				function()
 					return icons.arrows.left
 				end,
@@ -215,7 +218,7 @@ return {
 				color = dracula and { fg = colors.comment } or {},
 				padding = { right = 0, left = 0 },
 			})
-			table.insert(opts.sections.lualine_x, 4, {
+			table.insert(opts.sections.lualine_x, 5, {
 				require("lazy.status").updates,
 				cond = require("lazy.status").has_updates,
 				color = dracula and { fg = colors.cyan } or { fg = "#7DCFFF" },
