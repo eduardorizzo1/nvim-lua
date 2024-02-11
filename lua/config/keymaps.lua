@@ -92,7 +92,7 @@ if not vim.g.vscode then
   map("n", "<S-h>", "<CMD>BufferLineCyclePrev<cr>", opts) -- previous
   map("n", "<M-h>", "<CMD>BufferLineCyclePrev<cr>", opts)
   map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", opts)
-  map("n", "<S-x>", "<CMD>bd<cr>", opts)    -- delete
+  map("n", "<S-x>", "<CMD>bd<cr>", opts)     -- delete
   map("n", "<M-x>", "<CMD>bd<cr>", opts)
   map("n", "<M-t>", "<CMD>tabnew<cr>", opts) -- tabs
   map("n", "<M-[>", "<CMD>tabnext<cr>", opts)
@@ -135,7 +135,8 @@ if not vim.g.vscode then
   map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
   -- ToggleTerm
-  map("n", "<leader>t", '<cmd>ToggleTerm direction="float"<cr>', opts)
+  map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
+  map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
   map("n", "<C-\\>", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
   map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
   map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
