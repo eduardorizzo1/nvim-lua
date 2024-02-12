@@ -1,6 +1,6 @@
 return {
   "nvimtools/none-ls.nvim",
-  config = function(_, opts)
+  opts = function(_, opts)
     local nls = require("null-ls")
     opts.root_dir = opts.root_dir
         or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
@@ -9,6 +9,7 @@ return {
       nls.builtins.formatting.shfmt,
       nls.builtins.formatting.prettierd,
       nls.builtins.formatting.jq,
+      nls.builtins.formatting.black.with({ extra_args = { "--fast" } }),
       nls.builtins.formatting.rustfmt.with({
         extra_args = function(params)
           local Path = require("plenary.path")
