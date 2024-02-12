@@ -30,6 +30,7 @@ if not vim.g.vscode then
       { import = "lazyvim.plugins.extras.lang.docker" },
       { import = "lazyvim.plugins.extras.lang.yaml" },
       { import = "lazyvim.plugins.extras.lsp.none-ls" },
+      { import = "lazyvim.plugins.extras.linting.eslint" },
       { import = "lazyvim.plugins.extras.test.core" },
       { import = "lazyvim.plugins.extras.dap.core" },
       { import = "lazyvim.plugins.extras.editor.leap" },

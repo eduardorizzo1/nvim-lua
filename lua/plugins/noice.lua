@@ -20,7 +20,7 @@ return {
           enabled = false,
         },
         signature = {
-          enabled = true,
+          enabled = false,
         },
         progress = {
           enabled = false,
