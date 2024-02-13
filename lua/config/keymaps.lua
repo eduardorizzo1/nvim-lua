@@ -188,5 +188,6 @@ if not vim.g.vscode then
   map("n", "gn", ":IncRename ", opts)
 
   -- Markdown Preview
-  map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", opts)
+   map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", opts)
 end
+
