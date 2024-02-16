@@ -1,7 +1,5 @@
 return {
 	"akinsho/bufferline.nvim",
-	version = "*",
-	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
 			show_tab_indicators = true,

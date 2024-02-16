@@ -79,4 +79,7 @@ return {
 			},
 		})
 	end,
+	keys = {
+		{ "<leader><space>", false },
+	},
 }
