@@ -42,7 +42,7 @@ if not vim.g.vscode then
 			border = "rounded",
 		},
 		install = { colorscheme = { "tokyonight", "habamax" } },
-		checker = { enabled = true },
+		checker = { enabled = false },
 		performance = {
 			rtp = {
 				-- disable some rtp plugins
