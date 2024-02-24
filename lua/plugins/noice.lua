@@ -32,7 +32,7 @@ return {
 				},
 			},
 			health = {
-				checker = false,
+				checker = true,
 			},
 			messages = {
 				enabled = true, -- enables the Noice messages UI
