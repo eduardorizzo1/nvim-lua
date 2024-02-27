@@ -15,26 +15,36 @@ local server = function()
 end
 
 return {
-	"nvim-lualine/lualine.nvim",
-	opts = {
-		sections = {
-			lualine_a = {
-				{
-					"mode",
-					icon = "",
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = {
+			sections = {
+				lualine_a = {
+					{
+						"mode",
+						icon = "",
+					},
 				},
-			},
-			lualine_z = {
-				{ "progress", separator = " ", padding = { left = 1, right = 0 } },
-				{ "location", padding = { left = 0, right = 1 } },
-			},
-			lualine_y = {
-				{
-					server,
-					separator = { left = "" },
-					padding = { right = 1, left = 1 },
+				lualine_y = {
+					{
+						server,
+						separator = { left = "" },
+						padding = { right = 1, left = 1 },
+					},
+				},
+				lualine_z = {
+					{ "location", separator = " ", padding = { left = 1, right = 0 } },
+					{ "progress", padding = { left = 0, right = 1 } },
 				},
 			},
 		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = function(_, opts)
+			table.insert(opts.sections.lualine_x, 3, {
+				"searchcount",
+			})
+		end,
 	},
 }
