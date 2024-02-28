@@ -42,10 +42,6 @@ map({ "n", "x" }, "K", "5k", opts)
 map({ "n", "x" }, "<C-j>", "10j", opts)
 map({ "n", "x" }, "<C-k>", "10k", opts)
 
--- Split
-map("n", "<leader>v", "<cmd>vsp<cr>", opts)
-map("n", "<leader>h", "<cmd>sp<cr>", opts)
-
 -- save all files
 map("n", "<leader>ss", "<CMD>wa<cr>", opts)
 
@@ -95,6 +91,10 @@ if not vim.g.vscode then
 	map("n", "<M-t>", "<CMD>tabnew<cr>", opts) -- tabs
 	map("n", "<M-[>", "<CMD>tabnext<cr>", opts)
 	map("n", "<M-]>", "<CMD>tabprevious<cr>", opts)
+	map("n", "<leader><tab>t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab>n", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 	-- Telescope
 	map(
@@ -115,12 +115,11 @@ if not vim.g.vscode then
 	map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', opts)
 	map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', opts)
 	map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<cr>', opts)
-	-- DiffView
-	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts)
+	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
 	map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
 	map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
-	-- Lazygit
-	map("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
+	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
+	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
 
 	-- Lsp Saga
 	map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
@@ -134,9 +133,8 @@ if not vim.g.vscode then
 	map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 	map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
 	map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
-	map("n", "<M-b>", "<cmd>Lspsaga outline<cr>", opts)
-	map("n", "<A-b>", "<cmd>Lspsaga outline<cr>", opts)
-	map("n", "<leader>cs", "<cmd>Lspsaga outline<cr>", opts)
+	map("n", "<leader>cs", "<cmd>Lspsaga outline<cr>", { desc = "Toggle Outline" })
+	map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- ToggleTerm
 	map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
@@ -145,11 +143,6 @@ if not vim.g.vscode then
 	map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
-
-	-- Toggles
-	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
-	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
-	map("n", "<leader>uvt", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- Hop
 	map("n", "<leader><leader>w", "<cmd>HopWordAC<cr>", opts)
