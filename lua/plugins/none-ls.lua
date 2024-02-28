@@ -8,7 +8,6 @@ return {
 			nls.builtins.formatting.stylua,
 			nls.builtins.formatting.shfmt,
 			nls.builtins.formatting.prettierd,
-			nls.builtins.formatting.black.with({ extra_args = { "--fast" } }),
 			nls.builtins.formatting.csharpier,
 		})
 	end,
