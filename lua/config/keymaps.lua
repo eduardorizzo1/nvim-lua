@@ -1,6 +1,5 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
-local Util = require("lazyvim.util")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -48,7 +47,7 @@ map("n", "<leader>v", "<cmd>vsp<cr>", opts)
 map("n", "<leader>h", "<cmd>sp<cr>", opts)
 
 -- save all files
-map("n", ";s", "<CMD>wa<cr>", opts)
+map("n", "<leader>ss", "<CMD>wa<cr>", opts)
 
 -- ctrl+z
 map("n", "<C-z>", "<cmd>u<cr>", opts)
@@ -67,7 +66,7 @@ map("n", "<C-q>", "<cmd>q<cr>", opts)
 map("n", "<leader>*", "<cmd>noh<cr>", opts)
 
 -- Toggle Relative number
-map("n", "<leader>n", "<cmd>set relativenumber!<cr>", opts)
+map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", opts)
 
 --:NOTE:=================================================
 ------------------[ P L U G I N S ]----------------------
@@ -79,13 +78,10 @@ if not vim.g.vscode then
 	map("n", "+", "<cmd>NvimTreeResize +5<cr>", opts)
 
 	-- IndentLine
-	map("n", ";i", "<cmd>IBLToggle<cr>", opts)
+	map("n", "<leader>ui", "<cmd>IBLToggle<cr>", opts)
 
 	-- Code Runner
 	map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts)
-
-	-- Trouble
-	map("n", "<leader>e", "<cmd>TroubleToggle<cr>", opts)
 
 	-- Bufferline
 	map("n", "<S-l>", "<CMD>BufferLineCycleNext<cr>", opts) -- next
@@ -114,9 +110,17 @@ if not vim.g.vscode then
 	map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<cr>', opts)
 	map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<cr>', opts)
 	map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
+
+	-- Git
 	map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', opts)
 	map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', opts)
 	map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<cr>', opts)
+	-- DiffView
+	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts)
+	map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
+	map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
+	-- Lazygit
+	map("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
 
 	-- Lsp Saga
 	map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
@@ -131,7 +135,8 @@ if not vim.g.vscode then
 	map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
 	map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
 	map("n", "<M-b>", "<cmd>Lspsaga outline<cr>", opts)
-	map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+	map("n", "<A-b>", "<cmd>Lspsaga outline<cr>", opts)
+	map("n", "<leader>cs", "<cmd>Lspsaga outline<cr>", opts)
 
 	-- ToggleTerm
 	map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
@@ -141,14 +146,10 @@ if not vim.g.vscode then
 	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 
-	-- Lazygit
-	map("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
-
 	-- Toggles
-	map("n", ";gb", "<cmd>BlamerToggle <cr>", opts)
-	map("n", ";gs", "<cmd>Gitsigns toggle_signs <cr>", opts)
-	map("n", ";d", "<cmd>lua toggle_diagnostics()<cr>", opts)
-	map("n", ";e", "<cmd>lua toggle_virtual_text()<cr>", opts)
+	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
+	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
+	map("n", "<leader>uvt", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- Hop
 	map("n", "<leader><leader>w", "<cmd>HopWordAC<cr>", opts)
@@ -178,7 +179,7 @@ if not vim.g.vscode then
 	})
 
 	-- Barbecue
-	map("n", ";.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts)
+	map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts)
 
 	-- Rest
 	map("n", "gR", '<cmd>lua require("rest-nvim").run()<cr>', opts)
