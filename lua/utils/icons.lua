@@ -153,6 +153,7 @@ return {
 	hexagon_breakpoint = " ",
 	globe = " ",
 	cube = " ",
+	codeium = "󰘦 ",
 
 	-- Words
 	e_circle_outline = "Ⓔ ",

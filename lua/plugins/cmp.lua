@@ -10,9 +10,10 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		{
-			"tzachar/cmp-tabnine",
-			build = "./install.sh",
-			dependencies = "hrsh7th/nvim-cmp",
+			"Exafunction/codeium.nvim",
+			cmd = "Codeium",
+			build = ":Codeium Auth",
+			opts = {},
 		},
 	},
 	config = function()
@@ -29,7 +30,7 @@ return {
 		local icons = require("utils.icons").kinds
 
 		local custom_icons = {
-			cmp_tabnine = "⚡",
+			codeium = "󰘦 ",
 			luasnip = " ",
 			buffer = "◉ ",
 		}
@@ -99,7 +100,7 @@ return {
 					--NOTE: order matters
 					vim_item.menu = ({
 						nvim_lsp = space .. "❨" .. kind_name .. "❩",
-						cmp_tabnine = space .. "❨Tabnine❩",
+						codeium = space .. "❨Codeium❩",
 						luasnip = space .. "❨Luasnip❩",
 						buffer = space .. "❨Buffer❩",
 						nvim_lua = space .. "❨Nvim❩",
@@ -111,7 +112,7 @@ return {
 
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "cmp_tabnine" },
+				{ name = "codeium" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "nvim_lua" },

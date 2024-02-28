@@ -33,8 +33,8 @@ return {
 					},
 				},
 				lualine_z = {
-					{ "location", separator = " ", padding = { left = 1, right = 0 } },
-					{ "progress", padding = { left = 0, right = 1 } },
+					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
+					{ "location", padding = { left = 0, right = 1 } },
 				},
 			},
 		},
@@ -42,7 +42,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		opts = function(_, opts)
-			table.insert(opts.sections.lualine_x, 3, {
+			table.insert(opts.sections.lualine_x, 2, {
 				"searchcount",
 			})
 		end,
