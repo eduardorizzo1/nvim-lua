@@ -42,6 +42,14 @@ map({ "n", "x" }, "K", "5k", opts)
 map({ "n", "x" }, "<C-j>", "10j", opts)
 map({ "n", "x" }, "<C-k>", "10k", opts)
 
+-- Move Lines
+map("n", "<C-A-Down>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<C-A-Up>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<C-A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<C-A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<C-A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<C-A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
 -- save all files
 map("n", "<leader>ss", "<CMD>wa<cr>", opts)
 
@@ -93,8 +101,10 @@ if not vim.g.vscode then
 	map("n", "<M-]>", "<CMD>tabprevious<cr>", opts)
 	map("n", "<leader><tab>t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 	map("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab><S-tab>", "<cmd>tabnext<cr>", { desc = "Previous Tab" })
 	map("n", "<leader><tab>n", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 	map("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+	map("n", "<leader><tab>x", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 
 	-- Telescope
 	map(
