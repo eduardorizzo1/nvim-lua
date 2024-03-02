@@ -1,15 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	branch = "0.1.x",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "make",
-			cond = function()
-				return vim.fn.executable("make") == 1
-			end,
-		},
 		{
 			"nvim-telescope/telescope-media-files.nvim",
 			opts = {
@@ -23,7 +14,6 @@ return {
 			},
 		},
 	},
-	event = "BufEnter",
 	config = function()
 		local actions = require("telescope.actions")
 		require("telescope").load_extension("media_files")
@@ -50,7 +40,7 @@ return {
 		require("telescope").setup({
 			defaults = {
 				prompt_prefix = "❯ ",
-				selection_caret = " ", -- "  "
+				selection_caret = " ", -- "  "
 				entry_prefix = "  ",
 				initial_mode = "insert",
 				layout_strategy = "flex",
