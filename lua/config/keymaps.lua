@@ -128,6 +128,7 @@ if not vim.g.vscode then
 	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
 	map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
 	map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
+	map("n", "<leader>gD", "<cmd>Neogit<cr>", opts) -- NeoGit
 	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
 	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
 
