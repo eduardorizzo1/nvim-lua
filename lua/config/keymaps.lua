@@ -90,19 +90,12 @@ if not vim.g.vscode then
 	-- Bufferline
 	map("n", "<S-l>", "<CMD>BufferLineCycleNext<cr>", opts) -- next
 	map("n", "<M-l>", "<CMD>BufferLineCycleNext<cr>", opts)
-	map("n", "<TAB>", "<CMD>BufferLineCycleNext<cr>", opts)
 	map("n", "<S-h>", "<CMD>BufferLineCyclePrev<cr>", opts) -- previous
 	map("n", "<M-h>", "<CMD>BufferLineCyclePrev<cr>", opts)
-	map("n", "<S-TAB>", "<CMD>BufferLineCyclePrev<cr>", opts)
-	map("n", "<S-x>", "<CMD>bd<cr>", opts) -- delete
-	map("n", "<M-x>", "<CMD>bd<cr>", opts)
-	map("n", "<M-t>", "<CMD>tabnew<cr>", opts) -- tabs
-	map("n", "<M-[>", "<CMD>tabnext<cr>", opts)
-	map("n", "<M-]>", "<CMD>tabprevious<cr>", opts)
-	map("n", "<leader><tab>t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab>t", "<cmd>tabnew<cr>", { desc = "New Tab" })
 	map("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-	map("n", "<leader><tab><S-tab>", "<cmd>tabnext<cr>", { desc = "Previous Tab" })
 	map("n", "<leader><tab>n", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+	map("n", "<leader><tab><S-tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 	map("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 	map("n", "<leader><tab>x", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 
@@ -144,7 +137,6 @@ if not vim.g.vscode then
 	map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 	map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
 	map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
-	map("n", "<leader>cs", "<cmd>Lspsaga outline<cr>", { desc = "Toggle Outline" })
 	map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- ToggleTerm

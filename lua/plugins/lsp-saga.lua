@@ -109,6 +109,7 @@ return {
 			enable_in_insert = false,
 		},
 		outline = {
+			enable = false,
 			keys = {
 				jump = "<CR>",
 				expand_collapse = "o",
