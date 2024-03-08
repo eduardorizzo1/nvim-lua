@@ -1,11 +1,14 @@
 local server = function()
 	local msg = " Lsp"
+	---@diagnostic disable-next-line: deprecated
 	local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+	---@diagnostic disable-next-line: deprecated
 	local clients = vim.lsp.get_active_clients()
 	if next(clients) == nil then
 		return msg
 	end
 	for _, client in ipairs(clients) do
+		---@diagnostic disable-next-line: undefined-field
 		local filetypes = client.config.filetypes
 		if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
 			return " " .. client.name
@@ -33,8 +36,8 @@ return {
 					},
 				},
 				lualine_z = {
-					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
-					{ "location", padding = { left = 0, right = 1 } },
+					{ "location", separator = " ", padding = { left = 1, right = 0 } },
+					{ "progress", padding = { left = 0, right = 1 } },
 				},
 			},
 		},

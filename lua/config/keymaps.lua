@@ -1,9 +1,6 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- C-c ESC
 map({ "n", "i", "v", "x" }, "<C-c>", "<ESC>", opts)
 
