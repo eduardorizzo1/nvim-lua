@@ -56,7 +56,7 @@ map("x", "<C-z>", "<Esc><cmd>u<cr>", opts)
 
 map("v", "D", '"_d', opts) -- Delete without copy
 map("n", "<C-q>", "<cmd>q<cr>", opts) -- ctrl+q to quit
-map("n", "<leader>ss", "<CMD>wa<cr>", opts) -- save all files
+map("n", "<leader>S", "<CMD>wa<cr>", opts) -- save all files
 map("n", "<leader>*", "<cmd>noh<cr>", opts) -- Toggle highlight match word
 map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", opts) -- Toggle Relative number
 
