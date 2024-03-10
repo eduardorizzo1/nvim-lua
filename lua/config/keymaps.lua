@@ -47,9 +47,6 @@ map("i", "<C-A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<C-A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<C-A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
--- save all files
-map("n", "<leader>ss", "<CMD>wa<cr>", opts)
-
 -- ctrl+z
 map("n", "<C-z>", "<cmd>u<cr>", opts)
 map("i", "<C-z>", "<Esc><cmd>u<cr>a", opts)
@@ -57,37 +54,34 @@ map("v", "<C-z>", "<Esc><cmd>u<cr>v", opts)
 map("c", "<C-z>", "<Esc><cmd>u<cr>c", opts)
 map("x", "<C-z>", "<Esc><cmd>u<cr>", opts)
 
--- Delete without copy
-map("v", "D", '"_d', opts)
-
--- ctrl+q to quit
-map("n", "<C-q>", "<cmd>q<cr>", opts)
-
--- Toggle highlight match word
-map("n", "<leader>*", "<cmd>noh<cr>", opts)
-
--- Toggle Relative number
-map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", opts)
+map("v", "D", '"_d', opts) -- Delete without copy
+map("n", "<C-q>", "<cmd>q<cr>", opts) -- ctrl+q to quit
+map("n", "<leader>ss", "<CMD>wa<cr>", opts) -- save all files
+map("n", "<leader>*", "<cmd>noh<cr>", opts) -- Toggle highlight match word
+map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", opts) -- Toggle Relative number
 
 --:NOTE:=================================================
-------------------[ P L U G I N S ]----------------------
--- ======================================================
+--================[ P L U G I N S ]======================
+--=======================================================
 if not vim.g.vscode then
+	map("n", "<leader>ui", "<cmd>IBLToggle<cr>", opts) -- IndentLine
+	map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts) -- Code Runner
+	map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts) -- Barbecue
+	map("n", "gR", '<cmd>lua require("rest-nvim").run()<cr>', opts) -- Rest
+	map("n", "gn", ":IncRename ", opts) -- IncRename
+	map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
+	map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
+	map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment line" })
+	map("v", "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
+	map("x", "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
+
 	-- Nvimtree
 	map("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", opts)
 	map("n", "_", "<cmd>NvimTreeResize -5<cr>", opts)
 	map("n", "+", "<cmd>NvimTreeResize +5<cr>", opts)
 
-	-- IndentLine
-	map("n", "<leader>ui", "<cmd>IBLToggle<cr>", opts)
-
-	-- Code Runner
-	map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts)
-
 	-- Bufferline
-	map("n", "<S-l>", "<CMD>BufferLineCycleNext<cr>", opts) -- next
 	map("n", "<M-l>", "<CMD>BufferLineCycleNext<cr>", opts)
-	map("n", "<S-h>", "<CMD>BufferLineCyclePrev<cr>", opts) -- previous
 	map("n", "<M-h>", "<CMD>BufferLineCyclePrev<cr>", opts)
 	map("n", "<leader><tab>t", "<cmd>tabnew<cr>", { desc = "New Tab" })
 	map("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
@@ -133,7 +127,6 @@ if not vim.g.vscode then
 	map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
 	map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 	map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
-	map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
 	map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- ToggleTerm
@@ -151,35 +144,8 @@ if not vim.g.vscode then
 	map("n", "<leader><leader>k", "<cmd>HopLineBC<cr>", opts)
 
 	-- Debugger (Nvim-Dap)
-	map("n", "<leader>1", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 	map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
 	map("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 	map("n", "<F8>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 	map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<cr>", opts)
-
-	-- Spectre
-	map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<cr>', {
-		desc = "Toggle Spectre",
-	})
-	map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<cr>', {
-		desc = "Search current word",
-	})
-	map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<cr>', {
-		desc = "Search current word",
-	})
-	map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<cr>', {
-		desc = "Search on current file",
-	})
-
-	-- Barbecue
-	map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts)
-
-	-- Rest
-	map("n", "gR", '<cmd>lua require("rest-nvim").run()<cr>', opts)
-
-	-- IncRename
-	map("n", "gn", ":IncRename ", opts)
-
-	-- Markdown Preview
-	map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", opts)
 end

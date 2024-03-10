@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 if not vim.g.vscode then
@@ -36,6 +37,7 @@ if not vim.g.vscode then
 			{ import = "lazyvim.plugins.extras.ui.edgy" },
 			{ import = "lazyvim.plugins.extras.editor.outline" },
 			{ import = "lazyvim.plugins.extras.editor.leap" },
+			{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 			{ import = "lazyvim.plugins.extras.util.dot" },
 			{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 			{ import = "lazyvim.plugins.extras.coding.codeium" },
