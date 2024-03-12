@@ -210,8 +210,4 @@ return {
 			},
 		},
 	},
-	init = function()
-		vim.cmd([[ au VimEnter,WinEnter,BufEnter * setlocal cursorline ]])
-		vim.cmd([[ au WinLeave * setlocal nocursorline ]])
-	end,
 }
