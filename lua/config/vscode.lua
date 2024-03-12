@@ -86,11 +86,8 @@ map("n", "<leader>b", "<cmd>HopWordBC<cr>", opts)
 map("n", "<leader>j", "<cmd>HopLineAC<cr>", opts)
 map("n", "<leader>k", "<cmd>HopLineBC<cr>", opts)
 
---HACK:=================================
 --HACK:====== [ Plugins ] ==============
---HACK:=================================
 return {
-	--======== Hop ========
 	{
 		"smoka7/hop.nvim",
 		version = "*",
