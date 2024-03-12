@@ -1,4 +1,32 @@
-local colors = require("utils.colors").color
+local colors = {
+	bg = "#282a36",
+	current_line = "#44475a",
+	fg = "#f8f8f2",
+	comment = "#6272a4",
+	cyan = "#8be9fd",
+	green = "#50fa7b",
+	orange = "#ffb86c",
+	pink = "#ff79c6",
+	purple = "#bd93f9",
+	red = "#ff5555",
+	yellow = "#f1fa8c",
+
+	bg_alt = "#393a4d",
+	bg_dark = "#1e1f28",
+	-- bg_dark = "#252630",
+	bg_dark_alt = "#21222c",
+	purple_alt = "#564f8b",
+	current_line_alt = "#363747",
+	rounded_bg = "#1f2335",
+	rounded_fg = "#44475a",
+	darkblue = "#081633",
+	violet = "#a9a1e1",
+	magenta = "#c678dd",
+	darkpink = "#bb00ff",
+	blue = "#51afef",
+	search_hl = "#5f5f68",
+	blue_term = "#422fa3",
+}
 
 local M = {}
 M.transparent = true

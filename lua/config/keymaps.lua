@@ -56,9 +56,9 @@ map("x", "<C-z>", "<Esc><cmd>u<cr>", opts)
 
 map("v", "D", '"_d', opts) -- Delete without copy
 map("n", "<C-q>", "<cmd>q<cr>", opts) -- ctrl+q to quit
-map("n", "<leader>S", "<CMD>wa<cr>", opts) -- save all files
-map("n", "<leader>*", "<cmd>noh<cr>", opts) -- Toggle highlight match word
-map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", opts) -- Toggle Relative number
+map("n", "<leader>S", "<cmd>wa<cr>", { desc = "Save all files" }) -- save all files
+map("n", "<leader>*", "<cmd>noh<cr>", { desc = "Toggle highlight match" }) -- Toggle highlight match word
+map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative number" }) -- Toggle Relative number
 
 --:NOTE:=================================================
 --================[ P L U G I N S ]======================
@@ -71,6 +71,8 @@ if not vim.g.vscode then
 	map("n", "gn", ":IncRename ", opts) -- IncRename
 	map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 	map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
+	map("n", "<C-_>", "gcc", { remap = true, silent = true, desc = "Comment line" })
+	map("x", "<C-_>", "gc", { remap = true, silent = true, desc = "Comment selection" })
 	map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment line" })
 	map("v", "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
 	map("x", "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
@@ -97,12 +99,15 @@ if not vim.g.vscode then
 		'<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<cr>',
 		opts
 	)
-	map("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
 	map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
 	map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
-	map("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
 	map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<cr>', opts)
-	map("n", "<leader>fm", '<cmd>lua require("telescope").extensions.media_files.media_files()<cr>', opts)
+	map(
+		"n",
+		"<leader>fm",
+		'<cmd>lua require("telescope").extensions.media_files.media_files()<cr>',
+		{ desc = "Media files" }
+	)
 	map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 
 	-- Git
@@ -127,6 +132,7 @@ if not vim.g.vscode then
 	map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
 	map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 	map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
+	map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
 	map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", opts)
 
 	-- ToggleTerm

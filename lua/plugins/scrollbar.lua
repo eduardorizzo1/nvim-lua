@@ -1,5 +1,3 @@
-local colors = require("utils.colors")
-
 local opts = {
 	show = true,
 	show_in_active_only = false,
@@ -10,9 +8,8 @@ local opts = {
 	throttle_ms = 100,
 	handle = {
 		text = " ",
-		color = colors.color.current_line,
 		color_nr = nil, -- cterm
-		highlight = "CursorColumn",
+		highlight = "Visual",
 		hide_if_all_visible = true, -- Hides handle if all lines are visible
 	},
 	marks = {
@@ -20,7 +17,6 @@ local opts = {
 			text = "-",
 			priority = 0,
 			gui = nil,
-			color = colors.color.purple_alt,
 			cterm = nil,
 			color_nr = nil, -- cterm
 			highlight = "Normal",
@@ -148,8 +144,8 @@ local opts = {
 }
 
 return {
-  "petertriho/nvim-scrollbar",
-  config = function ()
-    require('scrollbar').setup(opts)
-  end
+	"petertriho/nvim-scrollbar",
+	config = function()
+		require("scrollbar").setup(opts)
+	end,
 }
