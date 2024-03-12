@@ -1,9 +1,22 @@
 return {
 	{
+		"echasnovski/mini.surround",
+		opts = {
+			mappings = {
+				add = "gsa", -- Add surrounding in Normal and Visual modes
+				delete = "gsd", -- Delete surrounding
+				find = "gsf", -- Find surrounding (to the right)
+				find_left = "gsF", -- Find surrounding (to the left)
+				highlight = "gsh", -- Highlight surrounding
+				replace = "gsr", -- Replace surrounding
+				update_n_lines = "gsn", -- Update `n_lines`
+			},
+		},
+	},
+	{
 		"echasnovski/mini.indentscope",
 		opts = {
 			symbol = "▎", -- "▏", "│"
-			options = { try_as_border = true },
 			draw = {
 				delay = 100,
 			},
@@ -11,8 +24,6 @@ return {
 	},
 	{
 		"echasnovski/mini.animate",
-		version = "*",
-		event = "VeryLazy",
 		opts = function()
 			local animate = require("mini.animate")
 			return {
