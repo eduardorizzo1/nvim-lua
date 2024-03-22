@@ -64,7 +64,7 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --================[ P L U G I N S ]======================
 --=======================================================
 if not vim.g.vscode then
-	map("n", "<leader>ui", "<cmd>IBLToggle<cr>", opts) -- IndentLine
+	map("n", "<leader>uI", "<cmd>IBLToggle<cr>", opts) -- IndentLine
 	map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts) -- Code Runner
 	map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts) -- Barbecue
 	map("n", "gR", '<cmd>lua require("rest-nvim").run()<cr>', opts) -- Rest

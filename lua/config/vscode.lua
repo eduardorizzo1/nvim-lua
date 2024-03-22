@@ -24,6 +24,8 @@ map({ "n", "x" }, "<C-k>", "10k", opts)
 -- Split
 map("n", "<leader>v", '<cmd>call VSCodeNotify("workbench.action.splitEditor")<cr>', opts)
 map("n", "<leader>h", '<cmd>call VSCodeNotify("workbench.action.splitEditorDown")<cr>', opts)
+map("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
+map("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- save all files
 map("n", ";s", '<cmd>call VSCodeNotify("workbench.action.files.saveAll")<cr>', opts)
@@ -54,9 +56,10 @@ map("n", "zf", '<cmd>call VSCodeNotify("editor.unfoldAll")<cr>', opts)
 -- Buffer
 map("n", "<S-l>", '<cmd>call VSCodeNotify("workbench.action.nextEditor")<cr>', opts)
 map("n", "<S-h>", '<cmd>call VSCodeNotify("workbench.action.previousEditor")<cr>', opts)
+map("n", "<S-x>", '<cmd>call VSCodeNotify("workbench.action.closeActiveEditor")<cr>', opts)
 
 -- Ctrl + D
-map({ "i", "v", "x", "n" }, "<C-d>", '<cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<cr>', opts)
+map("v", "<C-d>", '<cmd>call VSCodeNotify("editor.action.addSelectionToNextFindMatch")<cr>', opts)
 
 -- Terminal
 map("n", "<leader>t", '<cmd>call VSCodeNotify("workbench.action.togglePanel")<cr>', opts)
@@ -86,13 +89,40 @@ map("n", "<leader>b", "<cmd>HopWordBC<cr>", opts)
 map("n", "<leader>j", "<cmd>HopLineAC<cr>", opts)
 map("n", "<leader>k", "<cmd>HopLineBC<cr>", opts)
 
+-- Prevent open fold
+local function moveCursor(direction)
+	if vim.fn.reg_recording() == "" and vim.fn.reg_executing() == "" then
+		return ("g" .. direction)
+	else
+		return direction
+	end
+end
+map("n", "k", function()
+	return moveCursor("k")
+end, { expr = true, remap = true })
+map("n", "j", function()
+	return moveCursor("j")
+end, { expr = true, remap = true })
+
 --HACK:====== [ Plugins ] ==============
 return {
+	require("plugins.hop"),
+	require("plugins.visual-multi"),
+	require("plugins.autopairs"),
 	{
-		"smoka7/hop.nvim",
+		"echasnovski/mini.surround",
 		version = "*",
 		opts = {
-			jump_on_sole_occurrence = false,
+			mappings = {
+				add = "gsa",
+				delete = "gsd",
+				find = "gsf",
+				find_left = "gsF",
+				highlight = "gsh",
+				replace = "gsr",
+				update_n_lines = "gsn",
+			},
 		},
 	},
+	{ "tpope/vim-repeat", event = "VeryLazy" },
 }
