@@ -45,6 +45,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		opts = function(_, opts)
+			table.remove(opts.sections.lualine_x, 2)
 			table.insert(opts.sections.lualine_x, 2, {
 				"searchcount",
 			})
