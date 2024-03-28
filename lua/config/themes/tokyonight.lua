@@ -42,6 +42,14 @@ M.opts = {
 			bg = transparent and c.none or c.bg_dark,
 			fg = c.blue,
 		}
+		hl.TelescopePromptBorder = {
+			bg = transparent and c.none or c.bg_dark,
+			fg = c.blue,
+		}
+		hl.TelescopePromptTitle = {
+			bg = transparent and c.none or c.bg_dark,
+			fg = c.blue,
+		}
 		hl.TelescopePromptCounter = {
 			bg = c.bg_dark,
 			fg = c.cyan,
