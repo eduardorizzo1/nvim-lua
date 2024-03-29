@@ -23,7 +23,7 @@ M.opts = {
 		hl.WinSeparator = { fg = c.comment }
 		hl.Include = { fg = c.cyan, italic = true }
 
-		--HACK:======== NvimTree ========
+		--=========== [ NvimTree ] ================
 		hl.NvimTreeOpenedFolderName = {
 			bg = c.bg_highlight,
 			fg = c.magenta,
@@ -37,7 +37,7 @@ M.opts = {
 			fg = transparent and c.comment or c.bg,
 		}
 
-		--HACK:======== Telescope ========
+		--============ [ Telescope ] ================
 		hl.TelescopeBorder = {
 			bg = transparent and c.none or c.bg_dark,
 			fg = c.blue,
@@ -50,14 +50,8 @@ M.opts = {
 			bg = transparent and c.none or c.bg_dark,
 			fg = c.blue,
 		}
-		hl.TelescopePromptCounter = {
-			bg = c.bg_dark,
-			fg = c.cyan,
-		}
-		hl.TelescopeMatching = { fg = c.blue, bold = true }
-		hl.TelescopeSelection = { bg = c.bg_highlight, bold = true }
 
-		--HACK:======== Bufferline ========
+		--============ [ Bufferline ] =================
 		hl.BufferLineFill = transparent and {
 			bg = custom_bg,
 		} or {}
@@ -83,17 +77,10 @@ M.opts = {
 		hl.BufferLineTabSeparator = transparent and { fg = custom_bg, bg = custom_bg } or {}
 		hl.BufferLineTabSeparatorSelected = transparent and { fg = custom_bg } or {}
 
-		--HACK:========= Cmp =========
+		--=============== [ Cmp ] ====================
 		hl.Pmenu = transparent and {
 			bg = c.none,
 		} or {}
-
-		--HACK:======== Fidget ========
-		hl.FidgetTask = { fg = c.comment, italic = true }
-		hl.FidgetTitle = { fg = c.cyan, italic = true, bold = true }
-
-		--HACK:====== Typescript =======
-		hl.typescriptImport = { italic = true }
 	end,
 }
 
