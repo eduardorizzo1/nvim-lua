@@ -154,4 +154,11 @@ if not vim.g.vscode then
 	map("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 	map("n", "<F8>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 	map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+
+	-- ChatGPT
+	map("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
+	map("v", "<leader>ai", "<cmd>ChatGPTEditWithInstructions<cr>", opts)
+	map("v", "<leader>ar", "<cmd>ChatGPTRun<cr>", opts)
+	map("v", "<leader>ac", "<cmd>ChatGPTCompleteCode<cr>", opts)
+	map("v", "<leader>aA", "<cmd>ChatGPTCompleteCode<cr>", opts)
 end
