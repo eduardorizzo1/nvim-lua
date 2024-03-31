@@ -50,6 +50,12 @@ M.opts = {
 			bg = transparent and c.none or c.bg_dark,
 			fg = c.blue,
 		}
+		hl.TelescopePromptCounter = {
+			bg = c.bg_dark,
+			fg = c.cyan,
+		}
+		hl.TelescopeMatching = { fg = c.blue, bold = true }
+		hl.TelescopeSelection = { bg = c.bg_highlight, bold = true }
 
 		--============ [ Bufferline ] =================
 		hl.BufferLineFill = transparent and {

@@ -160,5 +160,5 @@ if not vim.g.vscode then
 	map("v", "<leader>ai", "<cmd>ChatGPTEditWithInstructions<cr>", opts)
 	map("v", "<leader>ar", "<cmd>ChatGPTRun<cr>", opts)
 	map("v", "<leader>ac", "<cmd>ChatGPTCompleteCode<cr>", opts)
-	map("v", "<leader>aA", "<cmd>ChatGPTCompleteCode<cr>", opts)
+	map("v", "<leader>aO", "<cmd>ChatGPTActAs<cr>", opts)
 end
