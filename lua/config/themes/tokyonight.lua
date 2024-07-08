@@ -21,12 +21,18 @@ M.opts = {
 			fg = c.cyan,
 		}
 		hl.WinSeparator = { fg = c.comment }
-		hl.Include = { fg = c.cyan, italic = true }
+		hl.Include = { fg = c.purple, italic = true }
 
 		--=========== [ NvimTree ] ================
 		hl.NvimTreeOpenedFolderName = {
 			bg = c.bg_highlight,
-			fg = c.magenta,
+			fg = c.blue,
+			bold = true,
+		}
+		hl.NvimTreeOpenedFolderIcon = {
+			bg = c.bg_highlight,
+			fg = c.blue,
+			bold = true,
 		}
 		hl.NvimTreeOpenedFile = {
 			bg = c.none,
@@ -35,6 +41,9 @@ M.opts = {
 		hl.NvimTreeWinSeparator = {
 			bg = c.bg,
 			fg = transparent and c.comment or c.bg,
+		}
+		hl.NvimTreeFolderIcon = {
+			fg = c.blue,
 		}
 
 		--============ [ Telescope ] ================

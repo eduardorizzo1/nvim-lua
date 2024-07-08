@@ -111,7 +111,6 @@ if not vim.g.vscode then
 	map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 
 	-- Git
-	map("n", "<leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', opts)
 	map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', opts)
 	map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<cr>', opts)
 	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
