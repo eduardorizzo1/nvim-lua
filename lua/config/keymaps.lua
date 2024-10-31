@@ -68,7 +68,6 @@ if not vim.g.vscode then
 	map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts) -- Code Runner
 	map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts) -- Barbecue
 	map("n", "gR", '<cmd>lua require("rest-nvim").run()<cr>', opts) -- Rest
-	map("n", "gn", "<leader>cr", { remap = true, silent = true, desc = "Lsp rename" }) -- IncRename
 	map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 	map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
 	map("n", "<C-_>", "gcc", { remap = true, silent = true, desc = "Comment line" })
