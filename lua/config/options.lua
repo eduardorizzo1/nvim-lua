@@ -1,2 +1,2 @@
 vim.opt.relativenumber = false
-vim.opt.wrap = true -- break line or side scroll
+vim.opt.wrap = false -- break line or side scroll

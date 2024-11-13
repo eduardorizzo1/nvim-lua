@@ -96,6 +96,11 @@ M.opts = {
 		hl.Pmenu = transparent and {
 			bg = c.none,
 		} or {}
+
+		--=============== [ Cmp ] ====================
+		hl.StatusLine = transparent and {
+			bg = c.none,
+		} or {}
 	end,
 }
 
