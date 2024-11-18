@@ -104,6 +104,7 @@ return {
 			add_trailing = false,
 			group_empty = false,
 			highlight_git = false,
+			highlight_hidden = "all",
 			full_name = false,
 			highlight_opened_files = "name",
 			root_folder_modifier = ":t",
