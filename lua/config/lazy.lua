@@ -45,7 +45,6 @@ if not vim.g.vscode then
 			{ import = "lazyvim.plugins.extras.util.dot" },
 			{ import = "lazyvim.plugins.extras.util.rest" },
 			{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-			{ import = "lazyvim.plugins.extras.util.chezmoi" },
 			{ import = "lazyvim.plugins.extras.util.octo" },
 			{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 			{ import = "plugins" },
