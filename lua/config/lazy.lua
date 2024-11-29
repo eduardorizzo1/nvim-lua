@@ -41,6 +41,7 @@ if not vim.g.vscode then
 			{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 			{ import = "lazyvim.plugins.extras.editor.overseer" },
 			{ import = "lazyvim.plugins.extras.coding.yanky" },
+			{ import = "lazyvim.plugins.extras.coding.blink" },
 			{ import = "lazyvim.plugins.extras.ai.codeium" },
 			{ import = "lazyvim.plugins.extras.util.dot" },
 			{ import = "lazyvim.plugins.extras.util.rest" },

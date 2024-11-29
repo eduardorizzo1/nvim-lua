@@ -2,6 +2,9 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
+		keys = {
+			{ "<c-k>", false },
+		},
 		opts = {
 			presets = {
 				inc_rename = true, -- enables an input dialog for inc-rename.nvim
@@ -12,13 +15,13 @@ return {
 					enabled = false,
 				},
 				signature = {
-					enabled = false,
+					enabled = true,
 				},
 				progress = {
 					enabled = true,
 				},
 				hover = {
-					enabled = false,
+					enabled = true,
 					silent = true,
 					view = nil,
 				},
