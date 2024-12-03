@@ -115,7 +115,9 @@ return {
 	terminal_bash = " ",
 
 	-- others
-	file = " ",
+	file = " ",
+	file_code = " ",
+	file_binary = " ",
 	separator_bold = "▊",
 	lock = " ",
 	close = "",
