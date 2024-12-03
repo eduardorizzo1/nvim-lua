@@ -23,10 +23,4 @@ return {
 		},
 		config = true,
 	},
-	{
-		--PERF:====[ GitConflict ]======
-		"akinsho/git-conflict.nvim",
-		version = "*",
-		config = true,
-	},
 }

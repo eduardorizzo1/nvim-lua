@@ -115,7 +115,6 @@ if not vim.g.vscode then
 	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
 	map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
 	map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
-	map("n", "<leader>gD", "<cmd>Neogit<cr>", opts) -- NeoGit
 	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
 	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
 
@@ -140,12 +139,6 @@ if not vim.g.vscode then
 	map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 	map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 	map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
-
-	-- Hop
-	map("n", "<leader><leader>w", "<cmd>HopWordAC<cr>", opts)
-	map("n", "<leader><leader>b", "<cmd>HopWordBC<cr>", opts)
-	map("n", "<leader><leader>j", "<cmd>HopLineAC<cr>", opts)
-	map("n", "<leader><leader>k", "<cmd>HopLineBC<cr>", opts)
 
 	-- Debugger (Nvim-Dap)
 	map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)

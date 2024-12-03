@@ -6,7 +6,7 @@ return {
 	dependencies = {
 		{
 			"saghen/blink.compat",
-			optional = true, -- make optional so it's only enabled if any extras need it
+			optional = true,
 			opts = {},
 			version = not vim.g.lazyvim_blink_main and "*",
 		},
@@ -24,6 +24,10 @@ return {
 				border = border,
 				winhighlight = winhighlight,
 				auto_show = true,
+				draw = {
+					columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
+					-- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+				},
 			},
 			documentation = {
 				border = border,
