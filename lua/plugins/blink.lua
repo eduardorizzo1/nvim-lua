@@ -25,8 +25,8 @@ return {
 				winhighlight = winhighlight,
 				auto_show = true,
 				draw = {
-					columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
-					-- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+					-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
+					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
 				},
 			},
 			documentation = {
@@ -42,7 +42,7 @@ return {
 			},
 		},
 		keymap = {
-			["<CR>"] = { "select_and_accept", "snippet_forward", "fallback" },
+			["<CR>"] = { "accept", "snippet_forward", "fallback" },
 			["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
