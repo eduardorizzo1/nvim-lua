@@ -23,7 +23,7 @@ return {
 		Number = " ",
 		Null = " ",
 		Operator = " ",
-		Object = " ",
+		Object = " ",
 		Package = " ",
 		Property = " ",
 		Reference = " ",

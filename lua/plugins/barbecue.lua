@@ -19,7 +19,7 @@ return {
 			separator = "›",
 		},
 		exclude_filetypes = { "toggleterm" },
-		kinds = require("utils.icons").kinds,
+		-- kinds = require("utils.icons").kinds,
 	},
 	-- init = function()
 	-- 	require("barbecue.ui").toggle(false)

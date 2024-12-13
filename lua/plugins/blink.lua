@@ -19,23 +19,28 @@ return {
 	},
 
 	opts = {
-		windows = {
-			autocomplete = {
+		autocomplete = {
+			border = border,
+			winhighlight = winhighlight,
+			auto_show = true,
+			draw = {
+				-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
+				columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+			},
+		},
+		completion = {
+			border = border,
+			winhighlight = winhighlight,
+
+			menu = {
 				border = border,
 				winhighlight = winhighlight,
-				auto_show = true,
-				draw = {
-					-- columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
-					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-				},
 			},
 			documentation = {
-				border = border,
-				winhighlight = winhighlight,
-			},
-			completion = {
-				border = border,
-				winhighlight = winhighlight,
+				window = {
+					border = border,
+					winhighlight = winhighlight,
+				},
 			},
 			ghost_text = {
 				enabled = false,
