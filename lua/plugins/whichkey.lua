@@ -1,8 +1,9 @@
 return {
 	"folke/which-key.nvim",
 	opts = {
+		preset = "classic",
 		win = {
-			border = "rounded", -- none, single, double, shadow, rounded
+			border = "rounded",
 		},
 	},
 }
