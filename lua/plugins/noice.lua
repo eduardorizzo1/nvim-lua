@@ -12,10 +12,16 @@ return {
 			},
 			lsp = {
 				notify = {
-					enabled = false,
+					enabled = true,
 				},
 				signature = {
 					enabled = true,
+					opts = {
+						size = {
+							max_height = 10,
+							max_width = 80,
+						},
+					},
 				},
 				progress = {
 					enabled = true,
