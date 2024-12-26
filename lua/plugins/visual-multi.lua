@@ -16,12 +16,3 @@ return {
 		cmd([[ let g:VM_maps["Skip Region"] = "<C-x>" ]])
 	end,
 }
-
--- cmd([[ let g:VM_maps["Select Operator"] = "gs" ]])
--- cmd([[ let g:VM_maps["Select Operator"] = "" ]])
--- cmd([[ let g:VM_maps["Visual All"] = "<M-n>" ]])
--- cmd([[ let g:VM_maps["Increase"] = "+" ]])
--- cmd([[ let g:VM_maps["Decrease"] = "-" ]])
---
---let s:Themes._light = ['sand', 'paper', 'lightblue1', 'lightblue2', 'lightpurple1', 'lightpurple2']
--- let s:Themes._dark = ['iceblue', 'ocean', 'neon', 'purplegray', 'nord', 'codedark', 'spacegray', 'olive', 'sand']
