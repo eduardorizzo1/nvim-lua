@@ -94,15 +94,6 @@ if not vim.g.vscode then
 	-- Telescope
 	map(
 		"n",
-		"<c-p>",
-		'<cmd>lua require("telescope.builtin").find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<cr>',
-		opts
-	)
-	map("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
-	map("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
-	map("n", "<leader>fa", '<cmd>lua require("telescope.builtin").grep_string()<cr>', opts)
-	map(
-		"n",
 		"<leader>fm",
 		'<cmd>lua require("telescope").extensions.media_files.media_files()<cr>',
 		{ desc = "Media files" }
@@ -110,13 +101,12 @@ if not vim.g.vscode then
 	map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
 
 	-- Git
-	map("n", "<leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', opts)
-	map("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_stash()<cr>', opts)
 	map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
 	map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
 	map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
 	map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
 	map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
+	map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
 	-- Lsp Saga
 	map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
