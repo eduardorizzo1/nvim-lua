@@ -34,8 +34,5 @@ return {
 	},
 	keys = {
 		{ "<leader><space>", false },
-		{ "<leader>fg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-		{ "<leader>fG", LazyVim.pick("git_files"), desc = "Find Files (git-files)" },
-		{ "<C-p>", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
 	},
 }
