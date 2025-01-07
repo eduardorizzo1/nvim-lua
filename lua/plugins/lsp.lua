@@ -8,6 +8,7 @@ return {
 		keys[#keys + 1] = { "<leader>cC", false } -- Refresh & Display Codelens
 		keys[#keys + 1] = { "gr", false }
 		keys[#keys + 1] = { "gn", false }
+		keys[#keys + 1] = { "<C-k>", false, mode = { "i" } }
 		vim.diagnostic.config({
 			virtual_text = require("utils.virtual-text").virtual_text,
 			codelens = false,
@@ -26,6 +27,14 @@ return {
 							propertyDeclarationTypes = { enabled = false },
 							variableTypes = { enabled = false },
 						},
+					},
+				},
+				keys = {
+					{ "<leader>cM", false },
+					{
+						"<leader>cm",
+						LazyVim.lsp.action["source.addMissingImports.ts"],
+						desc = "Add missing imports",
 					},
 				},
 			},

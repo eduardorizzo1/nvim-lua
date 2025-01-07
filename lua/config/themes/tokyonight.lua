@@ -5,7 +5,7 @@ local custom_bg = "#1E2030"
 local custom_fg = "#2f334d"
 
 M.opts = {
-	style = "moon",
+	style = "night",
 	transparent = transparent,
 	styles = {
 		comments = { italic = true },

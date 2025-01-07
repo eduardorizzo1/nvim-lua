@@ -19,14 +19,13 @@ return {
 	},
 
 	opts = {
-		autocomplete = {
-			border = border,
-			winhighlight = winhighlight,
-			auto_show = true,
-		},
+    signature = {
+			window = {
+				border = border,
+				winhighlight = winhighlight,
+			},
+    },
 		completion = {
-			border = border,
-			winhighlight = winhighlight,
 			list = {
 				selection = "manual",
 			},
@@ -45,8 +44,7 @@ return {
 			},
 		},
 		keymap = {
-
-			["<CR>"] = { "accept", "snippet_forward", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
 			["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
