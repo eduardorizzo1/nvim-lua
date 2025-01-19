@@ -83,12 +83,6 @@ map("n", "<leader>gg", '<cmd>call VSCodeNotify("workbench.view.scm")<cr>', opts)
 -- Dap
 map("n", "<leader>1", '<cmd>call VSCodeNotify("editor.debug.action.toggleBreakpoint")<cr>', opts)
 
--- Hop
-map("n", "<leader>w", "<cmd>HopWordAC<cr>", opts)
-map("n", "<leader>b", "<cmd>HopWordBC<cr>", opts)
-map("n", "<leader>j", "<cmd>HopLineAC<cr>", opts)
-map("n", "<leader>k", "<cmd>HopLineBC<cr>", opts)
-
 -- Prevent open fold
 local function moveCursor(direction)
 	if vim.fn.reg_recording() == "" and vim.fn.reg_executing() == "" then
@@ -106,23 +100,7 @@ end, { expr = true, remap = true })
 
 --HACK:====== [ Plugins ] ==============
 return {
-	require("plugins.hop"),
 	require("plugins.visual-multi"),
 	require("plugins.autopairs"),
-	{
-		"echasnovski/mini.surround",
-		version = "*",
-		opts = {
-			mappings = {
-				add = "gsa",
-				delete = "gsd",
-				find = "gsf",
-				find_left = "gsF",
-				highlight = "gsh",
-				replace = "gsr",
-				update_n_lines = "gsn",
-			},
-		},
-	},
 	{ "tpope/vim-repeat", event = "VeryLazy" },
 }

@@ -12,8 +12,8 @@ M.opts = {
 		keywords = { italic = true },
 		functions = {},
 		variables = {},
-		sidebars = transparent and "transparent" or "dark",
-		floats = transparent and "transparent" or "dark",
+		-- sidebars = transparent and "transparent" or "dark",
+		-- floats = transparent and "transparent" or "dark",
 	},
 
 	on_highlights = function(hl, c)

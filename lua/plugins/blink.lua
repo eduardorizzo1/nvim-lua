@@ -19,15 +19,18 @@ return {
 	},
 
 	opts = {
-    signature = {
+		signature = {
 			window = {
 				border = border,
 				winhighlight = winhighlight,
 			},
-    },
+		},
 		completion = {
 			list = {
-				selection = "manual",
+				selection = {
+					preselect = false,
+					auto_insert = true,
+				},
 			},
 			menu = {
 				border = border,

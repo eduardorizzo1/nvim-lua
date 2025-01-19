@@ -36,6 +36,11 @@ return {
 						LazyVim.lsp.action["source.addMissingImports.ts"],
 						desc = "Add missing imports",
 					},
+					{
+						"<leader>cu",
+						LazyVim.lsp.action["source.removeUnused.ts"],
+						desc = "Remove unused imports",
+					},
 				},
 			},
 			gopls = {

@@ -12,89 +12,31 @@ end
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-if not vim.g.vscode then
-	require("lazy").setup({
-		spec = {
-			{
-				"LazyVim/LazyVim",
-				import = "lazyvim.plugins",
-				opts = {
-					colorscheme = "tokyonight",
-				},
-			},
-			{ import = "lazyvim.plugins.extras.lang.typescript" },
-			{ import = "lazyvim.plugins.extras.lang.angular" },
-			{ import = "lazyvim.plugins.extras.lang.go" },
-			{ import = "lazyvim.plugins.extras.lang.json" },
-			{ import = "lazyvim.plugins.extras.lang.python" },
-			{ import = "lazyvim.plugins.extras.lang.tailwind" },
-			{ import = "lazyvim.plugins.extras.lang.markdown" },
-			{ import = "lazyvim.plugins.extras.lang.docker" },
-			{ import = "lazyvim.plugins.extras.lang.yaml" },
-			{ import = "lazyvim.plugins.extras.lang.omnisharp" },
-			{ import = "lazyvim.plugins.extras.lang.sql" },
-			{ import = "lazyvim.plugins.extras.lang.git" },
-			{ import = "lazyvim.plugins.extras.lsp.none-ls" },
-			{ import = "lazyvim.plugins.extras.linting.eslint" },
-			{ import = "lazyvim.plugins.extras.test.core" },
-			{ import = "lazyvim.plugins.extras.dap.core" },
-			{ import = "lazyvim.plugins.extras.ui.edgy" },
-			{ import = "lazyvim.plugins.extras.editor.outline" },
-			{ import = "lazyvim.plugins.extras.editor.leap" },
-			{ import = "lazyvim.plugins.extras.editor.illuminate" },
-			{ import = "lazyvim.plugins.extras.editor.harpoon2" },
-			{ import = "lazyvim.plugins.extras.coding.yanky" },
-			{ import = "lazyvim.plugins.extras.coding.blink" },
-			{ import = "lazyvim.plugins.extras.coding.luasnip" },
-			{ import = "lazyvim.plugins.extras.coding.mini-surround" },
-			{ import = "lazyvim.plugins.extras.ai.codeium" },
-			{ import = "lazyvim.plugins.extras.util.gitui" },
-			{ import = "lazyvim.plugins.extras.util.dot" },
-			{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-			{ import = "lazyvim.plugins.extras.util.rest" },
-			{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-			{ import = "lazyvim.plugins.extras.ui.indent-blankline" },
-			{ import = "plugins" },
-		},
-		ui = {
-			border = "rounded",
-		},
-		install = { colorscheme = { "tokyonight", "habamax" } },
-		checker = { enabled = false },
-		performance = {
-			rtp = {
-				-- disable some rtp plugins
-				disabled_plugins = {
-					"gzip",
-					"tarPlugin",
-					"tohtml",
-					"tutor",
-					"zipPlugin",
-				},
+require("lazy").setup({
+	spec = {
+		{
+			"LazyVim/LazyVim",
+			import = "lazyvim.plugins",
+			opts = {
+				colorscheme = "tokyonight",
 			},
 		},
-	})
-else
-	-- Vscode Config
-	require("lazy").setup({
-		spec = {
-			{
-				"LazyVim/LazyVim",
-			},
-			{ import = "lazyvim.plugins.extras.editor.leap" },
-			{ import = "config.vscode" },
-		},
-		install = { colorscheme = { "tokyonight" } },
-		performance = {
-			rtp = {
-				disabled_plugins = {
-					"gzip",
-					"tarPlugin",
-					"tohtml",
-					"tutor",
-					"zipPlugin",
-				},
+		{ import = "plugins" },
+	},
+	ui = {
+		border = "rounded",
+	},
+	install = { colorscheme = { "tokyonight", "habamax" } },
+	checker = { enabled = false },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
 			},
 		},
-	})
-end
+	},
+})
