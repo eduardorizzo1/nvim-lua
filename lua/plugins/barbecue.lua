@@ -21,7 +21,7 @@ return {
 		exclude_filetypes = { "toggleterm" },
 		-- kinds = require("utils.icons").kinds,
 	},
-	-- init = function()
-	-- 	require("barbecue.ui").toggle(false)
-	-- end,
+	init = function()
+		require("barbecue.ui").toggle(false)
+	end,
 }

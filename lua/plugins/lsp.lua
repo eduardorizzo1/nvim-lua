@@ -37,6 +37,11 @@ return {
 						desc = "Add missing imports",
 					},
 					{
+						"<leader>co",
+						LazyVim.lsp.action["source.organizeImports"],
+						desc = "Organize Imports",
+					},
+					{
 						"<leader>cu",
 						LazyVim.lsp.action["source.removeUnused.ts"],
 						desc = "Remove unused imports",

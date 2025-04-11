@@ -21,6 +21,9 @@ M.opts = {
 			fg = c.cyan,
 		}
 		hl.WinSeparator = { fg = c.comment }
+
+		--=========== [ Develop ] ================
+		hl["@module.python"] = { fg = c.fg }
 		hl.Include = { fg = c.purple, italic = true }
 
 		--=========== [ NvimTree ] ================
