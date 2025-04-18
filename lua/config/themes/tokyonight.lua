@@ -26,6 +26,7 @@ M.opts = {
 		hl["@module.python"] = { fg = c.fg }
 		hl["@constructor.python"] = { fg = c.cyan, italic = true }
 		hl["@keyword.function.python"] = { fg = c.purple, italic = true }
+		hl["@variable.builtin.python"] = { fg = c.red, italic = true }
 		hl.Include = { fg = c.purple, italic = true }
 
 		--=========== [ NvimTree ] ================
