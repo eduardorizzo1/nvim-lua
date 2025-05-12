@@ -65,7 +65,12 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --=======================================================
 map("n", "<leader>uI", "<cmd>IBLToggle<cr>", opts) -- IndentLine
 map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts) -- Code Runner
-map("n", "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', opts) -- Barbecue
+map(
+	"n",
+	"<leader>u.",
+	'<cmd>lua require("barbecue.ui").toggle()<cr>',
+	{ remap = true, silent = true, desc = "Barbecue Toggle" }
+) -- Barbecue
 
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
@@ -82,6 +87,8 @@ map("n", "+", "<cmd>NvimTreeResize +5<cr>", opts)
 -- Bufferline
 map("n", "<M-l>", "<CMD>BufferLineCycleNext<cr>", opts)
 map("n", "<M-h>", "<CMD>BufferLineCyclePrev<cr>", opts)
+map("n", "<M-x>", "<leader>bd", { remap = true, silent = true, desc = "Delete Buffer" })
+map("n", "<S-x>", "<leader>bd", { remap = true, silent = true, desc = "Delete Buffer" })
 map("n", "<leader><tab>t", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab><tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>n", "<cmd>tabnext<cr>", { desc = "Next Tab" })
