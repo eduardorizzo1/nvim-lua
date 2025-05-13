@@ -6,18 +6,20 @@ return {
 		},
 
 		indent = {
+			enabled = true,
+
 			indent = {
+				enabled = true,
 				char = "▏",
 			},
+
 			scope = {
+				enabled = true,
 				char = "▎",
 			},
 			animate = {
-				style = "out",
-				easing = "linear",
 				duration = {
-					step = 20,
-					total = 5000,
+					total = 2500,
 				},
 			},
 		},
