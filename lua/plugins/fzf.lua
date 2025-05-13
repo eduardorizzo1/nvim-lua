@@ -1,6 +1,9 @@
 return {
 	"ibhagwan/fzf-lua",
 	opts = {
+		fzf_opts = {
+			["--prompt"] = "❯ ",
+		},
 		files = {
 			fd_opts = [[--type f --hidden --follow --exclude .git --exclude node_modules]],
 		},
