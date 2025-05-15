@@ -79,10 +79,8 @@ map("x", "<C-_>", "gc", { remap = true, silent = true, desc = "Comment selection
 map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map({ "x", "v" }, "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
 
--- Nvimtree
-map("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", opts)
-map("n", "_", "<cmd>NvimTreeResize -5<cr>", opts)
-map("n", "+", "<cmd>NvimTreeResize +5<cr>", opts)
+-- Snacks
+map("n", "<C-b>", "<cmd>:lua Snacks.explorer()<cr>", { remap = true, silent = true, desc = "Toggle Explorer" })
 
 -- Bufferline
 map("n", "<M-l>", "<CMD>BufferLineCycleNext<cr>", opts)
