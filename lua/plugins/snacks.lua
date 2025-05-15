@@ -35,9 +35,9 @@ return {
 			actions = {
 				close_explorer = function(picker)
 					---@diagnostic disable-next-line: undefined-global
-					local is_open = vim.inspect(Snacks.picker.get({ source = "explorer" }))
+					local is_open = Snacks.picker.get({ source = "explorer" })
 
-					if is_open ~= "{}" or is_open == 0 then
+					if next(is_open) ~= nil then
 						vim.cmd("lua Snacks.explorer.open()")
 					end
 
@@ -46,6 +46,8 @@ return {
 			},
 			sources = {
 				explorer = {
+					hidden = true,
+					ignore = true,
 					actions = {
 						toggle_dir = function(picker, item)
 							if item.dir == false then
