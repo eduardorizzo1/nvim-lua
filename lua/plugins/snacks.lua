@@ -20,30 +20,6 @@ return {
 		},
 
 		picker = {
-			win = {
-				input = {
-					keys = {
-						["<CR>"] = { "close_explorer", mode = { "i", "n" } },
-					},
-					list = {
-						keys = {
-							["<CR>"] = "close_explorer",
-						},
-					},
-				},
-			},
-			actions = {
-				close_explorer = function(picker)
-					---@diagnostic disable-next-line: undefined-global
-					local is_open = Snacks.picker.get({ source = "explorer" })
-
-					if next(is_open) ~= nil then
-						vim.cmd("lua Snacks.explorer.open()")
-					end
-
-					picker:action("confirm")
-				end,
-			},
 			sources = {
 				explorer = {
 					hidden = true,
