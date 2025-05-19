@@ -37,6 +37,7 @@ return {
 					win = {
 						list = {
 							keys = {
+								["<cr>"] = "toggle_dir",
 								["<c-p>"] = false,
 								["<c-k>"] = false,
 								["<c-j>"] = false,
@@ -44,7 +45,6 @@ return {
 								["l"] = false,
 								["h"] = false,
 								["<S-l>"] = false,
-								["<cr>"] = "toggle_dir",
 								["<leader>fg"] = false,
 							},
 						},
