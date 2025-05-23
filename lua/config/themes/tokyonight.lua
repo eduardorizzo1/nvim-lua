@@ -103,10 +103,8 @@ M.opts = {
 			bg = c.none,
 		} or {}
 
-		--=============== [ Cmp ] ====================
-		hl.StatusLine = transparent and {
-			bg = c.none,
-		} or {}
+		--========== [ Snacks Scope ] ===============
+		hl.SnacksIndentScope = { fg = c.blue }
 	end,
 }
 
