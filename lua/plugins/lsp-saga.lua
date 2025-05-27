@@ -5,14 +5,11 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
-		symbol_in_winbar = {
-			enable = false,
-			separator = " › ",
-			hide_keyword = false,
-			show_file = true,
-			folder_level = 1,
-			color_mode = false,
-			delay = 300,
+		hover = {
+			max_width = 0.9,
+			max_height = 0.8,
+			open_link = "gx",
+			open_cmd = "!chrome",
 		},
 		callhierarchy = {
 			layout = "float",
@@ -88,46 +85,6 @@ return {
 				close = { "<C-c>k" },
 			},
 		},
-		hover = {
-			max_width = 0.9,
-			max_height = 0.8,
-			open_link = "gx",
-			open_cmd = "!chrome",
-		},
-		implement = {
-			enable = false,
-			sign = true,
-			virtual_text = true,
-			priority = 100,
-		},
-		lightbulb = {
-			enable = false,
-			sign = true,
-			virtual_text = false,
-			debounce = 10,
-			sign_priority = 40,
-			enable_in_insert = false,
-		},
-		outline = {
-			enable = false,
-			keys = {
-				jump = "<CR>",
-				expand_collapse = "o",
-				quit = "<ESC>",
-			},
-		},
-		rename = {
-			enable = false,
-			in_select = true,
-			auto_save = false,
-			project_max_width = 0.5,
-			project_max_height = 0.5,
-			keys = {
-				quit = { "<ESC>", "<C-c>" },
-				exec = "<CR>",
-				select = "x",
-			},
-		},
 		ui = {
 			border = "rounded",
 			devicon = true,
@@ -139,6 +96,21 @@ return {
 			lines = { "╰", "│", "│", "─", "╭" },
 			kind = {},
 			imp_sign = "󰳛 ",
+		},
+		implement = {
+			enable = false,
+		},
+		lightbulb = {
+			enable = false,
+		},
+		outline = {
+			enable = false,
+		},
+		rename = {
+			enable = false,
+		},
+		symbol_in_winbar = {
+			enable = false,
 		},
 	},
 }

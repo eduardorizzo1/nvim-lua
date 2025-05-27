@@ -63,14 +63,6 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --:NOTE:=================================================
 --================[ P L U G I N S ]======================
 --=======================================================
-map("n", "<leader>uI", "<cmd>IBLToggle<cr>", opts) -- IndentLine
-map("n", "<C-M-n>", "<cmd>RunCode<cr>", opts) -- Code Runner
-map(
-	"n",
-	"<leader>u.",
-	'<cmd>lua require("barbecue.ui").toggle()<cr>',
-	{ remap = true, silent = true, desc = "Barbecue Toggle" }
-) -- Barbecue
 
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
@@ -80,7 +72,7 @@ map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment lin
 map({ "x", "v" }, "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
 
 -- Snacks
-map("n", "<C-b>", "<cmd>:lua Snacks.explorer()<cr>", { remap = true, silent = true, desc = "Toggle Explorer" })
+map("n", "<C-b>", "<cmd>lua Snacks.explorer()<cr>", { remap = true, silent = true, desc = "Toggle Explorer" })
 
 -- Bufferline
 map("n", "<M-l>", "<CMD>BufferLineCycleNext<cr>", opts)
@@ -94,37 +86,6 @@ map("n", "<leader><tab><S-tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab"
 map("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "<leader><tab>x", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 
--- Telescope
-map(
-	"n",
-	"<leader>fm",
-	'<cmd>lua require("telescope").extensions.media_files.media_files()<cr>',
-	{ desc = "Media files" }
-)
-map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
-
--- Git
-map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", opts) -- DiffView
-map("n", "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", opts)
-map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", opts)
-map("n", "<leader>ugb", "<cmd>BlamerToggle <cr>", opts)
-map("n", "<leader>ugs", "<cmd>Gitsigns toggle_signs <cr>", opts)
-map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
-
--- Lsp Saga
-map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
-map("n", "go", "<cmd>Lspsaga outgoing_calls<cr>", opts)
-map("n", "gc", "<cmd>Lspsaga code_action<cr>", opts)
-map("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
-map("n", "gD", "<cmd>Lspsaga peek_type_definition<cr>", opts)
-map("n", "gt", "<cmd>Lspsaga goto_type_definition<cr>", opts)
-map("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opts)
-map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
-map("n", "gr", "<cmd>Lspsaga finder<cr>", opts)
-map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", opts)
-
 -- ToggleTerm
 map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
 map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
@@ -133,15 +94,13 @@ map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 
--- Debugger (Nvim-Dap)
-map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
-map("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
-map("n", "<F8>", "<cmd>lua require'dap'.step_into()<cr>", opts)
-map("n", "<F7>", "<cmd>lua require'dap'.repl.open()<cr>", opts)
-
--- ChatGPT
-map("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
-map("v", "<leader>ai", "<cmd>ChatGPTEditWithInstructions<cr>", opts)
-map("v", "<leader>ar", "<cmd>ChatGPTRun<cr>", opts)
-map("v", "<leader>ac", "<cmd>ChatGPTCompleteCode<cr>", opts)
-map("v", "<leader>aO", "<cmd>ChatGPTActAs<cr>", opts)
+-- Lsp Saga
+map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
+map("n", "go", "<cmd>Lspsaga outgoing_calls<cr>", opts)
+map("n", "gc", "<cmd>Lspsaga code_action<cr>", opts)
+map("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
+map("n", "gD", "<cmd>Lspsaga peek_type_definition<cr>", opts)
+map("n", "gt", "<cmd>Lspsaga goto_type_definition<cr>", opts)
+map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
+map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)

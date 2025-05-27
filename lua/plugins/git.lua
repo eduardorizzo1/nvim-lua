@@ -1,6 +1,5 @@
 return {
 	{
-		--PERF:======[ Blamer ]=========
 		"APZelos/blamer.nvim",
 		event = { "BufReadPost", "BufNewFile" },
 		init = function()
@@ -11,16 +10,8 @@ return {
 			vim.g.blamer_date_format = "%d/%m/%y"
 			vim.g.blamer_template = "<committer>, <author-time> • <summary>"
 		end,
-	},
-	{
-		--PERF:=====[ NeoGit ]=========
-		"NeogitOrg/neogit",
-		branch = "master",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{ "sindrets/diffview.nvim", opts = {} },
-			"nvim-telescope/telescope.nvim",
+		keys = {
+			{ "<leader>ugb", "<cmd>BlamerToggle <cr>", desc = "Toggle Blamer" },
 		},
-		config = true,
 	},
 }

@@ -134,5 +134,6 @@ return {
 		},
 		{ "<C-p>", "<cmd>lua Snacks.picker.files()<cr>", desc = "Find Files (Root Dir)" },
 		{ "<leader><space>", false },
+		{ "<C-b>", "<cmd>lua Snacks.explorer()<cr>", desc = "Toggle Explorer" },
 	},
 }

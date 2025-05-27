@@ -21,6 +21,9 @@ return {
 		exclude_filetypes = { "toggleterm" },
 		-- kinds = require("utils.icons").kinds,
 	},
+	keys = {
+		{ '<leader>u.", "<cmd>Barbecue toggle<cr>', desc = "Barbecue toggle" },
+	},
 	init = function()
 		require("barbecue.ui").toggle(false)
 	end,

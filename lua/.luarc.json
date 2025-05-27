@@ -35,6 +35,7 @@
         "${3rd}/luassert/library"
     ],
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "LazyVim"
     ]
 }
