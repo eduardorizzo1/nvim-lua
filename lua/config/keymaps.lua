@@ -64,6 +64,7 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --================[ P L U G I N S ]======================
 --=======================================================
 
+map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", { desc = "Toggle virtual text" })
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
 map("n", "<C-_>", "gcc", { remap = true, silent = true, desc = "Comment line" })
@@ -95,12 +96,9 @@ map("t", "<M-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 map("t", "<M-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
 
 -- Lsp Saga
-map("n", "gi", "<cmd>Lspsaga incoming_calls<cr>", opts)
-map("n", "go", "<cmd>Lspsaga outgoing_calls<cr>", opts)
-map("n", "gc", "<cmd>Lspsaga code_action<cr>", opts)
-map("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
-map("n", "gD", "<cmd>Lspsaga peek_type_definition<cr>", opts)
-map("n", "gt", "<cmd>Lspsaga goto_type_definition<cr>", opts)
-map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
+map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", { remap = true, silent = true, desc = "Diagnostic jump next" })
+map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", { remap = true, silent = true, desc = "Diagnostic jump prev" })
+map("n", "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", { remap = true, silent = true, desc = "Diagnostic show line" })
+map("n", "gI", "<cmd>Lspsaga incoming_calls<cr>", { remap = true, silent = true, desc = "Incoming calls" })
+map("n", "gO", "<cmd>Lspsaga outgoing_calls<cr>", { remap = true, silent = true, desc = "Outgoing calls" })
+map("n", "gc", "<cmd>Lspsaga code_action<cr>", { remap = true, silent = true, desc = "Code action" })

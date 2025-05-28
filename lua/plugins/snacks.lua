@@ -56,6 +56,9 @@ return {
 			},
 		},
 
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
+
 		dashboard = {
 			enabled = true,
 			width = 50,
@@ -123,7 +126,10 @@ return {
 	},
 
 	keys = {
-		{ "<leader>fg", "<cmd>lua Snacks.picker.grep()<cr>", desc = "Live Grep (Root Dir)" },
+		{ "<leader><space>", false },
+		{ "<leader>fg", "<cmd>lua Snacks.picker.grep()<cr>", desc = "Live Grep" },
+		{ "<C-p>", "<cmd>lua Snacks.picker.files()<cr>", desc = "Find Files" },
+		{ "<C-b>", "<cmd>lua Snacks.explorer()<cr>", desc = "Toggle Explorer" },
 		{
 			"<leader>fG",
 			function()
@@ -132,8 +138,5 @@ return {
 			end,
 			desc = "Find Files (git-files)",
 		},
-		{ "<C-p>", "<cmd>lua Snacks.picker.files()<cr>", desc = "Find Files (Root Dir)" },
-		{ "<leader><space>", false },
-		{ "<C-b>", "<cmd>lua Snacks.explorer()<cr>", desc = "Toggle Explorer" },
 	},
 }

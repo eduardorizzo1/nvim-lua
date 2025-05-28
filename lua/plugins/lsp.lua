@@ -63,6 +63,7 @@ return {
 	},
 	keys = {
 		{ "gn", vim.lsp.buf.rename, desc = "Rename" },
-		{ "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", desc = "Toggle virtual text" },
+		{ "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover" },
+		{ "gi", vim.lsp.buf.implementation, desc = "Goto Implementation" },
 	},
 }

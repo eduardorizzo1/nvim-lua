@@ -12,6 +12,7 @@ return {
 			open_cmd = "!chrome",
 		},
 		callhierarchy = {
+			enable = true,
 			layout = "float",
 			keys = {
 				edit = "<CR>",
