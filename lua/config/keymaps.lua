@@ -63,7 +63,6 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --:NOTE:=================================================
 --================[ P L U G I N S ]======================
 --=======================================================
-
 map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", { desc = "Toggle virtual text" })
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
@@ -71,6 +70,14 @@ map("n", "<C-_>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-_>", "gc", { remap = true, silent = true, desc = "Comment selection" })
 map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map({ "x", "v" }, "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
+
+-- Barbecue
+map(
+	"n",
+	"<leader>u.",
+	'<cmd>lua require("barbecue.ui").toggle()<cr>',
+	{ remap = true, silent = true, desc = "Barbecue Toggle" }
+) -- Barbecue
 
 -- Snacks
 map("n", "<C-b>", "<cmd>lua Snacks.explorer()<cr>", { remap = true, silent = true, desc = "Toggle Explorer" })
