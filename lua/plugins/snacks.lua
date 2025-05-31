@@ -107,12 +107,6 @@ return {
 						action = ":cd ~/dotfiles | :lua Snacks.explorer.open()",
 					},
 					{
-						icon = " ",
-						key = "r",
-						desc = "Recent Files",
-						action = ":lua Snacks.dashboard.pick('oldfiles')",
-					},
-					{
 						icon = "󰒲 ",
 						key = "l",
 						desc = "Lazy",
