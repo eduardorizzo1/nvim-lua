@@ -2,7 +2,9 @@ local M = {}
 
 local transparent = true
 local custom_bg = "#1E2030"
-local custom_fg = "#2f334d"
+local custom_fg = "#44446a"
+local black_bg = "#000000"
+local custom_fill = "#15161e"
 
 M.opts = {
 	style = "night",
@@ -73,9 +75,6 @@ M.opts = {
 		hl.TelescopeSelection = { bg = c.bg_highlight, bold = true }
 
 		--============ [ Bufferline ] =================
-		hl.BufferLineFill = transparent and {
-			bg = custom_bg,
-		} or {}
 		hl.BufferLineBackground = transparent and {
 			fg = custom_fg,
 		} or {}
@@ -84,16 +83,18 @@ M.opts = {
 			fg = c.bg_dark,
 		}
 		hl.BufferLineSeparator = transparent and {
-			fg = custom_bg,
+			fg = custom_fill,
 		} or {}
 		hl.BufferLineSeparatorSelected = transparent and {
-			fg = custom_bg,
+			fg = custom_fill,
+			bg = black_bg,
 		} or {}
 		hl.BufferLineSeparatorVisible = transparent and {
-			fg = custom_bg,
+			fg = custom_fill,
 		} or {}
 		hl.BufferLineBufferVisible = { fg = c.fg }
-		hl.BufferLineBufferSelected = { fg = c.fg, italic = true, bold = true }
+		hl.BufferLineBufferSelected = transparent and { bg = black_bg, fg = c.fg, italic = true, bold = true }
+			or { fg = c.fg, italic = true, bold = true }
 		hl.BufferLineTab = transparent and { fg = c.comment, bg = custom_bg } or {}
 		hl.BufferLineTabSeparator = transparent and { fg = custom_bg, bg = custom_bg } or {}
 		hl.BufferLineTabSeparatorSelected = transparent and { fg = custom_bg } or {}
