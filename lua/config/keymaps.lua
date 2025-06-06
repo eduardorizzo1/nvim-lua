@@ -60,9 +60,7 @@ map("n", "<leader>S", "<cmd>wa<cr>", { desc = "Save all files" }) -- save all fi
 map("n", "<leader>*", "<cmd>noh<cr>", { desc = "Toggle highlight match" }) -- Toggle highlight match word
 map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative number" }) -- Toggle Relative number
 
---:NOTE:=================================================
---================[ P L U G I N S ]======================
---=======================================================
+--NOTE:================[ P L U G I N S ]======================
 map("n", "<leader>uD", "<cmd>lua toggle_virtual_text()<cr>", { desc = "Toggle virtual text" })
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
