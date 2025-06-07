@@ -15,17 +15,22 @@ M.opts = {
 	},
 
 	on_highlights = function(hl, c)
-		hl.CursorLineNr = {
-			fg = c.cyan,
-		}
-		hl.WinSeparator = { fg = c.comment }
 		hl["@module.python"] = { fg = c.fg }
 		hl["@constructor.python"] = { fg = c.cyan, italic = true }
 		hl["@keyword.function.python"] = { fg = c.purple, italic = true }
 		hl["@variable.builtin.python"] = { fg = c.red, italic = true }
+		hl.CursorLineNr = { fg = c.cyan }
+		hl.WinSeparator = { fg = c.comment }
 		hl.Include = { fg = c.purple, italic = true }
-		hl.BufferLineBufferVisible = { fg = c.fg }
-		hl.BufferLineBufferSelected = { fg = c.fg, italic = true, bold = true }
+
+		if transparent then
+			hl.BufferLineBackground = { fg = "#464e72" }
+			hl.BufferLineFill = { bg = "#15161e" }
+			hl.BufferLineBufferSelected = { bg = "#000000", italic = true, bold = true }
+			hl.BufferLineSeparatorSelected = { bg = "#000000", fg = "#15161e" }
+			hl.BufferLineSeparatorVisible = { bg = "#15161e", fg = "#0e0e14" }
+			hl.BufferLineSeparator = { bg = "#15161e", fg = "#15161e" }
+		end
 		hl.SnacksIndentScope = { fg = c.blue }
 	end,
 }

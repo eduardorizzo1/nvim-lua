@@ -92,6 +92,9 @@ map("n", "<leader><tab><S-tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab"
 map("n", "<leader><tab>p", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "<leader><tab>x", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 
+-- Outline
+map("n", "<leader>O", "<cmd>Outline<cr>", { desc = "Outline" })
+
 -- ToggleTerm
 map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
 map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
