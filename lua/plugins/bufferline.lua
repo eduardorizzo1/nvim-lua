@@ -6,7 +6,7 @@ return {
 			show_buffer_close_icons = false,
 			separator_style = { "", "" },
 			indicator = {
-				icon = "",
+				icon = "",
 				style = "icon",
 			},
 		},
