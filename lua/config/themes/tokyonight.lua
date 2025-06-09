@@ -30,6 +30,7 @@ M.opts = {
 			hl.BufferLineSeparatorSelected = { bg = "#000000", fg = "#15161e" }
 			hl.BufferLineSeparatorVisible = { bg = "#15161e", fg = "#0e0e14" }
 			hl.BufferLineSeparator = { bg = "#15161e", fg = "#15161e" }
+			hl.Pmenu = { bg = "#000000" }
 		end
 		hl.SnacksIndentScope = { fg = c.blue }
 	end,
