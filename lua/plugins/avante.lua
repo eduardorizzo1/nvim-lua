@@ -4,11 +4,16 @@ return {
 	lazy = false,
 	version = false,
 	opts = {
-		provider = "copilot",
-		copilot = {
-			model = "claude-3.7-sonnet",
-			temperature = 0,
-			max_tokens = 8192,
+		providers = {
+			copilot = {
+				endpoint = "https://api.githubcopilot.com",
+				proxy = nil,
+				allow_insecure = false,
+				timeout = 10 * 60 * 1000,
+				max_completion_tokens = 1000000,
+				reasoning_effort = "high",
+				model = "claude-sonnet-4",
+			},
 		},
 	},
 	build = "make",
