@@ -26,10 +26,11 @@ M.opts = {
 		if transparent then
 			hl.BufferLineBackground = { fg = "#464e72" }
 			hl.BufferLineFill = { bg = "#15161e" }
-			hl.BufferLineBufferSelected = { bg = "#000000", italic = true, bold = true }
-			hl.BufferLineSeparatorSelected = { bg = "#000000", fg = "#15161e" }
+			hl.BufferLineBufferSelected = { italic = true, bold = true }
+			hl.BufferLineSeparatorSelected = { fg = "#000000" }
 			hl.BufferLineSeparatorVisible = { bg = "#15161e", fg = "#0e0e14" }
-			hl.BufferLineSeparator = { bg = "#15161e", fg = "#15161e" }
+			hl.BufferLineSeparator = { bg = "#000000", fg = "#15161e" }
+			hl.BufferLineIndicatorSelected = { bg = "#15161e", fg = "#000000" }
 			hl.Pmenu = { bg = "#000000" }
 		end
 		hl.SnacksIndentScope = { fg = c.blue }
