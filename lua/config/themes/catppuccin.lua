@@ -2,9 +2,6 @@ local M = {}
 
 M.init = function()
 	vim.cmd.colorscheme("catppuccin")
-	vim.cmd([[ hi SignColumn guibg=NONE ]])
-	vim.cmd([[ hi BufferLineSeparator guifg=#101019 guibg=#161623]])
-	vim.cmd([[ hi BufferLineFill guibg=#101019]])
 end
 
 M.opts = {

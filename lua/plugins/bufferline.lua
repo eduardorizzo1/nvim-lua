@@ -4,7 +4,7 @@ return {
 		options = {
 			always_show_bufferline = true,
 			show_buffer_close_icons = false,
-			separator_style = { "", "" },
+			separator_style = { "", "" },
 			indicator = {
 				icon = " ",
 				style = "icon",

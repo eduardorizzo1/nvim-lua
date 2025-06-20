@@ -27,9 +27,9 @@ M.opts = {
 			hl.BufferLineBackground = { fg = "#464e72" }
 			hl.BufferLineFill = { bg = "#15161e" }
 			hl.BufferLineBufferSelected = { italic = true, bold = true }
-			hl.BufferLineSeparatorSelected = { fg = "#000000" }
-			hl.BufferLineSeparatorVisible = { bg = "#15161e", fg = "#0e0e14" }
-			hl.BufferLineSeparator = { bg = "#000000", fg = "#15161e" }
+			hl.BufferLineSeparatorSelected = { fg = "#15161e" }
+			hl.BufferLineSeparatorVisible = { bg = "#15161e", fg = "#15161e", bold = true }
+			hl.BufferLineSeparator = { bg = "#000000", fg = "#15161e", bold = true }
 			hl.BufferLineIndicatorSelected = { bg = "#15161e", fg = "#000000" }
 			hl.Pmenu = { bg = "#000000" }
 		end

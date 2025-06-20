@@ -270,7 +270,7 @@ return {
 -- Rename = "    ",
 -- Repo = "   ",
 -- Robot = "ﮧ  ",
--- Separators = " ▌ ▐    "
+-- Separators = " ▌ ▐    "
 -- Snippet = "      ",
 -- Struct = "   ",
 -- String = " ",
