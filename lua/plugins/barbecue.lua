@@ -10,9 +10,13 @@ return {
 		symbols = {
 			modified = "●",
 			ellipsis = "…",
-			separator = "›",
+			separator = "",
 		},
 		exclude_filetypes = { "toggleterm" },
+
+		theme = {
+			normal = { bg = "#000000" },
+		},
 	},
 	init = function()
 		require("barbecue.ui").toggle(false)
