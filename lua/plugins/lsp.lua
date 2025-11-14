@@ -2,9 +2,6 @@ return {
 	"neovim/nvim-lspconfig",
 	init = function()
 		require("lspconfig.ui.windows").default_options.border = "rounded"
-		local keys = require("lazyvim.plugins.lsp.keymaps").get()
-		keys[#keys + 1] = { "K", false }
-		keys[#keys + 1] = { "<C-k>", false, mode = { "i" } }
 		vim.diagnostic.config({
 			virtual_text = require("utils.virtual-text").virtual_text,
 			codelens = false,
@@ -13,6 +10,12 @@ return {
 	opts = {
 		inlay_hints = { enabled = false },
 		servers = {
+			["*"] = {
+				keys = {
+					{ "K", false },
+					{ "<C-k>", false },
+				},
+			},
 			vtsls = {
 				settings = {
 					typescript = {
