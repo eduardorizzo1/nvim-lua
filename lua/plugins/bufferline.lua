@@ -7,7 +7,7 @@ return {
 			separator_style = "slant",
 			-- separator_style = { "▎", "▎" },
 			indicator = {
-				icon = " ",
+				icon = "",
 				style = "icon",
 			},
 		},
