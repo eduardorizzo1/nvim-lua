@@ -13,7 +13,17 @@ return {
 				timeout = 10 * 60 * 1000,
 				max_completion_tokens = 1000000,
 				reasoning_effort = "high",
-				model = "claude-sonnet-4",
+				-- model = "claude-opus-4",
+			},
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				auth_type = "api",
+				model = "claude-opus-4-5-20251101",
+				timeout = 30000,
+				extra_request_body = {
+					temperature = 0.2,
+					max_tokens = 8192,
+				},
 			},
 		},
 	},
