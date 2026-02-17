@@ -31,6 +31,8 @@ M.opts = {
 			hl.BufferLineSeparatorVisible = { fg = "#141416" }
 			hl.BufferLineSeparator = { fg = "#141416" }
 			hl.BufferLineIndicatorSelected = { fg = "#141416" }
+			hl.BufferLineTabSeparator = { fg = "#141416" }
+			hl.BufferLineTabSeparatorSelected = { fg = "#141416" }
 			hl.Pmenu = { bg = c.bg }
 		end
 		hl.SnacksIndentScope = { fg = c.blue }
