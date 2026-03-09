@@ -23,7 +23,7 @@ return {
 			sources = {
 				explorer = {
 					hidden = true,
-					ignore = true,
+					ignored = true,
 					actions = {
 						toggle_dir = function(picker, item)
 							if item.dir == false then
