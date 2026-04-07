@@ -18,6 +18,9 @@ return {
 			normal = { bg = "#000000" },
 		},
 	},
+	keys = {
+		{ "<leader>u.", '<cmd>lua require("barbecue.ui").toggle()<cr>', desc = "Barbecue Toggle" },
+	},
 	init = function()
 		require("barbecue.ui").toggle(false)
 	end,

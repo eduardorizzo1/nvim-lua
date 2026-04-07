@@ -2,10 +2,6 @@ return {
 	"neovim/nvim-lspconfig",
 	init = function()
 		require("lspconfig.ui.windows").default_options.border = "rounded"
-		vim.diagnostic.config({
-			virtual_text = require("utils.virtual-text").virtual_text,
-			codelens = false,
-		})
 	end,
 	opts = {
 		inlay_hints = { enabled = false },

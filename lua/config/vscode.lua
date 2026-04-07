@@ -12,8 +12,8 @@ map({ "n", "i", "v", "x" }, "<C-c>", "<ESC>", opts)
 -- Window Navigate
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<M-j>", "<C-w>j", opts)
-map("n", "<M-k>", "<C-w>k", opts)
+-- map("n", "<M-j>", "<C-w>j", opts)
+-- map("n", "<M-k>", "<C-w>k", opts)
 
 -- Up and Down lines
 map({ "n", "x" }, "J", "5j", opts)

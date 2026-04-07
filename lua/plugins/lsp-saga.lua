@@ -114,4 +114,12 @@ return {
 			enable = false,
 		},
 	},
+	keys = {
+		{ "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "Diagnostic jump next" },
+		{ "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "Diagnostic jump prev" },
+		{ "ge", "<cmd>Lspsaga show_line_diagnostics<cr>", desc = "Diagnostic show line" },
+		{ "gI", "<cmd>Lspsaga incoming_calls<cr>", desc = "Incoming calls" },
+		{ "gO", "<cmd>Lspsaga outgoing_calls<cr>", desc = "Outgoing calls" },
+		{ "gc", "<cmd>Lspsaga code_action<cr>", desc = "Code action" },
+	},
 }
