@@ -48,15 +48,17 @@ map("n", "<leader>uL", "<cmd>set relativenumber!<cr>", { desc = "Toggle relative
 --NOTE:================[ P L U G I N S ]======================
 map("n", "<C-/>", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map("x", "<C-/>", "gc", { remap = true, silent = true, desc = "Comment selection" })
+map("n", "<C-_>", "gcc", { remap = true, silent = true, desc = "Comment line" })
+map("x", "<C-_>", "gc", { remap = true, silent = true, desc = "Comment selection" })
 map("n", "<leader>cc", "gcc", { remap = true, silent = true, desc = "Comment line" })
 map({ "x", "v" }, "<leader>cc", "gc", { remap = true, silent = true, desc = "Comment line" })
 
 -- ToggleTerm
-map("n", "<C-t>", '<cmd>ToggleTerm direction="float"<cr>', opts)
-map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("n", "<C-\\>", '<cmd>ToggleTerm direction="horizontal"<cr>', opts)
 map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 -- Snacks Explorer
-
 map("n", "<C-b>", "<cmd>lua Snacks.explorer()<cr>", { desc = "Toggle Explorer" })
+
+-- Bufferline
+map("n", "<S-x>", "<leader>bd", { remap = true, silent = true, desc = "Delete Buffer" })

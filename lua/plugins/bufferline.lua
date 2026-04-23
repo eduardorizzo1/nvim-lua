@@ -13,7 +13,6 @@ return {
 		},
 	},
 	keys = {
-		{ "<S-x>", "<leader>bd", desc = "Delete Buffer" },
 		{ "<leader><tab>t", "<cmd>tabnew<cr>", desc = "New Tab" },
 		{ "<leader><tab><tab>", "<cmd>tabnext<cr>", desc = "Next Tab" },
 		{ "<leader><tab>n", "<cmd>tabnext<cr>", desc = "Next Tab" },

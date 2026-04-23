@@ -156,6 +156,7 @@ return {
 	globe = " ",
 	cube = " ",
 	codeium = "󰘦 ",
+	SpecFile = "󰂖",
 
 	-- Words
 	e_circle_outline = "Ⓔ ",

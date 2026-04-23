@@ -113,6 +113,10 @@ return {
 		symbol_in_winbar = {
 			enable = false,
 		},
+		floaterm = {
+			height = 0.7,
+			width = 0.7,
+		},
 	},
 	keys = {
 		{ "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "Diagnostic jump next" },
@@ -121,5 +125,7 @@ return {
 		{ "gI", "<cmd>Lspsaga incoming_calls<cr>", desc = "Incoming calls" },
 		{ "gO", "<cmd>Lspsaga outgoing_calls<cr>", desc = "Outgoing calls" },
 		{ "gc", "<cmd>Lspsaga code_action<cr>", desc = "Code action" },
+		{ "gH", "<cmd>Lspsaga hover_doc<cr>", desc = "Hover doc" },
+		{ "<C-t>", "<cmd>Lspsaga term_toggle<cr>", desc = "Term float" },
 	},
 }

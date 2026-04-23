@@ -2,7 +2,6 @@ return {
 	"akinsho/toggleterm.nvim",
 	opts = {
 		size = 20,
-		open_mapping = [[<c-t>]],
 		hide_numbers = true,
 		shade_filetypes = {},
 		shade_terminals = true,
@@ -15,6 +14,8 @@ return {
 		shell = vim.o.shell,
 		float_opts = {
 			border = "curved",
+			width = math.floor(vim.o.columns * 0.7),
+			height = math.floor(vim.o.lines * 0.7),
 			winblend = 0,
 			highlights = {
 				border = "Normal",

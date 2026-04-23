@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = { "folke/snacks.nvim" },
 	init = function()
 		require("lspconfig.ui.windows").default_options.border = "rounded"
 	end,

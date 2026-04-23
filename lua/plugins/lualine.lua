@@ -26,6 +26,12 @@ return {
 					{
 						"mode",
 						icon = "",
+						fmt = function(str)
+							return str:sub(1, 1):upper() .. str:sub(2):lower()
+						end,
+						color = {
+							gui = "italic,bold",
+						},
 					},
 				},
 				lualine_y = {

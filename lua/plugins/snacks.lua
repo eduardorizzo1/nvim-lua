@@ -148,6 +148,10 @@ return {
 	},
 
 	keys = {
+		{ "<C-/>", false },
+		{ "<C-/>", false, mode = "t" },
+		{ "<C-_>", false },
+		{ "<C-_>", false, mode = "t" },
 		{ "<leader><space>", false },
 		{ "<leader>fg", "<cmd>lua Snacks.picker.grep()<cr>", desc = "Live Grep" },
 		{ "<C-p>", "<cmd>lua Snacks.picker.files()<cr>", desc = "Find Files" },

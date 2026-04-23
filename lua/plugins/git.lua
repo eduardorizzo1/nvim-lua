@@ -14,4 +14,10 @@ return {
 			{ "<leader>ugb", "<cmd>BlamerToggle <cr>", desc = "Toggle Blamer" },
 		},
 	},
+	{
+		"gitsigns.nvim",
+		config = function()
+			require("gitsigns").toggle_signs(false)
+		end,
+	},
 }

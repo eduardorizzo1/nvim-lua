@@ -8,7 +8,7 @@ M.opts = {
 	keywordStyle = { italic = true },
 	statementStyle = { bold = true },
 	typeStyle = {},
-	transparent = true, -- do not set background color
+	transparent = false, -- do not set background color
 	dimInactive = false, -- dim inactive window `:h hl-NormalNC`
 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
 	colors = { -- add/modify theme and palette colors
@@ -28,11 +28,11 @@ M.opts = {
 	},
 	overrides = function(colors) -- add/modify highlights
 		return {
-			SnacksPicker = { bg = "#000000" },
-			LineNr = { bg = "#000000" },
-			GitSignsAdd = { bg = "#000000" },
-			GitSignsChange = { bg = "#000000" },
-			GitSignsDelete = { bg = "#000000" },
+			SnacksPicker = { bg = colors.bg },
+			LineNr = { bg = colors.bg },
+			-- GitSignsAdd = { bg = "#000000" },
+			-- GitSignsChange = { bg = "#000000" },
+			-- GitSignsDelete = { bg = "#000000" },
 			-- BufferLineBackground = { fg = "#464e72" },
 			BufferLineFill = { bg = "#000000" },
 			BufferLineBufferSelected = { italic = true, bold = true },
