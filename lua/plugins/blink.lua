@@ -35,13 +35,13 @@ return {
 					winhighlight = winhighlight,
 				},
 			},
-			ghost_text = {
-				enabled = false,
-			},
+			-- ghost_text = {
+			-- 	enabled = false,
+			-- },
 		},
 		keymap = {
 			["<CR>"] = { "accept", "fallback" },
-			["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
+			-- ["<Tab>"] = { "select_and_accept", "snippet_forward", "fallback" },
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
 			["<C-u>"] = { "scroll_documentation_up", "fallback" },
