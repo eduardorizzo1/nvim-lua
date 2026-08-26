@@ -40,18 +40,25 @@ return {
 				view_history = "messages", -- view for :messages
 				view_search = false, -- false | virtual-text | messages or notify
 			},
-		},
-	},
-	{
-		"folke/noice.nvim",
-		opts = function(_, opts)
-			table.insert(opts.routes, {
-				filter = {
-					event = "notify",
-					find = "No information available",
+			routes = {
+				{
+					filter = {
+						event = "lsp",
+						kind = "progress",
+						any = {
+							{ find = "pyright" },
+							{ find = "basedpyright" },
+						},
+					},
+					opts = { skip = true },
 				},
-				opts = { skip = true },
-			})
-		end,
+				{
+					filter = {
+						event = "notify",
+						find = "No information available",
+					},
+				},
+			},
+		},
 	},
 }
